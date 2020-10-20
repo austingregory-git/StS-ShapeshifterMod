@@ -1,0 +1,22 @@
+{
+        "StSShapeShifter:CommonPower": {
+                 "NAME": "Placeholder Power",
+                 "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
+        },
+        "StSShapeShifter:RarePower": {
+                 "NAME": "Placeholder Power",
+                 "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+        },
+        "StSShapeShifter:SapBurstPower": {
+                "NAME": "Sap Burst",
+                "DESCRIPTIONS": ["At the end of your turn, reduce a random enemy's strength by #b", "random enemy", "hello"]
+        },
+        "StSShapeShifter:DeerFormPower": {
+                "NAME": "Deer Form",
+                "DESCRIPTIONS": ["At the start of your turn, add a random skill to your hand", "random enemy", "hello"]
+        },
+        "StSShapeShifter:BearFormPower": {
+                "NAME": "Bear Form",
+                "DESCRIPTIONS": ["While in Bear Form, gain 2(3) Dexterity", "random enemy", "hello"]
+  }
+}

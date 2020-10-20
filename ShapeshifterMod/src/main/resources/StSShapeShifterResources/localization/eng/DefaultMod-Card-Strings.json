@@ -1,0 +1,149 @@
+{
+  "StSShapeShifter:ShapeShifter_Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "StSShapeShifter:ShapeShifter_Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "StSShapeShifter:AdaptiveStrikes": {
+    "NAME": "Adaptive Strikes",
+    "DESCRIPTION": "Deal !D! Damage 3 times. NL [#32CD32] Grow !M!"
+  },
+  "StSShapeShifter:FallingLeaves": {
+    "NAME": "Falling Leaves",
+    "DESCRIPTION": "Gain !B! Block !M! times."
+  },
+  "StSShapeShifter:ThornToss": {
+    "NAME": "Thorn Toss",
+    "DESCRIPTION": "Deal !D! Damage 2 times. NL [#696969] Wither !M!"
+  },
+  "StSShapeShifter:PoisonIvy": {
+    "NAME": "Poison Ivy",
+    "DESCRIPTION": "Apply !M! poison to all enemies."
+  },
+  "StSShapeShifter:BarkSkin": {
+    "NAME": "Bark Skin",
+    "DESCRIPTION": "Gain !B! Block. NL [#32CD32] Grow !M!"
+  },
+  "StSShapeShifter:BurstingSpore": {
+    "NAME": "Bursting Spore",
+    "DESCRIPTION": "Deal !D! Damage. Gain !B! Block. NL [#32CD32] Grow !M!"
+  },
+  "StSShapeShifter:VineHandcuffs": {
+    "NAME": "Vine Handcuffs",
+    "DESCRIPTION": "Reduce an enemy's strength by !M!."
+  },
+  "StSShapeShifter:Uproot_Redwood": {
+    "NAME": "Uproot Redwood",
+    "DESCRIPTION": "Deal !D! Damage. NL [#696969] Wither !M!"
+  },
+  "StSShapeShifter:Maul": {
+    "NAME": "Maul",
+    "DESCRIPTION": "Deal !D! Damage. NL [#696969] Wither !M!"
+  },
+  "StSShapeShifter:FesteringBite": {
+    "NAME": "Festering Bite",
+    "DESCRIPTION": "Deal !D! Damage. Apply !M! Weak. NL [#32CD32] Grow 1"
+  },
+  "StSShapeShifter:Guard": {
+    "NAME": "Guard",
+    "DESCRIPTION": "Gain !B! Block. NL Dexterity affects this card !M! times."
+  },
+  "StSShapeShifter:FlowerShield": {
+    "NAME": "Flower Shield",
+    "DESCRIPTION": "Gain !B! Block. NL [#696969] Wither 3"
+  },
+  "StSShapeShifter:BloomingSlash": {
+    "NAME": "Blooming Slash",
+    "DESCRIPTION": "Deal !D! Damage. NL [#32CD32] Grow !M!"
+  },
+  "StSShapeShifter:Mystical_Branch": {
+    "NAME": "Mystical Branch",
+    "DESCRIPTION": "Deal !D! Damage. NL [#32CD32] Grow !M!"
+  },
+  "StSShapeShifter:Summon_Mountains": {
+    "NAME": "Summon Mountains",
+    "DESCRIPTION": "Deal !B! Damage. NL [#32CD32] Grow 6"
+  },
+  "StSShapeShifter:Tortoise_Form": {
+    "NAME": "Tortoise Form",
+    "DESCRIPTION": "Upon Entering Tortoise Form, Gain !B!. While in Tortoise Form, gain !M! Dexterity"
+  },
+  "StSShapeShifter:Lynx_Form": {
+    "NAME": "Lynx_Form",
+    "DESCRIPTION": "Upon Entering Lynx Form, Deal !D! Damage to all enemies. While in Lynx Form, gain !M! Strength"
+  },
+  "StSShapeShifter:DeerForm": {
+    "NAME": "Deer Form",
+    "DESCRIPTION": "Upon Entering Deer Form, Gain !M! Weak and Draw 1 card. While in Deer Form, add a random skill to your hand at the start of your turn."
+  },
+  "StSShapeShifter:BearForm": {
+    "NAME": "Bear Form",
+    "DESCRIPTION": "Upon Entering Bear Form, Gain !M! Shielding and 1 Dexterity. While in Bear Form, gain 2(3) Dexterity"
+  },
+  "StSShapeShifter:Rest": {
+    "NAME": "Rest",
+    "DESCRIPTION": "Exit your form. You may not enter a new form this turn. Gain !B! Block."
+  },
+  "StSShapeShifter:Efflorescence": {
+    "NAME": "Efflorescence",
+    "DESCRIPTION": "Gain !M! Energy. NL [#32CD32] Grow 1"
+  },
+  "StSShapeShifter:Sap_Burst": {
+    "NAME": "Sap Burst",
+    "DESCRIPTION": "At the end of your turn, reduce a random enemy's strength by !M!."
+  },
+  "StSShapeShifter:DefaultCommonAttack": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! Damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"
+  },
+  "StSShapeShifter:DefaultCommonSkill": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block. NL StSShapeShifter:Multiword_Keyword."
+  },
+  "StSShapeShifter:DefaultCommonPower": {
+    "NAME": "Hold Place",
+    "DESCRIPTION": "Gain !M! StSShapeShifter:Keyword.",
+    "UPGRADE_DESCRIPTION": "Gain !M! StSShapeShifter:Keywords."
+  },
+  "StSShapeShifter:DefaultUncommonAttack": {
+    "NAME": "Big slap",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "StSShapeShifter:DefaultUncommonSkill": {
+    "NAME": "A Better Defend",
+    "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
+  },
+  "StSShapeShifter:DefaultUncommonPower": {
+    "NAME": "Weirdness",
+    "DESCRIPTION": "Gain X StSShapeShifter:Keywords.",
+    "UPGRADE_DESCRIPTION": "Gain X +1 StSShapeShifter:Keywords."
+  },
+  "StSShapeShifter:DefaultRareAttack": {
+    "NAME": "TOUCH",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "StSShapeShifter:DefaultRareSkill": {
+    "NAME": "For Each Loop x2",
+    "DESCRIPTION": "Apply !M! vulnerable to all enemies, 2 times.",
+    "UPGRADE_DESCRIPTION": "Apply !M! vulnerable to all enemies, 3 times."
+  },
+  "StSShapeShifter:DefaultRarePower": {
+    "NAME": "In-Progress Form",
+    "DESCRIPTION": "At the start of your turn, play a TOUCH."
+  },
+  "StSShapeShifter:DefaultAttackWithVariable": {
+    "NAME": "Special Strike",
+    "DESCRIPTION": "Deal !D! Damage [E] times. NL (Deal !StSShapeShifter:ENERGY_DAMAGE! damage total.)"
+  },
+  "StSShapeShifter:DefaultSecondMagicNumberSkill": {
+    "NAME": "Cool 2 Number Card",
+    "DESCRIPTION": "Apply !M! vulnerable and !StSShapeShifter:SecondMagic! poison to an enemy."
+  },
+  "StSShapeShifter:OrbSkill": {
+    "NAME": "Get Orb",
+    "DESCRIPTION": "Channel 1 Default Orb."
+  }
+}
