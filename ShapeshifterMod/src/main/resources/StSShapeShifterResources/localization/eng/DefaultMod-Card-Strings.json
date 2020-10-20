@@ -9,7 +9,7 @@
   },
   "StSShapeShifter:AdaptiveStrikes": {
     "NAME": "Adaptive Strikes",
-    "DESCRIPTION": "Deal !D! Damage 3 times. NL [#32CD32] Grow !M!"
+    "DESCRIPTION": "Deal !D! Damage 3 times. NL [#32CD32] Grow[] !M!"
   },
   "StSShapeShifter:FallingLeaves": {
     "NAME": "Falling Leaves",
@@ -25,11 +25,11 @@
   },
   "StSShapeShifter:BarkSkin": {
     "NAME": "Bark Skin",
-    "DESCRIPTION": "Gain !B! Block. NL [#32CD32] Grow !M!"
+    "DESCRIPTION": "Gain !B! Block. NL [#32CD32] Grow[] !M!"
   },
   "StSShapeShifter:BurstingSpore": {
     "NAME": "Bursting Spore",
-    "DESCRIPTION": "Deal !D! Damage. Gain !B! Block. NL [#32CD32] Grow !M!"
+    "DESCRIPTION": "Deal !D! Damage. Gain !B! Block. NL [#32CD32] Grow[] !M!"
   },
   "StSShapeShifter:VineHandcuffs": {
     "NAME": "Vine Handcuffs",
@@ -37,35 +37,63 @@
   },
   "StSShapeShifter:Uproot_Redwood": {
     "NAME": "Uproot Redwood",
-    "DESCRIPTION": "Deal !D! Damage. NL [#696969] Wither !M!"
+    "DESCRIPTION": "Deal !D! Damage. NL [#696969] Wither[] !M!"
   },
   "StSShapeShifter:Maul": {
     "NAME": "Maul",
-    "DESCRIPTION": "Deal !D! Damage. NL [#696969] Wither !M!"
+    "DESCRIPTION": "Deal !D! Damage. NL [#696969] Wither[] !M!"
   },
   "StSShapeShifter:FesteringBite": {
     "NAME": "Festering Bite",
-    "DESCRIPTION": "Deal !D! Damage. Apply !M! Weak. NL [#32CD32] Grow 1"
+    "DESCRIPTION": "Deal !D! Damage. Apply !M! Weak. NL [#32CD32] Grow[] 1"
+  },
+  "StSShapeShifter:ShiftingStrike": {
+    "NAME": "Shifting Strike",
+    "DESCRIPTION": "Deal !D! Damage. If you changed forms this turn, this card costs 0."
   },
   "StSShapeShifter:Guard": {
     "NAME": "Guard",
     "DESCRIPTION": "Gain !B! Block. NL Dexterity affects this card !M! times."
   },
+  "StSShapeShifter:Sapling": {
+    "NAME": "Sapling",
+    "DESCRIPTION": "Swap this card with a card in your discard pile. Draw 1 card. NL Exhaust."
+  },
   "StSShapeShifter:FlowerShield": {
     "NAME": "Flower Shield",
-    "DESCRIPTION": "Gain !B! Block. NL [#696969] Wither 3"
+    "DESCRIPTION": "Gain !B! Block. NL [#696969] Wither[] 3"
   },
   "StSShapeShifter:BloomingSlash": {
     "NAME": "Blooming Slash",
-    "DESCRIPTION": "Deal !D! Damage. NL [#32CD32] Grow !M!"
+    "DESCRIPTION": "Deal !D! Damage. NL [#32CD32] Grow[] !M!"
   },
   "StSShapeShifter:Mystical_Branch": {
     "NAME": "Mystical Branch",
-    "DESCRIPTION": "Deal !D! Damage. NL [#32CD32] Grow !M!"
+    "DESCRIPTION": "Deal !D! Damage. NL [#32CD32] Grow[] !M!"
+  },
+  "StSShapeShifter:MysticalSeed": {
+    "NAME": "Mystical Seed",
+    "DESCRIPTION": "Deal !D! Damage. NL [#32CD32] Grow[] !M!X"
+  },
+  "StSShapeShifter:Hunt": {
+    "NAME": "Hunt",
+    "DESCRIPTION": "Deal !D! Damage. Gain 2 energy next turn."
+  },
+  "StSShapeShifter:Bonk": {
+    "NAME": "Bonk",
+    "DESCRIPTION": "Deal !D! Damage. Enter a random form."
+  },
+  "StSShapeShifter:ThrashAbout": {
+    "NAME": "ThrashAbout",
+    "DESCRIPTION": "Deal !D! Damage to all enemies 3 times. Lose 1 energy next turn."
   },
   "StSShapeShifter:Summon_Mountains": {
     "NAME": "Summon Mountains",
-    "DESCRIPTION": "Deal !B! Damage. NL [#32CD32] Grow 6"
+    "DESCRIPTION": "Gain !B! Block. NL [#32CD32] Grow[] 6."
+  },
+  "StSShapeShifter:GoldenBerries": {
+    "NAME": "Golden Berries",
+    "DESCRIPTION": "Gain !M! Regen. NL Exhaust."
   },
   "StSShapeShifter:Tortoise_Form": {
     "NAME": "Tortoise Form",
@@ -89,11 +117,15 @@
   },
   "StSShapeShifter:Efflorescence": {
     "NAME": "Efflorescence",
-    "DESCRIPTION": "Gain !M! Energy. NL [#32CD32] Grow 1"
+    "DESCRIPTION": "Gain !M! Energy. NL [#32CD32] Grow[] 1"
   },
   "StSShapeShifter:Sap_Burst": {
     "NAME": "Sap Burst",
     "DESCRIPTION": "At the end of your turn, reduce a random enemy's strength by !M!."
+  },
+  "StSShapeShifter:DiverseSpirit": {
+    "NAME": "Diverse Spirit",
+    "DESCRIPTION": "Whenever you play a unique form this combat, gain 1 energy and draw 1 card."
   },
   "StSShapeShifter:DefaultCommonAttack": {
     "NAME": "Strike",

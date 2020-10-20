@@ -11,12 +11,24 @@
                 "NAME": "Sap Burst",
                 "DESCRIPTIONS": ["At the end of your turn, reduce a random enemy's strength by #b", "random enemy", "hello"]
         },
+        "StSShapeShifter:DiverseSpiritPower": {
+          "NAME": "Diverse Spirit",
+          "DESCRIPTIONS": ["Whenever you play a unique form this combat, gain 1 energy and draw 1 card", "random enemy", "hello"]
+        },
         "StSShapeShifter:DeerFormPower": {
                 "NAME": "Deer Form",
                 "DESCRIPTIONS": ["At the start of your turn, add a random skill to your hand", "random enemy", "hello"]
         },
+        "StSShapeShifter:Lynx": {
+          "NAME": "Lynx Form",
+          "DESCRIPTIONS": ["While in Lynx Form, gain 1(2) strength", "random enemy", "hello"]
+        },
         "StSShapeShifter:BearFormPower": {
                 "NAME": "Bear Form",
                 "DESCRIPTIONS": ["While in Bear Form, gain 2(3) Dexterity", "random enemy", "hello"]
-  }
+        },
+        "StSShapeShifter:TortoiseFormPower": {
+          "NAME": "Tortoise Form",
+          "DESCRIPTIONS": ["While in Tortoise Form, gain 1(2) Dexterity", "random enemy", "hello"]
+        }
 }

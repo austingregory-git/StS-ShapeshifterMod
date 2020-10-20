@@ -1,6 +1,8 @@
 package StSShapeShifter.cards;
 
 import StSShapeShifter.characters.ShapeShifter;
+import StSShapeShifter.powers.LynxFormPower;
+import StSShapeShifter.powers.TortoiseFormPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -64,7 +66,8 @@ public class Lynx_Form extends AbstractDynamicCard {
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
 
         if(!p.stance.ID.equals("LynxFormStance") && !p.hasPower("CannotChangeStancePower")) {
-            this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
+            //this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
+            this.addToBot(new ApplyPowerAction(p, p, new LynxFormPower(p, upgraded, 2, 1)));
             this.addToBot(new ChangeStanceAction("LynxFormStance"));
         }
 

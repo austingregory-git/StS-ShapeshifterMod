@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import com.sun.org.apache.xpath.internal.operations.Div;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import StSShapeShifter.characters.TheDefault;
@@ -462,9 +463,16 @@ public class ShapeshifterMod implements
         BaseMod.addCard(new FallingLeaves());
         BaseMod.addCard(new PoisonIvy());
         BaseMod.addCard(new DeerForm());
-        logger.info("Added" + DeerForm.ID);
         BaseMod.addCard(new BearForm());
-        logger.info("Added" + BearForm.ID);
+        BaseMod.addCard(new ShiftingStrike());
+        BaseMod.addCard(new Sapling());
+        BaseMod.addCard(new DiverseSpirit());
+        BaseMod.addCard(new GoldenBerries());
+        BaseMod.addCard(new Hunt());
+        BaseMod.addCard(new Bonk());
+        BaseMod.addCard(new MysticalSeed());
+        BaseMod.addCard(new ThrashAbout());
+
 
         new AutoAdd("AustinGregory:ShapeShifterMod")
             .packageFilter(AbstractDynamicCard.class)
@@ -540,7 +548,8 @@ public class ShapeshifterMod implements
         Gson gson = new Gson();
         String json = Gdx.files.internal(getModID() + "Resources/localization/eng/DefaultMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
         com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
-        BaseMod.addKeyword(new String[]{"grow"}, "dsankadsdasd");
+        BaseMod.addKeyword(new String[]{"grow"}, "Whenever you play this card, it is improved for the rest of combat");
+        BaseMod.addKeyword(new String[]{"wither"}, "Whenever you play this card, it is worsened for the rest of combat");
         /* (keywords != null) {
             for (Keyword keyword : keywords) {
                 //BaseMod.addKeyword(getModID().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);

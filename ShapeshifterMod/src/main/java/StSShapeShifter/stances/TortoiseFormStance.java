@@ -1,11 +1,13 @@
 package StSShapeShifter.stances;
 
+import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.cards.Tortoise_Form;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -37,7 +39,7 @@ public class TortoiseFormStance extends AbstractStance {
 
     public void updateDescription() {
         //this.description = stanceString.DESCRIPTION[0];
-        this.description = "DAdakjsda";
+        this.description = "Gain dexterity while in this form";
     }
 
     /*public void onEnterStance() {
@@ -62,8 +64,7 @@ public class TortoiseFormStance extends AbstractStance {
 
     }
     public void onExitStance() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner,
-                new DexterityPower(owner, -amount), -amount));
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ShapeshifterMod.makeID("TortoiseFormPower")));
     }
 
     static {

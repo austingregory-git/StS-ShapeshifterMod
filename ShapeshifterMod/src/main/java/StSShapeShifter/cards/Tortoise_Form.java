@@ -1,6 +1,8 @@
 package StSShapeShifter.cards;
 
 import StSShapeShifter.characters.ShapeShifter;
+import StSShapeShifter.powers.BearFormPower;
+import StSShapeShifter.powers.TortoiseFormPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
@@ -63,7 +65,8 @@ public class Tortoise_Form extends AbstractDynamicCard {
         /*AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new DexterityPower(p, this.magicNumber), this.magicNumber));*/
         if(!p.stance.ID.equals("TortoiseFormStance") && !p.hasPower("CannotChangeStancePower")) {
-            this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
+            //this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
+            this.addToBot(new ApplyPowerAction(p, p, new TortoiseFormPower(p, upgraded, 2, 1)));
             this.addToBot(new ChangeStanceAction("TortoiseFormStance"));
         }
 

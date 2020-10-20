@@ -56,7 +56,6 @@ public class Sap_Burst extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p, new SapBurstPower(p, p, magicNumber), magicNumber));
     }

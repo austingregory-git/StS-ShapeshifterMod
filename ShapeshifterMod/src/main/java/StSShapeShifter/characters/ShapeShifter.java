@@ -175,14 +175,21 @@ public class ShapeShifter extends CustomPlayer {
 
         retVal.add(Tortoise_Form.ID);
         retVal.add(Lynx_Form.ID);
-        retVal.add(BearForm.ID);
+        retVal.add(ThrashAbout.ID);
+        retVal.add(MysticalSeed.ID);
+        //retVal.add(ShiftingStrike.ID);
+        //retVal.add(Sapling.ID);
+        //retVal.add(DiverseSpirit.ID);
+        //retVal.add(DiverseSpirit.ID);
+        //retVal.add(GoldenBerries.ID);
+        //retVal.add(BearForm.ID);
 
         /*retVal.add(FallingLeaves.ID);
         retVal.add(VineHandcuffs.ID);
         retVal.add(BurstingSpore.ID);
         retVal.add(BarkSkin.ID);
         retVal.add(PoisonIvy.ID);*/
-        retVal.add(DeerForm.ID);
+        //retVal.add(DeerForm.ID);
         //retVal.add(FesteringBite.ID);
         //retVal.add(Maul.ID);
         //retVal.add(Guard.ID);
