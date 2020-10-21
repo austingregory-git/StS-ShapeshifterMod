@@ -7,6 +7,10 @@
                  "NAME": "Placeholder Power",
                  "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
         },
+        "StSShapeShifter:DeepWoundPower": {
+          "NAME": "Deep Wound",
+          "DESCRIPTIONS": ["Whenever this creature attacks, it takes 3(4) damage", "random enemy", "hello"]
+        },
         "StSShapeShifter:SapBurstPower": {
                 "NAME": "Sap Burst",
                 "DESCRIPTIONS": ["At the end of your turn, reduce a random enemy's strength by #b", "random enemy", "hello"]
@@ -19,9 +23,17 @@
                 "NAME": "Deer Form",
                 "DESCRIPTIONS": ["At the start of your turn, add a random skill to your hand", "random enemy", "hello"]
         },
-        "StSShapeShifter:Lynx": {
+        "StSShapeShifter:DragonFormPower": {
+          "NAME": "Dragon Form",
+          "DESCRIPTIONS": ["At the start of your turn, deal 6(8) damage to all enemies and gain 6(8).", "random enemy", "hello"]
+        },
+        "StSShapeShifter:LynxFormPower": {
           "NAME": "Lynx Form",
           "DESCRIPTIONS": ["While in Lynx Form, gain 1(2) strength", "random enemy", "hello"]
+        },
+        "StSShapeShifter:HydraFormPower": {
+          "NAME": "Hydra Form",
+          "DESCRIPTIONS": ["While in Hydra Form, deal triple damage.", "random enemy", "hello"]
         },
         "StSShapeShifter:BearFormPower": {
                 "NAME": "Bear Form",

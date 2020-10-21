@@ -1,10 +1,7 @@
 package StSShapeShifter.util;
 
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.cards.BearForm;
-import StSShapeShifter.cards.DeerForm;
-import StSShapeShifter.cards.Lynx_Form;
-import StSShapeShifter.cards.Tortoise_Form;
+import StSShapeShifter.cards.*;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.stances.BearFormStance;
 import StSShapeShifter.stances.DeerFormStance;
@@ -17,13 +14,13 @@ import java.util.Arrays;
 
 public class AllForms {
     public static ArrayList<String> getAllForms() {
-        ArrayList<String> allForms = new ArrayList<String>(Arrays.asList(Tortoise_Form.ID, Lynx_Form.ID, BearForm.ID, DeerForm.ID));
+        ArrayList<String> allForms = new ArrayList<String>(Arrays.asList(Tortoise_Form.ID, Lynx_Form.ID, BearForm.ID, DeerForm.ID, HydraForm.ID, DragonForm.ID));
 
         return allForms;
     }
 
     public static ArrayList<AbstractCard> getAllFormsCards() {
-        ArrayList<AbstractCard> allForms = new ArrayList<AbstractCard>(Arrays.asList(new Tortoise_Form(), new Lynx_Form(), new BearForm(), new DeerForm()));
+        ArrayList<AbstractCard> allForms = new ArrayList<AbstractCard>(Arrays.asList(new Tortoise_Form(), new Lynx_Form(), new BearForm(), new DeerForm(), new DragonForm(), new HydraForm()));
 
         return allForms;
     }

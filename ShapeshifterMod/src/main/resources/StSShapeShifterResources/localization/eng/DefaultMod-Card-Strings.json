@@ -47,6 +47,10 @@
     "NAME": "Festering Bite",
     "DESCRIPTION": "Deal !D! Damage. Apply !M! Weak. NL [#32CD32] Grow[] 1"
   },
+  "StSShapeShifter:DeepWound": {
+    "NAME": "Deep Wound",
+    "DESCRIPTION": "Deal !D! Damage. Whenever the target attacks, they take !M! damage."
+  },
   "StSShapeShifter:ShiftingStrike": {
     "NAME": "Shifting Strike",
     "DESCRIPTION": "Deal !D! Damage. If you changed forms this turn, this card costs 0."
@@ -79,13 +83,33 @@
     "NAME": "Hunt",
     "DESCRIPTION": "Deal !D! Damage. Gain 2 energy next turn."
   },
+  "StSShapeShifter:LeapingSlash": {
+    "NAME": "Leaping Slash",
+    "DESCRIPTION": "Can only be played if you have at least 2 Dexterity. Deal !D! Damage."
+  },
+  "StSShapeShifter:OpportuneSwoop": {
+    "NAME": "Opportune Swoop",
+    "DESCRIPTION": "Can only be played if you have at least 5 cards in you Draw Pile and Discard Pile. Deal !D! Damage."
+  },
+  "StSShapeShifter:ThornedSkin": {
+    "NAME": "Thorned Skin",
+    "DESCRIPTION": "Gain !B! Block. Gain !M! Thorns. Wither 1"
+  },
   "StSShapeShifter:Bonk": {
     "NAME": "Bonk",
     "DESCRIPTION": "Deal !D! Damage. Enter a random form."
   },
   "StSShapeShifter:ThrashAbout": {
-    "NAME": "ThrashAbout",
+    "NAME": "Thrash About",
     "DESCRIPTION": "Deal !D! Damage to all enemies 3 times. Lose 1 energy next turn."
+  },
+  "StSShapeShifter:CursedApple": {
+    "NAME": "Cursed Apple",
+    "DESCRIPTION": "Deal !D! Damage. Wither !M!. If this card is withered to 0, add a random Curse into your deck and exhaust this card."
+  },
+  "StSShapeShifter:MultiSpiritedStrike": {
+    "NAME": "Multi-Spirited Strike",
+    "DESCRIPTION": "Deal !D! Damage. Damage is equivalent to !M!X the number of unique forms played this combat."
   },
   "StSShapeShifter:Summon_Mountains": {
     "NAME": "Summon Mountains",
@@ -110,6 +134,14 @@
   "StSShapeShifter:BearForm": {
     "NAME": "Bear Form",
     "DESCRIPTION": "Upon Entering Bear Form, Gain !M! Shielding and 1 Dexterity. While in Bear Form, gain 2(3) Dexterity"
+  },
+  "StSShapeShifter:DragonForm": {
+    "NAME": "Dragon Form",
+    "DESCRIPTION": "Upon Entering Dragon Form, Apply !M! Weak and !M! Vulnerable to all enemies. While in Dragon Form, deal 6(8) to all enemies and gain 6(8) block. Lasts up to 3 turns. Exhaust"
+  },
+  "StSShapeShifter:HydraForm": {
+    "NAME": "Hydra Form",
+    "DESCRIPTION": "Upon Entering Hydra Form, Lose !M! Strength. While in Hydra Form, deal triple damage. Lasts up to 3 turns. Exhaust"
   },
   "StSShapeShifter:Rest": {
     "NAME": "Rest",

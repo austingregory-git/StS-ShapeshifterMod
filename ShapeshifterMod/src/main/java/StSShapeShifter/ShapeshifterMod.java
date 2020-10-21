@@ -472,10 +472,18 @@ public class ShapeshifterMod implements
         BaseMod.addCard(new Bonk());
         BaseMod.addCard(new MysticalSeed());
         BaseMod.addCard(new ThrashAbout());
+        BaseMod.addCard(new DragonForm());
+        BaseMod.addCard(new HydraForm());
+        BaseMod.addCard(new LeapingSlash());
+        BaseMod.addCard(new DeepWound());
+        BaseMod.addCard(new OpportuneSwoop());
+        BaseMod.addCard(new ThornedSkin());
+        BaseMod.addCard(new CursedApple());
+        BaseMod.addCard(new MultiSpiritedStrike());
 
 
         new AutoAdd("AustinGregory:ShapeShifterMod")
-            .packageFilter(AbstractDynamicCard.class)
+            .packageFilter("StSShapeshifter.cards")
             .setDefaultSeen(true)
             .cards();
 

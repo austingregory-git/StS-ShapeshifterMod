@@ -1,27 +1,37 @@
 package StSShapeShifter.cards;
 
 import StSShapeShifter.characters.ShapeShifter;
+import StSShapeShifter.util.AllCurses;
+import StSShapeShifter.util.AllForms;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
+import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.characters.TheDefault;
+import com.megacrit.cardcrawl.vfx.cardManip.ExhaustCardEffect;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
 //public class ${NAME} extends AbstractDynamicCard {}
 
-public class Uproot_Redwood extends AbstractDynamicCard {
+public class CursedApple extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
     //public static final String ID = ShapeshifterMod.makeID(${NAME}.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String ID = ShapeshifterMod.makeID("Uproot_Redwood"); // DELETE THIS ONE.
+    public static final String ID = ShapeshifterMod.makeID("CursedApple"); // DELETE THIS ONE.
     public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 
@@ -31,24 +41,25 @@ public class Uproot_Redwood extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
+    private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
 
-    private static final int COST = 3;  // COST = ${COST}
+    private static final int COST = 1;  // COST = ${COST}
     private static final int UPGRADED_COST = 3; // UPGRADED_COST = ${UPGRADED_COST}
 
-    private static final int DAMAGE = 50;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = 10;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int DAMAGE = 20;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADE_PLUS_MAGIC = 5;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private int count = 0;
 
     // /STAT DECLARATION/
 
 
-    public Uproot_Redwood() {
+    public CursedApple() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        this.baseMagicNumber = 20;
+        this.baseMagicNumber = 10;
         this.magicNumber = this.baseMagicNumber;
     }
 
@@ -56,11 +67,17 @@ public class Uproot_Redwood extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
+        count++;
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         this.addToBot(new ModifyDamageAction(this.uuid, -this.magicNumber));
-
-
+        int currVal = DAMAGE - (this.magicNumber * count);
+        if(currVal <= 0) {
+            ArrayList<AbstractCard> curses = new ArrayList<AbstractCard>(AllCurses.getAllCursesCards());
+            AbstractCard c = curses.get(new Random().nextInt(curses.size()));
+            ShapeshifterMod.logger.info(c.cardID);
+            this.addToBot(new AddCardToDeckAction(c.makeCopy()));
+            this.exhaust = true;
+        }
     }
 
 
@@ -71,9 +88,10 @@ public class Uproot_Redwood extends AbstractDynamicCard {
             upgradeName();
             upgradeDamage(10);
             upgradeMagicNumber(-5);
-            upgradeBaseCost(UPGRADED_COST);
+            //upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }
 }
+
 
