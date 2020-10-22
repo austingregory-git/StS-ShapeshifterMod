@@ -14,13 +14,13 @@ import java.util.Arrays;
 
 public class AllForms {
     public static ArrayList<String> getAllForms() {
-        ArrayList<String> allForms = new ArrayList<String>(Arrays.asList(Tortoise_Form.ID, Lynx_Form.ID, BearForm.ID, DeerForm.ID, HydraForm.ID, DragonForm.ID));
+        ArrayList<String> allForms = new ArrayList<String>(Arrays.asList(Tortoise_Form.ID, Lynx_Form.ID, BearForm.ID, DeerForm.ID, HydraForm.ID, DragonForm.ID, MammothForm.ID));
 
         return allForms;
     }
 
     public static ArrayList<AbstractCard> getAllFormsCards() {
-        ArrayList<AbstractCard> allForms = new ArrayList<AbstractCard>(Arrays.asList(new Tortoise_Form(), new Lynx_Form(), new BearForm(), new DeerForm(), new DragonForm(), new HydraForm()));
+        ArrayList<AbstractCard> allForms = new ArrayList<AbstractCard>(Arrays.asList(new Tortoise_Form(), new Lynx_Form(), new BearForm(), new DeerForm(), new DragonForm(), new HydraForm(), new MammothForm()));
 
         return allForms;
     }

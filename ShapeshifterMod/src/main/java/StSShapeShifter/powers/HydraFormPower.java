@@ -64,9 +64,9 @@ public class HydraFormPower extends AbstractPower implements CloneablePowerInter
         return type == DamageInfo.DamageType.NORMAL ? damage * 3.0F : damage;
     }
 
-    public void onInitialApplication() {
+    /*public void onInitialApplication() {
         this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -amount), -amount));
-    }
+    }*/
 
     public void atEndOfTurn(boolean isPlayer) {
         count++;

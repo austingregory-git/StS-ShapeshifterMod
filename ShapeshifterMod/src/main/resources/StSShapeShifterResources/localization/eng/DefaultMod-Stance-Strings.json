@@ -18,5 +18,13 @@
   "StSShapeShifter:DragonFormStance": {
     "NAME": "Dragon Form",
     "DESCRIPTIONS": ["Gain 1 Dexterity", "Or more, idk", "salkdna"]
+  },
+  "StSShapeShifter:MammothFormStance": {
+    "NAME": "Mammoth Form",
+    "DESCRIPTIONS": ["Gain 1 Dexterity", "Or more, idk", "salkdna"]
+  },
+  "StSShapeShifter:RatFormStance": {
+    "NAME": "Rat Form",
+    "DESCRIPTIONS": ["Gain 1 Dexterity", "Or more, idk", "salkdna"]
   }
 }

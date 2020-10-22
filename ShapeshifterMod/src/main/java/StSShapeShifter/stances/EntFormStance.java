@@ -21,14 +21,13 @@ import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.stance.CalmParticleEffect;
 import com.megacrit.cardcrawl.vfx.stance.StanceAuraEffect;
 
-public class BearFormStance extends AbstractStance {
-    public static final String STANCE_ID = "BearFormStance";
-    public static final String NAME = "Bear Form Stance";
+public class EntFormStance extends AbstractStance {
+    public static final String STANCE_ID = "EntFormStance";
     private static final StanceStrings stanceString;
     private static long sfxId;
     private final AbstractPlayer owner;
 
-    public BearFormStance() {
+    public EntFormStance() {
         this.ID = STANCE_ID;
         this.name = STANCE_ID;
         //this.name = null;
@@ -38,7 +37,7 @@ public class BearFormStance extends AbstractStance {
 
     public void updateDescription() {
         //this.description = stanceString.DESCRIPTION[0];
-        this.description = "Bear Form Stance";
+        this.description = "Ent Form Stance";
     }
 
     /*public void onEnterStance() {
@@ -63,13 +62,16 @@ public class BearFormStance extends AbstractStance {
 
     }
     public void onExitStance() {
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ShapeshifterMod.makeID("BearFormPower")));
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ShapeshifterMod.makeID("EntFormStance")));
     }
 
     static {
-        stanceString = CardCrawlGame.languagePack.getStanceString("BearFormStance");
+        stanceString = CardCrawlGame.languagePack.getStanceString("Ent Form Stance");
         sfxId = -1L;
     }
 }
+
+
+
 
 

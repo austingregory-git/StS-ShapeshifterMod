@@ -44,7 +44,7 @@ public class DiverseSpiritPower extends AbstractPower implements CloneablePowerI
         this.amount = amount;
         this.source = source;
 
-        type = PowerType.DEBUFF;
+        type = PowerType.BUFF;
         isTurnBased = false;
 
         // We load those textures here.

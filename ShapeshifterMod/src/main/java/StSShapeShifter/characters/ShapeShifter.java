@@ -1,6 +1,7 @@
 package StSShapeShifter.characters;
 
 import StSShapeShifter.relics.Golden_Flower;
+import StSShapeShifter.stances.PhoenixFormStance;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
@@ -175,7 +176,26 @@ public class ShapeShifter extends CustomPlayer {
 
         retVal.add(Tortoise_Form.ID);
         retVal.add(Lynx_Form.ID);
-        retVal.add(MultiSpiritedStrike.ID);
+        retVal.add(SpiritOfTheEarth.ID);
+        retVal.add(PhoenixForm.ID);
+
+        //retVal.add(EntForm.ID);
+        //retVal.add(Flourish.ID);
+        //retVal.add(ThornedSkin.ID);
+        //retVal.add(TopazSkin.ID);
+        //retVal.add(RatForm.ID);
+        //retVal.add(PorcupineForm.ID);
+
+
+/*      retVal.add(Wildfire.ID);
+        retVal.add(ForestFire.ID);
+        retVal.add(MagicMushrooms.ID);
+        retVal.add(Consume.ID);*/
+        //retVal.add(MultiSpiritedStrike.ID);
+        //retVal.add(MammothForm.ID);
+        //retVal.add(Blossom.ID);
+        //retVal.add(RestoreBalance.ID);
+        //retVal.add(Absorb.ID);
         //retVal.add(CursedApple.ID);
 
         //retVal.add(Bonk.ID);
@@ -188,10 +208,9 @@ public class ShapeShifter extends CustomPlayer {
         //retVal.add(ShiftingStrike.ID);
         //retVal.add(Sapling.ID);
         //retVal.add(DiverseSpirit.ID);
-        //retVal.add(DiverseSpirit.ID);
         //retVal.add(GoldenBerries.ID);
-        /*retVal.add(BearForm.ID);
-        retVal.add(OpportuneSwoop.ID);*/
+        //retVal.add(BearForm.ID);
+        //retVal.add(OpportuneSwoop.ID);
         //retVal.add(ThornedSkin.ID);
 
         /*retVal.add(FallingLeaves.ID);
@@ -199,7 +218,7 @@ public class ShapeShifter extends CustomPlayer {
         retVal.add(BurstingSpore.ID);
         retVal.add(BarkSkin.ID);
         retVal.add(PoisonIvy.ID);*/
-        retVal.add(DeerForm.ID);
+        //retVal.add(DeerForm.ID);
         //retVal.add(FesteringBite.ID);
         //retVal.add(Maul.ID);
         //retVal.add(Guard.ID);

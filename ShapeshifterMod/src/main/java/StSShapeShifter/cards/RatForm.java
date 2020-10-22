@@ -1,20 +1,22 @@
 package StSShapeShifter.cards;
 
 import StSShapeShifter.characters.ShapeShifter;
+import StSShapeShifter.powers.BearFormPower;
+import StSShapeShifter.powers.DodgePower;
+import StSShapeShifter.powers.RatFormPower;
+import StSShapeShifter.powers.TortoiseFormPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.common.ModifyBlockAction;
+import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.characters.TheDefault;
-import com.megacrit.cardcrawl.powers.ThornsPower;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
-public class ThornedSkin extends AbstractDynamicCard {
+public class RatForm extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -25,7 +27,7 @@ public class ThornedSkin extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = ShapeshifterMod.makeID(ThornedSkin.class.getSimpleName());
+    public static final String ID = ShapeshifterMod.makeID(RatForm.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     // /TEXT DECLARATION/
@@ -37,20 +39,19 @@ public class ThornedSkin extends AbstractDynamicCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
-
-    private static final int COST = 2;
-    private static final int BLOCK = 8;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
-    private static final int UPGRADE_PLUS_MAGIC = 1;
-    private int count = 0;
+    //public AbstractPlayer owner = null;
+    //public int amount = Integer.MIN_VALUE;
+    private static final int COST = 1;
+    private static final int UPGRADE_PLUS_MAGIC = 2;
+    private static final boolean IS_FORM = true;
 
     // /STAT DECLARATION/
 
 
-    public ThornedSkin() {
+    public RatForm() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = BLOCK;
-        this.baseMagicNumber = 2;
+
+        this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;
         this.defaultBaseSecondMagicNumber = 1;
         this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;
@@ -59,19 +60,18 @@ public class ThornedSkin extends AbstractDynamicCard {
     }
 
     // Actions the card should do.
-    //TODO fix display of thorns in combat
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        count++;
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        this.addToBot(new ModifyBlockAction(this.uuid, -1));
-        this.addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, this.magicNumber - this.defaultSecondMagicNumber + count), this.magicNumber - this.defaultSecondMagicNumber + count));
-        this.defaultSecondMagicNumber += defaultBaseSecondMagicNumber;
-        this.baseMagicNumber = this.magicNumber - this.defaultSecondMagicNumber + count;
-        if(this.baseMagicNumber < 0) {
-            this.baseMagicNumber = 0;
+        this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, -this.defaultSecondMagicNumber)));
+        this.addToBot(new ApplyPowerAction(p, p, new DodgePower(p, this.defaultSecondMagicNumber)));
+
+        if(!p.stance.ID.equals("RatFormStance") && !p.hasPower("CannotChangeStancePower")) {
+            //this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
+            this.addToBot(new ApplyPowerAction(p, p, new RatFormPower(p, this.magicNumber)));
+            this.addToBot(new ChangeStanceAction("RatFormStance"));
         }
 
+        //this.addToBot();
     }
 
     //Upgraded stats.
@@ -79,7 +79,6 @@ public class ThornedSkin extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }

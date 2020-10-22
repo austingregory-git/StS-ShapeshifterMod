@@ -21,14 +21,14 @@ import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.stance.CalmParticleEffect;
 import com.megacrit.cardcrawl.vfx.stance.StanceAuraEffect;
 
-public class BearFormStance extends AbstractStance {
-    public static final String STANCE_ID = "BearFormStance";
-    public static final String NAME = "Bear Form Stance";
+public class PhoenixFormStance extends AbstractStance {
+    public static final String STANCE_ID = "PhoenixFormStance";
+    public static final String NAME = "Phoenix Form Stance";
     private static final StanceStrings stanceString;
     private static long sfxId;
     private final AbstractPlayer owner;
 
-    public BearFormStance() {
+    public PhoenixFormStance() {
         this.ID = STANCE_ID;
         this.name = STANCE_ID;
         //this.name = null;
@@ -63,13 +63,14 @@ public class BearFormStance extends AbstractStance {
 
     }
     public void onExitStance() {
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ShapeshifterMod.makeID("BearFormPower")));
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ShapeshifterMod.makeID("PhoenixFormPower")));
     }
 
     static {
-        stanceString = CardCrawlGame.languagePack.getStanceString("BearFormStance");
+        stanceString = CardCrawlGame.languagePack.getStanceString("PhoenixFormStance");
         sfxId = -1L;
     }
 }
+
 
 

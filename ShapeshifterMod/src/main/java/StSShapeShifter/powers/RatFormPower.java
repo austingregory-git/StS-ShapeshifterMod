@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -20,28 +19,27 @@ import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.cards.DefaultRareAttack;
 import StSShapeShifter.util.TextureLoader;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-public class BearFormPower extends AbstractPower implements CloneablePowerInterface {
+public class RatFormPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ShapeshifterMod.makeID("BearFormPower");
+    public static final String POWER_ID = ShapeshifterMod.makeID("RatFormPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    public boolean upgraded;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power84.png");
     private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power32.png");
 
-    public BearFormPower(final AbstractCreature owner, boolean upgraded) {
+    public RatFormPower(final AbstractCreature owner, int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
-        //this.amount = amount;
-        this.upgraded = upgraded;
+        this.amount = amount;
         //this.source = source;
 
         type = PowerType.BUFF;
@@ -54,41 +52,27 @@ public class BearFormPower extends AbstractPower implements CloneablePowerInterf
         updateDescription();
     }
 
-    public void onInitialApplication() {
-        if(upgraded) {
-            this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, 3), 3));
-        }
-        else {
-            this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, 2), 2));
-        }
-    }
-
-    public void onRemove() {
-        if(upgraded) {
-            this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, -3), -3));
-        }
-        else {
-            this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, -2), -2));
+    @Override
+    public void atEndOfTurn(final boolean isPlayer) {
+        if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+            this.flash();
+            AbstractMonster targetMonster = AbstractDungeon.getRandomMonster();
+            this.addToBot(new ApplyPowerAction(targetMonster, owner, new PoisonPower(targetMonster, owner, this.amount), this.amount));
         }
     }
-    /*@Override
-    public void duringTurn() {
-        if(upgraded) {
-            this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, 3), 3));
-        }
-        else {
-            this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, 2), 2));
-        }
-    }*/
 
     @Override
     public void updateDescription() {
-
+        if (amount == 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        } else if (amount > 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
+        }
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new BearFormPower(owner, upgraded);
+        return new RatFormPower(owner, amount);
     }
 }
 

@@ -1,25 +1,28 @@
 package StSShapeShifter.cards;
 
 import StSShapeShifter.characters.ShapeShifter;
-import StSShapeShifter.powers.HydraFormPower;
-import StSShapeShifter.powers.LynxFormPower;
-import StSShapeShifter.powers.TortoiseFormPower;
+import StSShapeShifter.powers.DeerFormPower;
+import StSShapeShifter.powers.DragonFormPower;
+import StSShapeShifter.powers.PhoenixFormPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.unique.RemoveAllPowersAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
+
+import java.util.Iterator;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
-public class HydraForm extends AbstractDynamicCard {
+public class PhoenixForm extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -30,7 +33,7 @@ public class HydraForm extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = ShapeshifterMod.makeID(HydraForm.class.getSimpleName());
+    public static final String ID = ShapeshifterMod.makeID(PhoenixForm.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     // /TEXT DECLARATION/
@@ -44,32 +47,28 @@ public class HydraForm extends AbstractDynamicCard {
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
     //public AbstractPlayer owner = null;
     //public int amount = Integer.MIN_VALUE;
-    private static final int COST = 3;
-    private static final int UPGRADED_BASE_COST = 3;
-    private static final int DAMAGE = 8;
-    private static final int UPGRADE_PLUS_DAMAGE = 3;
+    private static final int COST = 1;
+
     private static final boolean IS_FORM = true;
 
     // /STAT DECLARATION/
 
 
-    public HydraForm() {
+    public PhoenixForm() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = 3;
+        this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
         this.exhaust = true;
-
-        //this.tags.add(CardTags.STARTER_DEFEND); //Tag your strike, defend and form (Wraith form, Demon form, Echo form, etc.) cards so that they function correctly.
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new VulnerablePower(p, this.magicNumber, false), this.magicNumber));
+        this.addToBot(new RemoveAllPowersAction(p, true));
 
-        if(!p.stance.ID.equals("HydraFormStance") && !p.hasPower("CannotChangeStancePower")) {
-            this.addToBot(new ApplyPowerAction(p, p, new HydraFormPower(p, this.magicNumber)));
-            this.addToBot(new ChangeStanceAction("HydraFormStance"));
+        if(!p.stance.ID.equals("PhoenixFormStance") && !p.hasPower("CannotChangeStancePower")) {
+            this.addToBot(new ApplyPowerAction(p, p, new PhoenixFormPower(p, upgraded)));
+            this.addToBot(new ChangeStanceAction("PhoenixFormStance"));
         }
 
         //this.addToBot();
@@ -80,11 +79,12 @@ public class HydraForm extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DAMAGE);
-            upgradeBaseCost(UPGRADED_BASE_COST);
             initializeDescription();
+            upgradeMagicNumber(1);
         }
     }
 }
+
+
 
 

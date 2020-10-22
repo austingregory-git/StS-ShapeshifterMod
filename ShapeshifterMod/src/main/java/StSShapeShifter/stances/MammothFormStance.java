@@ -21,30 +21,26 @@ import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.stance.CalmParticleEffect;
 import com.megacrit.cardcrawl.vfx.stance.StanceAuraEffect;
 
-public class BearFormStance extends AbstractStance {
-    public static final String STANCE_ID = "BearFormStance";
-    public static final String NAME = "Bear Form Stance";
+public class MammothFormStance extends AbstractStance {
+    public static final String STANCE_ID = "MammothFormStance";
     private static final StanceStrings stanceString;
     private static long sfxId;
     private final AbstractPlayer owner;
+    private final int amount;
 
-    public BearFormStance() {
+    public MammothFormStance() {
         this.ID = STANCE_ID;
         this.name = STANCE_ID;
         //this.name = null;
         this.updateDescription();
         this.owner = AbstractDungeon.player;
+        this.amount = 2;
     }
 
     public void updateDescription() {
         //this.description = stanceString.DESCRIPTION[0];
-        this.description = "Bear Form Stance";
+        this.description = "Dragon Form Stance";
     }
-
-    /*public void onEnterStance() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner,
-                new DexterityPower(owner, amount), amount));
-    }*/
 
     public void updateAnimation() {
         if (!Settings.DISABLE_EFFECTS) {
@@ -63,13 +59,14 @@ public class BearFormStance extends AbstractStance {
 
     }
     public void onExitStance() {
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ShapeshifterMod.makeID("BearFormPower")));
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ShapeshifterMod.makeID("MammothFormPower")));
     }
 
     static {
-        stanceString = CardCrawlGame.languagePack.getStanceString("BearFormStance");
+        stanceString = CardCrawlGame.languagePack.getStanceString("MammothFormStance");
         sfxId = -1L;
     }
 }
+
 
 

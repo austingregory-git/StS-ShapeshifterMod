@@ -47,7 +47,7 @@ public class TortoiseFormPower extends AbstractPower implements CloneablePowerIn
         this.upgraded = upgraded;
         //this.source = source;
 
-        type = PowerType.DEBUFF;
+        type = PowerType.BUFF;
         isTurnBased = false;
 
         // We load those textures here.

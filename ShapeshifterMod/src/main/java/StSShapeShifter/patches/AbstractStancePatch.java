@@ -29,6 +29,21 @@ public class AbstractStancePatch {
             if (stanceID.equals(HydraFormStance.STANCE_ID)) {
                 return SpireReturn.Return(new HydraFormStance());
             }
+            if (stanceID.equals(MammothFormStance.STANCE_ID)) {
+                return SpireReturn.Return(new MammothFormStance());
+            }
+            if (stanceID.equals(RatFormStance.STANCE_ID)) {
+                return SpireReturn.Return(new RatFormStance());
+            }
+            if (stanceID.equals(PorcupineFormStance.STANCE_ID)) {
+                return SpireReturn.Return(new PorcupineFormStance());
+            }
+            if (stanceID.equals(EntFormStance.STANCE_ID)) {
+                return SpireReturn.Return(new EntFormStance());
+            }
+            if (stanceID.equals(PhoenixFormStance.STANCE_ID)) {
+                return SpireReturn.Return(new PhoenixFormStance());
+            }
 
             return SpireReturn.Continue();
         }

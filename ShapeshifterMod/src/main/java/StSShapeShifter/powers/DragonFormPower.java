@@ -43,7 +43,7 @@ public class DragonFormPower extends AbstractPower implements CloneablePowerInte
         this.amount = amount;
         //this.source = source;
 
-        type = PowerType.DEBUFF;
+        type = PowerType.BUFF;
         isTurnBased = false;
 
         // We load those textures here.

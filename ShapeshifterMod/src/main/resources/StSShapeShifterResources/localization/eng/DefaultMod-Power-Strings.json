@@ -15,13 +15,29 @@
                 "NAME": "Sap Burst",
                 "DESCRIPTIONS": ["At the end of your turn, reduce a random enemy's strength by #b", "random enemy", "hello"]
         },
+        "StSShapeShifter:DodgePower": {
+          "NAME": "Dodge",
+          "DESCRIPTIONS": ["Prevent the next source of damage you take.", "random enemy", "hello"]
+        },
+        "StSShapeShifter:RatFormPower": {
+          "NAME": "Rat Form",
+          "DESCRIPTIONS": ["At the end of your turn, Apply #b poison to a random enemy", "random enemy", "hello"]
+        },
         "StSShapeShifter:DiverseSpiritPower": {
           "NAME": "Diverse Spirit",
           "DESCRIPTIONS": ["Whenever you play a unique form this combat, gain 1 energy and draw 1 card", "random enemy", "hello"]
         },
+        "StSShapeShifter:SpiritOfTheEarthPower": {
+          "NAME": "Spirit Of The Earth",
+          "DESCRIPTIONS": ["Whenever you play a skill, gain #b block", "random enemy", "hello"]
+        },
         "StSShapeShifter:DeerFormPower": {
                 "NAME": "Deer Form",
                 "DESCRIPTIONS": ["At the start of your turn, add a random skill to your hand", "random enemy", "hello"]
+        },
+        "StSShapeShifter:EntFormPower": {
+          "NAME": "Ent Form",
+          "DESCRIPTIONS": ["At the end of your turn, gain #b Dexterity.", "random enemy", "hello"]
         },
         "StSShapeShifter:DragonFormPower": {
           "NAME": "Dragon Form",
@@ -35,9 +51,17 @@
           "NAME": "Hydra Form",
           "DESCRIPTIONS": ["While in Hydra Form, deal triple damage.", "random enemy", "hello"]
         },
+        "StSShapeShifter:PhoenixFormPower": {
+          "NAME": "Phoenix Form",
+          "DESCRIPTIONS": ["While in Phoenix Form, revive upon death.", "random enemy", "hello"]
+        },
         "StSShapeShifter:BearFormPower": {
                 "NAME": "Bear Form",
                 "DESCRIPTIONS": ["While in Bear Form, gain 2(3) Dexterity", "random enemy", "hello"]
+        },
+        "StSShapeShifter:MammothFormPower": {
+          "NAME": "Mammoth Form Form",
+          "DESCRIPTIONS": ["While in Mammoth Form, take reduced damage", "random enemy", "hello"]
         },
         "StSShapeShifter:TortoiseFormPower": {
           "NAME": "Tortoise Form",

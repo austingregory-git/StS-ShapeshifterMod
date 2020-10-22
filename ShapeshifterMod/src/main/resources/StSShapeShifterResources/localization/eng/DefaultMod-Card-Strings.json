@@ -75,9 +75,21 @@
     "NAME": "Mystical Branch",
     "DESCRIPTION": "Deal !D! Damage. NL [#32CD32] Grow[] !M!"
   },
-  "StSShapeShifter:MysticalSeed": {
-    "NAME": "Mystical Seed",
-    "DESCRIPTION": "Deal !D! Damage. NL [#32CD32] Grow[] !M!X"
+  "StSShapeShifter:MagicMushrooms": {
+    "NAME": "Magical Mushrooms",
+    "DESCRIPTION": "Draw !M! Cards. Randomize the cost of cards in your hand."
+  },
+  "StSShapeShifter:Consume": {
+    "NAME": "Consume",
+    "DESCRIPTION": "Draw !M! Cards. Wither 1."
+  },
+  "StSShapeShifter:Flourish": {
+    "NAME": "Flourish",
+    "DESCRIPTION": "Draw !M! Cards. Reduce their costs by 1 this turn."
+  },
+  "StSShapeShifter:SpiritOfTheEarth": {
+    "NAME": "Spirit of the Earth",
+    "DESCRIPTION": "Whenever you play a skill, Gain !M! block."
   },
   "StSShapeShifter:Hunt": {
     "NAME": "Hunt",
@@ -95,6 +107,18 @@
     "NAME": "Thorned Skin",
     "DESCRIPTION": "Gain !B! Block. Gain !M! Thorns. Wither 1"
   },
+  "StSShapeShifter:Blossom": {
+    "NAME": "Blossom",
+    "DESCRIPTION": "Double your current buffs"
+  },
+  "StSShapeShifter:RestoreBalance": {
+    "NAME": "Restore Balance",
+    "DESCRIPTION": "Remove all non-boss-specific buffs an enemy."
+  },
+  "StSShapeShifter:Absorb": {
+    "NAME": "Absorb",
+    "DESCRIPTION": "Copy a random buff from an enemy."
+  },
   "StSShapeShifter:Bonk": {
     "NAME": "Bonk",
     "DESCRIPTION": "Deal !D! Damage. Enter a random form."
@@ -111,6 +135,26 @@
     "NAME": "Multi-Spirited Strike",
     "DESCRIPTION": "Deal !D! Damage. Damage is equivalent to !M!X the number of unique forms played this combat."
   },
+  "StSShapeShifter:SkullBash": {
+    "NAME": "Skull Bash",
+    "DESCRIPTION": "Deal !D! Damage. Damage is equivalent half of your current hp."
+  },
+  "StSShapeShifter:Wildfire": {
+    "NAME": "Wildfire",
+    "DESCRIPTION": "Deal !D! Damage to all enemies. Wither !M!."
+  },
+  "StSShapeShifter:Earthquake": {
+    "NAME": "Earthquake",
+    "DESCRIPTION": "Deal !D! Damage to all enemies. Wither !M!."
+  },
+  "StSShapeShifter:ForestFire": {
+    "NAME": "Forest Fire",
+    "DESCRIPTION": "Discard your hand. Draw !M! cards. Upgrade your hand."
+  },
+  "StSShapeShifter:TopazSkin": {
+    "NAME": "Topaz Skin",
+    "DESCRIPTION": "Gain !B!X Block. Grow X."
+  },
   "StSShapeShifter:Summon_Mountains": {
     "NAME": "Summon Mountains",
     "DESCRIPTION": "Gain !B! Block. NL [#32CD32] Grow[] 6."
@@ -124,8 +168,24 @@
     "DESCRIPTION": "Upon Entering Tortoise Form, Gain !B!. While in Tortoise Form, gain !M! Dexterity"
   },
   "StSShapeShifter:Lynx_Form": {
-    "NAME": "Lynx_Form",
+    "NAME": "Lynx Form",
     "DESCRIPTION": "Upon Entering Lynx Form, Deal !D! Damage to all enemies. While in Lynx Form, gain !M! Strength"
+  },
+  "StSShapeShifter:RatForm": {
+    "NAME": "Rat Form",
+    "DESCRIPTION": "Upon Entering Rat Form, Gain 1 Dodge and lose 1 Dexterity. While in Rat Form, apply !M! Poison to a random enemy at the end of your turn."
+  },
+  "StSShapeShifter:PhoenixForm": {
+    "NAME": "Phoenix Form",
+    "DESCRIPTION": "Upon Entering Phoenix Form, Remove all debuffs. While in Phoenix Form, If you receive fatal damage, heal for !M!0% of your health instead of dying."
+  },
+  "StSShapeShifter:PorcupineForm": {
+    "NAME": "Porcupine Form",
+    "DESCRIPTION": "Upon Entering Porcupine Form, Gain 1 Artifact. While in Porcupine Form, gain !M! thorns."
+  },
+  "StSShapeShifter:EntForm": {
+    "NAME": "Ent Form",
+    "DESCRIPTION": "Upon Entering Ent Form, Gain 4(5) Regen. While in Ent Form, gain Entangled at the start of your turn and gain !M! Dexterity at the end of your turn."
   },
   "StSShapeShifter:DeerForm": {
     "NAME": "Deer Form",
@@ -141,7 +201,11 @@
   },
   "StSShapeShifter:HydraForm": {
     "NAME": "Hydra Form",
-    "DESCRIPTION": "Upon Entering Hydra Form, Lose !M! Strength. While in Hydra Form, deal triple damage. Lasts up to 3 turns. Exhaust"
+    "DESCRIPTION": "Upon Entering Hydra Form, Gain !M! Vulnerable. While in Hydra Form, deal triple damage. Lasts up to 3 turns. Exhaust"
+  },
+  "StSShapeShifter:MammothForm": {
+    "NAME": "Mammoth Form",
+    "DESCRIPTION": "Upon Entering Mammoth, Gain !B! Block. While in Mammoth Form, whenever you receive damage, take !M! less damage. Lasts up to 3 turns. Exhaust"
   },
   "StSShapeShifter:Rest": {
     "NAME": "Rest",
