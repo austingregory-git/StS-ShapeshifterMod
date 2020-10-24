@@ -87,7 +87,7 @@ public class SkullBash extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             initializeDescription();
-            this.rawDescription = "Deal !D! Damage. Damage is equivalent half of your current hp.";
+            this.rawDescription = "Deal !D! Damage. Damage is equivalent half of your Max HP.";
         }
     }
 }

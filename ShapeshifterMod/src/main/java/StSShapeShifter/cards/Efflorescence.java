@@ -1,5 +1,6 @@
 package StSShapeShifter.cards;
 
+import StSShapeShifter.actions.ModifyMagicAction;
 import StSShapeShifter.characters.ShapeShifter;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.ModifyExhaustiveAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -38,8 +39,6 @@ public class Efflorescence extends AbstractDynamicCard {
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
 
     private static final int COST = 2;
-    private static final int BLOCK = 5;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
     private int count = 0;
 
     // /STAT DECLARATION/
@@ -57,15 +56,11 @@ public class Efflorescence extends AbstractDynamicCard {
     }
 
     // Actions the card should do.
-    //TODO update grow value when upgraded
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         count++;
-        this.addToBot(new GainEnergyAction(this.magicNumber + this.defaultSecondMagicNumber - count));
-        this.defaultSecondMagicNumber += defaultBaseSecondMagicNumber;
-        this.baseMagicNumber = this.magicNumber + this.defaultSecondMagicNumber - count;
-        //this.baseMagicNumber = this.defaultSecondMagicNumber;
+        this.addToBot(new GainEnergyAction(this.magicNumber));
+        this.addToBot(new ModifyMagicAction(this.uuid, this.defaultSecondMagicNumber));
     }
 
     //Upgraded stats.
@@ -74,7 +69,7 @@ public class Efflorescence extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             this.upgradeDefaultSecondMagicNumber(1);
-            //upgradeBlock(UPGRADE_PLUS_BLOCK);
+            this.rawDescription = "Gain !M! Energy. [#32CD32] Grow[] 2";
             initializeDescription();
         }
     }

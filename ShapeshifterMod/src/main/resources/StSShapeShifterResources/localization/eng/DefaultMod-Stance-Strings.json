@@ -26,5 +26,9 @@
   "StSShapeShifter:RatFormStance": {
     "NAME": "Rat Form",
     "DESCRIPTIONS": ["Gain 1 Dexterity", "Or more, idk", "salkdna"]
+  },
+  "StSShapeShifter:EagleFormStance": {
+    "NAME": "Eagle Form",
+    "DESCRIPTIONS": ["Gain 1 Dexterity", "Or more, idk", "salkdna"]
   }
 }

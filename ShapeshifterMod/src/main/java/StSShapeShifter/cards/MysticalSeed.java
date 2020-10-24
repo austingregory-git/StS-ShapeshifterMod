@@ -60,7 +60,7 @@ public class MysticalSeed extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        int mod = (damage * this.magicNumber) - damage;
+        int mod = (damage * this.magicNumber) - DAMAGE;
         this.addToBot(new ModifyDamageAction(this.uuid, mod));
     }
 

@@ -38,7 +38,7 @@ public class Summon_Mountains extends AbstractDynamicCard {
     private static final int COST = 3;
     private static final int UPGRADE_COST = 2;
     private static final int BLOCK = 20;
-    private static final int UPGRADE_PLUS_BLOCK = 6;
+    private static final int UPGRADE_PLUS_BLOCK = 4;
 
 
     // /STAT DECLARATION/

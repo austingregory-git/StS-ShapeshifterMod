@@ -54,6 +54,7 @@ public class EntForm extends AbstractDynamicCard {
         this.magicNumber = this.baseMagicNumber;
         this.defaultBaseSecondMagicNumber = 4;
         this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;
+        this.exhaust = true;
 
         //this.tags.add(CardTags.STARTER_DEFEND); //Tag your strike, defend and form (Wraith form, Demon form, Echo form, etc.) cards so that they function correctly.
     }
@@ -80,6 +81,7 @@ public class EntForm extends AbstractDynamicCard {
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_SECOND_MAGIC);
             initializeDescription();
+            this.rawDescription = "Upon Entering Ent Form, gain 5 regen. While in Ent Form, gain Entangled at the start of your turn and !M! Dexterity at the end of your turn.";
         }
     }
 }

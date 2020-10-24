@@ -38,7 +38,7 @@ public class MagicMushrooms extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
@@ -71,9 +71,10 @@ public class MagicMushrooms extends AbstractDynamicCard {
             if (card.cost >= 0) {
                 int newCost = AbstractDungeon.cardRandomRng.random(3);
                 if (card.cost != newCost) {
-                    card.cost = newCost;
-                    card.costForTurn = card.cost;
-                    card.isCostModifiedForTurn = true;
+                    //card.cost = newCost;
+                    //card.costForTurn = card.cost;
+                    //card.isCostModifiedForTurn = true;
+                    card.setCostForTurn(newCost);
                 }
             }
         }

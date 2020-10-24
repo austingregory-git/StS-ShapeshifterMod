@@ -86,7 +86,7 @@ public class CursedApple extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(10);
+            //upgradeDamage(10);
             upgradeMagicNumber(-5);
             //upgradeBaseCost(UPGRADED_COST);
             initializeDescription();

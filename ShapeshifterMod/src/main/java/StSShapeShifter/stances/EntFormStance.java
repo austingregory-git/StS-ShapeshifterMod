@@ -62,7 +62,7 @@ public class EntFormStance extends AbstractStance {
 
     }
     public void onExitStance() {
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ShapeshifterMod.makeID("EntFormStance")));
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ShapeshifterMod.makeID("EntFormPower")));
     }
 
     static {

@@ -45,9 +45,8 @@ public class HydraForm extends AbstractDynamicCard {
     //public AbstractPlayer owner = null;
     //public int amount = Integer.MIN_VALUE;
     private static final int COST = 3;
-    private static final int UPGRADED_BASE_COST = 3;
-    private static final int DAMAGE = 8;
-    private static final int UPGRADE_PLUS_DAMAGE = 3;
+    private static final int UPGRADED_BASE_COST = 2;
+    private static final int UPGRADE_PLUS_MAGIC = -1;
     private static final boolean IS_FORM = true;
 
     // /STAT DECLARATION/
@@ -80,7 +79,7 @@ public class HydraForm extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             upgradeBaseCost(UPGRADED_BASE_COST);
             initializeDescription();
         }

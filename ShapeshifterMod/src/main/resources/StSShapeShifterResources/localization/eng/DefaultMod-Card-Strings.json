@@ -7,6 +7,34 @@
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
   },
+  "StSShapeShifter:Acorn": {
+    "NAME": "Acorn",
+    "DESCRIPTION": "Deal !D! Damage. Exhaust."
+  },
+  "StSShapeShifter:Banana": {
+    "NAME": "Banana",
+    "DESCRIPTION": "Gain !M! Dexterity. NL Exhaust."
+  },
+  "StSShapeShifter:Pineapple": {
+    "NAME": "Pineapple",
+    "DESCRIPTION": "Gain !M! Thorns. NL Exhaust."
+  },
+  "StSShapeShifter:Dragonfruit": {
+    "NAME": "Dragonfruit",
+    "DESCRIPTION": "Gain !M! Strength. NL Exhaust."
+  },
+  "StSShapeShifter:Avocado": {
+    "NAME": "Avocado",
+    "DESCRIPTION": "Gain !M! Energy. NL Exhaust."
+  },
+  "StSShapeShifter:Cherry": {
+    "NAME": "Cherry",
+    "DESCRIPTION": "Gain !M! Health. NL Exhaust."
+  },
+  "StSShapeShifter:FruitBasket": {
+    "NAME": "Fruit Basket",
+    "DESCRIPTION": "Add !M! random Fruit to your hand."
+  },
   "StSShapeShifter:AdaptiveStrikes": {
     "NAME": "Adaptive Strikes",
     "DESCRIPTION": "Deal !D! Damage 3 times. NL [#32CD32] Grow[] !M!"
@@ -55,6 +83,10 @@
     "NAME": "Shifting Strike",
     "DESCRIPTION": "Deal !D! Damage. If you changed forms this turn, this card costs 0."
   },
+  "StSShapeShifter:OakBlade": {
+    "NAME": "Oak Blade",
+    "DESCRIPTION": "Deal !D! Damage. Return a random card from your Discard Pile to your hand. Shuffle Oak Blade back into your Draw Pile"
+  },
   "StSShapeShifter:Guard": {
     "NAME": "Guard",
     "DESCRIPTION": "Gain !B! Block. NL Dexterity affects this card !M! times."
@@ -75,9 +107,13 @@
     "NAME": "Mystical Branch",
     "DESCRIPTION": "Deal !D! Damage. NL [#32CD32] Grow[] !M!"
   },
+  "StSShapeShifter:MysticalSeed": {
+    "NAME": "Mystical Seed",
+    "DESCRIPTION": "Deal !D! Damage. NL [#32CD32] Grow[] !M!X"
+  },
   "StSShapeShifter:MagicMushrooms": {
     "NAME": "Magical Mushrooms",
-    "DESCRIPTION": "Draw !M! Cards. Randomize the cost of cards in your hand."
+    "DESCRIPTION": "Draw !M! Cards. Randomize the cost of cards in your hand. Exhaust"
   },
   "StSShapeShifter:Consume": {
     "NAME": "Consume",
@@ -93,7 +129,7 @@
   },
   "StSShapeShifter:Hunt": {
     "NAME": "Hunt",
-    "DESCRIPTION": "Deal !D! Damage. Gain 2 energy next turn."
+    "DESCRIPTION": "Deal !D! Damage. Gain !M! energy next turn."
   },
   "StSShapeShifter:LeapingSlash": {
     "NAME": "Leaping Slash",
@@ -114,6 +150,14 @@
   "StSShapeShifter:RestoreBalance": {
     "NAME": "Restore Balance",
     "DESCRIPTION": "Remove all non-boss-specific buffs an enemy."
+  },
+  "StSShapeShifter:RitualOfTheElders": {
+    "NAME": "Ritual of the Elders",
+    "DESCRIPTION": "Lose 1 Dexterity and 1 Strength. Increase Max HP by !M!."
+  },
+  "StSShapeShifter:RitualOfTheExtinct": {
+    "NAME": "Ritual of the Extinct",
+    "DESCRIPTION": "Deal NL Massive damage to an enemy. Decrease Max HP by !M!."
   },
   "StSShapeShifter:Absorb": {
     "NAME": "Absorb",
@@ -139,6 +183,10 @@
     "NAME": "Skull Bash",
     "DESCRIPTION": "Deal !D! Damage. Damage is equivalent half of your current hp."
   },
+  "StSShapeShifter:ReplenishingNectar": {
+    "NAME": "Replenishing Nectar",
+    "DESCRIPTION": "Heal for !M!. Increase this heal by 1 permanently. Exhaust."
+  },
   "StSShapeShifter:Wildfire": {
     "NAME": "Wildfire",
     "DESCRIPTION": "Deal !D! Damage to all enemies. Wither !M!."
@@ -155,13 +203,37 @@
     "NAME": "Topaz Skin",
     "DESCRIPTION": "Gain !B!X Block. Grow X."
   },
+  "StSShapeShifter:Tornado": {
+    "NAME": "Tornado",
+    "DESCRIPTION": "Swap your draw and discard piles. Retain. Exhaust."
+  },
+  "StSShapeShifter:FullMoon": {
+    "NAME": "Full Moon",
+    "DESCRIPTION": "Your next !M! forms cost 0."
+  },
+  "StSShapeShifter:RockSlide": {
+    "NAME": "Rock Slide",
+    "DESCRIPTION": "Deal !D! to all enemies. If this is the first time this card is played this turn, return it to your hand."
+  },
+  "StSShapeShifter:IntimidatingAura": {
+    "NAME": "Intimidating Aura",
+    "DESCRIPTION": "At the end of your turn, gain !M! block for each Attack card in your hand."
+  },
+  "StSShapeShifter:Pounce": {
+    "NAME": "Pounce",
+    "DESCRIPTION": "If your last card played was a form, apply !M! vulnerable. Deal !D! damage."
+  },
+  "StSShapeShifter:BurrBomb": {
+    "NAME": "Burr Bomb",
+    "DESCRIPTION": "Apply a Burr Bomb to an enemy. After 2 turns, it explodes, dealing !D! damage. Grow !M!."
+  },
   "StSShapeShifter:Summon_Mountains": {
     "NAME": "Summon Mountains",
-    "DESCRIPTION": "Gain !B! Block. NL [#32CD32] Grow[] 6."
+    "DESCRIPTION": "Gain !B! Block. [#32CD32] Grow[] 6."
   },
   "StSShapeShifter:GoldenBerries": {
     "NAME": "Golden Berries",
-    "DESCRIPTION": "Gain !M! Regen. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Regen. Exhaust."
   },
   "StSShapeShifter:Tortoise_Form": {
     "NAME": "Tortoise Form",
@@ -175,9 +247,13 @@
     "NAME": "Rat Form",
     "DESCRIPTION": "Upon Entering Rat Form, Gain 1 Dodge and lose 1 Dexterity. While in Rat Form, apply !M! Poison to a random enemy at the end of your turn."
   },
+  "StSShapeShifter:EagleForm": {
+    "NAME": "Eagle Form",
+    "DESCRIPTION": "Upon Entering Eagle Form, Discover an attack card. While in Eagle Form, at the start of your turn, apply !M! vulnerable to enemies who intend to attack"
+  },
   "StSShapeShifter:PhoenixForm": {
     "NAME": "Phoenix Form",
-    "DESCRIPTION": "Upon Entering Phoenix Form, Remove all debuffs. While in Phoenix Form, If you receive fatal damage, heal for !M!0% of your health instead of dying."
+    "DESCRIPTION": "Upon Entering Phoenix Form, Remove all debuffs. While in Phoenix Form, If you receive fatal damage, heal for !M!0 Percent of your health instead of dying."
   },
   "StSShapeShifter:PorcupineForm": {
     "NAME": "Porcupine Form",
@@ -185,7 +261,7 @@
   },
   "StSShapeShifter:EntForm": {
     "NAME": "Ent Form",
-    "DESCRIPTION": "Upon Entering Ent Form, Gain 4(5) Regen. While in Ent Form, gain Entangled at the start of your turn and gain !M! Dexterity at the end of your turn."
+    "DESCRIPTION": "Upon Entering Ent Form, Gain 4 Regen. While in Ent Form, gain Entangled at the start of your turn and gain !M! Dexterity at the end of your turn."
   },
   "StSShapeShifter:DeerForm": {
     "NAME": "Deer Form",
@@ -198,6 +274,22 @@
   "StSShapeShifter:DragonForm": {
     "NAME": "Dragon Form",
     "DESCRIPTION": "Upon Entering Dragon Form, Apply !M! Weak and !M! Vulnerable to all enemies. While in Dragon Form, deal 6(8) to all enemies and gain 6(8) block. Lasts up to 3 turns. Exhaust"
+  },
+  "StSShapeShifter:LionForm": {
+    "NAME": "Lion Form",
+    "DESCRIPTION": "Upon Entering Lion Form, double your strength. While in Lion Form, Apply !M! Deep Wound to all enemies. Lasts up to 3 turns. Exhaust"
+  },
+  "StSShapeShifter:MonkeyForm": {
+    "NAME": "Monkey Form",
+    "DESCRIPTION": "Upon Entering Monkey Form, add a Banana to your hand. While in Monkey Form, whenever you play a card, deal !M! damage to a random enemy."
+  },
+  "StSShapeShifter:FoxForm": {
+    "NAME": "Fox Form",
+    "DESCRIPTION": "Upon Entering Fox Form, deal !D! to a random enemy. While in Fox Form, at the start of your turn, Dig for treasure, gaining gold and a small chance at gaining a relic. Lasts for up to 3 turns. Exhaust."
+  },
+  "StSShapeShifter:SquirrelForm": {
+    "NAME": "Squirrel Form",
+    "DESCRIPTION": "Upon Entering Squirrel Form, add 2 Acorns to your hand. While in Squirrel Form, add an Acorn to your hand at the start of your turn."
   },
   "StSShapeShifter:HydraForm": {
     "NAME": "Hydra Form",
@@ -214,6 +306,10 @@
   "StSShapeShifter:Efflorescence": {
     "NAME": "Efflorescence",
     "DESCRIPTION": "Gain !M! Energy. NL [#32CD32] Grow[] 1"
+  },
+  "StSShapeShifter:VileMushroom": {
+    "NAME": "Vile Mushroom",
+    "DESCRIPTION": "Apply !M! Poison. NL [#32CD32] Grow[] 3"
   },
   "StSShapeShifter:Sap_Burst": {
     "NAME": "Sap Burst",

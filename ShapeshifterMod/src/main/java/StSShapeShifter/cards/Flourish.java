@@ -40,7 +40,7 @@ public class Flourish extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
 
-    private static final int COST = 2;
+    private static final int COST = 3;
     //private static final int BLOCK = 12;
     //private static final int UPGRADE_PLUS_BLOCK = 3;
 

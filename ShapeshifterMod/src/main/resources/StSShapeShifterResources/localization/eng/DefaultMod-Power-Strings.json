@@ -15,6 +15,14 @@
                 "NAME": "Sap Burst",
                 "DESCRIPTIONS": ["At the end of your turn, reduce a random enemy's strength by #b", "random enemy", "hello"]
         },
+        "StSShapeShifter:FullMoonPower": {
+          "NAME": "Full Moon",
+          "DESCRIPTIONS": ["Your forms cost 0 while the Full Moon lasts", "random enemy", "hello"]
+        },
+        "StSShapeShifter:FoxFormPower": {
+          "NAME": "Fox Form",
+          "DESCRIPTION": "At the start of your turn, Dig for treasure, gaining gold and a small chance at gaining a relic. Lasts for up to 3 turns. Exhaust."
+        },
         "StSShapeShifter:DodgePower": {
           "NAME": "Dodge",
           "DESCRIPTIONS": ["Prevent the next source of damage you take.", "random enemy", "hello"]
@@ -23,6 +31,18 @@
           "NAME": "Rat Form",
           "DESCRIPTIONS": ["At the end of your turn, Apply #b poison to a random enemy", "random enemy", "hello"]
         },
+        "StSShapeShifter:SquirrelFormPower": {
+          "NAME": "Squirrel Form",
+          "DESCRIPTIONS": ["At the start of your turn, add an Acorn to your hand.", "random enemy", "hello"]
+        },
+        "StSShapeShifter:MonkeyFormPower": {
+          "NAME": "Monkey Form",
+          "DESCRIPTIONS": ["Whenever you play a card, Deal #b damage to a random enemy", "random enemy", "hello"]
+        },
+        "StSShapeShifter:LionFormPower": {
+          "NAME": "Lion Form",
+          "DESCRIPTIONS": ["At the start of your turn, Apply deep wounds to all enemies", "random enemy", "hello"]
+        },
         "StSShapeShifter:DiverseSpiritPower": {
           "NAME": "Diverse Spirit",
           "DESCRIPTIONS": ["Whenever you play a unique form this combat, gain 1 energy and draw 1 card", "random enemy", "hello"]
@@ -30,6 +50,10 @@
         "StSShapeShifter:SpiritOfTheEarthPower": {
           "NAME": "Spirit Of The Earth",
           "DESCRIPTIONS": ["Whenever you play a skill, gain #b block", "random enemy", "hello"]
+        },
+        "StSShapeShifter:BurrBombPower": {
+          "NAME": "Burr Bomb",
+          "DESCRIPTIONS": ["After 2 turns, this explodes, dealing damage to this creature", "random enemy", "hello"]
         },
         "StSShapeShifter:DeerFormPower": {
                 "NAME": "Deer Form",
@@ -46,6 +70,10 @@
         "StSShapeShifter:LynxFormPower": {
           "NAME": "Lynx Form",
           "DESCRIPTIONS": ["While in Lynx Form, gain 1(2) strength", "random enemy", "hello"]
+        },
+        "StSShapeShifter:EagleFormPower": {
+          "NAME": "Eagle Form",
+          "DESCRIPTIONS": ["While in Eagle Form, apply vulnerable to enemies who intend to attack.", "random enemy", "hello"]
         },
         "StSShapeShifter:HydraFormPower": {
           "NAME": "Hydra Form",

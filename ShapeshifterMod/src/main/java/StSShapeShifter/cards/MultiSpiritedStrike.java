@@ -46,8 +46,9 @@ public class MultiSpiritedStrike extends AbstractDynamicCard {
     private static final int COST = 1;  // COST = ${COST}
     //private static final int UPGRADED_COST = 3; // UPGRADED_COST = ${UPGRADED_COST}
 
-    private static final int DAMAGE = 0;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_MAGIC = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int DAMAGE = 0;
+    private static final int MAGIC = 4;
+    private static final int UPGRADE_PLUS_MAGIC = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
 
     // /STAT DECLARATION/
@@ -56,8 +57,8 @@ public class MultiSpiritedStrike extends AbstractDynamicCard {
     public MultiSpiritedStrike() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        this.baseMagicNumber = 3;
-        this.magicNumber = this.baseMagicNumber;
+        this.magicNumber = this.baseMagicNumber = MAGIC;
+
     }
 
 
@@ -82,7 +83,7 @@ public class MultiSpiritedStrike extends AbstractDynamicCard {
 
     }
 
-    public void calculateCardDamage(AbstractMonster mo) {
+    /*public void calculateCardDamage(AbstractMonster mo) {
         ArrayList<AbstractCard> cards = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisCombat);
         int numFormsPlayed = 0;
         for (AbstractCard c : cards) {
@@ -94,7 +95,7 @@ public class MultiSpiritedStrike extends AbstractDynamicCard {
         super.calculateCardDamage(mo);
         //this.baseDamage = numFormsPlayed / this.magicNumber;
 
-    }
+    }*/
 
 
     // Upgraded stats.

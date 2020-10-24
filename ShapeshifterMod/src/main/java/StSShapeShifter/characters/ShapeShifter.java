@@ -67,7 +67,7 @@ public class ShapeShifter extends CustomPlayer {
 
     public static final int ENERGY_PER_TURN = 3;
     public static final int STARTING_HP = 80;
-    public static final int MAX_HP = 80;
+    public static final int MAX_HP = 72;
     public static final int STARTING_GOLD = 99;
     public static final int CARD_DRAW = 5;
     public static final int ORB_SLOTS = 0;
@@ -176,8 +176,17 @@ public class ShapeShifter extends CustomPlayer {
 
         retVal.add(Tortoise_Form.ID);
         retVal.add(Lynx_Form.ID);
-        retVal.add(SpiritOfTheEarth.ID);
-        retVal.add(PhoenixForm.ID);
+        //retVal.add(ReplenishingNectar.ID);
+/*        retVal.add(LionForm.ID);
+        retVal.add(MonkeyForm.ID);
+        retVal.add(SquirrelForm.ID);*/
+        //retVal.add(FoxForm.ID);
+
+        //retVal.add(SpiritOfTheEarth.ID);
+        //retVal.add(PhoenixForm.ID);
+        //retVal.add(Tornado.ID);
+        //retVal.add(IntimidatingAura.ID);
+        //retVal.add(EagleForm.ID);
 
         //retVal.add(EntForm.ID);
         //retVal.add(Flourish.ID);

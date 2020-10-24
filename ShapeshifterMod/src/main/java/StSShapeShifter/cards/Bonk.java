@@ -71,15 +71,9 @@ public class Bonk extends AbstractDynamicCard {
         ArrayList<AbstractCard> forms = new ArrayList<AbstractCard>(AllForms.getAllFormsCards());
         AbstractCard c = forms.get(new Random().nextInt(forms.size()));
         ShapeshifterMod.logger.info(c.cardID);
-        //this.addToBot(new AutoplayCardAction(c, ));
-        //AbstractDungeon.actionManager.addToTop(new QueueCardAction(c, (AbstractCreature)null));
         c.costForTurn = 0;
         c.exhaust = true;
         AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(c, m));
-        /*ArrayList<String> forms = new ArrayList<>(AllForms.getAllFormsStanceNames());
-        String f = forms.get(new Random().nextInt(forms.size()));
-        this.addToBot(new ChangeStanceAction(f));*/
-
 
     }
 

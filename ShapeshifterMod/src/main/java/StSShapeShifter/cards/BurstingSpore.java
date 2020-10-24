@@ -43,7 +43,7 @@ public class BurstingSpore extends AbstractDynamicCard {
 
     private static final int DAMAGE = 2;    // DAMAGE = ${DAMAGE}
     private static final int BLOCK = 2;
-    private static final int UPGRADE_PLUS_DMG = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int UPGRADE_PLUS_DMG = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
 
@@ -75,6 +75,7 @@ public class BurstingSpore extends AbstractDynamicCard {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
             upgradeMagicNumber(2);
+            upgradeBlock(1);
             //upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }

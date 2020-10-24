@@ -1,6 +1,7 @@
 package StSShapeShifter;
 
 import StSShapeShifter.cards.*;
+import StSShapeShifter.cards.tempCards.*;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.relics.*;
 import basemod.*;
@@ -214,9 +215,9 @@ public class ShapeshifterMod implements
         BaseMod.addColor(
                 ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR,
                 SHAPESHIFTER_BROWN, SHAPESHIFTER_BROWN, SHAPESHIFTER_BROWN, SHAPESHIFTER_BROWN, SHAPESHIFTER_BROWN, SHAPESHIFTER_BROWN, SHAPESHIFTER_BROWN,
-                "StSShapeShifterResources/images/512/card_bg_512_brown.png",
-                "StSShapeShifterResources/images/512/card_bg_512_brown.png",
-                "StSShapeShifterResources/images/512/card_bg_512_brown.png",
+                "StSShapeShifterResources/images/512/card_bg_ss_512.png",
+                "StSShapeShifterResources/images/512/card_bg_ss_512.png",
+                "StSShapeShifterResources/images/512/card_bg_ss_512.png",
                 ENERGY_ORB_DEFAULT_GRAY,
                 ATTACK_DEFAULT_GRAY_PORTRAIT,
                 SKILL_DEFAULT_GRAY_PORTRAIT,
@@ -496,6 +497,23 @@ public class ShapeshifterMod implements
         BaseMod.addCard(new Flourish());
         BaseMod.addCard(new SpiritOfTheEarth());
         BaseMod.addCard(new PhoenixForm());
+        BaseMod.addCard(new Tornado());
+        BaseMod.addCard(new IntimidatingAura());
+        BaseMod.addCard(new EagleForm());
+        BaseMod.addCard(new OakBlade());
+        BaseMod.addCard(new Cherry());
+        BaseMod.addCard(new Acorn());
+        BaseMod.addCard(new Dragonfruit());
+        BaseMod.addCard(new Pineapple());
+        BaseMod.addCard(new Banana());
+        BaseMod.addCard(new FruitBasket());
+        BaseMod.addCard(new Avocado());
+        BaseMod.addCard(new ReplenishingNectar());
+        BaseMod.addCard(new VileMushroom());
+        BaseMod.addCard(new LionForm());
+        BaseMod.addCard(new MonkeyForm());
+        BaseMod.addCard(new SquirrelForm());
+        BaseMod.addCard(new FoxForm());
 
 
         new AutoAdd("ShapeShifterMod:StSShapeShifter")

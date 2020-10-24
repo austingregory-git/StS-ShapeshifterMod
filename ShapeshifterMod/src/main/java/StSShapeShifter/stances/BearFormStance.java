@@ -30,7 +30,7 @@ public class BearFormStance extends AbstractStance {
 
     public BearFormStance() {
         this.ID = STANCE_ID;
-        this.name = STANCE_ID;
+        this.name = NAME;
         //this.name = null;
         this.updateDescription();
         this.owner = AbstractDungeon.player;
