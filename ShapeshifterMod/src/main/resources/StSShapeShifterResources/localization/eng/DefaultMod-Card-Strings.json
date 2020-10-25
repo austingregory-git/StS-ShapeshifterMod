@@ -13,23 +13,23 @@
   },
   "StSShapeShifter:Banana": {
     "NAME": "Banana",
-    "DESCRIPTION": "Gain !M! Dexterity. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Dexterity. Exhaust."
   },
   "StSShapeShifter:Pineapple": {
     "NAME": "Pineapple",
-    "DESCRIPTION": "Gain !M! Thorns. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Thorns. Exhaust."
   },
   "StSShapeShifter:Dragonfruit": {
     "NAME": "Dragonfruit",
-    "DESCRIPTION": "Gain !M! Strength. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Strength. Exhaust."
   },
   "StSShapeShifter:Avocado": {
     "NAME": "Avocado",
-    "DESCRIPTION": "Gain !M! Energy. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Energy. Exhaust."
   },
   "StSShapeShifter:Cherry": {
     "NAME": "Cherry",
-    "DESCRIPTION": "Gain !M! Health. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Health. Exhaust."
   },
   "StSShapeShifter:FruitBasket": {
     "NAME": "Fruit Basket",
@@ -37,7 +37,7 @@
   },
   "StSShapeShifter:AdaptiveStrikes": {
     "NAME": "Adaptive Strikes",
-    "DESCRIPTION": "Deal !D! Damage 3 times. NL [#32CD32] Grow[] !M!"
+    "DESCRIPTION": "Deal !D! Damage 3 times.[#32CD32] Grow[] !M!"
   },
   "StSShapeShifter:FallingLeaves": {
     "NAME": "Falling Leaves",
@@ -45,7 +45,7 @@
   },
   "StSShapeShifter:ThornToss": {
     "NAME": "Thorn Toss",
-    "DESCRIPTION": "Deal !D! Damage 2 times. NL [#696969] Wither !M!"
+    "DESCRIPTION": "Deal !D! Damage 2 times.[#696969] Wither !M!"
   },
   "StSShapeShifter:PoisonIvy": {
     "NAME": "Poison Ivy",
@@ -53,11 +53,11 @@
   },
   "StSShapeShifter:BarkSkin": {
     "NAME": "Bark Skin",
-    "DESCRIPTION": "Gain !B! Block. NL [#32CD32] Grow[] !M!"
+    "DESCRIPTION": "Gain !B! Block.[#32CD32] Grow[] !M!"
   },
   "StSShapeShifter:BurstingSpore": {
     "NAME": "Bursting Spore",
-    "DESCRIPTION": "Deal !D! Damage. Gain !B! Block. NL [#32CD32] Grow[] !M!"
+    "DESCRIPTION": "Deal !D! Damage. Gain !B! Block.[#32CD32] Grow[] !M!"
   },
   "StSShapeShifter:VineHandcuffs": {
     "NAME": "Vine Handcuffs",
@@ -65,15 +65,15 @@
   },
   "StSShapeShifter:Uproot_Redwood": {
     "NAME": "Uproot Redwood",
-    "DESCRIPTION": "Deal !D! Damage. NL [#696969] Wither[] !M!"
+    "DESCRIPTION": "Deal !D! Damage.[#696969] Wither[] !M!"
   },
   "StSShapeShifter:Maul": {
     "NAME": "Maul",
-    "DESCRIPTION": "Deal !D! Damage. NL [#696969] Wither[] !M!"
+    "DESCRIPTION": "Deal !D! Damage.[#696969] Wither[] !M!"
   },
   "StSShapeShifter:FesteringBite": {
     "NAME": "Festering Bite",
-    "DESCRIPTION": "Deal !D! Damage. Apply !M! Weak. NL [#32CD32] Grow[] 1"
+    "DESCRIPTION": "Deal !D! Damage. Apply !M! Weak.[#32CD32] Grow[] 1"
   },
   "StSShapeShifter:DeepWound": {
     "NAME": "Deep Wound",
@@ -89,27 +89,27 @@
   },
   "StSShapeShifter:Guard": {
     "NAME": "Guard",
-    "DESCRIPTION": "Gain !B! Block. NL Dexterity affects this card !M! times."
+    "DESCRIPTION": "Gain !B! Block. Dexterity affects this card !M! times."
   },
   "StSShapeShifter:Sapling": {
     "NAME": "Sapling",
-    "DESCRIPTION": "Swap this card with a card in your discard pile. Draw 1 card. NL Exhaust."
+    "DESCRIPTION": "Swap this card with a card in your discard pile. Draw 1 card. Exhaust."
   },
   "StSShapeShifter:FlowerShield": {
     "NAME": "Flower Shield",
-    "DESCRIPTION": "Gain !B! Block. NL [#696969] Wither[] 3"
+    "DESCRIPTION": "Gain !B! Block.[#696969] Wither[] 3"
   },
   "StSShapeShifter:BloomingSlash": {
     "NAME": "Blooming Slash",
-    "DESCRIPTION": "Deal !D! Damage. NL [#32CD32] Grow[] !M!"
+    "DESCRIPTION": "Deal !D! Damage.[#32CD32] Grow[] !M!"
   },
   "StSShapeShifter:Mystical_Branch": {
     "NAME": "Mystical Branch",
-    "DESCRIPTION": "Deal !D! Damage. NL [#32CD32] Grow[] !M!"
+    "DESCRIPTION": "Deal !D! Damage.[#32CD32] Grow[] !M!"
   },
   "StSShapeShifter:MysticalSeed": {
     "NAME": "Mystical Seed",
-    "DESCRIPTION": "Deal !D! Damage. NL [#32CD32] Grow[] !M!X"
+    "DESCRIPTION": "Deal !D! Damage.[#32CD32] Grow[] !M!X"
   },
   "StSShapeShifter:MagicMushrooms": {
     "NAME": "Magical Mushrooms",
@@ -157,7 +157,7 @@
   },
   "StSShapeShifter:RitualOfTheExtinct": {
     "NAME": "Ritual of the Extinct",
-    "DESCRIPTION": "Deal NL Massive damage to an enemy. Decrease Max HP by !M!."
+    "DESCRIPTION": "Deal Massive damage to an enemy. Decrease Max HP by !M!."
   },
   "StSShapeShifter:Absorb": {
     "NAME": "Absorb",
@@ -203,6 +203,10 @@
     "NAME": "Topaz Skin",
     "DESCRIPTION": "Gain !B!X Block. Grow X."
   },
+  "StSShapeShifter:Roar": {
+    "NAME": "Roar",
+    "DESCRIPTION": "Apply !M! Vulnerable to all enemies."
+  },
   "StSShapeShifter:Tornado": {
     "NAME": "Tornado",
     "DESCRIPTION": "Swap your draw and discard piles. Retain. Exhaust."
@@ -213,7 +217,7 @@
   },
   "StSShapeShifter:RockSlide": {
     "NAME": "Rock Slide",
-    "DESCRIPTION": "Deal !D! to all enemies. If this is the first time this card is played this turn, return it to your hand."
+    "DESCRIPTION": "Deal !D! to all enemies. If this is the first time this card is played this turn, return it to your hand. Grow !M!."
   },
   "StSShapeShifter:IntimidatingAura": {
     "NAME": "Intimidating Aura",
@@ -237,7 +241,7 @@
   },
   "StSShapeShifter:Tortoise_Form": {
     "NAME": "Tortoise Form",
-    "DESCRIPTION": "Upon Entering Tortoise Form, Gain !B!. While in Tortoise Form, gain !M! Dexterity"
+    "DESCRIPTION": "Upon Entering Tortoise Form, Gain !B! Block. While in Tortoise Form, gain !M! Dexterity"
   },
   "StSShapeShifter:Lynx_Form": {
     "NAME": "Lynx Form",
@@ -270,6 +274,10 @@
   "StSShapeShifter:BearForm": {
     "NAME": "Bear Form",
     "DESCRIPTION": "Upon Entering Bear Form, Gain !M! Shielding and 1 Dexterity. While in Bear Form, gain 2(3) Dexterity"
+  },
+  "StSShapeShifter:WolfForm": {
+    "NAME": "Wolf Form",
+    "DESCRIPTION": "Upon Entering Wolf Form, Gain !M! Strength. While in Wolf Form, your attacks heal you for !M!."
   },
   "StSShapeShifter:DragonForm": {
     "NAME": "Dragon Form",
@@ -305,11 +313,11 @@
   },
   "StSShapeShifter:Efflorescence": {
     "NAME": "Efflorescence",
-    "DESCRIPTION": "Gain !M! Energy. NL [#32CD32] Grow[] 1"
+    "DESCRIPTION": "Gain !M! Energy.[#32CD32] Grow[] 1"
   },
   "StSShapeShifter:VileMushroom": {
     "NAME": "Vile Mushroom",
-    "DESCRIPTION": "Apply !M! Poison. NL [#32CD32] Grow[] 3"
+    "DESCRIPTION": "Apply !M! Poison.[#32CD32] Grow[] 3"
   },
   "StSShapeShifter:Sap_Burst": {
     "NAME": "Sap Burst",

@@ -31,7 +31,7 @@ public class FoxDigAction extends AbstractGameAction {
             int goldRoll = AbstractDungeon.treasureRng.random(6, 10);
             this.addToBot(new GainGoldAction(goldRoll));
             for(int i = 0; i < goldRoll; ++i) {
-                AbstractDungeon.effectList.add(new GainPennyEffect(this.source, this.target.hb.cX, this.target.hb.cY, this.source.hb.cX, this.source.hb.cY, true));
+                AbstractDungeon.effectList.add(new GainPennyEffect(this.source, this.source.hb.cX, this.source.hb.cY, this.source.hb.cX, this.source.hb.cY, true));
             }
             if(relicRoll > 96) {
                 int relicTierRoll = AbstractDungeon.treasureRng.random(0, 99);

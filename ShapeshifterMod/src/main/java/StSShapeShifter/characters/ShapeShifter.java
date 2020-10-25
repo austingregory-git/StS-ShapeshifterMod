@@ -2,6 +2,7 @@ package StSShapeShifter.characters;
 
 import StSShapeShifter.relics.Golden_Flower;
 import StSShapeShifter.stances.PhoenixFormStance;
+import basemod.BaseMod;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
@@ -172,10 +173,22 @@ public class ShapeShifter extends CustomPlayer {
         retVal.add(ShapeShifter_Defend.ID);
         retVal.add(ShapeShifter_Defend.ID);
         retVal.add(ShapeShifter_Defend.ID);
+/*        BaseMod.addCard(new FoxForm());
+        BaseMod.addCard(new RockSlide());
+        BaseMod.addCard(new RitualOfTheElders());
+        BaseMod.addCard(new RitualOfTheExtinct());
+        BaseMod.addCard(new Pounce());
+        BaseMod.addCard(new BurrBomb());*/
 
 
         retVal.add(Tortoise_Form.ID);
         retVal.add(Lynx_Form.ID);
+/*        retVal.add(FoxForm.ID);
+        retVal.add(RockSlide.ID);
+        retVal.add(RitualOfTheElders.ID);
+        retVal.add(RitualOfTheExtinct.ID);
+        retVal.add(Pounce.ID);
+        retVal.add(BurrBomb.ID);*/
         //retVal.add(ReplenishingNectar.ID);
 /*        retVal.add(LionForm.ID);
         retVal.add(MonkeyForm.ID);

@@ -11,13 +11,18 @@ import java.util.Arrays;
 
 public class AllForms {
     public static ArrayList<String> getAllForms() {
-        ArrayList<String> allForms = new ArrayList<String>(Arrays.asList(Tortoise_Form.ID, Lynx_Form.ID, BearForm.ID, DeerForm.ID, HydraForm.ID, DragonForm.ID, MammothForm.ID, RatForm.ID, EagleForm.ID, PhoenixForm.ID));
+        ArrayList<String> allForms = new ArrayList<String>(Arrays.asList(Tortoise_Form.ID, Lynx_Form.ID, BearForm.ID, DeerForm.ID, HydraForm.ID, DragonForm.ID,
+                                                                    MammothForm.ID, RatForm.ID, EagleForm.ID, PhoenixForm.ID, FoxForm.ID, EntForm.ID,
+                                                                    PorcupineForm.ID, SquirrelForm.ID, MonkeyForm.ID));
 
         return allForms;
     }
 
     public static ArrayList<AbstractCard> getAllFormsCards() {
-        ArrayList<AbstractCard> allForms = new ArrayList<AbstractCard>(Arrays.asList(new Tortoise_Form(), new Lynx_Form(), new BearForm(), new DeerForm(), new DragonForm(), new HydraForm(), new MammothForm(), new RatForm(), new EagleForm(), new PhoenixForm()));
+        ArrayList<AbstractCard> allForms = new ArrayList<AbstractCard>(Arrays.asList(new Tortoise_Form(), new Lynx_Form(), new BearForm(), new DeerForm(),
+                                                                          new DragonForm(), new HydraForm(), new MammothForm(), new RatForm(),
+                                                                          new EagleForm(), new PhoenixForm(), new FoxForm(), new EntForm(),
+                                                                          new PorcupineForm(), new SquirrelForm(), new MonkeyForm()));
 
         return allForms;
     }

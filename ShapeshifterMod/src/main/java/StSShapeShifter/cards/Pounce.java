@@ -70,6 +70,15 @@ public class Pounce extends AbstractDynamicCard {
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
     }
 
+    public void triggerOnGlowCheck() {
+        if (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && (AllForms.getAllFormsCards().contains(AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1)))) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        }
+
+    }
+
 
     // Upgraded stats.
     @Override

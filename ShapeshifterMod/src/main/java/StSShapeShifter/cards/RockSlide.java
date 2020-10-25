@@ -2,7 +2,9 @@ package StSShapeShifter.cards;
 
 import StSShapeShifter.characters.ShapeShifter;
 import basemod.AutoAdd;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -15,7 +17,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.characters.TheDefault;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
+import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
@@ -37,7 +41,7 @@ public class RockSlide extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
+    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
@@ -57,6 +61,7 @@ public class RockSlide extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = 1;
+        this.onMoveToDiscard();
 
     }
 
@@ -64,14 +69,20 @@ public class RockSlide extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //p.cardInUse
-        ArrayList<AbstractCard> cardsThisTurn = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisTurn);
-        cardsThisTurn.remove(cardsThisTurn.size() - 1);
-
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         this.addToBot(new ModifyDamageAction(this.uuid, this.magicNumber));
-        if(!cardsThisTurn.contains(p.cardInUse)) {
-            p.hand.addToHand(p.cardInUse);
+    }
+
+    public void onMoveToDiscard() {
+        if(!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && !AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty()) {
+            ArrayList<AbstractCard> cardsThisTurn = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisTurn);
+            ShapeshifterMod.logger.info(cardsThisTurn);
+            //cardsThisTurn.remove(cardsThisTurn.size() - 1);
+            ShapeshifterMod.logger.info(cardsThisTurn);
+            ShapeshifterMod.logger.info(this);
+            if(!cardsThisTurn.contains(this)) {
+                AbstractDungeon.player.hand.addToHand(this);
+            }
         }
 
     }

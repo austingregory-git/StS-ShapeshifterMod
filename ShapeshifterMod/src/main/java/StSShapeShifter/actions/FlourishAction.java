@@ -36,7 +36,6 @@ public class FlourishAction extends AbstractGameAction {
                 return;
             }
             if (AbstractDungeon.player.drawPile.isEmpty()){
-                //this.addToBot(new EmptyDeckShuffleAction());
                 this.addToTop(new FlourishAction(this.upgraded, this.amount));
                 this.addToTop(new EmptyDeckShuffleAction());
 
@@ -55,7 +54,6 @@ public class FlourishAction extends AbstractGameAction {
         AbstractCard c = AbstractDungeon.player.drawPile.getTopCard();
         if(!upgraded) {
             this.addToBot(new ReduceCostForTurnAction(c, 1));
-
         }
         else {
             this.addToBot(new ReduceCostForTurnAction(c, 9));

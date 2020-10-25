@@ -514,6 +514,16 @@ public class ShapeshifterMod implements
         BaseMod.addCard(new MonkeyForm());
         BaseMod.addCard(new SquirrelForm());
         BaseMod.addCard(new FoxForm());
+        BaseMod.addCard(new RockSlide());
+        BaseMod.addCard(new RitualOfTheElders());
+        BaseMod.addCard(new RitualOfTheExtinct());
+        BaseMod.addCard(new Pounce());
+        BaseMod.addCard(new BurrBomb());
+        BaseMod.addCard(new Earthquake());
+        BaseMod.addCard(new WolfForm());
+        BaseMod.addCard(new Roar());
+
+
 
 
         new AutoAdd("ShapeShifterMod:StSShapeShifter")
