@@ -31,21 +31,17 @@ public class LynxFormPower extends AbstractPower implements CloneablePowerInterf
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     public boolean upgraded;
     public int upgraded_amount;
-    public int amount;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power84.png");
     private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power32.png");
 
-    public LynxFormPower(final AbstractCreature owner, boolean upgraded, int upgraded_amount, int amount) {
+    public LynxFormPower(final AbstractCreature owner, int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
-        this.upgraded_amount = upgraded_amount;
-        this.upgraded = upgraded;
-        //this.source = source;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -57,32 +53,19 @@ public class LynxFormPower extends AbstractPower implements CloneablePowerInterf
         updateDescription();
     }
 
+    public void stackPower(int stackAmount) {
+        this.fontScale = 8.0F;
+        this.amount += stackAmount;
+        this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, stackAmount), stackAmount));
+    }
+
     public void onInitialApplication() {
-        if(upgraded) {
-            this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, upgraded_amount), upgraded_amount));
-        }
-        else {
-            this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount), amount));
-        }
+        this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount), amount));
     }
 
     public void onRemove() {
-        if(upgraded) {
-            this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -upgraded_amount), -upgraded_amount));
-        }
-        else {
-            this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -amount), -amount));
-        }
+        this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -amount), -amount));
     }
-    /*@Override
-    public void duringTurn() {
-        if(upgraded) {
-            this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, 3), 3));
-        }
-        else {
-            this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, 2), 2));
-        }
-    }*/
 
     @Override
     public void updateDescription() {
@@ -91,7 +74,7 @@ public class LynxFormPower extends AbstractPower implements CloneablePowerInterf
 
     @Override
     public AbstractPower makeCopy() {
-        return new LynxFormPower(owner, upgraded, upgraded_amount, amount);
+        return new LynxFormPower(owner, amount);
     }
 }
 

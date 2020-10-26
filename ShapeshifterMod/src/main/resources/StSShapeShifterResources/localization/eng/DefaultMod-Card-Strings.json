@@ -37,7 +37,7 @@
   },
   "StSShapeShifter:AdaptiveStrikes": {
     "NAME": "Adaptive Strikes",
-    "DESCRIPTION": "Deal !D! Damage 3 times.[#32CD32] Grow[] !M!"
+    "DESCRIPTION": "Deal !D! Damage 3 times. Grow !StSShapeShifter:Grow!"
   },
   "StSShapeShifter:FallingLeaves": {
     "NAME": "Falling Leaves",
@@ -45,19 +45,19 @@
   },
   "StSShapeShifter:ThornToss": {
     "NAME": "Thorn Toss",
-    "DESCRIPTION": "Deal !D! Damage 2 times.[#696969] Wither !M!"
+    "DESCRIPTION": "Deal !D! Damage 2 times. Wither !StSShapeShifter:Wither!"
   },
   "StSShapeShifter:PoisonIvy": {
     "NAME": "Poison Ivy",
-    "DESCRIPTION": "Apply !M! poison to all enemies."
+    "DESCRIPTION": "Apply !M! poison to all enemies. Grow !StSShapeShifter:Grow!."
   },
   "StSShapeShifter:BarkSkin": {
     "NAME": "Bark Skin",
-    "DESCRIPTION": "Gain !B! Block.[#32CD32] Grow[] !M!"
+    "DESCRIPTION": "Gain !B! Block. Grow !StSShapeShifter:Grow!"
   },
   "StSShapeShifter:BurstingSpore": {
     "NAME": "Bursting Spore",
-    "DESCRIPTION": "Deal !D! Damage. Gain !B! Block.[#32CD32] Grow[] !M!"
+    "DESCRIPTION": "Deal !D! Damage. Gain !B! Block. Grow !StSShapeShifter:Grow!"
   },
   "StSShapeShifter:VineHandcuffs": {
     "NAME": "Vine Handcuffs",
@@ -65,15 +65,15 @@
   },
   "StSShapeShifter:Uproot_Redwood": {
     "NAME": "Uproot Redwood",
-    "DESCRIPTION": "Deal !D! Damage.[#696969] Wither[] !M!"
+    "DESCRIPTION": "Deal !D! Damage. Wither !StSShapeShifter:Wither!"
   },
   "StSShapeShifter:Maul": {
     "NAME": "Maul",
-    "DESCRIPTION": "Deal !D! Damage.[#696969] Wither[] !M!"
+    "DESCRIPTION": "Deal !D! Damage. Wither !StSShapeShifter:Wither!"
   },
   "StSShapeShifter:FesteringBite": {
     "NAME": "Festering Bite",
-    "DESCRIPTION": "Deal !D! Damage. Apply !M! Weak.[#32CD32] Grow[] 1"
+    "DESCRIPTION": "Deal !D! Damage. Apply !M! Weak. Grow !StSShapeShifter:Grow!"
   },
   "StSShapeShifter:DeepWound": {
     "NAME": "Deep Wound",
@@ -97,19 +97,19 @@
   },
   "StSShapeShifter:FlowerShield": {
     "NAME": "Flower Shield",
-    "DESCRIPTION": "Gain !B! Block.[#696969] Wither[] 3"
+    "DESCRIPTION": "Gain !B! Block. Wither !StSShapeShifter:Wither!"
   },
   "StSShapeShifter:BloomingSlash": {
     "NAME": "Blooming Slash",
-    "DESCRIPTION": "Deal !D! Damage.[#32CD32] Grow[] !M!"
+    "DESCRIPTION": "Deal !D! Damage. Grow !StSShapeShifter:Grow!"
   },
   "StSShapeShifter:Mystical_Branch": {
     "NAME": "Mystical Branch",
-    "DESCRIPTION": "Deal !D! Damage.[#32CD32] Grow[] !M!"
+    "DESCRIPTION": "Deal !D! Damage. Grow !StSShapeShifter:Grow!"
   },
   "StSShapeShifter:MysticalSeed": {
     "NAME": "Mystical Seed",
-    "DESCRIPTION": "Deal !D! Damage.[#32CD32] Grow[] !M!X"
+    "DESCRIPTION": "Deal !D! Damage. Grow !StSShapeShifter:Grow!X"
   },
   "StSShapeShifter:MagicMushrooms": {
     "NAME": "Magical Mushrooms",
@@ -117,7 +117,7 @@
   },
   "StSShapeShifter:Consume": {
     "NAME": "Consume",
-    "DESCRIPTION": "Draw !M! Cards. Wither 1."
+    "DESCRIPTION": "Draw !M! Cards. Wither !StSShapeShifter:Wither!."
   },
   "StSShapeShifter:Flourish": {
     "NAME": "Flourish",
@@ -141,7 +141,7 @@
   },
   "StSShapeShifter:ThornedSkin": {
     "NAME": "Thorned Skin",
-    "DESCRIPTION": "Gain !B! Block. Gain !M! Thorns. Wither 1"
+    "DESCRIPTION": "Gain !B! Block. Gain !M! Thorns. Wither !StSShapeShifter:Wither!"
   },
   "StSShapeShifter:Blossom": {
     "NAME": "Blossom",
@@ -173,7 +173,7 @@
   },
   "StSShapeShifter:CursedApple": {
     "NAME": "Cursed Apple",
-    "DESCRIPTION": "Deal !D! Damage. Wither !M!. If this card is withered to 0, add a random Curse into your deck and exhaust this card."
+    "DESCRIPTION": "Deal !D! Damage. Wither !StSShapeShifter:Wither!. If this card is withered to 0, add a random Curse into your deck and exhaust this card."
   },
   "StSShapeShifter:MultiSpiritedStrike": {
     "NAME": "Multi-Spirited Strike",
@@ -189,11 +189,11 @@
   },
   "StSShapeShifter:Wildfire": {
     "NAME": "Wildfire",
-    "DESCRIPTION": "Deal !D! Damage to all enemies. Wither !M!."
+    "DESCRIPTION": "Deal !D! Damage to all enemies. Wither !StSShapeShifter:Wither!."
   },
   "StSShapeShifter:Earthquake": {
     "NAME": "Earthquake",
-    "DESCRIPTION": "Deal !D! Damage to all enemies. Wither !M!."
+    "DESCRIPTION": "Deal !D! Damage to all enemies. Wither !StSShapeShifter:Wither!."
   },
   "StSShapeShifter:ForestFire": {
     "NAME": "Forest Fire",
@@ -217,7 +217,7 @@
   },
   "StSShapeShifter:RockSlide": {
     "NAME": "Rock Slide",
-    "DESCRIPTION": "Deal !D! to all enemies. If this is the first time this card is played this turn, return it to your hand. Grow !M!."
+    "DESCRIPTION": "Deal !D! to all enemies. If this is the first time this card is played this turn, return it to your hand. Grow !StSShapeShifter:Grow!."
   },
   "StSShapeShifter:IntimidatingAura": {
     "NAME": "Intimidating Aura",
@@ -229,11 +229,11 @@
   },
   "StSShapeShifter:BurrBomb": {
     "NAME": "Burr Bomb",
-    "DESCRIPTION": "Apply a Burr Bomb to an enemy. After 2 turns, it explodes, dealing !D! damage. Grow !M!."
+    "DESCRIPTION": "Apply a Burr Bomb to an enemy. After 2 turns, it explodes, dealing !D! damage. Grow !StSShapeShifter:Grow!."
   },
   "StSShapeShifter:Summon_Mountains": {
     "NAME": "Summon Mountains",
-    "DESCRIPTION": "Gain !B! Block. [#32CD32] Grow[] 6."
+    "DESCRIPTION": "Gain !B! Block. Grow !StSShapeShifter:Grow!."
   },
   "StSShapeShifter:GoldenBerries": {
     "NAME": "Golden Berries",
@@ -250,6 +250,18 @@
   "StSShapeShifter:RatForm": {
     "NAME": "Rat Form",
     "DESCRIPTION": "Upon Entering Rat Form, Gain 1 Dodge and lose 1 Dexterity. While in Rat Form, apply !M! Poison to a random enemy at the end of your turn."
+  },
+  "StSShapeShifter:OwlForm": {
+    "NAME": "Owl Form",
+    "DESCRIPTION": "Upon Entering Owl Form, Discover a Power card. While in Owl Form, draw 1 additional card each turn."
+  },
+  "StSShapeShifter:WaspSwarmForm": {
+    "NAME": "Wasp Swarm Form",
+    "DESCRIPTION": "Upon Entering Wasp Swarm Form, Apply X Weak to all enemies. While in Wasp Swarm Form, deal X damage to all enemies at the start of your turn."
+  },
+  "StSShapeShifter:HummingbirdForm": {
+    "NAME": "Hummingbird Form",
+    "DESCRIPTION": "Upon Entering Hummingbird Form, upgrade a random card in your hand. While in Hummingbird Form, your Grow cards Grow for !M! additional when played."
   },
   "StSShapeShifter:EagleForm": {
     "NAME": "Eagle Form",
@@ -313,11 +325,11 @@
   },
   "StSShapeShifter:Efflorescence": {
     "NAME": "Efflorescence",
-    "DESCRIPTION": "Gain !M! Energy.[#32CD32] Grow[] 1"
+    "DESCRIPTION": "Gain !M! Energy. Grow !StSShapeShifter:Grow!"
   },
   "StSShapeShifter:VileMushroom": {
     "NAME": "Vile Mushroom",
-    "DESCRIPTION": "Apply !M! Poison.[#32CD32] Grow[] 3"
+    "DESCRIPTION": "Apply !M! Poison. Grow !StSShapeShifter:Grow!"
   },
   "StSShapeShifter:Sap_Burst": {
     "NAME": "Sap Burst",
@@ -326,6 +338,18 @@
   "StSShapeShifter:DiverseSpirit": {
     "NAME": "Diverse Spirit",
     "DESCRIPTION": "Whenever you play a unique form this combat, gain 1 energy and draw 1 card."
+  },
+  "StSShapeShifter:PowerShifter": {
+    "NAME": "Power Shifter",
+    "DESCRIPTION": "Whenever you play a unique form this combat, gain !M! Strength"
+  },
+  "StSShapeShifter:Ensconce": {
+    "NAME": "Ensconce",
+    "DESCRIPTION": "If you haven't changed forms this turn, increase the value of your current form by !M!."
+  },
+  "StSShapeShifter:Spring": {
+    "NAME": "Spring",
+    "DESCRIPTION": "At the start of your turn, increase the Grow value of your Grow cards by !M!."
   },
   "StSShapeShifter:DefaultCommonAttack": {
     "NAME": "Strike",

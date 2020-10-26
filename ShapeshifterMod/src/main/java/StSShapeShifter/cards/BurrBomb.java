@@ -56,7 +56,7 @@ public class BurrBomb extends AbstractDynamicCard {
 
     public BurrBomb() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 5;
+        this.growValue = this.baseGrowValue = 5;
         this.baseDamage = DAMAGE;
         this.exhaust = true;
     }
@@ -65,7 +65,7 @@ public class BurrBomb extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(m, p, new BurrBombPower(m, p, damage)));
-        this.addToBot(new ModifyDamageAction(this.uuid, this.baseMagicNumber));
+        this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
     }
 
     //Upgraded stats.
@@ -74,7 +74,7 @@ public class BurrBomb extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             initializeDescription();
-            upgradeMagicNumber(1);
+            upgradeGrowValue(2);
         }
     }
 }

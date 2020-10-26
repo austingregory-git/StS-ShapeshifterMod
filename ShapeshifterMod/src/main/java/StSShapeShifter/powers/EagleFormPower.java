@@ -53,6 +53,11 @@ public class EagleFormPower extends AbstractPower implements CloneablePowerInter
         updateDescription();
     }
 
+    public void stackPower(int stackAmount) {
+        this.fontScale = 8.0F;
+        this.amount += stackAmount;
+    }
+
     public void atStartOfTurnPostDraw() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flash();

@@ -1,5 +1,6 @@
 package StSShapeShifter.cards;
 
+import StSShapeShifter.actions.ModifyMagicAction;
 import StSShapeShifter.characters.ShapeShifter;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -52,8 +53,7 @@ public class FesteringBite extends AbstractDynamicCard {
         baseDamage = DAMAGE;
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
-        this.defaultBaseSecondMagicNumber = 1;
-        this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;
+        this.growValue = this.baseGrowValue = 1;
     }
 
 
@@ -63,9 +63,8 @@ public class FesteringBite extends AbstractDynamicCard {
         count++;
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber + this.defaultSecondMagicNumber - count, false), this.magicNumber + this.defaultSecondMagicNumber - count));
-        this.addToBot(new ModifyDamageAction(this.uuid, this.magicNumber));
-        this.defaultSecondMagicNumber += defaultBaseSecondMagicNumber;
-        this.baseMagicNumber = this.magicNumber + this.defaultSecondMagicNumber - count;
+        this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
+        this.addToBot(new ModifyMagicAction(this.uuid, this.growValue));
     }
 
 
@@ -75,8 +74,6 @@ public class FesteringBite extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            //upgradeMagicNumber(1);
-            //upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

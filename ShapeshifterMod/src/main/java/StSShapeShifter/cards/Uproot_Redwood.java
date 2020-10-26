@@ -37,9 +37,7 @@ public class Uproot_Redwood extends AbstractDynamicCard {
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
 
     private static final int COST = 3;  // COST = ${COST}
-    private static final int UPGRADED_COST = 3; // UPGRADED_COST = ${UPGRADED_COST}
-
-    private static final int DAMAGE = 50;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 45;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 10;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
@@ -48,8 +46,7 @@ public class Uproot_Redwood extends AbstractDynamicCard {
     public Uproot_Redwood() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        this.baseMagicNumber = 20;
-        this.magicNumber = this.baseMagicNumber;
+        this.witherValue = this.baseWitherValue = 20;
     }
 
 
@@ -58,7 +55,7 @@ public class Uproot_Redwood extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        this.addToBot(new ModifyDamageAction(this.uuid, -this.magicNumber));
+        this.addToBot(new ModifyDamageAction(this.uuid, -this.witherValue));
 
 
     }
@@ -69,9 +66,8 @@ public class Uproot_Redwood extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(10);
-            upgradeMagicNumber(-5);
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeWitherValue(-5);
             initializeDescription();
         }
     }

@@ -63,9 +63,11 @@ public class Pounce extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         ArrayList<AbstractCard> cardsPlayed = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisCombat);
-        AbstractCard c = cardsPlayed.get(cardsPlayed.size() - 1);
-        if(AllForms.getAllForms().contains(c.cardID)) {
-            this.addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
+        if(cardsPlayed.size() >= 2) {
+            AbstractCard c = cardsPlayed.get(cardsPlayed.size() - 2);
+            if(AllForms.getAllForms().contains(c.cardID)) {
+                this.addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
+            }
         }
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
     }

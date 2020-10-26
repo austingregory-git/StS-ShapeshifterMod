@@ -15,6 +15,14 @@ public abstract class AbstractDefaultCard extends CustomCard {
     public int defaultBaseSecondMagicNumber;    // And our base stat - the number in it's base state. It will reset to that by default.
     public boolean upgradedDefaultSecondMagicNumber; // A boolean to check whether the number has been upgraded or not.
     public boolean isDefaultSecondMagicNumberModified; // A boolean to check whether the number has been modified or not, for coloring purposes. (red/green)
+    public int growValue;
+    public int witherValue;
+    public int baseGrowValue;
+    public int baseWitherValue;
+    public boolean upgradedGrowValue;
+    public boolean upgradedWitherValue;
+    public boolean isGrowValueModified;
+    public boolean isWitherValueModified;
 
     public AbstractDefaultCard(final String id,
                                final String name,
@@ -35,6 +43,8 @@ public abstract class AbstractDefaultCard extends CustomCard {
         isBlockModified = false;
         isMagicNumberModified = false;
         isDefaultSecondMagicNumberModified = false;
+        isGrowValueModified = false;
+        isWitherValueModified = false;
     }
 
     public void displayUpgrades() { // Display the upgrade - when you click a card to upgrade it
@@ -50,5 +60,17 @@ public abstract class AbstractDefaultCard extends CustomCard {
         defaultBaseSecondMagicNumber += amount; // Upgrade the number by the amount you provide in your card.
         defaultSecondMagicNumber = defaultBaseSecondMagicNumber; // Set the number to be equal to the base value.
         upgradedDefaultSecondMagicNumber = true; // Upgraded = true - which does what the above method does.
+    }
+
+    public void upgradeWitherValue(int amount) { // If we're upgrading (read: changing) the number. Note "upgrade" and NOT "upgraded" - 2 different things. One is a boolean, and then this one is what you will usually use - change the integer by how much you want to upgrade.
+        baseWitherValue += amount; // Upgrade the number by the amount you provide in your card.
+        witherValue = baseWitherValue; // Set the number to be equal to the base value.
+        upgradedWitherValue = true; // Upgraded = true - which does what the above method does.
+    }
+
+    public void upgradeGrowValue(int amount) { // If we're upgrading (read: changing) the number. Note "upgrade" and NOT "upgraded" - 2 different things. One is a boolean, and then this one is what you will usually use - change the integer by how much you want to upgrade.
+        baseGrowValue += amount; // Upgrade the number by the amount you provide in your card.
+        growValue = baseGrowValue; // Set the number to be equal to the base value.
+        upgradedGrowValue = true; // Upgraded = true - which does what the above method does.
     }
 }

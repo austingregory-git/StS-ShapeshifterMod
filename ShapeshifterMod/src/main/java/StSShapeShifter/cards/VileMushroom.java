@@ -46,7 +46,7 @@ public class VileMushroom extends AbstractDynamicCard {
     public VileMushroom() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 6;
-        this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber = 3;
+        this.growValue = this.baseGrowValue = 3;
     }
 
     // Actions the card should do.
@@ -54,16 +54,8 @@ public class VileMushroom extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         //this.applyPowers();
         this.addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p , this.magicNumber)));
-        this.addToBot(new ModifyMagicAction(this.uuid, this.defaultSecondMagicNumber));
+        this.addToBot(new ModifyMagicAction(this.uuid, this.growValue));
     }
-
-    /*public void applyPowers() {
-        count++;
-        if(upgraded)
-            this.baseMagicNumber = 8 + (this.defaultSecondMagicNumber*count) - 3;
-        else
-            this.baseMagicNumber = 6 + (this.defaultSecondMagicNumber*count) - 3;
-    }*/
 
     //Upgraded stats.
     @Override

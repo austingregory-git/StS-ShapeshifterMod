@@ -1,5 +1,6 @@
 package StSShapeShifter.cards;
 
+import StSShapeShifter.actions.ModifyMagicAction;
 import StSShapeShifter.characters.ShapeShifter;
 import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
@@ -54,20 +55,16 @@ public class Consume extends AbstractDynamicCard {
     public Consume() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = 3;
-        this.defaultBaseSecondMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
-        this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;
+        this.witherValue = this.baseWitherValue = 1;
         //this.tags.add(CardTags.STARTER_DEFEND); //Tag your strike, defend and form (Wraith form, Demon form, Echo form, etc.) cards so that they function correctly.
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        count++;
         this.addToBot(new DrawCardAction(this.magicNumber));
-        this.defaultSecondMagicNumber += defaultBaseSecondMagicNumber;
-        this.baseMagicNumber = this.magicNumber - this.defaultSecondMagicNumber + count;
-
+        this.addToBot(new ModifyMagicAction(this.uuid, -this.witherValue));
     }
 
     //Upgraded stats.

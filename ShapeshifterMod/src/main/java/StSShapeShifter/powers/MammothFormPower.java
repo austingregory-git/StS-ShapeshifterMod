@@ -53,7 +53,13 @@ public class MammothFormPower extends AbstractPower implements CloneablePowerInt
         updateDescription();
     }
 
+    public void stackPower(int stackAmount) {
+        this.fontScale = 8.0F;
+        this.amount += stackAmount;
+    }
+
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
+        this.flash();
         return damage-this.amount;
     }
 

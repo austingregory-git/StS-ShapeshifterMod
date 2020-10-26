@@ -29,7 +29,7 @@ public class PhoenixFormPower extends AbstractPower implements CloneablePowerInt
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private int count = 0;
-    private boolean upgraded;
+    public boolean upgraded;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power84.png");
@@ -53,10 +53,6 @@ public class PhoenixFormPower extends AbstractPower implements CloneablePowerInt
 
         updateDescription();
     }
-
-    /*public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
-        return damage-this.amount;
-    }*/
 
     public int onLoseHp(int damageAmount) {
         if(AbstractDungeon.player.currentHealth - damageAmount <= 0) {

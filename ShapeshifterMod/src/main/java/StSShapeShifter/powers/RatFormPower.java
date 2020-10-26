@@ -61,6 +61,12 @@ public class RatFormPower extends AbstractPower implements CloneablePowerInterfa
         }
     }
 
+    public void stackPower(int stackAmount) {
+        this.fontScale = 8.0F;
+        this.amount += stackAmount;
+        this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, stackAmount), stackAmount));
+    }
+
     @Override
     public void updateDescription() {
         if (amount == 1) {

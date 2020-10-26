@@ -3,9 +3,12 @@
     "Names":  ["grow"],
     "DESCRIPTION":  "Whenever you play this card, it gains value equal to the grow value on it for the rest of combat"
   },
-
   {
     "Names":  ["wither"],
     "DESCRIPTION":  "Whenever you play this card, it loses value equal to the wither value on it for the rest of combat"
+  },
+  {
+    "Names": ["form"],
+    "DESCRIPTION": "You can only occupy one Form at a time. By playing a new Form card, you will exit your previous Form."
   }
 ]

@@ -57,6 +57,11 @@ public class WolfFormPower extends AbstractPower implements CloneablePowerInterf
         }
     }
 
+    public void stackPower(int stackAmount) {
+        this.fontScale = 8.0F;
+        this.amount += stackAmount;
+    }
+
     @Override
     public void updateDescription() {
 

@@ -47,9 +47,10 @@ public class Efflorescence extends AbstractDynamicCard {
     public Efflorescence() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = 2;
-        this.defaultBaseSecondMagicNumber = 1;
+        //this.defaultBaseSecondMagicNumber = 1;
+        this.growValue = this.baseGrowValue = 1;
         this.magicNumber = this.baseMagicNumber;
-        this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;
+        //this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;
 
 
         //this.tags.add(CardTags.STARTER_DEFEND); //Tag your strike, defend and form (Wraith form, Demon form, Echo form, etc.) cards so that they function correctly.
@@ -60,7 +61,7 @@ public class Efflorescence extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         count++;
         this.addToBot(new GainEnergyAction(this.magicNumber));
-        this.addToBot(new ModifyMagicAction(this.uuid, this.defaultSecondMagicNumber));
+        this.addToBot(new ModifyMagicAction(this.uuid, this.growValue));
     }
 
     //Upgraded stats.
@@ -68,8 +69,9 @@ public class Efflorescence extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.upgradeDefaultSecondMagicNumber(1);
-            this.rawDescription = "Gain !M! Energy. [#32CD32] Grow[] 2";
+            this.upgradeGrowValue(1);
+            //this.upgradeDefaultSecondMagicNumber(1);
+            //this.rawDescription = "Gain !M! Energy. [#32CD32] Grow[] 2";
             initializeDescription();
         }
     }

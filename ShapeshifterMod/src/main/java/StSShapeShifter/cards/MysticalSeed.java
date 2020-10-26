@@ -51,8 +51,7 @@ public class MysticalSeed extends AbstractDynamicCard {
     public MysticalSeed() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        this.baseMagicNumber = 2;
-        this.magicNumber = this.baseMagicNumber;
+        this.growValue = this.baseGrowValue = 2;
     }
 
 
@@ -60,7 +59,7 @@ public class MysticalSeed extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        int mod = (damage * this.magicNumber) - DAMAGE;
+        int mod = (damage * this.growValue) - DAMAGE;
         this.addToBot(new ModifyDamageAction(this.uuid, mod));
     }
 
@@ -71,8 +70,7 @@ public class MysticalSeed extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
-            //upgradeBaseCost(UPGRADED_COST);
+            upgradeGrowValue(1);
             initializeDescription();
         }
     }

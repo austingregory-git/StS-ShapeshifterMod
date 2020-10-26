@@ -39,7 +39,7 @@ public class Maul extends AbstractDynamicCard {
     private static final int COST = 2;  // COST = ${COST}
     //private static final int UPGRADED_COST = 3; // UPGRADED_COST = ${UPGRADED_COST}
 
-    private static final int DAMAGE = 20;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 18;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 3;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
@@ -48,8 +48,7 @@ public class Maul extends AbstractDynamicCard {
     public Maul() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        this.baseMagicNumber = 2;
-        this.magicNumber = this.baseMagicNumber;
+        this.witherValue = this.baseWitherValue = 2;
     }
 
 
@@ -60,7 +59,7 @@ public class Maul extends AbstractDynamicCard {
             this.baseDamage = 0;
         }
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        this.addToBot(new ModifyDamageAction(this.uuid, -this.magicNumber));
+        this.addToBot(new ModifyDamageAction(this.uuid, -this.witherValue));
 
     }
 
@@ -71,8 +70,7 @@ public class Maul extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(1);
-            //upgradeBaseCost(UPGRADED_COST);
+            upgradeWitherValue(-1);
             initializeDescription();
         }
     }

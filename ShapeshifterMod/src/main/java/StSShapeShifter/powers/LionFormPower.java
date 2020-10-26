@@ -53,6 +53,11 @@ public class LionFormPower extends AbstractPower implements CloneablePowerInterf
         updateDescription();
     }
 
+    public void stackPower(int stackAmount) {
+        this.fontScale = 8.0F;
+        this.amount += stackAmount;
+    }
+
     public void atStartOfTurn() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flash();

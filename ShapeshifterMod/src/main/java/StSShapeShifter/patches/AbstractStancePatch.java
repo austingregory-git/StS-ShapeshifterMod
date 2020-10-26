@@ -2,6 +2,7 @@ package StSShapeShifter.patches;
 
 import StSShapeShifter.cards.EagleForm;
 import StSShapeShifter.cards.Tortoise_Form;
+import StSShapeShifter.cards.WaspSwarmForm;
 import StSShapeShifter.stances.*;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
@@ -52,13 +53,25 @@ public class AbstractStancePatch {
                 return SpireReturn.Return(new LionFormStance());
             }
             if (stanceID.equals(MonkeyFormStance.STANCE_ID)) {
-                return SpireReturn.Return(new LionFormStance());
+                return SpireReturn.Return(new MonkeyFormStance());
             }
             if (stanceID.equals(SquirrelFormStance.STANCE_ID)) {
                 return SpireReturn.Return(new SquirrelFormStance());
             }
+            if (stanceID.equals(WolfFormStance.STANCE_ID)) {
+                return SpireReturn.Return(new WolfFormStance());
+            }
             if (stanceID.equals(FoxFormStance.STANCE_ID)) {
                 return SpireReturn.Return(new FoxFormStance());
+            }
+            if (stanceID.equals(WaspSwarmFormStance.STANCE_ID)) {
+                return SpireReturn.Return(new WaspSwarmFormStance());
+            }
+            if (stanceID.equals(OwlFormStance.STANCE_ID)) {
+                return SpireReturn.Return(new OwlFormStance());
+            }
+            if (stanceID.equals(HummingbirdFormStance.STANCE_ID)) {
+                return SpireReturn.Return(new HummingbirdFormStance());
             }
 
             return SpireReturn.Continue();

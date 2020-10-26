@@ -43,7 +43,7 @@ public class BearForm extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;
-        this.defaultBaseSecondMagicNumber = 1;
+        this.defaultBaseSecondMagicNumber = 2;
         this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;
 
     }
@@ -53,10 +53,10 @@ public class BearForm extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         this.addToBot(new ApplyPowerAction(p, p, new PlatedArmorPower(p, this.magicNumber), this.magicNumber));
-        this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.defaultSecondMagicNumber), this.defaultSecondMagicNumber));
+        this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 1), 1));
 
         if(!p.stance.ID.equals("BearFormStance") && !p.hasPower("CannotChangeStancePower")) {
-            this.addToBot(new ApplyPowerAction(p, p, new BearFormPower(p, upgraded)));
+            this.addToBot(new ApplyPowerAction(p, p, new BearFormPower(p, this.defaultSecondMagicNumber)));
             this.addToBot(new ChangeStanceAction("BearFormStance"));
         }
 
@@ -69,7 +69,7 @@ public class BearForm extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
-            //upgradeDefaultSecondMagicNumber(2);
+            upgradeDefaultSecondMagicNumber(1);
             initializeDescription();
         }
     }

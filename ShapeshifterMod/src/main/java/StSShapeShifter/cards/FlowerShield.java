@@ -46,7 +46,7 @@ public class FlowerShield extends AbstractDynamicCard {
     public FlowerShield() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
-        this.magicNumber = -3;
+        this.witherValue = this.baseWitherValue = 3;
 
         //this.tags.add(CardTags.STARTER_DEFEND); //Tag your strike, defend and form (Wraith form, Demon form, Echo form, etc.) cards so that they function correctly.
     }
@@ -55,7 +55,7 @@ public class FlowerShield extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        this.addToBot(new ModifyBlockAction(this.uuid, this.magicNumber));
+        this.addToBot(new ModifyBlockAction(this.uuid, -this.witherValue));
     }
 
     //Upgraded stats.

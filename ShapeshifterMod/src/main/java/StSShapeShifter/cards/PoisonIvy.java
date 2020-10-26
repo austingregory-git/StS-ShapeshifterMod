@@ -1,5 +1,6 @@
 package StSShapeShifter.cards;
 
+import StSShapeShifter.actions.ModifyMagicAction;
 import StSShapeShifter.characters.ShapeShifter;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -51,6 +52,7 @@ public class PoisonIvy extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;
+        this.growValue = this.baseGrowValue = 1;
 
         //this.tags.add(CardTags.STARTER_DEFEND); //Tag your strike, defend and form (Wraith form, Demon form, Echo form, etc.) cards so that they function correctly.
     }
@@ -69,6 +71,7 @@ public class PoisonIvy extends AbstractDynamicCard {
                 }
             }
         }
+        this.addToBot(new ModifyMagicAction(this.uuid, this.growValue));
     }
 
     //Upgraded stats.
@@ -77,6 +80,7 @@ public class PoisonIvy extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
+            upgradeGrowValue(1);
             initializeDescription();
         }
     }

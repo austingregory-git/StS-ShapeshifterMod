@@ -66,7 +66,7 @@ public class Tortoise_Form extends AbstractDynamicCard {
                 new DexterityPower(p, this.magicNumber), this.magicNumber));*/
         if(!p.stance.ID.equals("TortoiseFormStance") && !p.hasPower("CannotChangeStancePower")) {
             //this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
-            this.addToBot(new ApplyPowerAction(p, p, new TortoiseFormPower(p, upgraded, 2, 1)));
+            this.addToBot(new ApplyPowerAction(p, p, new TortoiseFormPower(p, this.magicNumber)));
             this.addToBot(new ChangeStanceAction("TortoiseFormStance"));
         }
 

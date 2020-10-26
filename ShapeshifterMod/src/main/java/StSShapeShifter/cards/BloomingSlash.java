@@ -48,8 +48,7 @@ public class BloomingSlash extends AbstractDynamicCard {
     public BloomingSlash() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        this.baseMagicNumber = 6;
-        this.magicNumber = this.baseMagicNumber;
+        this.growValue = this.baseGrowValue = 6;
     }
 
 
@@ -57,7 +56,7 @@ public class BloomingSlash extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        this.addToBot(new ModifyDamageAction(this.uuid, this.magicNumber));
+        this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
 
     }
 
@@ -68,8 +67,7 @@ public class BloomingSlash extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(2);
-            //upgradeBaseCost(UPGRADED_COST);
+            upgradeGrowValue(2);
             initializeDescription();
         }
     }

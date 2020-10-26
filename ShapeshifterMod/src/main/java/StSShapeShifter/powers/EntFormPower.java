@@ -67,6 +67,11 @@ public class EntFormPower extends AbstractPower implements CloneablePowerInterfa
         }
     }
 
+    public void stackPower(int stackAmount) {
+        this.fontScale = 8.0F;
+        this.amount += stackAmount;
+    }
+
     public void onRemove() {
         if(owner.hasPower(EntanglePower.POWER_ID)) {
             this.addToBot(new RemoveSpecificPowerAction(owner, owner, EntanglePower.POWER_ID));

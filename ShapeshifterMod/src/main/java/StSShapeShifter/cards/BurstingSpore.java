@@ -52,8 +52,7 @@ public class BurstingSpore extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         baseBlock = BLOCK;
-        this.baseMagicNumber = 2;
-        this.magicNumber = this.baseMagicNumber;
+        this.growValue = this.baseGrowValue = 2;
     }
 
 
@@ -61,9 +60,9 @@ public class BurstingSpore extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        this.addToBot(new ModifyDamageAction(this.uuid, this.magicNumber));
+        this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        this.addToBot(new ModifyBlockAction(this.uuid, this.magicNumber));
+        this.addToBot(new ModifyBlockAction(this.uuid, this.growValue));
 
     }
 
@@ -74,7 +73,7 @@ public class BurstingSpore extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(2);
+            upgradeGrowValue(1);
             upgradeBlock(1);
             //upgradeBaseCost(UPGRADED_COST);
             initializeDescription();

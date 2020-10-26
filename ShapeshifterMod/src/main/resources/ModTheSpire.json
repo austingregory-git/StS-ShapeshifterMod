@@ -1,7 +1,7 @@
 {
-  "modid": "YourNameHere:${project.artifactId}",
+  "modid": "AustinGregory:${project.artifactId}",
   "name": "${project.name}",
-  "author_list": ["NotGremious"],
+  "author_list": ["Austin Gregory"],
   "credits": "Basemod, ModTheSpire, #modding",
   "description": "${project.description}",
   "version": "${project.version}",

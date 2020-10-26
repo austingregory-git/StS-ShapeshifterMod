@@ -68,6 +68,11 @@ public class DragonFormPower extends AbstractPower implements CloneablePowerInte
         }
     }
 
+    public void stackPower(int stackAmount) {
+        this.fontScale = 8.0F;
+        this.amount += stackAmount;
+    }
+
 
     public void atEndOfTurn(boolean isPlayer) {
         count++;

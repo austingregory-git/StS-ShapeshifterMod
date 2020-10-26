@@ -59,8 +59,7 @@ public class CursedApple extends AbstractDynamicCard {
     public CursedApple() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        this.baseMagicNumber = 10;
-        this.magicNumber = this.baseMagicNumber;
+        this.witherValue = this.baseWitherValue = 10;
     }
 
 
@@ -69,8 +68,8 @@ public class CursedApple extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         count++;
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        this.addToBot(new ModifyDamageAction(this.uuid, -this.magicNumber));
-        int currVal = DAMAGE - (this.magicNumber * count);
+        this.addToBot(new ModifyDamageAction(this.uuid, -this.witherValue));
+        int currVal = DAMAGE - (this.witherValue * count);
         if(currVal <= 0) {
             ArrayList<AbstractCard> curses = new ArrayList<AbstractCard>(AllCurses.getAllCursesCards());
             AbstractCard c = curses.get(new Random().nextInt(curses.size()));
@@ -86,9 +85,7 @@ public class CursedApple extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            //upgradeDamage(10);
-            upgradeMagicNumber(-5);
-            //upgradeBaseCost(UPGRADED_COST);
+            upgradeWitherValue(-5);
             initializeDescription();
         }
     }

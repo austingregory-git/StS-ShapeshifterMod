@@ -60,13 +60,14 @@ public class HydraFormPower extends AbstractPower implements CloneablePowerInter
         updateDescription();
     }
 
-    public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        return type == DamageInfo.DamageType.NORMAL ? damage * 3.0F : damage;
+    public void stackPower(int stackAmount) {
+        this.fontScale = 8.0F;
+        this.amount += stackAmount;
     }
 
-    /*public void onInitialApplication() {
-        this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -amount), -amount));
-    }*/
+    public float atDamageGive(float damage, DamageInfo.DamageType type) {
+        return type == DamageInfo.DamageType.NORMAL ? damage * (float) amount : damage;
+    }
 
     public void atEndOfTurn(boolean isPlayer) {
         count++;
@@ -91,7 +92,7 @@ public class HydraFormPower extends AbstractPower implements CloneablePowerInter
 
     @Override
     public AbstractPower makeCopy() {
-        return new LynxFormPower(owner, upgraded, upgraded_amount, amount);
+        return new HydraFormPower(owner, amount);
     }
 }
 

@@ -5,6 +5,7 @@ import StSShapeShifter.cards.Tortoise_Form;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -34,6 +35,7 @@ public class WolfFormStance extends AbstractStance {
         //this.name = null;
         this.updateDescription();
         this.owner = AbstractDungeon.player;
+        //GameActionManager.hpLossThisCombat
     }
 
     public void updateDescription() {

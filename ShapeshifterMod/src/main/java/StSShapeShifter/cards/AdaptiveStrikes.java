@@ -48,8 +48,7 @@ public class AdaptiveStrikes extends AbstractDynamicCard {
     public AdaptiveStrikes() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        this.baseMagicNumber = 1;
-        this.magicNumber = this.baseMagicNumber;
+        this.growValue = this.baseGrowValue = 1;
     }
 
 
@@ -59,7 +58,7 @@ public class AdaptiveStrikes extends AbstractDynamicCard {
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        this.addToBot(new ModifyDamageAction(this.uuid, this.magicNumber));
+        this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
 
     }
 
@@ -69,8 +68,7 @@ public class AdaptiveStrikes extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
-            //upgradeBaseCost(UPGRADED_COST);
+            upgradeGrowValue(1);
             initializeDescription();
         }
     }

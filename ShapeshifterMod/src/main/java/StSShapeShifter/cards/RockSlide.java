@@ -1,5 +1,6 @@
 package StSShapeShifter.cards;
 
+import StSShapeShifter.actions.RockSlideAction;
 import StSShapeShifter.characters.ShapeShifter;
 import basemod.AutoAdd;
 import com.badlogic.gdx.graphics.Color;
@@ -60,9 +61,7 @@ public class RockSlide extends AbstractDynamicCard {
     public RockSlide() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = 1;
-        this.onMoveToDiscard();
-
+        this.growValue = this.baseGrowValue = 1;
     }
 
 
@@ -70,22 +69,13 @@ public class RockSlide extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
-        this.addToBot(new ModifyDamageAction(this.uuid, this.magicNumber));
+        this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
     }
 
     public void onMoveToDiscard() {
-        if(!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && !AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty()) {
-            ArrayList<AbstractCard> cardsThisTurn = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisTurn);
-            ShapeshifterMod.logger.info(cardsThisTurn);
-            //cardsThisTurn.remove(cardsThisTurn.size() - 1);
-            ShapeshifterMod.logger.info(cardsThisTurn);
-            ShapeshifterMod.logger.info(this);
-            if(!cardsThisTurn.contains(this)) {
-                AbstractDungeon.player.hand.addToHand(this);
-            }
-        }
-
+        this.addToBot(new RockSlideAction(this.uuid, this));
     }
+
 
 
     // Upgraded stats.
@@ -94,7 +84,7 @@ public class RockSlide extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            upgradeGrowValue(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

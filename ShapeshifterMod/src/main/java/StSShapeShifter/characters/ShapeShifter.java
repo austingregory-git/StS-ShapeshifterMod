@@ -67,8 +67,8 @@ public class ShapeShifter extends CustomPlayer {
     // =============== BASE STATS =================
 
     public static final int ENERGY_PER_TURN = 3;
-    public static final int STARTING_HP = 80;
-    public static final int MAX_HP = 72;
+    public static final int STARTING_HP = 78;
+    public static final int MAX_HP = 78;
     public static final int STARTING_GOLD = 99;
     public static final int CARD_DRAW = 5;
     public static final int ORB_SLOTS = 0;
@@ -81,7 +81,7 @@ public class ShapeShifter extends CustomPlayer {
     //private static final String ID = makeID("ShapeShifterCharacter");
     //private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = {"The Shapeshifter"};
-    private static final String[] TEXT = {"forms forms nature forms nature!"};
+    private static final String[] TEXT = {"A wanderer of the forest who has discovered the lost art of shapeshifting.", "Through a combination of forms drawn from connecting with animals and powers drawn from communing with nature,", "the Shapeshifter seeks to rid the spire of its unnatural creatures."};
 
     // =============== /STRINGS/ =================
 
@@ -183,9 +183,19 @@ public class ShapeShifter extends CustomPlayer {
 
         retVal.add(Tortoise_Form.ID);
         retVal.add(Lynx_Form.ID);
-/*        retVal.add(FoxForm.ID);
+        //retVal.add(Ensconce.ID);
+        //retVal.add(PowerShifter.ID);
+
+        //retVal.add(PowerShifter.ID);
+        retVal.add(Spring.ID);
+/*        retVal.add(WolfForm.ID);
+        retVal.add(WaspSwarmForm.ID);
+        retVal.add(OwlForm.ID);
+        retVal.add(Roar.ID);*/
+        //retVal.add(HummingbirdForm.ID);
+        //retVal.add(FoxForm.ID);
         retVal.add(RockSlide.ID);
-        retVal.add(RitualOfTheElders.ID);
+/*        retVal.add(RitualOfTheElders.ID);
         retVal.add(RitualOfTheExtinct.ID);
         retVal.add(Pounce.ID);
         retVal.add(BurrBomb.ID);*/
@@ -242,6 +252,7 @@ public class ShapeShifter extends CustomPlayer {
         retVal.add(PoisonIvy.ID);*/
         //retVal.add(DeerForm.ID);
         //retVal.add(FesteringBite.ID);
+        //retVal.add(FesteringBite.ID);
         //retVal.add(Maul.ID);
         //retVal.add(Guard.ID);
         //retVal.add(Rest.ID);
@@ -292,7 +303,7 @@ public class ShapeShifter extends CustomPlayer {
     // Ascension 14 or higher. (ironclad loses 5, defect and silent lose 4 hp respectively)
     @Override
     public int getAscensionMaxHPLoss() {
-        return 6;
+        return 5;
     }
 
     // Should return the card color enum to be associated with your character.

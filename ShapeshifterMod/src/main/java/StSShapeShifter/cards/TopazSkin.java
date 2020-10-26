@@ -48,18 +48,11 @@ public class TopazSkin extends AbstractDynamicCard {
     public TopazSkin() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
-        this.baseMagicNumber = 2;
-        this.magicNumber = this.baseMagicNumber;
-
-        //this.tags.add(CardTags.STARTER_DEFEND); //Tag your strike, defend and form (Wraith form, Demon form, Echo form, etc.) cards so that they function correctly.
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-/*        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        this.addToBot(new ModifyBlockAction(this.uuid, this.magicNumber));*/
-
         topazSkinEffect(p);
     }
 
@@ -84,8 +77,6 @@ public class TopazSkin extends AbstractDynamicCard {
                 p.energy.use(EnergyPanel.totalCount);
             }
         }
-
-
     }
 
     //Upgraded stats.
@@ -94,7 +85,6 @@ public class TopazSkin extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeBlock(UPGRADE_PLUS_BLOCK);
-            //upgradeMagicNumber(1);
             initializeDescription();
         }
     }

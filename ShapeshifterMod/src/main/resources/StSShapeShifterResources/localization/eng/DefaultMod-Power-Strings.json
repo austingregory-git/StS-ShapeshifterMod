@@ -19,13 +19,29 @@
           "NAME": "Full Moon",
           "DESCRIPTIONS": ["Your forms cost 0 while the Full Moon lasts", "random enemy", "hello"]
         },
+        "StSShapeShifter:PowerShifterPower": {
+          "NAME": "Power Shifter",
+          "DESCRIPTIONS": ["Whenever you play a unique form this combat, gain 1 Strength", "random enemy", "hello"]
+        },
+        "StSShapeShifter:EnsconcePower": {
+          "NAME": "Ensconce",
+          "DESCRIPTIONS": ["Improve your current Form if you do not shift forms this turn.", "random enemy", "hello"]
+        },
         "StSShapeShifter:FoxFormPower": {
           "NAME": "Fox Form",
           "DESCRIPTION": "At the start of your turn, Dig for treasure, gaining gold and a small chance at gaining a relic. Lasts for up to 3 turns. Exhaust."
         },
+        "StSShapeShifter:WolfFormPower": {
+          "NAME": "Wolf Form",
+          "DESCRIPTION": ["While in Wolf Form, your attacks heal you.", "yo", "hello"]
+        },
         "StSShapeShifter:DodgePower": {
           "NAME": "Dodge",
           "DESCRIPTIONS": ["Prevent the next source of damage you take.", "random enemy", "hello"]
+        },
+        "StSShapeShifter:SpringPower": {
+          "NAME": "Spring",
+          "DESCRIPTIONS": ["At the start of your turn, improve the growth of your grow cards.", "random enemy", "hello"]
         },
         "StSShapeShifter:RatFormPower": {
           "NAME": "Rat Form",
@@ -51,6 +67,10 @@
           "NAME": "Spirit Of The Earth",
           "DESCRIPTIONS": ["Whenever you play a skill, gain #b block", "random enemy", "hello"]
         },
+        "StSShapeShifter:HummingbirdFormPower": {
+          "NAME": "Hummingbird Form",
+          "DESCRIPTIONS": ["Improve your grow cards.", "random enemy", "hello"]
+        },
         "StSShapeShifter:BurrBombPower": {
           "NAME": "Burr Bomb",
           "DESCRIPTIONS": ["After 2 turns, this explodes, dealing damage to this creature", "random enemy", "hello"]
@@ -75,6 +95,10 @@
           "NAME": "Eagle Form",
           "DESCRIPTIONS": ["While in Eagle Form, apply vulnerable to enemies who intend to attack.", "random enemy", "hello"]
         },
+        "StSShapeShifter:IntimidatingAuraPower": {
+          "NAME": "Intimidating Aura",
+          "DESCRIPTIONS": ["At the end of your turn, gain block based on the number of attacks in your hand.", "random enemy", "hello"]
+        },
         "StSShapeShifter:HydraFormPower": {
           "NAME": "Hydra Form",
           "DESCRIPTIONS": ["While in Hydra Form, deal triple damage.", "random enemy", "hello"]
@@ -90,6 +114,14 @@
         "StSShapeShifter:MammothFormPower": {
           "NAME": "Mammoth Form Form",
           "DESCRIPTIONS": ["While in Mammoth Form, take reduced damage", "random enemy", "hello"]
+        },
+        "StSShapeShifter:OwlFormPower": {
+          "NAME": "Owl Form Form",
+          "DESCRIPTIONS": ["While in Owl Form, draw 1 additional card", "random enemy", "hello"]
+        },
+        "StSShapeShifter:WaspSwarmFormPower": {
+          "NAME": "Wasp Swarm Form",
+          "DESCRIPTIONS": ["While in Wasp Swarm Form, deal damage to all enemies at the start of your turn.", "random enemy", "hello"]
         },
         "StSShapeShifter:TortoiseFormPower": {
           "NAME": "Tortoise Form",

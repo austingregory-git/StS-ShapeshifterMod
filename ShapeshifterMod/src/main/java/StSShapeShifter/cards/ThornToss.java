@@ -49,8 +49,7 @@ public class ThornToss extends AbstractDynamicCard {
     public ThornToss() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        this.baseMagicNumber = 2;
-        this.magicNumber = this.baseMagicNumber;
+        this.witherValue = this.baseWitherValue = 2;
     }
 
 
@@ -59,7 +58,7 @@ public class ThornToss extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        this.addToBot(new ModifyDamageAction(this.uuid, -this.magicNumber));
+        this.addToBot(new ModifyDamageAction(this.uuid, -this.witherValue));
 
     }
 
@@ -70,8 +69,7 @@ public class ThornToss extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(UPGRADE_WITHER);
-            //upgradeBaseCost(UPGRADED_COST);
+            upgradeWitherValue(UPGRADE_WITHER);
             initializeDescription();
         }
     }

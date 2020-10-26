@@ -52,8 +52,7 @@ public class Wildfire extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.isMultiDamage = true;
-        this.baseMagicNumber = 2;
-        this.magicNumber = this.baseMagicNumber;
+        this.witherValue = this.baseWitherValue = 2;
 
     }
 
@@ -62,7 +61,7 @@ public class Wildfire extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
-        this.addToBot(new ModifyDamageAction(this.uuid, -this.magicNumber));
+        this.addToBot(new ModifyDamageAction(this.uuid, -this.witherValue));
 
     }
 

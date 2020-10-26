@@ -4,6 +4,8 @@ import StSShapeShifter.cards.*;
 import StSShapeShifter.cards.tempCards.*;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.relics.*;
+import StSShapeShifter.variables.GrowVariable;
+import StSShapeShifter.variables.WitherVariable;
 import basemod.*;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.RelicType;
@@ -124,7 +126,9 @@ public class ShapeshifterMod implements
     
     // Character assets
     private static final String THE_DEFAULT_BUTTON = "StSShapeShifterResources/images/charSelect/DefaultCharacterButton.png";
+    private static final String THE_SHAPESHIFTER_BUTTON = "StSShapeShifterResources/images/charSelect/shapeshifter_button4.png";
     private static final String THE_DEFAULT_PORTRAIT = "StSShapeShifterResources/images/charSelect/DefaultCharacterPortraitBG.png";
+    private static final String THE_SHAPESHIFTER_PORTRAIT = "StSShapeShifterResources/images/charSelect/shapeshifter_portrait_bg2.png";
     public static final String THE_DEFAULT_SHOULDER_1 = "StSShapeShifterResources/images/char/defaultCharacter/shoulder.png";
     public static final String THE_DEFAULT_SHOULDER_2 = "StSShapeShifterResources/images/char/defaultCharacter/shoulder2.png";
     public static final String THE_DEFAULT_CORPSE = "StSShapeShifterResources/images/char/defaultCharacter/corpse.png";
@@ -309,8 +313,8 @@ public class ShapeshifterMod implements
                 THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, ShapeShifter.Enums.SHAPESHIFTER);*/
 
         BaseMod.addCharacter(new ShapeShifter("TheShapeShifter", ShapeShifter.Enums.SHAPESHIFTER),
-                "StSShapeShifterResources/images/charSelect/DefaultCharacterButton.png",
-                "StSShapeShifterResources/images/charSelect/DefaultCharacterPortraitBG.png",
+                THE_SHAPESHIFTER_BUTTON,
+                THE_SHAPESHIFTER_PORTRAIT,
                 ShapeShifter.Enums.SHAPESHIFTER);
         
         receiveEditPotions();
@@ -430,6 +434,9 @@ public class ShapeshifterMod implements
         // Add the Custom Dynamic variables
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
+        BaseMod.addDynamicVariable(new GrowVariable());
+        BaseMod.addDynamicVariable(new WitherVariable());
+
         
         logger.info("Adding cards");
         // Add the cards
@@ -522,6 +529,14 @@ public class ShapeshifterMod implements
         BaseMod.addCard(new Earthquake());
         BaseMod.addCard(new WolfForm());
         BaseMod.addCard(new Roar());
+        BaseMod.addCard(new WaspSwarmForm());
+        BaseMod.addCard(new OwlForm());
+        BaseMod.addCard(new HummingbirdForm());
+        BaseMod.addCard(new FullMoon());
+        BaseMod.addCard(new PowerShifter());
+        BaseMod.addCard(new Ensconce());
+        BaseMod.addCard(new Spring());
+
 
 
 
@@ -602,6 +617,9 @@ public class ShapeshifterMod implements
         com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
         BaseMod.addKeyword(new String[]{"grow"}, "Whenever you play this card, it is improved for the rest of combat");
         BaseMod.addKeyword(new String[]{"wither"}, "Whenever you play this card, it is worsened for the rest of combat");
+        BaseMod.addKeyword(new String[]{"form"}, "You can only occupy one Form at a time. Forms perform some effect upon entrance, and have a persisting effect while you remain in that Form.");
+        BaseMod.addKeyword(new String[]{"dodge"}, "Dodge the next source of damage.");
+        BaseMod.addKeyword(new String[]{"discover"}, "Choose between 3 cards to temporarily add to your deck.");
         /* (keywords != null) {
             for (Keyword keyword : keywords) {
                 //BaseMod.addKeyword(getModID().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);

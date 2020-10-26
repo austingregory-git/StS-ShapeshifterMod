@@ -67,7 +67,7 @@ public class HydraForm extends AbstractDynamicCard {
         this.addToBot(new ApplyPowerAction(p, p, new VulnerablePower(p, this.magicNumber, false), this.magicNumber));
 
         if(!p.stance.ID.equals("HydraFormStance") && !p.hasPower("CannotChangeStancePower")) {
-            this.addToBot(new ApplyPowerAction(p, p, new HydraFormPower(p, this.magicNumber)));
+            this.addToBot(new ApplyPowerAction(p, p, new HydraFormPower(p, 3)));
             this.addToBot(new ChangeStanceAction("HydraFormStance"));
         }
 

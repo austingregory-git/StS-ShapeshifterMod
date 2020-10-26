@@ -48,8 +48,7 @@ public class Mystical_Branch extends AbstractDynamicCard {
     public Mystical_Branch() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        this.baseMagicNumber = 6;
-        this.magicNumber = this.baseMagicNumber;
+        this.growValue = this.baseGrowValue = 6;
     }
 
 
@@ -57,7 +56,7 @@ public class Mystical_Branch extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        this.addToBot(new ModifyDamageAction(this.uuid, this.magicNumber));
+        this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
 
     }
 
@@ -68,7 +67,7 @@ public class Mystical_Branch extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(2);
-            upgradeMagicNumber(2);
+            upgradeGrowValue(2);
             upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }

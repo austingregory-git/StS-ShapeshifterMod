@@ -35,13 +35,13 @@ public class BearFormPower extends AbstractPower implements CloneablePowerInterf
     private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power84.png");
     private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power32.png");
 
-    public BearFormPower(final AbstractCreature owner, boolean upgraded) {
+    public BearFormPower(final AbstractCreature owner, int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
-        //this.amount = amount;
-        this.upgraded = upgraded;
+        this.amount = amount;
+        //this.upgraded = upgraded;
         //this.source = source;
 
         type = PowerType.BUFF;
@@ -54,32 +54,19 @@ public class BearFormPower extends AbstractPower implements CloneablePowerInterf
         updateDescription();
     }
 
+    public void stackPower(int stackAmount) {
+        this.fontScale = 8.0F;
+        this.amount += stackAmount;
+        this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, stackAmount), stackAmount));
+    }
+
     public void onInitialApplication() {
-        if(upgraded) {
-            this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, 3), 3));
-        }
-        else {
-            this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, 2), 2));
-        }
+        this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, amount), amount));
     }
 
     public void onRemove() {
-        if(upgraded) {
-            this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, -3), -3));
-        }
-        else {
-            this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, -2), -2));
-        }
+        this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, -amount), -amount));
     }
-    /*@Override
-    public void duringTurn() {
-        if(upgraded) {
-            this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, 3), 3));
-        }
-        else {
-            this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, 2), 2));
-        }
-    }*/
 
     @Override
     public void updateDescription() {
@@ -88,7 +75,7 @@ public class BearFormPower extends AbstractPower implements CloneablePowerInterf
 
     @Override
     public AbstractPower makeCopy() {
-        return new BearFormPower(owner, upgraded);
+        return new BearFormPower(owner, amount);
     }
 }
 

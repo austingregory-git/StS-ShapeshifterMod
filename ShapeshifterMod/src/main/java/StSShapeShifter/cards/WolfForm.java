@@ -20,7 +20,7 @@ public class WolfForm extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = ShapeshifterMod.makeID(BearForm.class.getSimpleName());
+    public static final String ID = ShapeshifterMod.makeID(WolfForm.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     // /TEXT DECLARATION/

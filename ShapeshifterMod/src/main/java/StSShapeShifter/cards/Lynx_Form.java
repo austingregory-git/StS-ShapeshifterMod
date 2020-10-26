@@ -67,7 +67,7 @@ public class Lynx_Form extends AbstractDynamicCard {
 
         if(!p.stance.ID.equals("LynxFormStance") && !p.hasPower("CannotChangeStancePower")) {
             //this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
-            this.addToBot(new ApplyPowerAction(p, p, new LynxFormPower(p, upgraded, 2, 1)));
+            this.addToBot(new ApplyPowerAction(p, p, new LynxFormPower(p, this.magicNumber)));
             this.addToBot(new ChangeStanceAction("LynxFormStance"));
         }
 
