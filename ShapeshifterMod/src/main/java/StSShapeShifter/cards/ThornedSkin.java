@@ -59,10 +59,12 @@ public class ThornedSkin extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.applyWither();
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         this.addToBot(new ModifyBlockAction(this.uuid, -this.witherValue));
         this.addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, this.magicNumber), this.magicNumber));
         this.addToBot(new ModifyMagicAction(this.uuid, -this.witherValue));
+        updateBloomCount(-this.witherValue);
 
     }
 

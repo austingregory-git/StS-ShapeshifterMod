@@ -2,8 +2,11 @@ package StSShapeShifter.cards;
 
 import StSShapeShifter.actions.RockSlideAction;
 import StSShapeShifter.characters.ShapeShifter;
+import StSShapeShifter.patches.BloomWiltCountField;
+import StSShapeShifter.util.BloomCountUtils;
 import basemod.AutoAdd;
 import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -68,15 +71,18 @@ public class RockSlide extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        ShapeshifterMod.logger.info(BloomCountUtils.getBloomCount());
+        this.applyGrow();
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
+        updateBloomCount(this.growValue);
+        ShapeshifterMod.logger.info(BloomCountUtils.getBloomCount());
+
     }
 
     public void onMoveToDiscard() {
         this.addToBot(new RockSlideAction(this.uuid, this));
     }
-
-
 
     // Upgraded stats.
     @Override

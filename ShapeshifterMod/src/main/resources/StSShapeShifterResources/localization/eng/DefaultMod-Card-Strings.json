@@ -349,7 +349,19 @@
   },
   "StSShapeShifter:Spring": {
     "NAME": "Spring",
-    "DESCRIPTION": "At the start of your turn, increase the Grow value of your Grow cards by !M!."
+    "DESCRIPTION": "Whenever you draw a Grow card, increase its Grow value by !M!."
+  },
+  "StSShapeShifter:Summer": {
+    "NAME": "Summer",
+    "DESCRIPTION": "Draw 1 less card each turn. Whenever you draw a Grow card, double its Grow value."
+  },
+  "StSShapeShifter:Autumn": {
+    "NAME": "Autumn",
+    "DESCRIPTION": "Draw 2 additional cards each turn. Whenever you draw a Wither card, increase its Wither value by !M!."
+  },
+  "StSShapeShifter:Winter": {
+    "NAME": "Winter",
+    "DESCRIPTION": "Your Wither cards cost 1 less. Whenever you draw a Wither Card, double its Wither value."
   },
   "StSShapeShifter:DefaultCommonAttack": {
     "NAME": "Strike",

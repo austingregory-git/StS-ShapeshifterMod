@@ -3,6 +3,7 @@ package StSShapeShifter.cards;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.util.AllCurses;
 import StSShapeShifter.util.AllForms;
+import StSShapeShifter.util.BloomCountUtils;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -62,13 +63,14 @@ public class CursedApple extends AbstractDynamicCard {
         this.witherValue = this.baseWitherValue = 10;
     }
 
-
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.applyWither();
         count++;
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         this.addToBot(new ModifyDamageAction(this.uuid, -this.witherValue));
+        updateBloomCount(-this.witherValue);
         int currVal = DAMAGE - (this.witherValue * count);
         if(currVal <= 0) {
             ArrayList<AbstractCard> curses = new ArrayList<AbstractCard>(AllCurses.getAllCursesCards());
@@ -79,6 +81,9 @@ public class CursedApple extends AbstractDynamicCard {
         }
     }
 
+    public void applyWither() {
+        this.witherValue = this.baseWitherValue;
+    }
 
     // Upgraded stats.
     @Override

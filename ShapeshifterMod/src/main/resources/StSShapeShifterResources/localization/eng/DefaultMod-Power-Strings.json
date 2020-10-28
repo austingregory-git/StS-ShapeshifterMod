@@ -19,6 +19,10 @@
           "NAME": "Full Moon",
           "DESCRIPTIONS": ["Your forms cost 0 while the Full Moon lasts", "random enemy", "hello"]
         },
+        "StSShapeShifter:FreeFormPower": {
+          "NAME": "Free Form",
+          "DESCRIPTIONS": ["Your forms cost 0.", "random enemy", "hello"]
+        },
         "StSShapeShifter:PowerShifterPower": {
           "NAME": "Power Shifter",
           "DESCRIPTIONS": ["Whenever you play a unique form this combat, gain 1 Strength", "random enemy", "hello"]
@@ -41,7 +45,19 @@
         },
         "StSShapeShifter:SpringPower": {
           "NAME": "Spring",
-          "DESCRIPTIONS": ["At the start of your turn, improve the growth of your grow cards.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["Whenever you draw a Grow card, increase its Grow value.", "random enemy", "hello"]
+        },
+        "StSShapeShifter:SummerPower": {
+          "NAME": "Summer",
+          "DESCRIPTIONS": ["Draw 1 less card each turn. Whenever you draw a Grow card, double its Grow value.", "random enemy", "hello"]
+        },
+        "StSShapeShifter:AutumnPower": {
+          "NAME": "Autumn",
+          "DESCRIPTIONS": ["Draw 2 additional cards each turn. Whenever you draw a Wither card, increase its Wither value.", "random enemy", "hello"]
+        },
+        "StSShapeShifter:WinterPower": {
+          "NAME": "Winter",
+          "DESCRIPTIONS": ["Your Wither cards cost less. Whenever you draw a Wither Card, double its Wither value.", "random enemy", "hello"]
         },
         "StSShapeShifter:RatFormPower": {
           "NAME": "Rat Form",

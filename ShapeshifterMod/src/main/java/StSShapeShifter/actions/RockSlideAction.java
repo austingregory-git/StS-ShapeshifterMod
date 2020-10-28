@@ -26,12 +26,14 @@ public class RockSlideAction extends AbstractGameAction {
     public void update() {
         if(!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && !AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty()) {
             ArrayList<AbstractCard> cardsThisTurn = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisTurn);
-            cardsThisTurn.remove(cardsThisTurn.size() - 1);
-            if(!cardsThisTurn.contains(card)) {
-                ShapeshifterMod.logger.info(!cardsThisTurn.contains(card));
-                //AbstractDungeon.player.hand.moveToHand(card);
-                AbstractDungeon.player.hand.addToHand(card);
+            if(cardsThisTurn.contains(card)) {
+                cardsThisTurn.remove(cardsThisTurn.size() - 1);
+                if(!cardsThisTurn.contains(card)) {
+                    ShapeshifterMod.logger.info(!cardsThisTurn.contains(card));;
+                    AbstractDungeon.player.hand.addToHand(card);
+                }
             }
+
         }
 
         this.isDone = true;

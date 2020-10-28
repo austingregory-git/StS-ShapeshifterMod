@@ -40,7 +40,7 @@ public class Tortoise_Form extends AbstractDynamicCard {
     //public AbstractPlayer owner = null;
     //public int amount = Integer.MIN_VALUE;
     private static final int COST = 2;
-    private static final int BLOCK = 8;
+    private static final int BLOCK = 10;
     private static final int UPGRADE_PLUS_BLOCK = 2;
     private static final boolean IS_FORM = true;
 

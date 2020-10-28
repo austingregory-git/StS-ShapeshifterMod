@@ -60,9 +60,10 @@ public class Earthquake extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.applyWither();
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         this.addToBot(new ModifyDamageAction(this.uuid, -this.witherValue));
-
+        updateBloomCount(-this.witherValue);
     }
 
 

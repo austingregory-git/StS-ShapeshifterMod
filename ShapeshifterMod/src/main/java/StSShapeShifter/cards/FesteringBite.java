@@ -56,17 +56,16 @@ public class FesteringBite extends AbstractDynamicCard {
         this.growValue = this.baseGrowValue = 1;
     }
 
-
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        count++;
+        this.applyGrow();
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber + this.defaultSecondMagicNumber - count, false), this.magicNumber + this.defaultSecondMagicNumber - count));
+        this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
         this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
         this.addToBot(new ModifyMagicAction(this.uuid, this.growValue));
+        updateBloomCount(this.growValue);
     }
-
 
     // Upgraded stats.
     @Override

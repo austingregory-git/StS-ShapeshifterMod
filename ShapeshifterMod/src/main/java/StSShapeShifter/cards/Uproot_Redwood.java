@@ -53,11 +53,10 @@ public class Uproot_Redwood extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
+        this.applyWither();
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         this.addToBot(new ModifyDamageAction(this.uuid, -this.witherValue));
-
-
+        updateBloomCount(-this.witherValue);
     }
 
 

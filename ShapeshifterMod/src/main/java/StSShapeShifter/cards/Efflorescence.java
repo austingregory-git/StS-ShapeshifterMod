@@ -2,6 +2,7 @@ package StSShapeShifter.cards;
 
 import StSShapeShifter.actions.ModifyMagicAction;
 import StSShapeShifter.characters.ShapeShifter;
+import StSShapeShifter.util.BloomCountUtils;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.ModifyExhaustiveAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -50,18 +51,17 @@ public class Efflorescence extends AbstractDynamicCard {
         //this.defaultBaseSecondMagicNumber = 1;
         this.growValue = this.baseGrowValue = 1;
         this.magicNumber = this.baseMagicNumber;
-        //this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;
-
-
-        //this.tags.add(CardTags.STARTER_DEFEND); //Tag your strike, defend and form (Wraith form, Demon form, Echo form, etc.) cards so that they function correctly.
     }
+
+
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        count++;
+        this.applyGrow();
         this.addToBot(new GainEnergyAction(this.magicNumber));
         this.addToBot(new ModifyMagicAction(this.uuid, this.growValue));
+        updateBloomCount(this.growValue);
     }
 
     //Upgraded stats.

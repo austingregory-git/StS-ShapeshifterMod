@@ -1,6 +1,7 @@
 package StSShapeShifter.cards;
 
 import StSShapeShifter.characters.ShapeShifter;
+import StSShapeShifter.util.BloomCountUtils;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -55,13 +56,14 @@ public class AdaptiveStrikes extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.applyGrow();
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
-
+        updateBloomCount(this.growValue);
+        ShapeshifterMod.logger.info(BloomCountUtils.getBloomCount());
     }
-
 
     // Upgraded stats.
     @Override

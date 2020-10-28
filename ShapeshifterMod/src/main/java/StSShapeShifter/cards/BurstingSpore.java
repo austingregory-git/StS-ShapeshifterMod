@@ -1,6 +1,7 @@
 package StSShapeShifter.cards;
 
 import StSShapeShifter.characters.ShapeShifter;
+import StSShapeShifter.util.BloomCountUtils;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -59,13 +60,13 @@ public class BurstingSpore extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.applyGrow();
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         this.addToBot(new ModifyBlockAction(this.uuid, this.growValue));
-
+        updateBloomCount(this.growValue);
     }
-
 
     // Upgraded stats.
     @Override

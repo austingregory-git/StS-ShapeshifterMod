@@ -89,8 +89,8 @@ public class ShapeshifterMod implements
 
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "Shapeshifter Mod";
-    private static final String AUTHOR = "Austin Gregory"; // And pretty soon - You!
-    private static final String DESCRIPTION = "A base for Slay the Spire to start your own mod from, feat. the Default.";
+    private static final String AUTHOR = "Austin Gregory";
+    private static final String DESCRIPTION = "The Shapeshifter Mod";
     
     // =============== INPUT TEXTURE LOCATION =================
     
@@ -408,6 +408,17 @@ public class ShapeshifterMod implements
         //BaseMod.addRelicToCustomPool(new PlaceholderRelic(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
         //BaseMod.addRelicToCustomPool(new PlaceholderRelic(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
         BaseMod.addRelicToCustomPool(new Golden_Flower(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
+        BaseMod.addRelicToCustomPool(new AnimalHeart(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
+        BaseMod.addRelicToCustomPool(new TheShapeShiftersMagnolia(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
+        BaseMod.addRelicToCustomPool(new AlarmClock(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
+        BaseMod.addRelicToCustomPool(new AlchemistsNecklace(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
+        BaseMod.addRelicToCustomPool(new BeastkeepersGift(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
+        BaseMod.addRelicToCustomPool(new DruidicMedallion(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
+        BaseMod.addRelicToCustomPool(new EmeraldPantherFigurine(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
+        BaseMod.addRelicToCustomPool(new FruitTree(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
+        BaseMod.addRelicToCustomPool(new LemurHeaddress(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
+        BaseMod.addRelicToCustomPool(new ThornsOfSummi(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
+        BaseMod.addRelicToCustomPool(new WristwrapsOfDiscovery(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
         //BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
         //BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheDefault.Enums.COLOR_GRAY);*/
         
@@ -536,6 +547,9 @@ public class ShapeshifterMod implements
         BaseMod.addCard(new PowerShifter());
         BaseMod.addCard(new Ensconce());
         BaseMod.addCard(new Spring());
+        BaseMod.addCard(new Summer());
+        BaseMod.addCard(new Autumn());
+        BaseMod.addCard(new Winter());
 
 
 

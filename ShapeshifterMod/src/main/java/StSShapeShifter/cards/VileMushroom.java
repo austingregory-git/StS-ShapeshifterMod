@@ -52,9 +52,10 @@ public class VileMushroom extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //this.applyPowers();
+        this.applyGrow();
         this.addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p , this.magicNumber)));
         this.addToBot(new ModifyMagicAction(this.uuid, this.growValue));
+        updateBloomCount(this.growValue);
     }
 
     //Upgraded stats.

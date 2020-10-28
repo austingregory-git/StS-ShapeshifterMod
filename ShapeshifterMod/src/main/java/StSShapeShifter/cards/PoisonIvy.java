@@ -60,6 +60,7 @@ public class PoisonIvy extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.applyGrow();
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flash();
             Iterator var3 = AbstractDungeon.getMonsters().monsters.iterator();
@@ -72,6 +73,7 @@ public class PoisonIvy extends AbstractDynamicCard {
             }
         }
         this.addToBot(new ModifyMagicAction(this.uuid, this.growValue));
+        updateBloomCount(this.growValue);
     }
 
     //Upgraded stats.

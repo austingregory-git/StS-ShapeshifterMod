@@ -48,6 +48,7 @@ public class TopazSkin extends AbstractDynamicCard {
     public TopazSkin() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
+        this.growValue = this.baseGrowValue = 0;
     }
 
     // Actions the card should do.
@@ -57,6 +58,11 @@ public class TopazSkin extends AbstractDynamicCard {
     }
 
     public void topazSkinEffect(AbstractPlayer p) {
+        this.applyGrow();
+        if(this.growValue > 0) {
+            this.rawDescription = "Gain !B!X Block. Grow (X + !StSShapeShifter:Grow!).";
+            initializeDescription();
+        }
         int effect = EnergyPanel.totalCount;
         if (this.energyOnUse != -1) {
             effect = this.energyOnUse;
@@ -72,7 +78,8 @@ public class TopazSkin extends AbstractDynamicCard {
                 this.addToBot(new GainBlockAction(p, p, this.block));
 
             }
-            this.addToBot(new ModifyBlockAction(this.uuid, effect));
+            this.addToBot(new ModifyBlockAction(this.uuid, effect +  this.growValue));
+            updateBloomCount(effect + this.growValue);
             if (!this.freeToPlayOnce) {
                 p.energy.use(EnergyPanel.totalCount);
             }

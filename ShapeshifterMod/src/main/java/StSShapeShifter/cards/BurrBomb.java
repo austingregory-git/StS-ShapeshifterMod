@@ -5,6 +5,7 @@ import StSShapeShifter.powers.BurrBombPower;
 import StSShapeShifter.powers.DeerFormPower;
 import StSShapeShifter.powers.DragonFormPower;
 import StSShapeShifter.powers.PhoenixFormPower;
+import StSShapeShifter.util.BloomCountUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.unique.RemoveAllPowersAction;
@@ -64,8 +65,10 @@ public class BurrBomb extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.applyGrow();
         this.addToBot(new ApplyPowerAction(m, p, new BurrBombPower(m, p, damage)));
         this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
+        updateBloomCount(this.growValue);
     }
 
     //Upgraded stats.

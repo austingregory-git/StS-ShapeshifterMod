@@ -1,5 +1,7 @@
 package StSShapeShifter.cards;
 
+import StSShapeShifter.util.BloomCountUtils;
+
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
 public abstract class AbstractDynamicCard extends AbstractDefaultCard {
@@ -23,5 +25,17 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard {
 
         super(id, languagePack.getCardStrings(id).NAME, img, cost, languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
 
+    }
+
+    public void applyGrow() {
+        this.growValue = this.baseGrowValue;
+    }
+
+    public void applyWither() {
+        this.witherValue = this.baseWitherValue;
+    }
+
+    public void updateBloomCount(int value) {
+        BloomCountUtils.addBloomCount(value);
     }
 }

@@ -55,12 +55,10 @@ public class Maul extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(this.baseDamage < 0) {
-            this.baseDamage = 0;
-        }
+        this.applyWither();
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         this.addToBot(new ModifyDamageAction(this.uuid, -this.witherValue));
-
+        updateBloomCount(-this.witherValue);
     }
 
 

@@ -23,6 +23,8 @@ public abstract class AbstractDefaultCard extends CustomCard {
     public boolean upgradedWitherValue;
     public boolean isGrowValueModified;
     public boolean isWitherValueModified;
+    public boolean hasGrowValue;
+    public boolean hasWitherValue;
 
     public AbstractDefaultCard(final String id,
                                final String name,
@@ -45,6 +47,8 @@ public abstract class AbstractDefaultCard extends CustomCard {
         isDefaultSecondMagicNumberModified = false;
         isGrowValueModified = false;
         isWitherValueModified = false;
+        hasGrowValue = true;
+        hasWitherValue = true;
     }
 
     public void displayUpgrades() { // Display the upgrade - when you click a card to upgrade it

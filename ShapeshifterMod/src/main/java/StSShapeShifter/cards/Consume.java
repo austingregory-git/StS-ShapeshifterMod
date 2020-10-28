@@ -63,8 +63,10 @@ public class Consume extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.applyWither();
         this.addToBot(new DrawCardAction(this.magicNumber));
         this.addToBot(new ModifyMagicAction(this.uuid, -this.witherValue));
+        updateBloomCount(-this.witherValue);
     }
 
     //Upgraded stats.

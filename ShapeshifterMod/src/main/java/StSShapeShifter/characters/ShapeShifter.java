@@ -1,6 +1,6 @@
 package StSShapeShifter.characters;
 
-import StSShapeShifter.relics.Golden_Flower;
+import StSShapeShifter.relics.*;
 import StSShapeShifter.stances.PhoenixFormStance;
 import basemod.BaseMod;
 import basemod.abstracts.CustomPlayer;
@@ -27,9 +27,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.cards.*;
-import StSShapeShifter.relics.DefaultClickableRelic;
-import StSShapeShifter.relics.PlaceholderRelic;
-import StSShapeShifter.relics.PlaceholderRelic2;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -187,14 +184,18 @@ public class ShapeShifter extends CustomPlayer {
         //retVal.add(PowerShifter.ID);
 
         //retVal.add(PowerShifter.ID);
-        retVal.add(Spring.ID);
+/*        retVal.add(Spring.ID);
+        retVal.add(Summer.ID);
+        retVal.add(Autumn.ID);
+        retVal.add(Winter.ID);*/
+        //retVal.add(AdaptiveStrikes.ID);
 /*        retVal.add(WolfForm.ID);
         retVal.add(WaspSwarmForm.ID);
         retVal.add(OwlForm.ID);
         retVal.add(Roar.ID);*/
         //retVal.add(HummingbirdForm.ID);
         //retVal.add(FoxForm.ID);
-        retVal.add(RockSlide.ID);
+        //retVal.add(RockSlide.ID);
 /*        retVal.add(RitualOfTheElders.ID);
         retVal.add(RitualOfTheExtinct.ID);
         retVal.add(Pounce.ID);
@@ -219,8 +220,8 @@ public class ShapeShifter extends CustomPlayer {
         //retVal.add(PorcupineForm.ID);
 
 
-/*      retVal.add(Wildfire.ID);
-        retVal.add(ForestFire.ID);
+        //retVal.add(Wildfire.ID);
+/*        retVal.add(ForestFire.ID);
         retVal.add(MagicMushrooms.ID);
         retVal.add(Consume.ID);*/
         //retVal.add(MultiSpiritedStrike.ID);
@@ -273,12 +274,14 @@ public class ShapeShifter extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
 
         //retVal.add(PlaceholderRelic.ID);
-        retVal.add(Golden_Flower.ID);
+        //retVal.add(Golden_Flower.ID);
+        retVal.add(TheShapeShiftersMagnolia.ID);
+        retVal.add(AnimalHeart.ID);
         //retVal.add(PlaceholderRelic2.ID);
         //retVal.add(DefaultClickableRelic.ID);
 
         //UnlockTracker.markRelicAsSeen(PlaceholderRelic.ID);
-        UnlockTracker.markRelicAsSeen(Golden_Flower.ID);
+        //UnlockTracker.markRelicAsSeen(Golden_Flower.ID);
         //UnlockTracker.markRelicAsSeen(PlaceholderRelic2.ID);
         //UnlockTracker.markRelicAsSeen(DefaultClickableRelic.ID);
 

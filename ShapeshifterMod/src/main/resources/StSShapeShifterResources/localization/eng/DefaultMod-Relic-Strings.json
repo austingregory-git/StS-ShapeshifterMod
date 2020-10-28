@@ -13,6 +13,83 @@
       "Every 4 turns, ", " Draw 1 card"
     ]
   },
+  "StSShapeShifter:AnimalHeart": {
+    "NAME": "Animal Heart",
+    "FLAVOR": "The ShapeShifter's true form...",
+    "DESCRIPTIONS": [
+      "Every 4 turns, ", " Draw 1 card"
+    ]
+  },
+  "StSShapeShifter:TheShapeShiftersMagnolia": {
+    "NAME": "The Shapeshifter's Magnolia",
+    "FLAVOR": "The ShapeShifter's favorite flower.",
+    "DESCRIPTIONS": [
+      "Every 4 turns, ", " Draw 1 card"
+    ]
+  },
+  "StSShapeShifter:AlarmClock": {
+    "NAME": "Alarm Clock",
+    "FLAVOR": "IT'S TIME TO WAKE UP.",
+    "DESCRIPTIONS": [
+      "Every 4 turns, ", " Draw 1 card"
+    ]
+  },
+  "StSShapeShifter:AlchemistsNecklace": {
+    "NAME": "Alchemist's Necklace",
+    "FLAVOR": "Each bead contains a powerful potion.",
+    "DESCRIPTIONS": [
+      "Every 4 turns, ", " Draw 1 card"
+    ]
+  },
+  "StSShapeShifter:BeastkeepersGift": {
+    "NAME": "Beastkeeper's Gift",
+    "FLAVOR": "A book about beasts! What a wonderful gift.",
+    "DESCRIPTIONS": [
+      "Every 4 turns, ", " Draw 1 card"
+    ]
+  },
+  "StSShapeShifter:EmeraldPantherFigurine": {
+    "NAME": "Emerald Panther Figurine",
+    "FLAVOR": "Its eyes keep glowing... and the cards keep growing.",
+    "DESCRIPTIONS": [
+      "Every 4 turns, ", " Draw 1 card"
+    ]
+  },
+  "StSShapeShifter:FruitTree": {
+    "NAME": "Fruit Treee",
+    "FLAVOR": "Full of Healthy Snacks!",
+    "DESCRIPTIONS": [
+      "Every 4 turns, ", " Draw 1 card"
+    ]
+  },
+  "StSShapeShifter:LemurHeaddress": {
+    "NAME": "Lemur Headdress",
+    "FLAVOR": "To move it move it, or to not move it move it, that is the question.",
+    "DESCRIPTIONS": [
+      "Every 4 turns, ", " Draw 1 card"
+    ]
+  },
+  "StSShapeShifter:DruidicMedallion": {
+    "NAME": "Druidic Medallion",
+    "FLAVOR": "Dodge, duck, dip, dive, and... transform",
+    "DESCRIPTIONS": [
+      "Every 4 turns, ", " Draw 1 card"
+    ]
+  },
+  "StSShapeShifter:ThornsOfSummi": {
+    "NAME": "Thorns Of Summi",
+    "FLAVOR": "Ouch!",
+    "DESCRIPTIONS": [
+      "Every 4 turns, ", " Draw 1 card"
+    ]
+  },
+  "StSShapeShifter:WristwrapsOfDiscovery": {
+    "NAME": "Wristwraps of Discovery",
+    "FLAVOR": "The thrill of discovery strengthens me!",
+    "DESCRIPTIONS": [
+      "Every 4 turns, ", " Draw 1 card"
+    ]
+  },
   "StSShapeShifter:PlaceholderRelic2": {
     "NAME": "Placeholder Relic 2",
     "FLAVOR": "You feel stronger.",

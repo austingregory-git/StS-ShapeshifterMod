@@ -67,14 +67,14 @@ public class FullMoonPower extends AbstractPower implements CloneablePowerInterf
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (AllForms.getAllFormsCards().contains(card)) {
+        if (AllForms.getAllForms().contains(card.cardID)) {
             count++;
             if(count == amount) {
                 Iterator var2 = player.hand.group.iterator();
 
                 while(var2.hasNext()) {
                     AbstractCard c = (AbstractCard)var2.next();
-                    if(AllForms.getAllFormsCards().contains(card)) {
+                    if(AllForms.getAllForms().contains(card.cardID)) {
                         card.setCostForTurn(c.cost);
                     }
                 }

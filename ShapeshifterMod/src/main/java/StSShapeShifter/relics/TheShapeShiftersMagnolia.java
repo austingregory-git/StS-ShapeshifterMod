@@ -6,23 +6,24 @@
 package StSShapeShifter.relics;
 
 import StSShapeShifter.ShapeshifterMod;
+import StSShapeShifter.util.BloomCountUtils;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer.PlayerClass;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.AbstractRelic.LandingSound;
 import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 
-public class Golden_Flower extends AbstractRelic {
-    private static final int NUM_TURNS = 4;
-    private static final int ENERGY_AMT = 1;
-    private static final int DRAW_AMT = 1;
-    public static final String ID = ShapeshifterMod.makeID("Golden_Flower");
+public class TheShapeShiftersMagnolia extends AbstractRelic {
+    public static final String ID = ShapeshifterMod.makeID("TheShapeShiftersMagnolia");
 
-    public Golden_Flower() {
+    public TheShapeShiftersMagnolia() {
         super(ID, "sunflower.png", RelicTier.STARTER, LandingSound.SOLID);
     }
 
@@ -31,36 +32,21 @@ public class Golden_Flower extends AbstractRelic {
     }
 
     private String setDescription(PlayerClass c) {
-        return "Every 4 turns, gain 1 energy and draw 1 card";
+        return "Keeps track of your current Bloom Count.";
     }
-
-    /*public String getUpdatedDescription(PlayerClass c) {
-       return "Every 4 turns, gain 1 energy and draw 1 card";
-    }*/
 
     public void onEquip() {
         this.counter = 0;
     }
 
-    public void atTurnStart() {
-        if (this.counter == -1) {
-            this.counter += 2;
-        } else {
-            ++this.counter;
-        }
-
-        if (this.counter == NUM_TURNS) {
-            this.counter = 0;
-            this.flash();
-            this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            this.addToBot(new GainEnergyAction(ENERGY_AMT));
-            this.addToBot(new DrawCardAction(DRAW_AMT));
-        }
-
+    public void onUseCard(AbstractCard c, UseCardAction action) {
+        this.counter = BloomCountUtils.getBloomCount();
     }
 
     public AbstractRelic makeCopy() {
-        return new Golden_Flower();
+        return new TheShapeShiftersMagnolia();
     }
+
 }
+
 
