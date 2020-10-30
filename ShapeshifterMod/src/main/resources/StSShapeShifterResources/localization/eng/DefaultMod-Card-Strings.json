@@ -47,6 +47,10 @@
     "NAME": "Thorn Toss",
     "DESCRIPTION": "Deal !D! Damage 2 times. Wither !StSShapeShifter:Wither!"
   },
+  "StSShapeShifter:Flood": {
+    "NAME": "Flood",
+    "DESCRIPTION": "Destroy all minions. Exhaust."
+  },
   "StSShapeShifter:PoisonIvy": {
     "NAME": "Poison Ivy",
     "DESCRIPTION": "Apply !M! poison to all enemies. Grow !StSShapeShifter:Grow!."
@@ -257,11 +261,19 @@
   },
   "StSShapeShifter:WaspSwarmForm": {
     "NAME": "Wasp Swarm Form",
-    "DESCRIPTION": "Upon Entering Wasp Swarm Form, Apply X Weak to all enemies. While in Wasp Swarm Form, deal X damage to all enemies at the start of your turn."
+    "DESCRIPTION": "Upon Entering Wasp Swarm Form, Apply X Weak to all enemies. While in Wasp Swarm Form, deal 2X damage to all enemies at the start of your turn."
   },
   "StSShapeShifter:HummingbirdForm": {
     "NAME": "Hummingbird Form",
     "DESCRIPTION": "Upon Entering Hummingbird Form, upgrade a random card in your hand. While in Hummingbird Form, your Grow cards Grow for !M! additional when played."
+  },
+  "StSShapeShifter:BulwarkOfDiscovery": {
+    "NAME": "Bulwark of Discovery",
+    "DESCRIPTION": "After playing this card, whenever you draw a unique card, gain 2 block."
+  },
+  "StSShapeShifter:Evolution": {
+    "NAME": "Evolution",
+    "DESCRIPTION": "Whenever you shuffle your draw pile, upgrade a random card in your deck."
   },
   "StSShapeShifter:EagleForm": {
     "NAME": "Eagle Form",
@@ -271,9 +283,29 @@
     "NAME": "Phoenix Form",
     "DESCRIPTION": "Upon Entering Phoenix Form, Remove all debuffs. While in Phoenix Form, If you receive fatal damage, heal for !M!0 Percent of your health instead of dying."
   },
+  "StSShapeShifter:MooseForm": {
+    "NAME": "Moose Form",
+    "DESCRIPTION": "Upon Entering Moose Form, stun all enemies. While in Moose Form, return a card from your discard pile to your hand at the start of your turn. Exhaust."
+  },
+  "StSShapeShifter:HippoForm": {
+    "NAME": "Hippo Form",
+    "DESCRIPTION": "Upon Entering Hippo Form, deal !D! damage to a random enemy. While in Hippo Form, at the start of your turn, discard a card and deal !M! damage to a random enemy."
+  },
+  "StSShapeShifter:RaptorForm": {
+    "NAME": "Raptor Form",
+    "DESCRIPTION": "Upon Entering Raptor Form, deal !D! to a random enemy !M! times. While in Raptor Form, Grow !StSShapeShifter:Grow!."
+  },
+  "StSShapeShifter:RhinoCalfForm": {
+    "NAME": "Rhino Calf Form",
+    "DESCRIPTION": "Upon Entering Rhino Calf Form, gain !B! block. While in Rhino Calf Form, gain !M! Plated Armor at the end of your turn. This Grows by 1 each turn. After 3 turns, enter Rhino Form. Exhaust."
+  },
   "StSShapeShifter:PorcupineForm": {
     "NAME": "Porcupine Form",
     "DESCRIPTION": "Upon Entering Porcupine Form, Gain 1 Artifact. While in Porcupine Form, gain !M! thorns."
+  },
+  "StSShapeShifter:FertileSoil": {
+    "NAME": "Fertile Soil",
+    "DESCRIPTION": "At the start of your turn, if your Bloom Count is 10 or more, draw 1 card and gain 1 energy."
   },
   "StSShapeShifter:EntForm": {
     "NAME": "Ent Form",

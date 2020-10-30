@@ -1,5 +1,6 @@
 package StSShapeShifter.powers;
 
+import StSShapeShifter.actions.ModifyGrowAction;
 import StSShapeShifter.actions.ModifyMagicAction;
 import StSShapeShifter.cards.AbstractDynamicCard;
 import basemod.interfaces.CloneablePowerInterface;
@@ -57,9 +58,14 @@ public class HummingbirdFormPower extends AbstractPower implements CloneablePowe
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        AbstractDynamicCard c = (AbstractDynamicCard) card;
-        if(c.growValue > 0)
-            c.growValue += this.amount;
+        if(card instanceof AbstractDynamicCard){
+            AbstractDynamicCard c = (AbstractDynamicCard) card;
+            if(c.growValue > 0) {
+                c.growValue += this.amount;
+                c.applyGrow();
+            }
+            c.applyPowers();
+        }
     }
 
     @Override

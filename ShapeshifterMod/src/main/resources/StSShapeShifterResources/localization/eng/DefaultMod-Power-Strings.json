@@ -23,6 +23,26 @@
           "NAME": "Free Form",
           "DESCRIPTIONS": ["Your forms cost 0.", "random enemy", "hello"]
         },
+        "StSShapeShifter:FertileSoilPower": {
+          "NAME": "Fertile Soil",
+          "DESCRIPTIONS": ["At the start of your turn, if your Bloom Count is 10 or more, draw 1 card and gain 1 energy.", "random enemy", "hello"]
+        },
+        "StSShapeShifter:BulwarkOfDiscoveryPower": {
+          "NAME": "Bulwark of Discovery",
+          "DESCRIPTIONS": ["Whenever you draw a unique card, gain block.", "random enemy", "hello"]
+        },
+        "StSShapeShifter:EvolutionPower": {
+          "NAME": "Evolution",
+          "DESCRIPTIONS": ["Whenever you draw a unique card, gain block.", "random enemy", "hello"]
+        },
+        "StSShapeShifter:MooseFormPower": {
+          "NAME": "Moose Form",
+          "DESCRIPTIONS": ["Return cards to your hand from your discard pile at the start of your turn.", "random enemy", "hello"]
+        },
+        "StSShapeShifter:Evolution": {
+          "NAME": "Evolution",
+          "DESCRIPTIONS": ["Whenever you shuffle your discard pile into your draw pile, upgrade random cards in your deck.", "random enemy", "hello"]
+        },
         "StSShapeShifter:PowerShifterPower": {
           "NAME": "Power Shifter",
           "DESCRIPTIONS": ["Whenever you play a unique form this combat, gain 1 Strength", "random enemy", "hello"]
@@ -38,6 +58,22 @@
         "StSShapeShifter:WolfFormPower": {
           "NAME": "Wolf Form",
           "DESCRIPTION": ["While in Wolf Form, your attacks heal you.", "yo", "hello"]
+        },
+        "StSShapeShifter:HippoFormPower": {
+          "NAME": "Hippo Form",
+          "DESCRIPTION": ["While in Hippo Form, at the start of your turn, discard a card and deal damage to a random enemy.", "yo", "hello"]
+        },
+        "StSShapeShifter:RaptorFormPower": {
+          "NAME": "Raptor Form",
+          "DESCRIPTION": ["While in Raptor Form, Grow 1", "yo", "hello"]
+        },
+        "StSShapeShifter:RhinoCalfFormPower": {
+          "NAME": "Rhino Calf Form",
+          "DESCRIPTION": ["While in Rhino Calf Form, gain Plated Armor at the end of your turn. This Grows by 1 each turn. After 3 turns, enter Rhino Form.", "yo", "hello"]
+        },
+        "StSShapeShifter:RhinoFormPower": {
+          "NAME": "Rhino Form",
+          "DESCRIPTION": ["Upon Entering Rhino Form, gain block and plated armor. While in Rhino Form, deal damage equal to your block to the lowest health enemy at the end of you turn. Lasts 3 turns.", "yo", "hello"]
         },
         "StSShapeShifter:DodgePower": {
           "NAME": "Dodge",

@@ -3,18 +3,23 @@ package StSShapeShifter;
 import StSShapeShifter.cards.*;
 import StSShapeShifter.cards.tempCards.*;
 import StSShapeShifter.characters.ShapeShifter;
+import StSShapeShifter.events.IdentityCrisisEvent;
 import StSShapeShifter.relics.*;
+import StSShapeShifter.util.IDCheckDontTouchPls;
+import StSShapeShifter.util.TextureLoader;
+import StSShapeShifter.variables.DefaultCustomVariable;
+import StSShapeShifter.variables.DefaultSecondMagicNumber;
 import StSShapeShifter.variables.GrowVariable;
 import StSShapeShifter.variables.WitherVariable;
-import basemod.*;
-import basemod.abstracts.CustomCard;
-import basemod.helpers.RelicType;
+import basemod.AutoAdd;
+import basemod.BaseMod;
+import basemod.ModLabeledToggleButton;
+import basemod.ModPanel;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -23,22 +28,12 @@ import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import com.sun.org.apache.xpath.internal.operations.Div;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import StSShapeShifter.characters.TheDefault;
-import StSShapeShifter.events.IdentityCrisisEvent;
-import StSShapeShifter.potions.PlaceholderPotion;
-import StSShapeShifter.util.IDCheckDontTouchPls;
-import StSShapeShifter.util.TextureLoader;
-import StSShapeShifter.variables.DefaultCustomVariable;
-import StSShapeShifter.variables.DefaultSecondMagicNumber;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.List;
 import java.util.Properties;
 
 //TODO: DON'T MASS RENAME/REFACTOR
@@ -550,10 +545,14 @@ public class ShapeshifterMod implements
         BaseMod.addCard(new Summer());
         BaseMod.addCard(new Autumn());
         BaseMod.addCard(new Winter());
-
-
-
-
+        BaseMod.addCard(new BulwarkOfDiscovery());
+        BaseMod.addCard(new MooseForm());
+        BaseMod.addCard(new Evolution());
+        BaseMod.addCard(new HippoForm());
+        BaseMod.addCard(new RaptorForm());
+        BaseMod.addCard(new FlamingoForm());
+        BaseMod.addCard(new RhinoCalfForm());
+        BaseMod.addCard(new FertileSoil());
 
         new AutoAdd("ShapeShifterMod:StSShapeShifter")
             .packageFilter("StSShapeshifter.cards")

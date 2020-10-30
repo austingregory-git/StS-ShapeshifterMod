@@ -53,7 +53,8 @@ public class WaspSwarmFormPower extends AbstractPower implements CloneablePowerI
     }
 
     public void atStartOfTurn() {
-        if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+        this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(2*this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        /*if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flash();
             Iterator var3 = AbstractDungeon.getMonsters().monsters.iterator();
 
@@ -63,7 +64,7 @@ public class WaspSwarmFormPower extends AbstractPower implements CloneablePowerI
                     this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
                 }
             }
-        }
+        }*/
     }
 
     public void stackPower(int stackAmount) {

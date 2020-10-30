@@ -43,8 +43,6 @@ public class TortoiseFormPower extends AbstractPower implements CloneablePowerIn
 
         this.owner = owner;
         this.amount = amount;
-        this.upgraded_amount = upgraded_amount;
-        this.upgraded = upgraded;
         //this.source = source;
 
         type = PowerType.BUFF;

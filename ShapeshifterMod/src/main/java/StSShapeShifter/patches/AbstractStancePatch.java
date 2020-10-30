@@ -73,6 +73,24 @@ public class AbstractStancePatch {
             if (stanceID.equals(HummingbirdFormStance.STANCE_ID)) {
                 return SpireReturn.Return(new HummingbirdFormStance());
             }
+            if (stanceID.equals(MooseFormStance.STANCE_ID)) {
+                return SpireReturn.Return(new MooseFormStance());
+            }
+            if (stanceID.equals(FlamingoFormStance.STANCE_ID)) {
+                return SpireReturn.Return(new FlamingoFormStance());
+            }
+            if (stanceID.equals(HippoFormStance.STANCE_ID)) {
+                return SpireReturn.Return(new HippoFormStance());
+            }
+            if (stanceID.equals(RaptorFormStance.STANCE_ID)) {
+                return SpireReturn.Return(new RaptorFormStance());
+            }
+            if (stanceID.equals(RhinoCalfFormStance.STANCE_ID)) {
+                return SpireReturn.Return(new RhinoCalfFormStance());
+            }
+            if (stanceID.equals(RhinoFormStance.STANCE_ID)) {
+                return SpireReturn.Return(new RhinoFormStance());
+            }
 
             return SpireReturn.Continue();
         }

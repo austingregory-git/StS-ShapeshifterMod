@@ -96,7 +96,7 @@ public class WaspSwarmForm extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_MAGIC);
-            this.rawDescription = "Upon Entering Wasp Swarm Form, Apply X+1 Weak to all enemies. While in Wasp Swarm Form, deal X+1 damage to all enemies at the start of your turn.";
+            this.rawDescription = "Upon Entering Wasp Swarm Form, Apply X+1 Weak to all enemies. While in Wasp Swarm Form, deal 2(X+1) damage to all enemies at the start of your turn.";
             initializeDescription();
         }
     }

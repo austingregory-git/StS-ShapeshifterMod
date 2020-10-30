@@ -59,26 +59,40 @@ public class FullMoonPower extends AbstractPower implements CloneablePowerInterf
         updateDescription();
     }
 
-    // At the end of the turn, remove gained Dexterity.
-    public void onCardDraw(AbstractCard card) {
-        if (AllForms.getAllFormsCards().contains(card)) {
-            card.setCostForTurn(-9);
+    @Override
+    public void onInitialApplication() {
+        if(!AbstractDungeon.player.hand.group.isEmpty()) {
+            Iterator var2 = AbstractDungeon.player.hand.group.iterator();
+
+            while(var2.hasNext()) {
+                AbstractCard c = (AbstractCard)var2.next();
+                if(AllForms.getAllForms().contains(c.cardID)) {
+                    c.setCostForTurn(0);
+                }
+            }
         }
     }
 
-    public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (AllForms.getAllForms().contains(card.cardID)) {
+    @Override
+    public void onCardDraw(AbstractCard card) {
+        if (AllForms.getAllForms().contains(card.cardID) && !card.purgeOnUse && this.amount > 0) {
+            card.setCostForTurn(0);
+        }
+    }
+
+    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
+        if (AllForms.getAllForms().contains(card.cardID) && !card.purgeOnUse && this.amount > 0) {
             count++;
             if(count == amount) {
-                Iterator var2 = player.hand.group.iterator();
+                Iterator var2 = AbstractDungeon.player.hand.group.iterator();
 
                 while(var2.hasNext()) {
                     AbstractCard c = (AbstractCard)var2.next();
-                    if(AllForms.getAllForms().contains(card.cardID)) {
-                        card.setCostForTurn(c.cost);
+                    if(AllForms.getAllForms().contains(c.cardID)) {
+                        c.setCostForTurn(c.cost);
                     }
                 }
-                this.addToBot(new RemoveSpecificPowerAction(owner, owner, ShapeshifterMod.makeID("FullMoonPower")));
+                this.addToBot(new RemoveSpecificPowerAction(owner, owner, ShapeshifterMod.makeID("FreeFormPower")));
             }
         }
     }

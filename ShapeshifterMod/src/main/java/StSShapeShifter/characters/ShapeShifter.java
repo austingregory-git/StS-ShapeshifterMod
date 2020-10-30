@@ -170,101 +170,12 @@ public class ShapeShifter extends CustomPlayer {
         retVal.add(ShapeShifter_Defend.ID);
         retVal.add(ShapeShifter_Defend.ID);
         retVal.add(ShapeShifter_Defend.ID);
-/*        BaseMod.addCard(new FoxForm());
-        BaseMod.addCard(new RockSlide());
-        BaseMod.addCard(new RitualOfTheElders());
-        BaseMod.addCard(new RitualOfTheExtinct());
-        BaseMod.addCard(new Pounce());
-        BaseMod.addCard(new BurrBomb());*/
-
 
         retVal.add(Tortoise_Form.ID);
         retVal.add(Lynx_Form.ID);
-        //retVal.add(Ensconce.ID);
-        //retVal.add(PowerShifter.ID);
-
-        //retVal.add(PowerShifter.ID);
-/*        retVal.add(Spring.ID);
-        retVal.add(Summer.ID);
-        retVal.add(Autumn.ID);
-        retVal.add(Winter.ID);*/
-        //retVal.add(AdaptiveStrikes.ID);
-/*        retVal.add(WolfForm.ID);
-        retVal.add(WaspSwarmForm.ID);
-        retVal.add(OwlForm.ID);
-        retVal.add(Roar.ID);*/
-        //retVal.add(HummingbirdForm.ID);
-        //retVal.add(FoxForm.ID);
-        //retVal.add(RockSlide.ID);
-/*        retVal.add(RitualOfTheElders.ID);
-        retVal.add(RitualOfTheExtinct.ID);
-        retVal.add(Pounce.ID);
-        retVal.add(BurrBomb.ID);*/
-        //retVal.add(ReplenishingNectar.ID);
-/*        retVal.add(LionForm.ID);
-        retVal.add(MonkeyForm.ID);
-        retVal.add(SquirrelForm.ID);*/
-        //retVal.add(FoxForm.ID);
-
-        //retVal.add(SpiritOfTheEarth.ID);
-        //retVal.add(PhoenixForm.ID);
-        //retVal.add(Tornado.ID);
-        //retVal.add(IntimidatingAura.ID);
-        //retVal.add(EagleForm.ID);
-
-        //retVal.add(EntForm.ID);
-        //retVal.add(Flourish.ID);
-        //retVal.add(ThornedSkin.ID);
-        //retVal.add(TopazSkin.ID);
-        //retVal.add(RatForm.ID);
-        //retVal.add(PorcupineForm.ID);
-
-
-        //retVal.add(Wildfire.ID);
-/*        retVal.add(ForestFire.ID);
-        retVal.add(MagicMushrooms.ID);
-        retVal.add(Consume.ID);*/
-        //retVal.add(MultiSpiritedStrike.ID);
-        //retVal.add(MammothForm.ID);
-        //retVal.add(Blossom.ID);
-        //retVal.add(RestoreBalance.ID);
-        //retVal.add(Absorb.ID);
-        //retVal.add(CursedApple.ID);
-
-        //retVal.add(Bonk.ID);
-        //retVal.add(HydraForm.ID);
-        /*retVal.add(DeepWound.ID);
-        retVal.add(LeapingSlash.ID);*/
-        //retVal.add(ThrashAbout.ID);
-        //retVal.add(MysticalSeed.ID);
-
-        //retVal.add(ShiftingStrike.ID);
-        //retVal.add(Sapling.ID);
-        //retVal.add(DiverseSpirit.ID);
-        //retVal.add(GoldenBerries.ID);
-        //retVal.add(BearForm.ID);
-        //retVal.add(OpportuneSwoop.ID);
-        //retVal.add(ThornedSkin.ID);
-
-        /*retVal.add(FallingLeaves.ID);
-        retVal.add(VineHandcuffs.ID);
-        retVal.add(BurstingSpore.ID);
-        retVal.add(BarkSkin.ID);
-        retVal.add(PoisonIvy.ID);*/
-        //retVal.add(DeerForm.ID);
-        //retVal.add(FesteringBite.ID);
-        //retVal.add(FesteringBite.ID);
-        //retVal.add(Maul.ID);
-        //retVal.add(Guard.ID);
-        //retVal.add(Rest.ID);
-        //retVal.add(Efflorescence.ID);
-        //retVal.add(AdaptiveStrikes.ID);
-        //retVal.add(Uproot_Redwood.ID);
-        //retVal.add(FlowerShield.ID);
-        //retVal.add(Mystical_Branch.ID);
-        //retVal.add(Summon_Mountains.ID);
-        //retVal.add(Sap_Burst.ID);
-
+        retVal.add(FlamingoForm.ID);
+        retVal.add(FertileSoil.ID);
+        retVal.add(BloomingSlash.ID);
 
         return retVal;
     }
@@ -273,17 +184,8 @@ public class ShapeShifter extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
 
-        //retVal.add(PlaceholderRelic.ID);
-        //retVal.add(Golden_Flower.ID);
         retVal.add(TheShapeShiftersMagnolia.ID);
         retVal.add(AnimalHeart.ID);
-        //retVal.add(PlaceholderRelic2.ID);
-        //retVal.add(DefaultClickableRelic.ID);
-
-        //UnlockTracker.markRelicAsSeen(PlaceholderRelic.ID);
-        //UnlockTracker.markRelicAsSeen(Golden_Flower.ID);
-        //UnlockTracker.markRelicAsSeen(PlaceholderRelic2.ID);
-        //UnlockTracker.markRelicAsSeen(DefaultClickableRelic.ID);
 
         return retVal;
     }

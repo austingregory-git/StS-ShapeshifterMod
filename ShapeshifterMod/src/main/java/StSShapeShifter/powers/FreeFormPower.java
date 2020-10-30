@@ -67,7 +67,7 @@ public class FreeFormPower extends AbstractPower implements CloneablePowerInterf
         }
     }
 
-    public void onUseCard(AbstractCard card, UseCardAction action) {
+    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         if (AllForms.getAllForms().contains(card.cardID) && !card.purgeOnUse && this.amount > 0) {
             count++;
             if(count == amount) {
@@ -76,7 +76,7 @@ public class FreeFormPower extends AbstractPower implements CloneablePowerInterf
                 while(var2.hasNext()) {
                     AbstractCard c = (AbstractCard)var2.next();
                     if(AllForms.getAllForms().contains(card.cardID)) {
-                        card.setCostForTurn(c.cost);
+                        c.setCostForTurn(c.cost);
                     }
                 }
                 this.addToBot(new RemoveSpecificPowerAction(owner, owner, ShapeshifterMod.makeID("FreeFormPower")));
