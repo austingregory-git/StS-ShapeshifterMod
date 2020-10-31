@@ -553,6 +553,13 @@ public class ShapeshifterMod implements
         BaseMod.addCard(new FlamingoForm());
         BaseMod.addCard(new RhinoCalfForm());
         BaseMod.addCard(new FertileSoil());
+        BaseMod.addCard(new Flood());
+        BaseMod.addCard(new WiltingWrath());
+        BaseMod.addCard(new BaskInBloom());
+        BaseMod.addCard(new Harmony());
+        BaseMod.addCard(new BladeOfGrass());
+        BaseMod.addCard(new SunflowerShuriken());
+
 
         new AutoAdd("ShapeShifterMod:StSShapeShifter")
             .packageFilter("StSShapeshifter.cards")
@@ -633,6 +640,11 @@ public class ShapeshifterMod implements
         BaseMod.addKeyword(new String[]{"form"}, "You can only occupy one Form at a time. Forms perform some effect upon entrance, and have a persisting effect while you remain in that Form.");
         BaseMod.addKeyword(new String[]{"dodge"}, "Dodge the next source of damage.");
         BaseMod.addKeyword(new String[]{"discover"}, "Choose between 3 cards to temporarily add to your deck.");
+        BaseMod.addKeyword(new String[]{"blooming"}, "If your Bloom Count is greater than or equal to 10, you are Blooming.");
+        BaseMod.addKeyword(new String[]{"blossoming"}, "If your Bloom Count is greater than or equal to 20, you are Blossoming.");
+        BaseMod.addKeyword(new String[]{"wilting"}, "If your Bloom Count is less than or equal to -10, you are Wilting.");
+        BaseMod.addKeyword(new String[]{"decaying"}, "If your Bloom Count is less than or equal to -20, you are Decaying.");
+        BaseMod.addKeyword(new String[]{"balanced"}, "If your Bloom Count is less than or equal to 3 AND greater than or equal to -3, you are Balanced.");
         /* (keywords != null) {
             for (Keyword keyword : keywords) {
                 //BaseMod.addKeyword(getModID().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);

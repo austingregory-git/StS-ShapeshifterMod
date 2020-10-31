@@ -305,7 +305,11 @@
   },
   "StSShapeShifter:FertileSoil": {
     "NAME": "Fertile Soil",
-    "DESCRIPTION": "At the start of your turn, if your Bloom Count is 10 or more, draw 1 card and gain 1 energy."
+    "DESCRIPTION": "At the start of your turn, if you are Blooming, draw 1 card and gain 1 energy."
+  },
+  "StSShapeShifter:WiltingWrath": {
+    "NAME": "Wilting Wrath",
+    "DESCRIPTION": "At the start of your turn, if you are Wilting, your next attack deals double damage."
   },
   "StSShapeShifter:EntForm": {
     "NAME": "Ent Form",
@@ -314,6 +318,10 @@
   "StSShapeShifter:DeerForm": {
     "NAME": "Deer Form",
     "DESCRIPTION": "Upon Entering Deer Form, Gain !M! Weak and Draw 1 card. While in Deer Form, add a random skill to your hand at the start of your turn."
+  },
+  "StSShapeShifter:FlamingoForm": {
+    "NAME": "Flamingo Form",
+    "DESCRIPTION": "Upon Entering Flamingo Form, discover a Skill. While in Flamingo Form, remove a random debuff at the start of your turn."
   },
   "StSShapeShifter:BearForm": {
     "NAME": "Bear Form",
@@ -378,6 +386,22 @@
   "StSShapeShifter:Ensconce": {
     "NAME": "Ensconce",
     "DESCRIPTION": "If you haven't changed forms this turn, increase the value of your current form by !M!."
+  },
+  "StSShapeShifter:BaskInBloom": {
+    "NAME": "Bask in Bloom",
+    "DESCRIPTION": "Whenever you draw a card, if you are Blooming, increase its Grow value by !M!."
+  },
+  "StSShapeShifter:Harmony": {
+    "NAME": "Harmony",
+    "DESCRIPTION": "At the start of your turn, if you are Balanced, gain 1 Strength or 1 Dexterity at random."
+  },
+  "StSShapeShifter:BladeOfGrass": {
+    "NAME": "Blade of Grass",
+    "DESCRIPTION": "Deal !D! damage. If you are Blossoming, Grow 8. If you are Blooming, Grow 4. Otherwise, Grow 2."
+  },
+  "StSShapeShifter:SunflowerShuriken": {
+    "NAME": "Sunflower Shuriken",
+    "DESCRIPTION": "Deal !D! damage. If you are Decaying, set this card's damage to 20. If you are Wilting, Reset this card's damage. Otherwise, Wither !StSShapeShifter:Wither!."
   },
   "StSShapeShifter:Spring": {
     "NAME": "Spring",

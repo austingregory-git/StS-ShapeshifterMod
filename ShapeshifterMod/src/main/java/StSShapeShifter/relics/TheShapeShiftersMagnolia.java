@@ -48,6 +48,17 @@ public class TheShapeShiftersMagnolia extends AbstractRelic {
     }
 
     @Override
+    public void onVictory() {
+        BloomCountUtils.setBloomCount(0);
+        this.counter = BloomCountUtils.getBloomCount();
+    }
+
+    @Override
+    public void atBattleStartPreDraw() {
+        this.counter = BloomCountUtils.getBloomCount();
+    }
+
+    @Override
     public void renderCounter(SpriteBatch sb, boolean inTopPanel) {
         if (inTopPanel) {
             FontHelper.renderFontRightTopAligned(sb, FontHelper.topPanelInfoFont, Integer.toString(this.counter), 0.0F + this.currentX + 30.0F * Settings.scale, this.currentY - 7.0F * Settings.scale, Color.WHITE);

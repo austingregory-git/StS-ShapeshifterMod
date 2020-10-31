@@ -27,6 +27,22 @@
           "NAME": "Fertile Soil",
           "DESCRIPTIONS": ["At the start of your turn, if your Bloom Count is 10 or more, draw 1 card and gain 1 energy.", "random enemy", "hello"]
         },
+        "StSShapeShifter:BaskInBloomPower": {
+          "NAME": "Bask in Bloom",
+          "DESCRIPTIONS": ["Whenever you draw a card, if you are Blooming, increase its Grow value.", "random enemy", "hello"]
+        },
+        "StSShapeShifter:HarmonyPower": {
+          "NAME": "Harmony",
+          "DESCRIPTIONS": ["At the start of your turn, if you are Balanced, gain 1 Strength or 1 Dexterity at random.", "At the start of your turn, if you are Balanced, gain 1 Strength and 1 Dexterity.", "hello"]
+        },
+        "StSShapeShifter:DamageAmpPower": {
+          "NAME": "Amplified Attack",
+          "DESCRIPTIONS": ["Your next attack deals double damage.", "random enemy", "hello"]
+        },
+        "StSShapeShifter:WiltingWrathPower": {
+          "NAME": "WiltingWrath",
+          "DESCRIPTIONS": ["At the start of your turn, if you are Wilting, your next attack deals double damage.", "random enemy", "hello"]
+        },
         "StSShapeShifter:BulwarkOfDiscoveryPower": {
           "NAME": "Bulwark of Discovery",
           "DESCRIPTIONS": ["Whenever you draw a unique card, gain block.", "random enemy", "hello"]
