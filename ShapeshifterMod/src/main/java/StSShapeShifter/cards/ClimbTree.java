@@ -1,17 +1,22 @@
 package StSShapeShifter.cards;
 
+import StSShapeShifter.ShapeshifterMod;
+import StSShapeShifter.actions.ModifyMagicAction;
 import StSShapeShifter.characters.ShapeShifter;
+import StSShapeShifter.powers.DodgePower;
+import StSShapeShifter.util.BloomCountUtils;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.ModifyBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.characters.TheDefault;
+import com.megacrit.cardcrawl.powers.ThornsPower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
-public class Summon_Mountains extends AbstractDynamicCard {
+public class ClimbTree extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -22,7 +27,7 @@ public class Summon_Mountains extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = ShapeshifterMod.makeID(Summon_Mountains.class.getSimpleName());
+    public static final String ID = ShapeshifterMod.makeID(ClimbTree.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     // /TEXT DECLARATION/
@@ -30,35 +35,32 @@ public class Summon_Mountains extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
 
-    private static final int COST = 3;
-    private static final int UPGRADE_COST = 2;
-    private static final int BLOCK = 20;
-    private static final int UPGRADE_PLUS_BLOCK = 4;
-
+    private static final int COST = 2;
+    private static final int BLOCK = 12;
+    private static final int UPGRADE_PLUS_MAGIC = 1;
 
     // /STAT DECLARATION/
 
 
-    public Summon_Mountains() {
+    public ClimbTree() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
-        this.growValue = this.baseGrowValue = 6;
+        this.magicNumber = this.baseMagicNumber = 1;
 
-        //this.tags.add(CardTags.STARTER_DEFEND); //Tag your strike, defend and form (Wraith form, Demon form, Echo form, etc.) cards so that they function correctly.
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.applyGrow();
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        this.addToBot(new ModifyBlockAction(this.uuid, this.growValue));
-        updateBloomCount(this.growValue);
+        this.addToBot(new GainBlockAction(p, this.block));
+        if(BloomCountUtils.getBloomCount() >= -3 && BloomCountUtils.getBloomCount() <= 3) {
+            this.addToBot(new ApplyPowerAction(p, p, new DodgePower(p, this.magicNumber)));
+        }
     }
 
     //Upgraded stats.
@@ -66,8 +68,7 @@ public class Summon_Mountains extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
-            upgradeBaseCost(UPGRADE_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

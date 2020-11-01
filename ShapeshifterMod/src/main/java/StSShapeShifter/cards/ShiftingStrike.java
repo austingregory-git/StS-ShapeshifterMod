@@ -21,6 +21,11 @@ import StSShapeShifter.characters.TheDefault;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.SanctityEffect;
 
+import java.util.AbstractList;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
 //public class ${NAME} extends AbstractDynamicCard {}
@@ -63,22 +68,17 @@ public class ShiftingStrike extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        /*for(AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisCombat) {
-            if (AbstractDungeon.actionManager.cardsPlayedThisCombat.size() >= 2); {
-                if(AllForms.getAllForms().contains(c.cardID)) {
-                    this.setCostForTurn(0);
-                }
-                this.addToTop(new VFXAction(new BorderFlashEffect(Color.GOLD, true), 0.1F));
-            }
-        }*/
 
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-
     }
 
-    public void triggerOnCardPlayed(AbstractCard cardPlayed) {
-        ShapeshifterMod.logger.info("Card Player: " + cardPlayed.cardID);
-        if(AllForms.getAllForms().contains(cardPlayed.cardID)) {
+    public void triggerOnOtherCardPlayed(AbstractCard card) {
+        ArrayList<AbstractCard> cards = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisTurn);
+        ArrayList<String> cardIDs = new ArrayList<>();
+        for (AbstractCard c : cards) {
+            cardIDs.add(c.cardID);
+        }
+        if(!Collections.disjoint(AllForms.getAllForms(), cardIDs)) {
             this.setCostForTurn(0);
             this.addToTop(new VFXAction(new BorderFlashEffect(Color.GOLD, true), 0.1F));
         }
@@ -90,8 +90,6 @@ public class ShiftingStrike extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(2);
-            //upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

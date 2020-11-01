@@ -15,7 +15,8 @@ public class AllForms {
         ArrayList<String> allForms = new ArrayList<String>(Arrays.asList(Tortoise_Form.ID, Lynx_Form.ID, BearForm.ID, DeerForm.ID, HydraForm.ID, DragonForm.ID,
                                                                     MammothForm.ID, RatForm.ID, EagleForm.ID, PhoenixForm.ID, FoxForm.ID, EntForm.ID,
                                                                     PorcupineForm.ID, SquirrelForm.ID, MonkeyForm.ID, LionForm.ID, OwlForm.ID, HummingbirdForm.ID,
-                                                                    WaspSwarmForm.ID, MooseForm.ID, HippoForm.ID, RhinoCalfForm.ID, RaptorForm.ID, FlamingoForm.ID));
+                                                                    WaspSwarmForm.ID, MooseForm.ID, HippoForm.ID, RhinoCalfForm.ID, RaptorForm.ID, FlamingoForm.ID,
+                                                                    PantherForm.ID, WolfForm.ID));
 
         return allForms;
     }
@@ -26,7 +27,7 @@ public class AllForms {
                                                                           new EagleForm(), new PhoenixForm(), new FoxForm(), new EntForm(),
                                                                           new PorcupineForm(), new SquirrelForm(), new MonkeyForm(), new LionForm(),
                                                                           new OwlForm(), new HummingbirdForm(), new WaspSwarmForm(), new MooseForm(),
-                                                                          new HippoForm(), new RhinoCalfForm(), new RaptorForm(), new FlamingoForm()));
+                                                                          new HippoForm(), new RhinoCalfForm(), new RaptorForm(), new FlamingoForm(), new PantherForm(), new WolfForm()));
 
         return allForms;
     }

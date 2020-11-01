@@ -78,6 +78,7 @@ public class SkullBash extends AbstractDynamicCard {
             this.baseDamage = AbstractDungeon.player.maxHealth/2;
 
         super.calculateCardDamage(mo);
+        this.initializeDescription();
     }
 
 

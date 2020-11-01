@@ -56,9 +56,12 @@ public class PowerShifterPower extends AbstractPower implements CloneablePowerIn
 
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
         //AbstractDungeon.actionManager.cardsPlayedThisCombat
-        ArrayList<AbstractCard> allButMostRecentCard = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisCombat);
+        /*ArrayList<AbstractCard> allButMostRecentCard = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisCombat);
         allButMostRecentCard.remove(allButMostRecentCard.size() - 1);
         if(AllForms.getAllForms().contains(card.cardID) && !allButMostRecentCard.contains(card)) {
+            this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount)));
+        }*/
+        if(AllForms.getAllForms().contains(card.cardID)) {
             this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount)));
         }
     }

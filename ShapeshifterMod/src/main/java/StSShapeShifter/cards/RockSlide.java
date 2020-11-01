@@ -82,6 +82,7 @@ public class RockSlide extends AbstractDynamicCard {
 
     public void onMoveToDiscard() {
         this.addToBot(new RockSlideAction(this.uuid, this));
+        AbstractDungeon.player.hand.refreshHandLayout();
     }
 
     // Upgraded stats.

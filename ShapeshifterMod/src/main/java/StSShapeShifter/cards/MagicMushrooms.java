@@ -68,12 +68,9 @@ public class MagicMushrooms extends AbstractDynamicCard {
 
         while(var1.hasNext()) {
             AbstractCard card = (AbstractCard)var1.next();
-            if (card.cost >= 0) {
+            if (card.cost >= 0 && card.uuid != this.uuid) {
                 int newCost = AbstractDungeon.cardRandomRng.random(3);
                 if (card.cost != newCost) {
-                    //card.cost = newCost;
-                    //card.costForTurn = card.cost;
-                    //card.isCostModifiedForTurn = true;
                     card.setCostForTurn(newCost);
                 }
             }

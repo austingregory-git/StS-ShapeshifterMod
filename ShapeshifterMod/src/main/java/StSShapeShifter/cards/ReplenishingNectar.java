@@ -41,7 +41,7 @@ public class ReplenishingNectar extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
@@ -70,6 +70,12 @@ public class ReplenishingNectar extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ReplenishingNectarAction(this.uuid, this.misc, this.defaultSecondMagicNumber));
         this.addToBot(new HealAction(p, p, this.magicNumber));
+    }
+
+    public void applyPowers() {
+        this.baseMagicNumber = this.misc;
+        super.applyPowers();
+        this.initializeDescription();
     }
 
     //Upgraded stats.

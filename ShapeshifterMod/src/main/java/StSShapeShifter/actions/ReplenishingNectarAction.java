@@ -27,7 +27,7 @@ public class ReplenishingNectarAction extends AbstractGameAction {
                 c.misc += this.miscIncrease;
                 //c.applyPowers();
                 c.baseMagicNumber = c.misc;
-                c.isMagicNumberModified = true;
+                c.isMagicNumberModified = false;
             }
         }
 

@@ -2,8 +2,13 @@ package StSShapeShifter.actions;
 
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.characters.ShapeShifter;
+import basemod.TopPanelGroup;
+import basemod.TopPanelItem;
 import basemod.helpers.RelicType;
+import basemod.patches.com.megacrit.cardcrawl.helpers.TopPanel.TopPanelHelper;
+import com.badlogic.gdx.Game;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,6 +16,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.chests.AbstractChest;
+import com.megacrit.cardcrawl.ui.panels.TopPanel;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import com.megacrit.cardcrawl.vfx.RelicAboveCreatureEffect;
 
@@ -24,9 +30,9 @@ public class FoxDigAction extends AbstractGameAction {
     }
 
     public void update() {
-        owner.relics.add(AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.COMMON));
+        //owner.relics.add(AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.COMMON));
         int relicRoll = AbstractDungeon.treasureRng.random(0, 99);
-        AbstractDungeon.getRandomChest();
+        //AbstractDungeon.getRandomChest();
         if(upgraded) {
             int goldRoll = AbstractDungeon.treasureRng.random(6, 10);
             this.addToBot(new GainGoldAction(goldRoll));
@@ -82,7 +88,7 @@ public class FoxDigAction extends AbstractGameAction {
                 }
             }
         }
-
+        TopPanelHelper.topPanelGroup.update();
         this.isDone = true;
     }
 }

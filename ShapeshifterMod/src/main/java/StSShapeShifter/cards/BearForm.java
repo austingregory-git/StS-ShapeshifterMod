@@ -70,6 +70,7 @@ public class BearForm extends AbstractDynamicCard {
             upgradeName();
             upgradeMagicNumber(1);
             upgradeDefaultSecondMagicNumber(1);
+            this.rawDescription = "Upon Entering Bear Form, Gain !M! Shielding and 1 Dexterity. While in Bear Form, gain 2 Dexterity.";
             initializeDescription();
         }
     }

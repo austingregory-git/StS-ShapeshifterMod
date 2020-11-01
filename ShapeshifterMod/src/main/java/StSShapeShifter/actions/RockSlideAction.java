@@ -1,6 +1,7 @@
 package StSShapeShifter.actions;
 
 import StSShapeShifter.ShapeshifterMod;
+import StSShapeShifter.cards.AbstractDynamicCard;
 import basemod.patches.com.megacrit.cardcrawl.characters.AbstractPlayer.MaxHandSizePatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType;
@@ -32,8 +33,10 @@ public class RockSlideAction extends AbstractGameAction {
                 if(!cardsThisTurn.contains(card)) {
                     ShapeshifterMod.logger.info(!cardsThisTurn.contains(card));;
                     AbstractDungeon.player.hand.addToHand(card);
-                    AbstractDungeon.player.hand.refreshHandLayout();
-                    AbstractDungeon.player.discardPile.refreshHandLayout();
+                    card.applyPowers();
+                    if(card instanceof AbstractDynamicCard) {
+                        ((AbstractDynamicCard) card).applyGrow();
+                    }
                 }
             }
 

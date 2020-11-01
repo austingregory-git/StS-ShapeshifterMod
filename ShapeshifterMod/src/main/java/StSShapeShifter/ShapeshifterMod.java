@@ -559,6 +559,15 @@ public class ShapeshifterMod implements
         BaseMod.addCard(new Harmony());
         BaseMod.addCard(new BladeOfGrass());
         BaseMod.addCard(new SunflowerShuriken());
+        BaseMod.addCard(new ClimbTree());
+        BaseMod.addCard(new PantherForm());
+        BaseMod.addCard(new Rabid());
+        BaseMod.addCard(new Garden());
+        BaseMod.addCard(new EmbraceTheCycle());
+        BaseMod.addCard(new BurstOfLife());
+        BaseMod.addCard(new EscapeDeath());
+        BaseMod.addCard(new Vengeance());
+        BaseMod.addCard(new Forgiveness());
 
 
         new AutoAdd("ShapeShifterMod:StSShapeShifter")
@@ -645,6 +654,8 @@ public class ShapeshifterMod implements
         BaseMod.addKeyword(new String[]{"wilting"}, "If your Bloom Count is less than or equal to -10, you are Wilting.");
         BaseMod.addKeyword(new String[]{"decaying"}, "If your Bloom Count is less than or equal to -20, you are Decaying.");
         BaseMod.addKeyword(new String[]{"balanced"}, "If your Bloom Count is less than or equal to 3 AND greater than or equal to -3, you are Balanced.");
+        BaseMod.addKeyword(new String[]{"bloom count"}, "Bloom Count is the positive number associated with the Shapeshifter's Magnolia.");
+        BaseMod.addKeyword(new String[]{"wilt count"}, "Wilt Count is the negative number associate with the Shapeshifter's Magnolia.");
         /* (keywords != null) {
             for (Keyword keyword : keywords) {
                 //BaseMod.addKeyword(getModID().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);

@@ -41,7 +41,7 @@
   },
   "StSShapeShifter:FallingLeaves": {
     "NAME": "Falling Leaves",
-    "DESCRIPTION": "Gain !B! Block !M! times."
+    "DESCRIPTION": "Gain !B! Block !M! times. Wither !StSShapeShifter:Wither!"
   },
   "StSShapeShifter:ThornToss": {
     "NAME": "Thorn Toss",
@@ -157,11 +157,11 @@
   },
   "StSShapeShifter:RitualOfTheElders": {
     "NAME": "Ritual of the Elders",
-    "DESCRIPTION": "Lose 1 Dexterity and 1 Strength. Increase Max HP by !M!."
+    "DESCRIPTION": "Lose 1 Dexterity and 1 Strength. Increase Max HP by !M!. Exhaust."
   },
   "StSShapeShifter:RitualOfTheExtinct": {
     "NAME": "Ritual of the Extinct",
-    "DESCRIPTION": "Deal Massive damage to an enemy. Decrease Max HP by !M!."
+    "DESCRIPTION": "Deal Massive damage to an enemy. Decrease Max HP by !M!. Exhaust"
   },
   "StSShapeShifter:Absorb": {
     "NAME": "Absorb",
@@ -313,7 +313,7 @@
   },
   "StSShapeShifter:EntForm": {
     "NAME": "Ent Form",
-    "DESCRIPTION": "Upon Entering Ent Form, Gain 4 Regen. While in Ent Form, gain Entangled at the start of your turn and gain !M! Dexterity at the end of your turn."
+    "DESCRIPTION": "Upon Entering Ent Form, Gain 4 Regen. While in Ent Form, gain Entangled at the start of your turn and gain !M! Dexterity at the end of your turn. Lasts up to 3 turns. Exhaust."
   },
   "StSShapeShifter:DeerForm": {
     "NAME": "Deer Form",
@@ -325,7 +325,7 @@
   },
   "StSShapeShifter:BearForm": {
     "NAME": "Bear Form",
-    "DESCRIPTION": "Upon Entering Bear Form, Gain !M! Shielding and 1 Dexterity. While in Bear Form, gain 2(3) Dexterity"
+    "DESCRIPTION": "Upon Entering Bear Form, Gain !M! Shielding and 1 Dexterity. While in Bear Form, gain 2 Dexterity."
   },
   "StSShapeShifter:WolfForm": {
     "NAME": "Wolf Form",
@@ -389,7 +389,7 @@
   },
   "StSShapeShifter:BaskInBloom": {
     "NAME": "Bask in Bloom",
-    "DESCRIPTION": "Whenever you draw a card, if you are Blooming, increase its Grow value by !M!."
+    "DESCRIPTION": "At the start of your turn, if you are Blooming, increase all cards in your deck's Grow value by !M!."
   },
   "StSShapeShifter:Harmony": {
     "NAME": "Harmony",
@@ -401,7 +401,39 @@
   },
   "StSShapeShifter:SunflowerShuriken": {
     "NAME": "Sunflower Shuriken",
-    "DESCRIPTION": "Deal !D! damage. If you are Decaying, set this card's damage to 20. If you are Wilting, Reset this card's damage. Otherwise, Wither !StSShapeShifter:Wither!."
+    "DESCRIPTION": "Deal !D! damage. If you are Decaying, set this card's damage to 18. If you are Wilting, Reset this card's damage. Otherwise, Wither !StSShapeShifter:Wither!."
+  },
+  "StSShapeShifter:ClimbTree": {
+    "NAME": "Climb Tree",
+    "DESCRIPTION": "Gain !B! Block. If you are Balanced, gain !M! Dodge."
+  },
+  "StSShapeShifter:BurstOfLife": {
+    "NAME": "Burst of Life",
+    "DESCRIPTION": "Can only be played if your Bloom Count is more than 0. Deal !D! Damage to all enemies. Damage is equivalent to your Bloom Count. Reset your Bloom Count to 0."
+  },
+  "StSShapeShifter:EscapeDeath": {
+    "NAME": "Escape Death",
+    "DESCRIPTION": "Can only be played if your Bloom Count is less than 0. Gain !B! Block. Block is equivalent to your Wilt Count. Reset your Bloom Count to 0."
+  },
+  "StSShapeShifter:Vengeance": {
+    "NAME": "Vengeance",
+    "DESCRIPTION": "Deal !D! Damage. Damage is equivalent to the damage you have received this combat. Exhaust."
+  },
+  "StSShapeShifter:Forgiveness": {
+    "NAME": "Forgiveness",
+    "DESCRIPTION": "Heal for !M!. Heal is equivalent to 30 percent of the damage you have received this combat. Exhaust."
+  },
+  "StSShapeShifter:Rabid": {
+    "NAME": "Rabid",
+    "DESCRIPTION": "Whenever you play a form, deal !M! Damage to a random enemy."
+  },
+  "StSShapeShifter:Garden": {
+    "NAME": "Garden",
+    "DESCRIPTION": "At the start of your turn, if you are Balanced, add a random Fruit to your hand."
+  },
+  "StSShapeShifter:EmbraceTheCycle": {
+    "NAME": "Embrace the Cycle",
+    "DESCRIPTION": "If you are Wilting, Attacks cost 1 less. If you are Balanced, Powers cost 1 less. If you are Blooming, Skills cost 1 less. Occurs when cards are drawn."
   },
   "StSShapeShifter:Spring": {
     "NAME": "Spring",

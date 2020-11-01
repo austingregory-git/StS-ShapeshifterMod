@@ -1,6 +1,8 @@
 package StSShapeShifter.cards;
 
+import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.util.BloomCountUtils;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
@@ -29,6 +31,12 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard {
 
     public void applyGrow() {
         this.growValue = this.baseGrowValue;
+        if(AbstractDungeon.player.hasPower(ShapeshifterMod.makeID("HummingbirdPower"))) {
+            this.growValue += AbstractDungeon.player.getPower(ShapeshifterMod.makeID("HummingbirdPower")).amount;
+        }
+        if(AbstractDungeon.player.hasRelic(ShapeshifterMod.makeID("EmeraldPantherFigurine"))) {
+            this.growValue += 1;
+        }
     }
 
     public void applyWither() {

@@ -51,6 +51,18 @@
           "NAME": "Evolution",
           "DESCRIPTIONS": ["Whenever you draw a unique card, gain block.", "random enemy", "hello"]
         },
+        "StSShapeShifter:GardenPower": {
+          "NAME": "Garden",
+          "DESCRIPTIONS": ["At the start of your turn, if you are Balanced, add a random Fruit to your hand.", "random enemy", "hello"]
+        },
+        "StSShapeShifter:EmbraceTheCyclePower": {
+          "NAME": "Embrace The Cycle",
+          "DESCRIPTIONS": ["If you are Wilting, Attacks cost 1 less. If you are Balanced, Powers cost 1 less. If you are Blooming, Skills cost 1 less. Occurs when cards are drawn.", "random enemy", "hello"]
+        },
+        "StSShapeShifter:RabidPower": {
+          "NAME": "Rabid",
+          "DESCRIPTIONS": ["Whenever you play a form, deal Damage to a random enemy.", "random enemy", "hello"]
+        },
         "StSShapeShifter:MooseFormPower": {
           "NAME": "Moose Form",
           "DESCRIPTIONS": ["Return cards to your hand from your discard pile at the start of your turn.", "random enemy", "hello"]

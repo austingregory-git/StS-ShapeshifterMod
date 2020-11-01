@@ -39,7 +39,7 @@ public class FallingLeaves extends AbstractDynamicCard {
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int BLOCK = 2;
+    private static final int BLOCK = 3;
     private static final int UPGRADE_PLUS_BLOCK = 2;
 
 
@@ -51,16 +51,19 @@ public class FallingLeaves extends AbstractDynamicCard {
         baseBlock = BLOCK;
         this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;
-
+        this.witherValue = this.baseWitherValue = 1;
         //this.tags.add(CardTags.STARTER_DEFEND); //Tag your strike, defend and form (Wraith form, Demon form, Echo form, etc.) cards so that they function correctly.
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.applyWither();
         for(int i = 0; i < this.magicNumber; ++i) {
             this.addToBot(new GainBlockAction(p, p, block));
         }
+        this.addToBot(new ModifyBlockAction(this.uuid, -this.witherValue));
+        updateBloomCount(-this.witherValue);
     }
 
     //Upgraded stats.

@@ -34,7 +34,7 @@ public class SunflowerShuriken extends AbstractDynamicCard {
     private static final int COST = 1;  // COST = ${COST}
     private static final int UPGRADED_COST = 1; // UPGRADED_COST = ${UPGRADED_COST}
 
-    private static final int DAMAGE = 14;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 12;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 4;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
 
@@ -55,9 +55,9 @@ public class SunflowerShuriken extends AbstractDynamicCard {
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         if(BloomCountUtils.getBloomCount() <= -20) {
             if(upgraded)
-                this.addToBot(new ModifyDamageAction(this.uuid, 24-this.baseDamage));
+                this.addToBot(new ModifyDamageAction(this.uuid, 22-this.baseDamage));
             else
-                this.addToBot(new ModifyDamageAction(this.uuid, 20-this.baseDamage));
+                this.addToBot(new ModifyDamageAction(this.uuid, 18-this.baseDamage));
             this.applyPowers();
         }
         else if(BloomCountUtils.getBloomCount() <= -10) {
@@ -82,7 +82,7 @@ public class SunflowerShuriken extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            this.rawDescription = "Deal !D! damage. If you are Decaying, set this card's damage to 26. If you are Wilting, Reset this card's damage. Otherwise, Wither !StSShapeShifter:Wither!.";
+            this.rawDescription = "Deal !D! damage. If you are Decaying, set this card's damage to 22. If you are Wilting, Reset this card's damage. Otherwise, Wither !StSShapeShifter:Wither!.";
             initializeDescription();
         }
     }
