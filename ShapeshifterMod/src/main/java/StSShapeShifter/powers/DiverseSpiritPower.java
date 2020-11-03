@@ -35,6 +35,7 @@ public class DiverseSpiritPower extends AbstractPower implements CloneablePowerI
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power84.png");
     private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power32.png");
+    ArrayList<String> uniqueForms = new ArrayList<>();
 
     public DiverseSpiritPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -56,9 +57,16 @@ public class DiverseSpiritPower extends AbstractPower implements CloneablePowerI
 
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
         //AbstractDungeon.actionManager.cardsPlayedThisCombat
-        ArrayList<AbstractCard> allButMostRecentCard = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisCombat);
+        /*ArrayList<AbstractCard> allButMostRecentCard = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisCombat);
         allButMostRecentCard.remove(allButMostRecentCard.size() - 1);
         if(AllForms.getAllForms().contains(card.cardID) && !allButMostRecentCard.contains(card)) {
+            this.addToBot(new GainEnergyAction(1));
+            this.addToBot(new DrawCardAction(1));
+        }*/
+        /*ArrayList<AbstractCard> allButMostRecentCard = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisCombat);
+        allButMostRecentCard.remove(allButMostRecentCard.size() - 1);*/
+        if(AllForms.getAllForms().contains(card.cardID) && !uniqueForms.contains(card.cardID)) {
+            uniqueForms.add(card.cardID);
             this.addToBot(new GainEnergyAction(1));
             this.addToBot(new DrawCardAction(1));
         }

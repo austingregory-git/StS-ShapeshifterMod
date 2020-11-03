@@ -45,8 +45,8 @@ public class Roar extends AbstractDynamicCard {
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
     //public AbstractPlayer owner = null;
     //public int amount = Integer.MIN_VALUE;
-    private static final int COST = 0;
-    private static final int MAGIC = 1;
+    private static final int COST = 1;
+    private static final int MAGIC = 2;
 
     private static final boolean IS_FORM = true;
 

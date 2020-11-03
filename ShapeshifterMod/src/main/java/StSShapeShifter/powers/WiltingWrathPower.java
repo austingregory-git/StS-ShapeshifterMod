@@ -6,9 +6,12 @@ import StSShapeShifter.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -26,14 +29,15 @@ public class WiltingWrathPower extends AbstractPower implements CloneablePowerIn
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power84.png");
     private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power32.png");
-    public int cardDraw;
+    public int dmgAmount;
 
-    public WiltingWrathPower(final AbstractCreature owner, int amount) {
+    public WiltingWrathPower(final AbstractCreature owner, int amount, int dmgAmount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
+        this.dmgAmount = dmgAmount;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -47,6 +51,10 @@ public class WiltingWrathPower extends AbstractPower implements CloneablePowerIn
 
     @Override
     public void atStartOfTurn() {
+        if(BloomCountUtils.getBloomCount() <= -20) {
+            this.flash();
+            this.addToBot(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE, true));
+        }
         if(BloomCountUtils.getBloomCount() <= -10) {
             this.flash();
             this.addToBot(new ApplyPowerAction(this.owner, this.owner, new DamageAmpPower(this.owner, this.amount)));
@@ -64,7 +72,7 @@ public class WiltingWrathPower extends AbstractPower implements CloneablePowerIn
 
     @Override
     public AbstractPower makeCopy() {
-        return new WiltingWrathPower(owner, amount);
+        return new WiltingWrathPower(owner, amount, dmgAmount);
     }
 }
 

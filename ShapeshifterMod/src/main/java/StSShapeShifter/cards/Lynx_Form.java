@@ -43,7 +43,7 @@ public class Lynx_Form extends AbstractDynamicCard {
     //public AbstractPlayer owner = null;
     //public int amount = Integer.MIN_VALUE;
     private static final int COST = 2;
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 9;
     private static final int UPGRADE_PLUS_DAMAGE = 3;
     private static final boolean IS_FORM = true;
 

@@ -1,7 +1,10 @@
 package StSShapeShifter.cards;
 
 import StSShapeShifter.ShapeshifterMod;
+import StSShapeShifter.actions.ModifyMagicAction;
 import StSShapeShifter.util.BloomCountUtils;
+import com.megacrit.cardcrawl.actions.common.ModifyBlockAction;
+import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
@@ -41,6 +44,15 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard {
 
     public void applyWither() {
         this.witherValue = this.baseWitherValue;
+    }
+
+    public void simulateGrow(int times) {
+        for(int i=0; i<times; i++) {
+            this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
+            this.addToBot(new ModifyBlockAction(this.uuid, this.growValue));
+            this.addToBot(new ModifyMagicAction(this.uuid, this.growValue));
+            updateBloomCount(this.growValue);
+        }
     }
 
     public void updateBloomCount(int value) {

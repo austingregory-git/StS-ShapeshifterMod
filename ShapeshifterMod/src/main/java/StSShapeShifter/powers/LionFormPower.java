@@ -30,17 +30,19 @@ public class LionFormPower extends AbstractPower implements CloneablePowerInterf
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private int count = 0;
     public int amount;
+    public boolean upgraded;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power84.png");
     private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power32.png");
 
-    public LionFormPower(final AbstractCreature owner, int amount) {
+    public LionFormPower(final AbstractCreature owner, int amount, boolean upgraded) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
+        this.upgraded = upgraded;
         //this.source = source;
 
         type = PowerType.BUFF;
@@ -58,17 +60,26 @@ public class LionFormPower extends AbstractPower implements CloneablePowerInterf
         this.amount += stackAmount;
     }
 
+    @Override
+    public void onInitialApplication() {
+        if(this.owner.hasPower("Strength")) {
+            if(upgraded) {
+                int strToAdd = this.owner.getPower("Strength").amount * 2;
+                this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, strToAdd)));
+            }
+            else {
+                int strToAdd = this.owner.getPower("Strength").amount;
+                this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, strToAdd)));
+            }
+
+        }
+    }
+
     public void atStartOfTurn() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+            AbstractMonster targetMonster = AbstractDungeon.getRandomMonster();
+            this.addToBot(new ApplyPowerAction(targetMonster, owner, new DeepWoundPower(targetMonster, amount)));
             this.flash();
-            Iterator var3 = AbstractDungeon.getMonsters().monsters.iterator();
-
-            while(var3.hasNext()) {
-                AbstractMonster monster = (AbstractMonster)var3.next();
-                if (!monster.isDead && !monster.isDying) {
-                    this.addToBot(new ApplyPowerAction(monster, owner, new DeepWoundPower(monster, amount)));
-                }
-            }
         }
     }
 
@@ -93,7 +104,7 @@ public class LionFormPower extends AbstractPower implements CloneablePowerInterf
 
     @Override
     public AbstractPower makeCopy() {
-        return new LionFormPower(owner, amount);
+        return new LionFormPower(owner, amount, upgraded);
     }
 }
 

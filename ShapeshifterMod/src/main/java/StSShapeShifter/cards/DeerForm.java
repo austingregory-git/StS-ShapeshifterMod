@@ -59,7 +59,7 @@ public class DeerForm extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new WeakPower(p, this.magicNumber, false), this.magicNumber));
+        //this.addToBot(new ApplyPowerAction(p, p, new WeakPower(p, this.magicNumber, false), this.magicNumber));
         this.addToBot(new DrawCardAction(this.defaultSecondMagicNumber));
 
         if(!p.stance.ID.equals("DeerFormStance") && !p.hasPower("CannotChangeStancePower")) {
@@ -76,8 +76,8 @@ public class DeerForm extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             //upgradeBlock(UPGRADE_PLUS_BLOCK);
-            upgradeMagicNumber(-1);
-            upgradeDefaultSecondMagicNumber(2);
+            //upgradeMagicNumber(-1);
+            upgradeDefaultSecondMagicNumber(1);
             initializeDescription();
         }
     }

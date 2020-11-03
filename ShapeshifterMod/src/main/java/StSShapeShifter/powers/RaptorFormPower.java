@@ -47,7 +47,7 @@ public class RaptorFormPower extends AbstractPower implements CloneablePowerInte
     @Override
     public void atEndOfTurn(final boolean isPlayer) {
         this.addToBot(new ModifyDamageAction(this.card.uuid, this.amount));
-        this.addToBot(new ModifyMagicAction(this.card.uuid, this.amount));
+        //this.addToBot(new ModifyMagicAction(this.card.uuid, this.amount));
         this.card.applyPowers();
         this.flash();
     }

@@ -79,7 +79,7 @@ public class RockSlide extends AbstractDynamicCard {
         ShapeshifterMod.logger.info(BloomCountUtils.getBloomCount());
 
     }
-
+    
     public void onMoveToDiscard() {
         this.addToBot(new RockSlideAction(this.uuid, this));
         AbstractDungeon.player.hand.refreshHandLayout();

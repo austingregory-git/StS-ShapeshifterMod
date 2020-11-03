@@ -33,7 +33,7 @@ public class BearForm extends AbstractDynamicCard {
     //public AbstractPlayer owner = null;
     //public int amount = Integer.MIN_VALUE;
     private static final int COST = 2;
-    private static final int UPGRADE_MAGIC = 2;
+    private static final int UPGRADE_MAGIC = 1;
     private static final boolean IS_FORM = true;
 
     // /STAT DECLARATION/
@@ -41,9 +41,9 @@ public class BearForm extends AbstractDynamicCard {
 
     public BearForm() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = 3;
+        this.baseMagicNumber = 4;
         this.magicNumber = this.baseMagicNumber;
-        this.defaultBaseSecondMagicNumber = 2;
+        this.defaultBaseSecondMagicNumber = 6;
         this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;
 
     }
@@ -68,9 +68,8 @@ public class BearForm extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
-            upgradeDefaultSecondMagicNumber(1);
-            this.rawDescription = "Upon Entering Bear Form, Gain !M! Shielding and 1 Dexterity. While in Bear Form, gain 2 Dexterity.";
+            upgradeMagicNumber(UPGRADE_MAGIC);
+            upgradeDefaultSecondMagicNumber(2);
             initializeDescription();
         }
     }

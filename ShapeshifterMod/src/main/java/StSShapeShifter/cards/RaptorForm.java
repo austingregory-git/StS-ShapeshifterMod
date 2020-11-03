@@ -1,12 +1,15 @@
 package StSShapeShifter.cards;
 
 import StSShapeShifter.ShapeshifterMod;
+import StSShapeShifter.actions.ModifyMagicAction;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.FoxFormPower;
 import StSShapeShifter.powers.RaptorFormPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
+import com.megacrit.cardcrawl.actions.common.ModifyBlockAction;
+import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -60,6 +63,14 @@ public class RaptorForm extends AbstractDynamicCard {
         if(!p.stance.ID.equals("RaptorFormStance") && !p.hasPower("CannotChangeStancePower")) {
             this.addToBot(new ApplyPowerAction(p, p, new RaptorFormPower(p, this.growValue, this)));
             this.addToBot(new ChangeStanceAction("RaptorFormStance"));
+        }
+    }
+
+    @Override
+    public void simulateGrow(int times) {
+        for(int i=0; i<times; i++) {
+            this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
+            updateBloomCount(this.growValue);
         }
     }
 

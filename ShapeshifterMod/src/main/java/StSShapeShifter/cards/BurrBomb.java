@@ -77,6 +77,7 @@ public class BurrBomb extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             initializeDescription();
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
             upgradeGrowValue(2);
         }
     }

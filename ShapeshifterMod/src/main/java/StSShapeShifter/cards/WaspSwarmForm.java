@@ -11,10 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.PlatedArmorPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import java.util.Iterator;
@@ -77,6 +74,7 @@ public class WaspSwarmForm extends AbstractDynamicCard {
                     AbstractMonster monster = (AbstractMonster)var3.next();
                     if (!monster.isDead && !monster.isDying) {
                         this.addToBot(new ApplyPowerAction(monster, p, new WeakPower(monster, effect + this.magicNumber, false), effect + this.magicNumber));
+                        this.addToBot(new ApplyPowerAction(monster, p, new PoisonPower(monster, p, effect + this.magicNumber), effect + this.magicNumber));
                     }
                 }
             }

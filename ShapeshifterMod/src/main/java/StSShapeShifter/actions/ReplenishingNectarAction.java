@@ -1,5 +1,6 @@
 package StSShapeShifter.actions;
 
+import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,7 +15,6 @@ public class ReplenishingNectarAction extends AbstractGameAction {
     public ReplenishingNectarAction(UUID targetUUID, int miscValue, int miscIncrease) {
         this.miscIncrease = miscIncrease;
         this.uuid = targetUUID;
-        this.actionType = ActionType.HEAL;
     }
 
     public void update() {
@@ -25,8 +25,9 @@ public class ReplenishingNectarAction extends AbstractGameAction {
             c = (AbstractCard)var1.next();
             if (c.uuid.equals(this.uuid)) {
                 c.misc += this.miscIncrease;
-                //c.applyPowers();
+                c.applyPowers();
                 c.baseMagicNumber = c.misc;
+                //ShapeshifterMod.logger.info(c.baseMagicNumber);
                 c.isMagicNumberModified = false;
             }
         }
@@ -34,7 +35,7 @@ public class ReplenishingNectarAction extends AbstractGameAction {
         for(var1 = GetAllInBattleInstances.get(this.uuid).iterator(); var1.hasNext(); c.baseMagicNumber = c.misc) {
             c = (AbstractCard)var1.next();
             c.misc += this.miscIncrease;
-            //c.applyPowers();
+            c.applyPowers();
         }
 
         this.isDone = true;

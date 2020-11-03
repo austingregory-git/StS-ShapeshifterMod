@@ -63,7 +63,7 @@ public class FreeFormPower extends AbstractPower implements CloneablePowerInterf
     @Override
     public void onCardDraw(AbstractCard card) {
         if (AllForms.getAllForms().contains(card.cardID) && !card.purgeOnUse && this.amount > 0) {
-            card.setCostForTurn(0);
+            card.setCostForTurn(-1);
         }
     }
 

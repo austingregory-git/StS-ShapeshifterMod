@@ -40,7 +40,7 @@ public class BloomingSlash extends AbstractDynamicCard {
     private static final int COST = 1;  // COST = ${COST}
     private static final int UPGRADED_COST = 1; // UPGRADED_COST = ${UPGRADED_COST}
 
-    private static final int DAMAGE = 5;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 7;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
@@ -49,7 +49,7 @@ public class BloomingSlash extends AbstractDynamicCard {
     public BloomingSlash() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        this.growValue = this.baseGrowValue = 6;
+        this.growValue = this.baseGrowValue = 4;
     }
 
 

@@ -59,8 +59,8 @@ public class SummerPower extends AbstractPower implements CloneablePowerInterfac
         updateDescription();
 
         this.isTurnBased = false;
-        AbstractPlayer var10000 = AbstractDungeon.player;
-        var10000.gameHandSize += amount;
+/*        AbstractPlayer var10000 = AbstractDungeon.player;
+        var10000.gameHandSize += amount;*/
     }
 
 
@@ -73,10 +73,10 @@ public class SummerPower extends AbstractPower implements CloneablePowerInterfac
         }
     }
 
-    public void onRemove() {
+/*    public void onRemove() {
         AbstractPlayer var10000 = AbstractDungeon.player;
         var10000.gameHandSize += amount;
-    }
+    }*/
 
     @Override
     public void updateDescription() {

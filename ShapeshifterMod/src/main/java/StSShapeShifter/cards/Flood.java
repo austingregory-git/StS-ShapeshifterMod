@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 import java.util.Iterator;
 
@@ -38,8 +39,8 @@ public class Flood extends AbstractDynamicCard {
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
     //public AbstractPlayer owner = null;
     //public int amount = Integer.MIN_VALUE;
-    private static final int COST = 0;
-    private static final int MAGIC = 1;
+    private static final int COST = 2;
+    private static final int MAGIC = 2;
 
     private static final boolean IS_FORM = true;
 
@@ -65,6 +66,10 @@ public class Flood extends AbstractDynamicCard {
                 if (!monster.isDead && !monster.isDying && monster.hasPower("Minion")) {
                     this.addToBot(new InstantKillAction(m));
                 }
+                else if(!monster.isDead && !monster.isDying) {
+                    this.addToBot(new ApplyPowerAction(monster, p, new VulnerablePower(monster, this.magicNumber, false), this.magicNumber));
+                    this.addToBot(new ApplyPowerAction(monster, p, new WeakPower(monster, this.magicNumber, false), this.magicNumber));
+                }
             }
         }
     }
@@ -74,8 +79,8 @@ public class Flood extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.retain = true;
-            this.rawDescription = "Destroy all minions. Retain. Exhaust.";
+            this.isInnate = true;
+            this.rawDescription = "Destroy all minions. Innate. Exhaust.";
             initializeDescription();
         }
     }

@@ -51,6 +51,17 @@ public class BaskInBloomPower extends AbstractPower implements CloneablePowerInt
 
     @Override
     public void atStartOfTurnPostDraw() {
+        if(BloomCountUtils.getBloomCount() >= 20) {
+            this.flash();
+            this.addToBot(new DrawCardAction(1));
+        }
+        if(BloomCountUtils.getBloomCount() >= 10) {
+            this.flash();
+            growAllCards();
+        }
+    }
+
+    public void growAllCards() {
         Iterator var1 = AbstractDungeon.player.drawPile.group.iterator();
         Iterator var2 = AbstractDungeon.player.hand.group.iterator();
         Iterator var3 = AbstractDungeon.player.discardPile.group.iterator();

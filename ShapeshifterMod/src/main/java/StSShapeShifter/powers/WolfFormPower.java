@@ -26,18 +26,19 @@ public class WolfFormPower extends AbstractPower implements CloneablePowerInterf
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    public boolean upgraded;
+    public int healAmount;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power84.png");
     private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power32.png");
 
-    public WolfFormPower(final AbstractCreature owner, int amount) {
+    public WolfFormPower(final AbstractCreature owner, int amount, int healAmount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
+        this.healAmount = healAmount;
         //this.upgraded = upgraded;
         //this.source = source;
 
@@ -53,13 +54,13 @@ public class WolfFormPower extends AbstractPower implements CloneablePowerInterf
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if(card != null && card.type == AbstractCard.CardType.ATTACK) {
-            this.addToBot(new HealAction(owner, owner, amount));
+            this.addToBot(new HealAction(owner, owner, healAmount));
         }
     }
 
     public void stackPower(int stackAmount) {
         this.fontScale = 8.0F;
-        this.amount += stackAmount;
+        this.healAmount += stackAmount;
     }
 
     @Override
@@ -69,7 +70,7 @@ public class WolfFormPower extends AbstractPower implements CloneablePowerInterf
 
     @Override
     public AbstractPower makeCopy() {
-        return new WolfFormPower(owner, amount);
+        return new WolfFormPower(owner, amount, healAmount);
     }
 }
 

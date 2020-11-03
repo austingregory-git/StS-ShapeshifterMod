@@ -45,7 +45,7 @@ public class VileMushroom extends AbstractDynamicCard {
 
     public VileMushroom() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 6;
+        this.magicNumber = this.baseMagicNumber = 8;
         this.growValue = this.baseGrowValue = 3;
     }
 
@@ -64,6 +64,7 @@ public class VileMushroom extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             this.upgradeMagicNumber(2);
+            upgradeGrowValue(1);
             initializeDescription();
         }
     }

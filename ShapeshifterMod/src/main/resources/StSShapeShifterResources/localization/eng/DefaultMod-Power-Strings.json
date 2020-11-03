@@ -103,6 +103,10 @@
           "NAME": "Rhino Form",
           "DESCRIPTION": ["Upon Entering Rhino Form, gain block and plated armor. While in Rhino Form, deal damage equal to your block to the lowest health enemy at the end of you turn. Lasts 3 turns.", "yo", "hello"]
         },
+        "StSShapeShifter:PantherFormPower": {
+          "NAME": "Panther Form",
+          "DESCRIPTION": ["Upon Entering Panther Form, your next attack deals double damage. While in Panther Form, gain Strength at the end of your turn. Lasts 3 turns.", "yo", "hello"]
+        },
         "StSShapeShifter:DodgePower": {
           "NAME": "Dodge",
           "DESCRIPTIONS": ["Prevent the next source of damage you take.", "random enemy", "hello"]

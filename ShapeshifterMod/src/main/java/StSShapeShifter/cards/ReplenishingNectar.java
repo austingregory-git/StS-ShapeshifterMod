@@ -68,8 +68,16 @@ public class ReplenishingNectar extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        ShapeshifterMod.logger.info(this.magicNumber);
+        this.applyPowers();
+        ShapeshifterMod.logger.info(this.magicNumber);
         this.addToBot(new ReplenishingNectarAction(this.uuid, this.misc, this.defaultSecondMagicNumber));
-        this.addToBot(new HealAction(p, p, this.magicNumber));
+        ShapeshifterMod.logger.info(this.magicNumber);
+        ShapeshifterMod.logger.info(this.baseMagicNumber);
+        ShapeshifterMod.logger.info(this.misc);
+        ShapeshifterMod.logger.info(this.defaultSecondMagicNumber);
+        this.addToBot(new HealAction(p, p, this.baseMagicNumber));
+        ShapeshifterMod.logger.info(this.magicNumber);
     }
 
     public void applyPowers() {

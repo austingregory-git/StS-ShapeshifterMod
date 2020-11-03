@@ -34,7 +34,7 @@ public class SunflowerShuriken extends AbstractDynamicCard {
     private static final int COST = 1;  // COST = ${COST}
     private static final int UPGRADED_COST = 1; // UPGRADED_COST = ${UPGRADED_COST}
 
-    private static final int DAMAGE = 12;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 14;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 4;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
 

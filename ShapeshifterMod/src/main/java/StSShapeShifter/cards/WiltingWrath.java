@@ -46,6 +46,7 @@ public class WiltingWrath extends AbstractDynamicCard {
 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = baseMagicNumber = MAGIC;
+        this.baseDamage = 4;
 
     }
 
@@ -53,7 +54,7 @@ public class WiltingWrath extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new WiltingWrathPower(p, this.magicNumber)));
+                new ApplyPowerAction(p, p, new WiltingWrathPower(p, this.magicNumber, this.baseDamage)));
     }
 
     //Upgraded stats.

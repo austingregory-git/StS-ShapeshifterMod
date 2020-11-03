@@ -44,6 +44,7 @@ public class WolfForm extends AbstractDynamicCard {
     public WolfForm() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
+        this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber = 2;
     }
 
     // Actions the card should do.
@@ -52,7 +53,7 @@ public class WolfForm extends AbstractDynamicCard {
         this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
 
         if(!p.stance.ID.equals("WolfFormStance") && !p.hasPower("CannotChangeStancePower")) {
-            this.addToBot(new ApplyPowerAction(p, p, new WolfFormPower(p, this.magicNumber)));
+            this.addToBot(new ApplyPowerAction(p, p, new WolfFormPower(p, this.magicNumber, this.defaultSecondMagicNumber)));
             this.addToBot(new ChangeStanceAction("WolfFormStance"));
         }
 
@@ -65,6 +66,7 @@ public class WolfForm extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
+            upgradeDefaultSecondMagicNumber(1);
             initializeDescription();
         }
     }

@@ -43,26 +43,19 @@ public class LionForm extends AbstractDynamicCard {
 
     public LionForm() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 5;
+        this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber = 2;
+        this.exhaust = true;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(p.hasPower("Strength")) {
-            if(upgraded) {
-                int strToAdd = p.getPower("Strength").amount * 2;
-                this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, strToAdd)));
-            }
-            else {
-                int strToAdd = p.getPower("Strength").amount;
-                this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, strToAdd)));
-            }
-
-        }
+        this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.defaultSecondMagicNumber)));
+        this.applyPowers();
 
         if(!p.stance.ID.equals("LionFormStance") && !p.hasPower("CannotChangeStancePower")) {
-            this.addToBot(new ApplyPowerAction(p, p, new LionFormPower(p, this.magicNumber)));
+            this.addToBot(new ApplyPowerAction(p, p, new LionFormPower(p, this.magicNumber, this.upgraded)));
             this.addToBot(new ChangeStanceAction("LionFormStance"));
         }
 
@@ -75,7 +68,7 @@ public class LionForm extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
-            //upgradeDefaultSecondMagicNumber(2);
+            upgradeDefaultSecondMagicNumber(1);
             initializeDescription();
         }
     }

@@ -259,6 +259,10 @@
     "NAME": "Owl Form",
     "DESCRIPTION": "Upon Entering Owl Form, Discover a Power card. While in Owl Form, draw 1 additional card each turn."
   },
+  "StSShapeShifter:PantherForm": {
+    "NAME": "Panther Form",
+    "DESCRIPTION": "Upon Entering Panther Form, your next attack deals double damage. While in Panther Form, gain !M! Strength at the end of your turn. Lasts 3 turns. Exhaust."
+  },
   "StSShapeShifter:WaspSwarmForm": {
     "NAME": "Wasp Swarm Form",
     "DESCRIPTION": "Upon Entering Wasp Swarm Form, Apply X Weak to all enemies. While in Wasp Swarm Form, deal 2X damage to all enemies at the start of your turn."

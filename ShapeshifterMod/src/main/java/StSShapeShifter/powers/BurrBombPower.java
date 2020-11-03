@@ -58,8 +58,8 @@ public class BurrBombPower extends AbstractPower implements CloneablePowerInterf
     @Override
     public void atEndOfTurn(final boolean isPlayer) {
         count++;
-        this.description = "" + (2-count) + "Turns Remaining.";
-        if(count == 2) {
+        this.description = "" + (1-count) + " Turns Remaining.";
+        if(count == 1) {
             this.addToBot(new DamageAction(owner, new DamageInfo(owner, amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
             this.addToBot(new RemoveSpecificPowerAction(owner, owner, ShapeshifterMod.makeID("BurrBombPower")));
         }

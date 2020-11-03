@@ -3,10 +3,7 @@ package StSShapeShifter.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -60,13 +57,18 @@ public class BearFormPower extends AbstractPower implements CloneablePowerInterf
         this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, stackAmount), stackAmount));
     }
 
-    public void onInitialApplication() {
+    @Override
+    public void atStartOfTurn() {
+        this.addToBot(new GainBlockAction(this.owner, this.amount));
+    }
+
+    /*public void onInitialApplication() {
         this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, amount), amount));
     }
 
     public void onRemove() {
         this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, -amount), -amount));
-    }
+    }*/
 
     @Override
     public void updateDescription() {

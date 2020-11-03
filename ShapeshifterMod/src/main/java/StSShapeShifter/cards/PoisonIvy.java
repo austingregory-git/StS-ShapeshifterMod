@@ -50,7 +50,7 @@ public class PoisonIvy extends AbstractDynamicCard {
 
     public PoisonIvy() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = 3;
+        this.baseMagicNumber = 4;
         this.magicNumber = this.baseMagicNumber;
         this.growValue = this.baseGrowValue = 1;
 

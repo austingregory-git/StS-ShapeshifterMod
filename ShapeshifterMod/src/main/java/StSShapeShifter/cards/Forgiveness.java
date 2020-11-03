@@ -52,15 +52,17 @@ public class Forgiveness extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.triggerOnGlowCheck();
         ShapeshifterMod.logger.info(GameActionManager.damageReceivedThisCombat);
-        this.updateMagic();
+        this.applyPowers();
         this.addToBot(new HealAction(p, p, this.magicNumber));
     }
 
-    public void updateMagic() {
+    public void applyPowers() {
         if(upgraded)
             this.baseMagicNumber = (int)((float)GameActionManager.damageReceivedThisCombat * (50.0F / 100.0F));
         else
             this.baseMagicNumber = (int)((float)GameActionManager.damageReceivedThisCombat * (30.0F / 100.0F));
+        super.applyPowers();
+        this.initializeDescription();
     }
 
     // Upgraded stats.

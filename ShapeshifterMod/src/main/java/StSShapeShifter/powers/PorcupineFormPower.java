@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -48,7 +49,7 @@ public class PorcupineFormPower extends AbstractPower implements CloneablePowerI
     }
 
     public void onInitialApplication() {
-        this.addToBot(new ApplyPowerAction(owner, owner, new ArtifactPower(owner, 1)));
+        //this.addToBot(new ApplyPowerAction(owner, owner, new ArtifactPower(owner, 1)));
         this.addToBot(new ApplyPowerAction(owner, owner, new ThornsPower(owner, amount), amount));
     }
 
@@ -59,7 +60,15 @@ public class PorcupineFormPower extends AbstractPower implements CloneablePowerI
         this.addToBot(new ApplyPowerAction(owner, owner, new ThornsPower(owner, stackAmount), stackAmount));
     }
 
-    public void onRemove() {
+    @Override
+    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+        if(target == AbstractDungeon.player && this.owner.hasPower(power.ID)) {
+            this.flash();
+            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, power));
+        }
+    }
+
+    /*public void onRemove() {
         this.addToBot(new ApplyPowerAction(owner, owner, new ThornsPower(owner, -amount), -amount));
         ShapeshifterMod.logger.info(owner.hasPower("Thorns"));
         if(owner.hasPower("Thorns")) {
@@ -70,7 +79,7 @@ public class PorcupineFormPower extends AbstractPower implements CloneablePowerI
                 ShapeshifterMod.logger.info(owner.hasPower("Thorns"));
             }
         }
-    }
+    }*/
 
     @Override
     public void updateDescription() {
