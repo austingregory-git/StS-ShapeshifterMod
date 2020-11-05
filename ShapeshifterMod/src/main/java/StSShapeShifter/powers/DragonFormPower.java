@@ -1,5 +1,6 @@
 package StSShapeShifter.powers;
 
+import StSShapeShifter.cards.DragonForm;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -24,7 +25,7 @@ import java.util.Iterator;
 public class DragonFormPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ShapeshifterMod.makeID("DragonFormPower");
+    public static final String POWER_ID = ShapeshifterMod.makeID(DragonFormPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

@@ -23,7 +23,7 @@ public class FesteringBite extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = ShapeshifterMod.makeID("FesteringBite"); // DELETE THIS ONE.
+    public static final String ID = ShapeshifterMod.makeID(FesteringBite.class.getSimpleName()); // DELETE THIS ONE.
     public static final String IMG = makeCardPath("Attack.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 

@@ -32,7 +32,7 @@ public class CursedApple extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     //public static final String ID = ShapeshifterMod.makeID(${NAME}.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String ID = ShapeshifterMod.makeID("CursedApple"); // DELETE THIS ONE.
+    public static final String ID = ShapeshifterMod.makeID(CursedApple.class.getSimpleName()); // DELETE THIS ONE.
     public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 

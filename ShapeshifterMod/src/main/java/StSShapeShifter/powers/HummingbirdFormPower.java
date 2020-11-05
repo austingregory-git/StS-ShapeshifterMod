@@ -3,6 +3,7 @@ package StSShapeShifter.powers;
 import StSShapeShifter.actions.ModifyGrowAction;
 import StSShapeShifter.actions.ModifyMagicAction;
 import StSShapeShifter.cards.AbstractDynamicCard;
+import StSShapeShifter.cards.HummingbirdForm;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -28,7 +29,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 public class HummingbirdFormPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ShapeshifterMod.makeID("HummingbirdFormPower");
+    public static final String POWER_ID = ShapeshifterMod.makeID(HummingbirdFormPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

@@ -24,7 +24,7 @@ import java.util.Iterator;
 public class RhinoFormPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ShapeshifterMod.makeID("RhinoFormPower");
+    public static final String POWER_ID = ShapeshifterMod.makeID(RhinoFormPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

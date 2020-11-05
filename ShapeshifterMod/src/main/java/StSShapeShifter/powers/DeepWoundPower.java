@@ -1,5 +1,6 @@
 package StSShapeShifter.powers;
 
+import StSShapeShifter.cards.DeepWound;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -26,7 +27,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 public class DeepWoundPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ShapeshifterMod.makeID("DeepWoundPower");
+    public static final String POWER_ID = ShapeshifterMod.makeID(DeepWoundPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

@@ -1,6 +1,7 @@
 package StSShapeShifter.powers;
 
 import StSShapeShifter.ShapeshifterMod;
+import StSShapeShifter.stances.LynxFormStance;
 import StSShapeShifter.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -15,7 +16,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 public class LynxFormPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ShapeshifterMod.makeID("LynxFormPower");
+    public static final String POWER_ID = ShapeshifterMod.makeID(LynxFormPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -23,8 +24,8 @@ public class LynxFormPower extends AbstractPower implements CloneablePowerInterf
     public int upgraded_amount;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
-    private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/LynxFormPower84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/LynxFormPower32.png");
 
     public LynxFormPower(final AbstractCreature owner, int amount) {
         name = NAME;

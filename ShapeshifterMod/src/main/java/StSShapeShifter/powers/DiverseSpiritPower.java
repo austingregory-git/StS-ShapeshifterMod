@@ -1,5 +1,6 @@
 package StSShapeShifter.powers;
 
+import StSShapeShifter.cards.DiverseSpirit;
 import StSShapeShifter.util.AllForms;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -28,7 +29,7 @@ import java.util.ArrayList;
 public class DiverseSpiritPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ShapeshifterMod.makeID("DiverseSpiritPower");
+    public static final String POWER_ID = ShapeshifterMod.makeID(DiverseSpiritPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

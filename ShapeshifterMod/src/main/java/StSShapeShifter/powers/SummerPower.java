@@ -3,6 +3,7 @@ package StSShapeShifter.powers;
 import StSShapeShifter.actions.ModifyGrowAction;
 import StSShapeShifter.actions.ModifyMagicAction;
 import StSShapeShifter.cards.AbstractDynamicCard;
+import StSShapeShifter.cards.Summer;
 import StSShapeShifter.util.AllForms;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -32,7 +33,7 @@ import java.util.Iterator;
 public class SummerPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ShapeshifterMod.makeID("SummerPower");
+    public static final String POWER_ID = ShapeshifterMod.makeID(Summer.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

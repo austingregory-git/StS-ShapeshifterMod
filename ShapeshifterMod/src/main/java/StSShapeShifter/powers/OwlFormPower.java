@@ -26,7 +26,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 public class OwlFormPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ShapeshifterMod.makeID("OwlFormPower");
+    public static final String POWER_ID = ShapeshifterMod.makeID(OwlFormPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

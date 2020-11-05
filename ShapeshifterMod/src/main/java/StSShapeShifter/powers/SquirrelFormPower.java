@@ -25,14 +25,14 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 public class SquirrelFormPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ShapeshifterMod.makeID("SquirrelFormPower");
+    public static final String POWER_ID = ShapeshifterMod.makeID(SquirrelFormPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
-    private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/SquirrelFormPower84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/SquirrelFormPower32.png");
 
     public SquirrelFormPower(final AbstractCreature owner) {
         name = NAME;

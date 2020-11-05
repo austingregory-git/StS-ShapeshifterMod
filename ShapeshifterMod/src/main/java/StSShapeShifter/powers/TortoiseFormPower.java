@@ -25,7 +25,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 public class TortoiseFormPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ShapeshifterMod.makeID("TortoiseFormPower");
+    public static final String POWER_ID = ShapeshifterMod.makeID(TortoiseFormPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -34,8 +34,8 @@ public class TortoiseFormPower extends AbstractPower implements CloneablePowerIn
     public int amount;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
-    private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/TurtleFormPower2-84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/TurtleFormPower3-32.png");
 
     public TortoiseFormPower(final AbstractCreature owner, int amount) {
         name = NAME;

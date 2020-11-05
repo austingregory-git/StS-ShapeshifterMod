@@ -173,9 +173,6 @@ public class ShapeShifter extends CustomPlayer {
 
         retVal.add(Tortoise_Form.ID);
         retVal.add(Lynx_Form.ID);
-        retVal.add(PorcupineForm.ID);
-
-
 
         return retVal;
     }

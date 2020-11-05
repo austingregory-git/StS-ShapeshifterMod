@@ -3,6 +3,7 @@ package StSShapeShifter.powers;
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.actions.ModifyWitherAction;
 import StSShapeShifter.cards.AbstractDynamicCard;
+import StSShapeShifter.cards.FertileSoil;
 import StSShapeShifter.util.BloomCountUtils;
 import StSShapeShifter.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
@@ -21,7 +22,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 public class FertileSoilPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ShapeshifterMod.makeID("WiltingWrathPower");
+    public static final String POWER_ID = ShapeshifterMod.makeID(FertileSoilPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

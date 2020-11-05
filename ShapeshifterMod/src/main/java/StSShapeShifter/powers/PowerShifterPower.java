@@ -27,7 +27,7 @@ import java.util.ArrayList;
 public class PowerShifterPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ShapeshifterMod.makeID("PowerShifterPower");
+    public static final String POWER_ID = ShapeshifterMod.makeID(PowerShifterPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
