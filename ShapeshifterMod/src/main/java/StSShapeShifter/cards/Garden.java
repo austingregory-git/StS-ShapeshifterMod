@@ -35,7 +35,7 @@ public class Garden extends AbstractDynamicCard {
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
 
     private static final int COST = 2;
-    private static final int UPGRADE_COST = 1;
+    //private static final int UPGRADE_COST = 1;
 
     private static final int MAGIC = 1;
 
@@ -61,8 +61,8 @@ public class Garden extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADE_COST);
-            this.rawDescription = "At the start of your turn, if you are Balanced, add 2 random fruits to your hand.";
+            //upgradeBaseCost(UPGRADE_COST);
+            this.rawDescription = "At the start of your turn, if you are Balanced, add 2 random fruits to your hand. If you are Blooming, gain 1 energy and draw 1 card. If you are Wilting, add 2 Rotten Fruit to your hand.";
             initializeDescription();
         }
     }

@@ -60,7 +60,7 @@ public class PorcupineFormPower extends AbstractPower implements CloneablePowerI
         this.addToBot(new ApplyPowerAction(owner, owner, new ThornsPower(owner, stackAmount), stackAmount));
     }
 
-    @Override
+    /*@Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if(target == AbstractDungeon.player && this.owner.hasPower(power.ID)) {
             this.flash();
@@ -68,7 +68,10 @@ public class PorcupineFormPower extends AbstractPower implements CloneablePowerI
         }
     }
 
-    /*public void onRemove() {
+    public void onSpecificTrigger() {
+
+    }*/
+/*public void onRemove() {
         this.addToBot(new ApplyPowerAction(owner, owner, new ThornsPower(owner, -amount), -amount));
         ShapeshifterMod.logger.info(owner.hasPower("Thorns"));
         if(owner.hasPower("Thorns")) {

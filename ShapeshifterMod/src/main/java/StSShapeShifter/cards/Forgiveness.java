@@ -53,7 +53,10 @@ public class Forgiveness extends AbstractDynamicCard {
         this.triggerOnGlowCheck();
         ShapeshifterMod.logger.info(GameActionManager.damageReceivedThisCombat);
         this.applyPowers();
-        this.addToBot(new HealAction(p, p, this.magicNumber));
+        ShapeshifterMod.logger.info(this.magicNumber);
+        ShapeshifterMod.logger.info(this.baseMagicNumber);
+        this.addToBot(new HealAction(p, p, this.baseMagicNumber));
+        //ShapeshifterMod.logger.info(this.magicNumber);
     }
 
     public void applyPowers() {

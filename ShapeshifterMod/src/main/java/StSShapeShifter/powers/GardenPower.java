@@ -1,6 +1,7 @@
 package StSShapeShifter.powers;
 
 import StSShapeShifter.ShapeshifterMod;
+import StSShapeShifter.cards.tempCards.RottenFruit;
 import StSShapeShifter.util.AllFruit;
 import StSShapeShifter.util.BloomCountUtils;
 import StSShapeShifter.util.TextureLoader;
@@ -8,6 +9,8 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -60,6 +63,25 @@ public class GardenPower extends AbstractPower implements CloneablePowerInterfac
             }
             else {
                 this.addToBot(new MakeTempCardInHandAction(fruit.get(new Random().nextInt(fruit.size())), 1));
+            }
+        }
+        else if(BloomCountUtils.getBloomCount() >= 10) {
+            if(upgraded) {
+                this.addToBot(new GainEnergyAction(1));
+                this.addToBot(new DrawCardAction(1));
+            }
+            else {
+                this.addToBot(new GainEnergyAction(1));
+            }
+
+        }
+        else if(BloomCountUtils.getBloomCount() <= -10) {
+            if(upgraded) {
+                this.addToBot(new MakeTempCardInHandAction(new RottenFruit()));
+                this.addToBot(new MakeTempCardInHandAction(new RottenFruit()));
+            }
+            else {
+                this.addToBot(new MakeTempCardInHandAction(new RottenFruit()));
             }
         }
     }

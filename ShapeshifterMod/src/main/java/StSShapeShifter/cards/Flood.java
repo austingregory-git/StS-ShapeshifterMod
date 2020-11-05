@@ -80,7 +80,7 @@ public class Flood extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             this.isInnate = true;
-            this.rawDescription = "Destroy all minions. Innate. Exhaust.";
+            this.rawDescription = "Innate. Destroy all minions. Apply !M! Vulnerable and Weak to all remaining enemies. Exhaust.";
             initializeDescription();
         }
     }

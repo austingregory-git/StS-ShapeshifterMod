@@ -552,11 +552,11 @@ public class ShapeshifterMod implements
         BaseMod.addCard(new RaptorForm());
         BaseMod.addCard(new FlamingoForm());
         BaseMod.addCard(new RhinoCalfForm());
-        BaseMod.addCard(new FertileSoil());
+        //BaseMod.addCard(new FertileSoil());
         BaseMod.addCard(new Flood());
         BaseMod.addCard(new WiltingWrath());
         BaseMod.addCard(new BaskInBloom());
-        BaseMod.addCard(new Harmony());
+        //BaseMod.addCard(new Harmony());
         BaseMod.addCard(new BladeOfGrass());
         BaseMod.addCard(new SunflowerShuriken());
         BaseMod.addCard(new ClimbTree());
@@ -564,10 +564,12 @@ public class ShapeshifterMod implements
         BaseMod.addCard(new Rabid());
         BaseMod.addCard(new Garden());
         BaseMod.addCard(new EmbraceTheCycle());
-        BaseMod.addCard(new BurstOfLife());
-        BaseMod.addCard(new EscapeDeath());
+        //BaseMod.addCard(new BurstOfLife());
+        //BaseMod.addCard(new EscapeDeath());
         BaseMod.addCard(new Vengeance());
         BaseMod.addCard(new Forgiveness());
+        BaseMod.addCard(new BurstOfLifeEscapeDeath());
+
 
 
         new AutoAdd("ShapeShifterMod:StSShapeShifter")

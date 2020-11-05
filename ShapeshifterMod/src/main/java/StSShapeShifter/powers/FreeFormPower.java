@@ -75,7 +75,7 @@ public class FreeFormPower extends AbstractPower implements CloneablePowerInterf
 
                 while(var2.hasNext()) {
                     AbstractCard c = (AbstractCard)var2.next();
-                    if(AllForms.getAllForms().contains(card.cardID)) {
+                    if(AllForms.getAllForms().contains(card.cardID) && c.costForTurn >= 0) {
                         c.setCostForTurn(c.cost);
                     }
                 }

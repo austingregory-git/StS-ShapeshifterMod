@@ -37,7 +37,6 @@ public class WaspSwarmForm extends AbstractDynamicCard {
     //public AbstractPlayer owner = null;
     //public int amount = Integer.MIN_VALUE;
     private static final int COST = -1;
-    private static final int UPGRADE_MAGIC = 1;
     private static final boolean IS_FORM = true;
 
     // /STAT DECLARATION/
@@ -45,8 +44,6 @@ public class WaspSwarmForm extends AbstractDynamicCard {
 
     public WaspSwarmForm() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 0;
-
     }
 
     // Actions the card should do.
@@ -65,6 +62,10 @@ public class WaspSwarmForm extends AbstractDynamicCard {
             effect += 2;
             p.getRelic("Chemical X").flash();
         }
+
+        if(upgraded) {
+            effect++;
+        }
         if (effect > 0) {
             if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                 this.flash();
@@ -73,12 +74,12 @@ public class WaspSwarmForm extends AbstractDynamicCard {
                 while(var3.hasNext()) {
                     AbstractMonster monster = (AbstractMonster)var3.next();
                     if (!monster.isDead && !monster.isDying) {
-                        this.addToBot(new ApplyPowerAction(monster, p, new WeakPower(monster, effect + this.magicNumber, false), effect + this.magicNumber));
-                        this.addToBot(new ApplyPowerAction(monster, p, new PoisonPower(monster, p, effect + this.magicNumber), effect + this.magicNumber));
+                        this.addToBot(new ApplyPowerAction(monster, p, new WeakPower(monster, effect, false), effect));
+                        this.addToBot(new ApplyPowerAction(monster, p, new PoisonPower(monster, p, effect), effect));
                     }
                 }
             }
-            this.addToBot(new ApplyPowerAction(p, p, new WaspSwarmFormPower(p, effect + this.magicNumber)));
+            this.addToBot(new ApplyPowerAction(p, p, new WaspSwarmFormPower(p, effect)));
             if (!this.freeToPlayOnce) {
                 p.energy.use(EnergyPanel.totalCount);
             }
@@ -93,8 +94,7 @@ public class WaspSwarmForm extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_MAGIC);
-            this.rawDescription = "Upon Entering Wasp Swarm Form, Apply X+1 Weak to all enemies. While in Wasp Swarm Form, deal 2(X+1) damage to all enemies at the start of your turn.";
+            this.rawDescription = "Upon Entering Wasp Swarm Form, Apply X+1 Weak and Poison to all enemies. While in Wasp Swarm Form, deal 2(X+1) damage to all enemies at the start of your turn.";
             initializeDescription();
         }
     }

@@ -72,9 +72,9 @@ public class Flourish extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            //upgradeMagicNumber(2);
-            initializeDescription();
             this.rawDescription = "Draw !M! Cards. Reduce their cost to 0 this turn.";
+            initializeDescription();
+
         }
     }
 }

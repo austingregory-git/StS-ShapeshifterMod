@@ -64,7 +64,7 @@ public class BulwarkOfDiscovery extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             this.isInnate = true;
-            this.rawDescription = "After playing this card, whenever you draw a unique card, gain 2 block.";
+            this.rawDescription = "Innate. After playing this card, whenever you draw a unique card, gain 2 block.";
             initializeDescription();
         }
     }

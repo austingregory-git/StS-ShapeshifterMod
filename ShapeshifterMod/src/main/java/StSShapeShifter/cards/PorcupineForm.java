@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.ThornsPower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -52,7 +53,7 @@ public class PorcupineForm extends AbstractDynamicCard {
     public PorcupineForm() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
-        this.baseMagicNumber = 3;
+        this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
 
         //this.tags.add(CardTags.STARTER_DEFEND); //Tag your strike, defend and form (Wraith form, Demon form, Echo form, etc.) cards so that they function correctly.
@@ -66,7 +67,7 @@ public class PorcupineForm extends AbstractDynamicCard {
             this.addToBot(new ApplyPowerAction(p, p, new PorcupineFormPower(p, this.magicNumber)));
         }
         else {
-            this.addToBot(new ApplyPowerAction(p, p, new ArtifactPower(p, 1)));
+            this.addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, this.magicNumber)));
         }
 
 

@@ -21,7 +21,6 @@ public class EvolutionPowerShufflePatch {
                 loc = 51
         )
         public static void Insert() {
-            ShapeshifterMod.logger.info("oi1");
             if(AbstractDungeon.player.hasPower(ShapeshifterMod.makeID("EvolutionPower"))) {
                 ShapeshifterMod.logger.info("oi2");
                 EvolutionPower.onShuffle(AbstractDungeon.player.getPower(ShapeshifterMod.makeID("EvolutionPower")).amount);

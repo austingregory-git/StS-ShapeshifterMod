@@ -73,13 +73,17 @@ public class ShiftingStrike extends AbstractDynamicCard {
     }
 
     public void triggerOnOtherCardPlayed(AbstractCard card) {
-        ArrayList<AbstractCard> cards = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisTurn);
+/*        ArrayList<AbstractCard> cards = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisTurn);
         ArrayList<String> cardIDs = new ArrayList<>();
         for (AbstractCard c : cards) {
             cardIDs.add(c.cardID);
         }
         if(!Collections.disjoint(AllForms.getAllForms(), cardIDs)) {
-            this.setCostForTurn(0);
+            this.setCostForTurn(-9);
+            this.addToTop(new VFXAction(new BorderFlashEffect(Color.GOLD, true), 0.1F));
+        }*/
+        if(AllForms.getAllForms().contains(card.cardID)) {
+            this.setCostForTurn(-9);
             this.addToTop(new VFXAction(new BorderFlashEffect(Color.GOLD, true), 0.1F));
         }
     }

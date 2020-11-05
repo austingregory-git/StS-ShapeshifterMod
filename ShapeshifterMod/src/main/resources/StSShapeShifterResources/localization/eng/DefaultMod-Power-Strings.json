@@ -103,6 +103,10 @@
           "NAME": "Rhino Form",
           "DESCRIPTION": ["Upon Entering Rhino Form, gain block and plated armor. While in Rhino Form, deal damage equal to your block to the lowest health enemy at the end of you turn. Lasts 3 turns.", "yo", "hello"]
         },
+        "StSShapeShifter:PorcupineFormPower": {
+          "NAME": "Porcupine Form",
+          "DESCRIPTION": ["While in Porcupine Form, you are immune to debuffs.", "yo", "hello"]
+        },
         "StSShapeShifter:PantherFormPower": {
           "NAME": "Panther Form",
           "DESCRIPTION": ["Upon Entering Panther Form, your next attack deals double damage. While in Panther Form, gain Strength at the end of your turn. Lasts 3 turns.", "yo", "hello"]

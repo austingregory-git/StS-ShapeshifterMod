@@ -63,7 +63,7 @@ public class VileMushroom extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.upgradeMagicNumber(2);
+            this.upgradeMagicNumber(3);
             upgradeGrowValue(1);
             initializeDescription();
         }

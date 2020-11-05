@@ -11,6 +11,10 @@
     "NAME": "Acorn",
     "DESCRIPTION": "Deal !D! Damage. Exhaust."
   },
+  "StSShapeShifter:RottenFruit": {
+    "NAME": "RottenFruit",
+    "DESCRIPTION": "Deal !D! Damage. Exhaust."
+  },
   "StSShapeShifter:Banana": {
     "NAME": "Banana",
     "DESCRIPTION": "Gain !M! Dexterity. Exhaust."
@@ -37,7 +41,7 @@
   },
   "StSShapeShifter:AdaptiveStrikes": {
     "NAME": "Adaptive Strikes",
-    "DESCRIPTION": "Deal !D! Damage 3 times. Grow !StSShapeShifter:Grow!"
+    "DESCRIPTION": "Deal !D! Damage 2 times. Grow !StSShapeShifter:Grow!"
   },
   "StSShapeShifter:FallingLeaves": {
     "NAME": "Falling Leaves",
@@ -49,7 +53,7 @@
   },
   "StSShapeShifter:Flood": {
     "NAME": "Flood",
-    "DESCRIPTION": "Destroy all minions. Exhaust."
+    "DESCRIPTION": "Destroy all minions. Apply !M! Vulnerable and Weak to all remaining enemies. Exhaust."
   },
   "StSShapeShifter:PoisonIvy": {
     "NAME": "Poison Ivy",
@@ -233,7 +237,7 @@
   },
   "StSShapeShifter:BurrBomb": {
     "NAME": "Burr Bomb",
-    "DESCRIPTION": "Apply a Burr Bomb to an enemy. After 2 turns, it explodes, dealing !D! damage. Grow !StSShapeShifter:Grow!."
+    "DESCRIPTION": "Apply a Burr Bomb to an enemy. At the end of your next turn, it explodes, dealing !D! damage. Grow !StSShapeShifter:Grow!."
   },
   "StSShapeShifter:Summon_Mountains": {
     "NAME": "Summon Mountains",
@@ -265,7 +269,7 @@
   },
   "StSShapeShifter:WaspSwarmForm": {
     "NAME": "Wasp Swarm Form",
-    "DESCRIPTION": "Upon Entering Wasp Swarm Form, Apply X Weak to all enemies. While in Wasp Swarm Form, deal 2X damage to all enemies at the start of your turn."
+    "DESCRIPTION": "Upon Entering Wasp Swarm Form, Apply X Weak and Poison to all enemies. While in Wasp Swarm Form, deal 2X damage to all enemies at the start of your turn."
   },
   "StSShapeShifter:HummingbirdForm": {
     "NAME": "Hummingbird Form",
@@ -273,7 +277,7 @@
   },
   "StSShapeShifter:BulwarkOfDiscovery": {
     "NAME": "Bulwark of Discovery",
-    "DESCRIPTION": "After playing this card, whenever you draw a unique card, gain 2 block."
+    "DESCRIPTION": "After playing this card, whenever you draw a unique card, gain !M! Block."
   },
   "StSShapeShifter:Evolution": {
     "NAME": "Evolution",
@@ -305,7 +309,7 @@
   },
   "StSShapeShifter:PorcupineForm": {
     "NAME": "Porcupine Form",
-    "DESCRIPTION": "Upon Entering Porcupine Form, Gain 1 Artifact. While in Porcupine Form, gain !M! thorns."
+    "DESCRIPTION": "Upon Entering Porcupine Form, Gain !M! Thorns. While in Porcupine Form, you are immune to Debuffs."
   },
   "StSShapeShifter:FertileSoil": {
     "NAME": "Fertile Soil",
@@ -313,7 +317,7 @@
   },
   "StSShapeShifter:WiltingWrath": {
     "NAME": "Wilting Wrath",
-    "DESCRIPTION": "At the start of your turn, if you are Wilting, your next attack deals double damage."
+    "DESCRIPTION": "At the start of your turn, if you are Wilting, your next attack deals double damage. If you are Decaying, also deal !D! Damage to all enemies"
   },
   "StSShapeShifter:EntForm": {
     "NAME": "Ent Form",
@@ -321,7 +325,7 @@
   },
   "StSShapeShifter:DeerForm": {
     "NAME": "Deer Form",
-    "DESCRIPTION": "Upon Entering Deer Form, Gain !M! Weak and Draw 1 card. While in Deer Form, add a random skill to your hand at the start of your turn."
+    "DESCRIPTION": "Upon Entering Deer Form, Draw !M! card(s). While in Deer Form, add a random skill to your hand at the start of your turn."
   },
   "StSShapeShifter:FlamingoForm": {
     "NAME": "Flamingo Form",
@@ -329,19 +333,19 @@
   },
   "StSShapeShifter:BearForm": {
     "NAME": "Bear Form",
-    "DESCRIPTION": "Upon Entering Bear Form, Gain !M! Shielding and 1 Dexterity. While in Bear Form, gain 2 Dexterity."
+    "DESCRIPTION": "Upon Entering Bear Form, Gain !M! Shielding and 1 Dexterity. While in Bear Form, gain !StSShapeShifter:SecondMagic! Block at the start of your turn."
   },
   "StSShapeShifter:WolfForm": {
     "NAME": "Wolf Form",
-    "DESCRIPTION": "Upon Entering Wolf Form, Gain !M! Strength. While in Wolf Form, your attacks heal you for !M!."
+    "DESCRIPTION": "Upon Entering Wolf Form, Gain !M! Strength. While in Wolf Form, your attacks heal you for !StSShapeShifter:SecondMagic!."
   },
   "StSShapeShifter:DragonForm": {
     "NAME": "Dragon Form",
-    "DESCRIPTION": "Upon Entering Dragon Form, Apply !M! Weak and !M! Vulnerable to all enemies. While in Dragon Form, deal 6(8) to all enemies and gain 6(8) block. Lasts up to 3 turns. Exhaust"
+    "DESCRIPTION": "Upon Entering Dragon Form, Deal !D! Damage and Apply !M! Weak and !M! Vulnerable to all enemies. While in Dragon Form, deal !StSShapeShifter:SecondMagic! damage to all enemies and gain !StSShapeShifter:SecondMagic! Block at the start of your turn. Lasts up to 3 turns. Exhaust"
   },
   "StSShapeShifter:LionForm": {
     "NAME": "Lion Form",
-    "DESCRIPTION": "Upon Entering Lion Form, double your strength. While in Lion Form, Apply !M! Deep Wound to all enemies. Lasts up to 3 turns. Exhaust"
+    "DESCRIPTION": "Upon Entering Lion Form, double your strength. While in Lion Form, Apply !M! Deep Wound to a random enemy. Lasts up to 3 turns. Exhaust"
   },
   "StSShapeShifter:MonkeyForm": {
     "NAME": "Monkey Form",
@@ -381,11 +385,11 @@
   },
   "StSShapeShifter:DiverseSpirit": {
     "NAME": "Diverse Spirit",
-    "DESCRIPTION": "Whenever you play a unique form this combat, gain 1 energy and draw 1 card."
+    "DESCRIPTION": "After playing this card, whenever you play a unique form this combat, gain 1 energy and draw 1 card."
   },
   "StSShapeShifter:PowerShifter": {
     "NAME": "Power Shifter",
-    "DESCRIPTION": "Whenever you play a unique form this combat, gain !M! Strength"
+    "DESCRIPTION": "Whenever you play a form, gain !M! Strength"
   },
   "StSShapeShifter:Ensconce": {
     "NAME": "Ensconce",
@@ -393,7 +397,7 @@
   },
   "StSShapeShifter:BaskInBloom": {
     "NAME": "Bask in Bloom",
-    "DESCRIPTION": "At the start of your turn, if you are Blooming, increase all cards in your deck's Grow value by !M!."
+    "DESCRIPTION": "At the start of your turn, if you are Blooming, increase all cards in your deck's Grow value by !M!. If you are Blossoming, also draw a card."
   },
   "StSShapeShifter:Harmony": {
     "NAME": "Harmony",
@@ -401,7 +405,7 @@
   },
   "StSShapeShifter:BladeOfGrass": {
     "NAME": "Blade of Grass",
-    "DESCRIPTION": "Deal !D! damage. If you are Blossoming, Grow 8. If you are Blooming, Grow 4. Otherwise, Grow 2."
+    "DESCRIPTION": "Deal !D! damage. If you are Blooming, Grow 4. If you are Blossoming, Grow 8. Otherwise, Grow 2."
   },
   "StSShapeShifter:SunflowerShuriken": {
     "NAME": "Sunflower Shuriken",
@@ -409,11 +413,15 @@
   },
   "StSShapeShifter:ClimbTree": {
     "NAME": "Climb Tree",
-    "DESCRIPTION": "Gain !B! Block. If you are Balanced, gain !M! Dodge."
+    "DESCRIPTION": "Gain !B! Block. If you are Balanced, gain !M! Dodge. If you are are Wilting, add Falling Leaves to your hand. If you are Blooming, add a random Fruit to your hand."
   },
   "StSShapeShifter:BurstOfLife": {
     "NAME": "Burst of Life",
     "DESCRIPTION": "Can only be played if your Bloom Count is more than 0. Deal !D! Damage to all enemies. Damage is equivalent to your Bloom Count. Reset your Bloom Count to 0."
+  },
+  "StSShapeShifter:BurstOfLifeEscapeDeath": {
+    "NAME": "Burst of Life/Death",
+    "DESCRIPTION": "Can only be played if your Bloom Count is NOT 0. If your Bloom Count is greater than 0, Deal !D! Damage to all enemies. If your Bloom Count is less than 0, Gain !B! Block. Damage/Block is equivalent to your Bloom/Wilt Count. Reset your Bloom Count to 0."
   },
   "StSShapeShifter:EscapeDeath": {
     "NAME": "Escape Death",
@@ -433,7 +441,7 @@
   },
   "StSShapeShifter:Garden": {
     "NAME": "Garden",
-    "DESCRIPTION": "At the start of your turn, if you are Balanced, add a random Fruit to your hand."
+    "DESCRIPTION": "At the start of your turn, if you are Balanced, add a random Fruit to your hand. If you are Blooming, gain 1 energy. If you are Wilting, add a Rotten Fruit to your hand."
   },
   "StSShapeShifter:EmbraceTheCycle": {
     "NAME": "Embrace the Cycle",
@@ -445,7 +453,7 @@
   },
   "StSShapeShifter:Summer": {
     "NAME": "Summer",
-    "DESCRIPTION": "Draw 1 less card each turn. Whenever you draw a Grow card, double its Grow value."
+    "DESCRIPTION": "Whenever you draw a Grow card, double its Grow value."
   },
   "StSShapeShifter:Autumn": {
     "NAME": "Autumn",

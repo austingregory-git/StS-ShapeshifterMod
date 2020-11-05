@@ -1,22 +1,16 @@
 package StSShapeShifter.cards.tempCards;
 
+import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.cards.AbstractDynamicCard;
-import StSShapeShifter.characters.ShapeShifter;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.ModifyExhaustiveAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.characters.TheDefault;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.ThornsPower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
-public class Acorn extends AbstractDynamicCard {
+public class RottenFruit extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -27,7 +21,7 @@ public class Acorn extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = ShapeshifterMod.makeID(Acorn.class.getSimpleName());
+    public static final String ID = ShapeshifterMod.makeID(RottenFruit.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
     // /TEXT DECLARATION/
@@ -41,12 +35,12 @@ public class Acorn extends AbstractDynamicCard {
     public static final CardColor COLOR = CardColor.COLORLESS;
 
     private static final int COST = 0;
-    private static final int DAMAGE = 3;
+    private static final int DAMAGE = 5;
     private static final int UPGRADE_PLUS_DAMAGE = 2;
 
     // /STAT DECLARATION/
 
-    public Acorn() {
+    public RottenFruit() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.exhaust = true;
@@ -54,7 +48,7 @@ public class Acorn extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
     }
 
     //Upgraded stats.

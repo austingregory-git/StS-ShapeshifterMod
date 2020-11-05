@@ -4,15 +4,17 @@ import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.actions.ModifyMagicAction;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.DodgePower;
+import StSShapeShifter.util.AllFruit;
 import StSShapeShifter.util.BloomCountUtils;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.common.ModifyBlockAction;
+import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ThornsPower;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -41,7 +43,7 @@ public class ClimbTree extends AbstractDynamicCard {
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
 
     private static final int COST = 2;
-    private static final int BLOCK = 12;
+    private static final int BLOCK = 10;
     private static final int UPGRADE_PLUS_MAGIC = 1;
 
     // /STAT DECLARATION/
@@ -61,6 +63,25 @@ public class ClimbTree extends AbstractDynamicCard {
         if(BloomCountUtils.getBloomCount() >= -3 && BloomCountUtils.getBloomCount() <= 3) {
             this.addToBot(new ApplyPowerAction(p, p, new DodgePower(p, this.magicNumber)));
         }
+        if(BloomCountUtils.getBloomCount() <= -10) {
+            if(upgraded) {
+                AbstractCard fl = new FallingLeaves().makeCopy();
+                fl.upgrade();
+                this.addToBot(new MakeTempCardInHandAction(fl));
+            }
+            else {
+                this.addToBot(new MakeTempCardInHandAction(new FallingLeaves().makeCopy()));
+            }
+
+        }
+        if(BloomCountUtils.getBloomCount() >= 10) {
+            ArrayList<AbstractCard> fruit = new ArrayList<AbstractCard>(AllFruit.getAllFruitCards());
+            if(upgraded)
+                this.addToBot(new MakeTempCardInHandAction(fruit.get(new Random().nextInt(fruit.size())), 2));
+            else
+                this.addToBot(new MakeTempCardInHandAction(fruit.get(new Random().nextInt(fruit.size())), 1));
+
+        }
     }
 
     //Upgraded stats.
@@ -69,6 +90,7 @@ public class ClimbTree extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            this.rawDescription = "Gain !B! Block. If you are Balanced, gain !M! Dodge. If you are are Wilting, add an Upgraded Falling Leaves to your hand. If you are Blooming, add 2 of a random Fruit to your hand.";
             initializeDescription();
         }
     }
