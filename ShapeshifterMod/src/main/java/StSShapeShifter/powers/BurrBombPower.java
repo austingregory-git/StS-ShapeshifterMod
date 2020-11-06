@@ -33,8 +33,8 @@ public class BurrBombPower extends AbstractPower implements CloneablePowerInterf
     public int count = 0;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
-    private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/BurrBombPower84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/BurrBombPower32.png");
 
     public BurrBombPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
