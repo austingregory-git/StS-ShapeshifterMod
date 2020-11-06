@@ -33,8 +33,8 @@ public class DragonFormPower extends AbstractPower implements CloneablePowerInte
     public int amount;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
-    private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/DragonFormPower84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/DragonFormPower32.png");
 
     public DragonFormPower(final AbstractCreature owner, int amount) {
         name = NAME;

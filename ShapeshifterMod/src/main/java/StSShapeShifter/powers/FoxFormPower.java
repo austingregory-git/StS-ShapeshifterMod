@@ -35,8 +35,8 @@ public class FoxFormPower extends AbstractPower implements CloneablePowerInterfa
     public AbstractPlayer player;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
-    private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/FoxFormPower84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/FoxFormPower32.png");
 
     public FoxFormPower(final AbstractPlayer player, final AbstractCreature owner, boolean upgraded) {
         name = NAME;
