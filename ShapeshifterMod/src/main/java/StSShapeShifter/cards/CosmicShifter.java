@@ -1,20 +1,17 @@
 package StSShapeShifter.cards;
 
+import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.characters.ShapeShifter;
-import StSShapeShifter.powers.FullMoonPower;
-import StSShapeShifter.powers.SapBurstPower;
-import basemod.helpers.BaseModCardTags;
+import StSShapeShifter.powers.CosmicShifterPower;
+import StSShapeShifter.powers.DiverseSpiritPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.characters.TheDefault;
-import StSShapeShifter.powers.RarePower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
-public class FullMoon extends AbstractDynamicCard {
+public class CosmicShifter extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -24,7 +21,7 @@ public class FullMoon extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = ShapeshifterMod.makeID(FullMoon.class.getSimpleName());
+    public static final String ID = ShapeshifterMod.makeID(CosmicShifter.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
 
     // /TEXT DECLARATION/
@@ -32,20 +29,20 @@ public class FullMoon extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
 
-    private static final int COST = 3;
-    //private static final int UPGRADE_COST = 2;
-    private static final int MAGIC = 3;
-    private static final int UPGRADE_PLUS_MAGIC = 2;
+    private static final int COST = 2;
+    private static final int UPGRADE_COST = 1;
+
+    private static final int MAGIC = 1;
 
     // /STAT DECLARATION/
 
 
-    public FullMoon() {
+    public CosmicShifter() {
 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = baseMagicNumber = MAGIC;
@@ -58,7 +55,7 @@ public class FullMoon extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new FullMoonPower(p, p, magicNumber), magicNumber));
+                new ApplyPowerAction(p, p, new CosmicShifterPower(p)));
     }
 
     //Upgraded stats.
@@ -66,7 +63,7 @@ public class FullMoon extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            upgradeBaseCost(UPGRADE_COST);
             initializeDescription();
         }
     }

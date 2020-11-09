@@ -83,16 +83,17 @@ public class FullMoonPower extends AbstractPower implements CloneablePowerInterf
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         if (AllForms.getAllForms().contains(card.cardID) && !card.purgeOnUse && this.amount > 0) {
             count++;
+            reducePower(1);
             if(count == amount) {
                 Iterator var2 = AbstractDungeon.player.hand.group.iterator();
 
                 while(var2.hasNext()) {
                     AbstractCard c = (AbstractCard)var2.next();
-                    if(AllForms.getAllForms().contains(c.cardID)) {
+                    if(AllForms.getAllForms().contains(c.cardID) && !c.isCostModifiedForTurn && c.costForTurn >= 0) {
                         c.setCostForTurn(c.cost);
                     }
                 }
-                this.addToBot(new RemoveSpecificPowerAction(owner, owner, ShapeshifterMod.makeID("FreeFormPower")));
+                this.addToBot(new RemoveSpecificPowerAction(owner, owner, ShapeshifterMod.makeID("FullMoonPower")));
             }
         }
     }

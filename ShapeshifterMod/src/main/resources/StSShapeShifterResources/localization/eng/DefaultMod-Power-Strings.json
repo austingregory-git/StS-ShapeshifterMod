@@ -23,6 +23,14 @@
           "NAME": "Free Form",
           "DESCRIPTIONS": ["Your forms cost 0.", "random enemy", "hello"]
         },
+        "StSShapeShifter:CosmicShifterPower": {
+          "NAME": "Cosmic Shifter",
+          "DESCRIPTION": "At the end of your turn, deal damage to all enemies equal to the number of unique forms you have entered this combat."
+        },
+        "StSShapeShifter:WildfirePower": {
+          "NAME": "Wildfire",
+          "DESCRIPTION": "At the start of this creature's turn, they take damage. Then, Wildfire jumps to a random enemy. This effect Withers by 2 for each jump."
+        },
         "StSShapeShifter:FertileSoilPower": {
           "NAME": "Fertile Soil",
           "DESCRIPTIONS": ["At the start of your turn, if your Bloom Count is 10 or more, draw 1 card and gain 1 energy.", "random enemy", "hello"]
@@ -38,6 +46,14 @@
         "StSShapeShifter:DamageAmpPower": {
           "NAME": "Amplified Attack",
           "DESCRIPTIONS": ["Your next attack deals double damage.", "random enemy", "hello"]
+        },
+        "StSShapeShifter:WolfsBanePower": {
+          "NAME": "Wolf's Bane",
+          "DESCRIPTION": "Whenever you play a Grow or Wither card, apply poison to a random enemy. These effects Grow or Wither depending on the card played."
+        },
+        "StSShapeShifter:SynchronicityPower": {
+          "NAME": "Synchronicity",
+          "DESCRIPTION": "Whenever you play a Grow card, gain 1 Dexterity. Whenever you play a Wither card, gain 1 Strength."
         },
         "StSShapeShifter:WiltingWrathPower": {
           "NAME": "WiltingWrath",

@@ -1,37 +1,26 @@
 package StSShapeShifter.powers;
 
+import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.actions.ModifyGrowAction;
-import StSShapeShifter.actions.ModifyMagicAction;
 import StSShapeShifter.cards.AbstractDynamicCard;
-import StSShapeShifter.util.AllForms;
+import StSShapeShifter.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.cards.DefaultRareAttack;
-import StSShapeShifter.util.TextureLoader;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
-public class SpringPower extends AbstractPower implements CloneablePowerInterface {
+public class SynchronicityPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ShapeshifterMod.makeID(SpringPower.class.getSimpleName());
+    public static final String POWER_ID = ShapeshifterMod.makeID(SynchronicityPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -40,7 +29,7 @@ public class SpringPower extends AbstractPower implements CloneablePowerInterfac
     private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/SpringPower84.png");
     private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/SpringPower32.png");
 
-    public SpringPower(final AbstractCreature owner, int amount) {
+    public SynchronicityPower(final AbstractCreature owner, int amount) {
         name = NAME;
         ID = POWER_ID;
 
@@ -58,20 +47,18 @@ public class SpringPower extends AbstractPower implements CloneablePowerInterfac
         updateDescription();
     }
 
-
-    public void onCardDraw(AbstractCard card) {
-        //card.getClass().getName().equals(AbstractDynamicCard.class.getName())
+    @Override
+    public void onUseCard(AbstractCard card, UseCardAction action) {
         if(card instanceof AbstractDynamicCard){
             AbstractDynamicCard c = (AbstractDynamicCard) card;
             if(c.growValue > 0) {
-                this.addToTop(new ModifyGrowAction(c.uuid, this.amount));
-                c.applyPowers();
+                this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, amount)));
+            }
+            if(c.witherValue > 0) {
+                this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount)));
             }
         }
-
     }
-
-
 
     @Override
     public void updateDescription() {
@@ -84,7 +71,7 @@ public class SpringPower extends AbstractPower implements CloneablePowerInterfac
 
     @Override
     public AbstractPower makeCopy() {
-        return new SpringPower(owner, amount);
+        return new SynchronicityPower(owner, amount);
     }
 }
 

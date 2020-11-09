@@ -155,6 +155,10 @@
     "NAME": "Blossom",
     "DESCRIPTION": "Double your current buffs"
   },
+  "StSShapeShifter:Blossom2": {
+    "NAME": "Blossom",
+    "DESCRIPTION": "Simulate the Growth of all of your Grow cards !M! times."
+  },
   "StSShapeShifter:RestoreBalance": {
     "NAME": "Restore Balance",
     "DESCRIPTION": "Remove all non-boss-specific buffs an enemy."
@@ -198,6 +202,10 @@
   "StSShapeShifter:Wildfire": {
     "NAME": "Wildfire",
     "DESCRIPTION": "Deal !D! Damage to all enemies. Wither !StSShapeShifter:Wither!."
+  },
+  "StSShapeShifter:Wildfire2": {
+    "NAME": "Wildfire",
+    "DESCRIPTION": "Apply Wildfire !D! to an enemy. That enemy takes !D! damage at the end of their turn, and then Wildfire jumps to a random enemy. This effect Withers by !StSShapeShifter:Wither! for each jump."
   },
   "StSShapeShifter:Earthquake": {
     "NAME": "Earthquake",
@@ -327,6 +335,10 @@
     "NAME": "Deer Form",
     "DESCRIPTION": "Upon Entering Deer Form, Draw !M! card(s). While in Deer Form, add a random skill to your hand at the start of your turn."
   },
+  "StSShapeShifter:CosmicShifter": {
+    "NAME": "Cosmic Shifter",
+    "DESCRIPTION": "At the end of your turn, deal damage to all enemies equal to the number of unique forms you have entered this combat."
+  },
   "StSShapeShifter:FlamingoForm": {
     "NAME": "Flamingo Form",
     "DESCRIPTION": "Upon Entering Flamingo Form, discover a Skill. While in Flamingo Form, remove a random debuff at the start of your turn."
@@ -403,13 +415,21 @@
     "NAME": "Harmony",
     "DESCRIPTION": "At the start of your turn, if you are Balanced, gain 1 Strength or 1 Dexterity at random."
   },
+  "StSShapeShifter:Synchronicity": {
+    "NAME": "Synchronicity",
+    "DESCRIPTION": "Whenever you play a Grow card, gain 1 Dexterity. Whenever you play a Wither card, gain 1 Strength."
+  },
+  "StSShapeShifter:WolfsBane": {
+    "NAME": "Wolf's Bane",
+    "DESCRIPTION": "Whenever you play a Grow card, apply !StSShapeShifter:SecondMagic! Poison to a random enemy. This effect Grows by !StSShapeShifter:Grow!. Whenever you play a Wither card, apply !M! Poison to a random enemy. This effect Withers by !StSShapeShifter:Wither!."
+  },
   "StSShapeShifter:BladeOfGrass": {
     "NAME": "Blade of Grass",
     "DESCRIPTION": "Deal !D! damage. If you are Blooming, Grow 4. If you are Blossoming, Grow 8. Otherwise, Grow 2."
   },
   "StSShapeShifter:SunflowerShuriken": {
     "NAME": "Sunflower Shuriken",
-    "DESCRIPTION": "Deal !D! damage. If you are Decaying, set this card's damage to 18. If you are Wilting, Reset this card's damage. Otherwise, Wither !StSShapeShifter:Wither!."
+    "DESCRIPTION": "Deal !D! damage. If you are Decaying, set this card's damage to 16. If you are Wilting, Reset this card's damage. Otherwise, Wither !StSShapeShifter:Wither!."
   },
   "StSShapeShifter:ClimbTree": {
     "NAME": "Climb Tree",

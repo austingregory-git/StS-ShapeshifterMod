@@ -4,6 +4,7 @@ import StSShapeShifter.relics.*;
 import StSShapeShifter.stances.PhoenixFormStance;
 import basemod.BaseMod;
 import basemod.abstracts.CustomPlayer;
+import basemod.animations.SpineAnimation;
 import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -78,7 +79,7 @@ public class ShapeShifter extends CustomPlayer {
     //private static final String ID = makeID("ShapeShifterCharacter");
     //private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = {"The Shapeshifter"};
-    private static final String[] TEXT = {"A wanderer of the forest who has discovered the lost art of shapeshifting.", "Through a combination of forms drawn from connecting with animals and powers drawn from communing with nature,", "the Shapeshifter seeks to rid the spire of its unnatural creatures."};
+    private static final String[] TEXT = {"A wanderer of the forest who has discovered the lost art of shapeshifting.\nThrough a combination of forms drawn from connecting with animals and powers drawn from communing with nature,\nthe Shapeshifter seeks to rid the spire of its unnatural creatures."};
 
     // =============== /STRINGS/ =================
 
@@ -103,32 +104,42 @@ public class ShapeShifter extends CustomPlayer {
     // =============== CHARACTER CLASS START =================
 
     public ShapeShifter(String name, PlayerClass setClass) {
-        super(name, setClass, orbTextures,
+/*        super(name, setClass, orbTextures,
                 "StSShapeShifterResources/images/char/defaultCharacter/orb/vfx.png", null,
                 new SpriterAnimation(
-                        "StSShapeShifterResources/images/char/defaultCharacter/Spriter/theDefaultAnimation.scml"));
+                        "StSShapeShifterResources/images/char/defaultCharacter/Spriter/theDefaultAnimation.scml"));*/
+        super(name, setClass, orbTextures,
+                "StSShapeShifterResources/images/char/defaultCharacter/orb/vfx.png", null,
+                new SpineAnimation(SHAPESHIFTER_SKELETON_ATLAS, SHAPESHIFTER_SKELETON_JSON, 2.75F));
 
 
         // =============== TEXTURES, ENERGY, LOADOUT =================
+
+        /*initializeClass(null, // required call to load textures and setup energy/loadout.
+                // I left these in DefaultMod.java (Ctrl+click them to see where they are, Ctrl+hover to see what they read.)
+                THE_DEFAULT_SHOULDER_2, // campfire pose
+                THE_DEFAULT_SHOULDER_1, // another campfire pose
+                THE_DEFAULT_CORPSE, // dead corpse
+                getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));*/
 
         initializeClass(null, // required call to load textures and setup energy/loadout.
                 // I left these in DefaultMod.java (Ctrl+click them to see where they are, Ctrl+hover to see what they read.)
                 THE_DEFAULT_SHOULDER_2, // campfire pose
                 THE_DEFAULT_SHOULDER_1, // another campfire pose
                 THE_DEFAULT_CORPSE, // dead corpse
-                getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN)); // energy manager
-
+                getLoadout(), 0.0F, -15.0F, 240.0F, 330.0F, new EnergyManager(ENERGY_PER_TURN));
         // =============== /TEXTURES, ENERGY, LOADOUT/ =================
 
 
         // =============== ANIMATIONS =================
 
-        loadAnimation(
+        /*loadAnimation(
                 THE_DEFAULT_SKELETON_ATLAS,
                 THE_DEFAULT_SKELETON_JSON,
-                1.0f);
-        AnimationState.TrackEntry e = state.setAnimation(0, "animation", true);
+                1.0f);*/
+        AnimationState.TrackEntry e = state.setAnimation(0, "Idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
+
 
         // =============== /ANIMATIONS/ =================
 

@@ -1,20 +1,17 @@
 package StSShapeShifter.cards;
 
+import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.characters.ShapeShifter;
-import StSShapeShifter.powers.FullMoonPower;
 import StSShapeShifter.powers.SapBurstPower;
-import basemod.helpers.BaseModCardTags;
+import StSShapeShifter.powers.WolfsBanePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.characters.TheDefault;
-import StSShapeShifter.powers.RarePower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
-public class FullMoon extends AbstractDynamicCard {
+public class WolfsBane extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -24,7 +21,7 @@ public class FullMoon extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = ShapeshifterMod.makeID(FullMoon.class.getSimpleName());
+    public static final String ID = ShapeshifterMod.makeID(WolfsBane.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
 
     // /TEXT DECLARATION/
@@ -37,28 +34,29 @@ public class FullMoon extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
 
-    private static final int COST = 3;
-    //private static final int UPGRADE_COST = 2;
-    private static final int MAGIC = 3;
-    private static final int UPGRADE_PLUS_MAGIC = 2;
+    private static final int COST = 2;
+    private static final int UPGRADE_COST = 2;
+
+    private static final int MAGIC = 6;
+    private static final int MAGIC2 = 1;
 
     // /STAT DECLARATION/
 
 
-    public FullMoon() {
+    public WolfsBane() {
 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = baseMagicNumber = MAGIC;
-
-        //this.tags.add(BaseModCardTags.FORM); //Tag your strike, defend and form cards so that they work correctly.
-
+        this.defaultSecondMagicNumber = defaultBaseSecondMagicNumber = MAGIC2;
+        this.growValue = this.baseGrowValue = 1;
+        this.witherValue = this.baseWitherValue = 1;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new FullMoonPower(p, p, magicNumber), magicNumber));
+                new ApplyPowerAction(p, p, new WolfsBanePower(p, this.defaultSecondMagicNumber, this.magicNumber, this.growValue, this.witherValue)));
     }
 
     //Upgraded stats.
@@ -66,9 +64,9 @@ public class FullMoon extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            upgradeGrowValue(1);
+            upgradeMagicNumber(2);
             initializeDescription();
         }
     }
 }
-

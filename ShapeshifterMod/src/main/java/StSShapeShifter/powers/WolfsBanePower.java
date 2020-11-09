@@ -1,17 +1,13 @@
 package StSShapeShifter.powers;
 
-import StSShapeShifter.actions.ModifyGrowAction;
-import StSShapeShifter.actions.ModifyMagicAction;
+import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.cards.AbstractDynamicCard;
-import StSShapeShifter.util.AllForms;
+import StSShapeShifter.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -19,19 +15,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.cards.DefaultRareAttack;
-import StSShapeShifter.util.TextureLoader;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
-public class SpringPower extends AbstractPower implements CloneablePowerInterface {
+public class WolfsBanePower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ShapeshifterMod.makeID(SpringPower.class.getSimpleName());
+    public static final String POWER_ID = ShapeshifterMod.makeID(WolfsBanePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -39,13 +30,19 @@ public class SpringPower extends AbstractPower implements CloneablePowerInterfac
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/SpringPower84.png");
     private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/SpringPower32.png");
-
-    public SpringPower(final AbstractCreature owner, int amount) {
+    public int growValue;
+    public int witherValue;
+    public int growAmount;
+    public int witherAmount;
+    public WolfsBanePower(final AbstractCreature owner, int growAmount, int witherAmount, int growValue, int witherValue) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
-        this.amount = amount;
+        this.growAmount = growAmount;
+        this.witherAmount = witherAmount;
+        this.growValue = growValue;
+        this.witherValue = witherValue;
         //this.source = source;
 
         type = PowerType.BUFF;
@@ -58,20 +55,25 @@ public class SpringPower extends AbstractPower implements CloneablePowerInterfac
         updateDescription();
     }
 
-
-    public void onCardDraw(AbstractCard card) {
-        //card.getClass().getName().equals(AbstractDynamicCard.class.getName())
+    @Override
+    public void onUseCard(AbstractCard card, UseCardAction action) {
         if(card instanceof AbstractDynamicCard){
             AbstractDynamicCard c = (AbstractDynamicCard) card;
             if(c.growValue > 0) {
-                this.addToTop(new ModifyGrowAction(c.uuid, this.amount));
-                c.applyPowers();
+                this.flash();
+                AbstractMonster targetMonster = AbstractDungeon.getRandomMonster();
+                this.addToBot(new ApplyPowerAction(targetMonster, owner, new PoisonPower(targetMonster, owner, this.growAmount), this.growAmount));
+                this.growAmount += this.growValue;
+            }
+            if(c.witherValue > 0) {
+                this.flash();
+                AbstractMonster targetMonster = AbstractDungeon.getRandomMonster();
+                this.addToBot(new ApplyPowerAction(targetMonster, owner, new PoisonPower(targetMonster, owner, this.witherAmount), this.witherAmount));
+                if(witherAmount > 0)
+                    witherAmount -= witherValue;
             }
         }
-
     }
-
-
 
     @Override
     public void updateDescription() {
@@ -84,7 +86,7 @@ public class SpringPower extends AbstractPower implements CloneablePowerInterfac
 
     @Override
     public AbstractPower makeCopy() {
-        return new SpringPower(owner, amount);
+        return new WolfsBanePower(owner, growAmount, witherAmount, growValue, witherValue);
     }
 }
 

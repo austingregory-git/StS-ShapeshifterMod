@@ -134,6 +134,10 @@ public class ShapeshifterMod implements
     // Atlas and JSON files for the Animations
     public static final String THE_DEFAULT_SKELETON_ATLAS = "StSShapeShifterResources/images/char/defaultCharacter/skeleton.atlas";
     public static final String THE_DEFAULT_SKELETON_JSON = "StSShapeShifterResources/images/char/defaultCharacter/skeleton.json";
+    public static final String SHAPESHIFTER_SKELETON_ATLAS = "StSShapeShifterResources/images/ShapeShifter/ShapeShifterCharacter.atlas";
+    public static final String SHAPESHIFTER_SKELETON_JSON = "StSShapeShifterResources/images/ShapeShifter/ShapeShifterCharacter.json";
+
+
     
     // =============== MAKE IMAGE PATHS =================
     
@@ -496,10 +500,12 @@ public class ShapeshifterMod implements
         BaseMod.addCard(new MultiSpiritedStrike());
         BaseMod.addCard(new SkullBash());
         BaseMod.addCard(new MammothForm());
-        BaseMod.addCard(new Blossom());
+        //BaseMod.addCard(new Blossom());
+        BaseMod.addCard(new Blossom2());
         BaseMod.addCard(new RestoreBalance());
-        BaseMod.addCard(new Absorb());
-        BaseMod.addCard(new Wildfire());
+        // BaseMod.addCard(new Absorb());
+        //BaseMod.addCard(new Wildfire());
+        BaseMod.addCard(new Wildfire2());
         BaseMod.addCard(new ForestFire());
         BaseMod.addCard(new MagicMushrooms());
         BaseMod.addCard(new Consume());
@@ -569,6 +575,9 @@ public class ShapeshifterMod implements
         BaseMod.addCard(new Vengeance());
         BaseMod.addCard(new Forgiveness());
         BaseMod.addCard(new BurstOfLifeEscapeDeath());
+        BaseMod.addCard(new CosmicShifter());
+        BaseMod.addCard(new Synchronicity());
+        BaseMod.addCard(new WolfsBane());
 
 
 

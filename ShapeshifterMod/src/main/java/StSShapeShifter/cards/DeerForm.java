@@ -48,10 +48,8 @@ public class DeerForm extends AbstractDynamicCard {
 
     public DeerForm() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = 2;
+        this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
-        this.defaultBaseSecondMagicNumber = 1;
-        this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;
 
         //this.tags.add(CardTags.STARTER_DEFEND); //Tag your strike, defend and form (Wraith form, Demon form, Echo form, etc.) cards so that they function correctly.
     }
@@ -60,7 +58,7 @@ public class DeerForm extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         //this.addToBot(new ApplyPowerAction(p, p, new WeakPower(p, this.magicNumber, false), this.magicNumber));
-        this.addToBot(new DrawCardAction(this.defaultSecondMagicNumber));
+        this.addToBot(new DrawCardAction(this.magicNumber));
 
         if(!p.stance.ID.equals("DeerFormStance") && !p.hasPower("CannotChangeStancePower")) {
             this.addToBot(new ApplyPowerAction(p, p, new DeerFormPower(p)));
@@ -75,9 +73,7 @@ public class DeerForm extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            //upgradeBlock(UPGRADE_PLUS_BLOCK);
-            //upgradeMagicNumber(-1);
-            upgradeDefaultSecondMagicNumber(1);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

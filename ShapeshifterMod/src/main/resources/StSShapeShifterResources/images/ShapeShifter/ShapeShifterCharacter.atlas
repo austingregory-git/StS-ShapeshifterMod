@@ -1,0 +1,55 @@
+
+ShapeShifterCharacter.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Torso
+  rotate: false
+  xy: 617, 505
+  size: 240, 352
+  orig: 242, 354
+  offset: 1, 1
+  index: -1
+Head
+  rotate: false
+  xy: 622, 1
+  size: 173, 286
+  orig: 175, 288
+  offset: 1, 1
+  index: -1
+r_arm
+  rotate: false
+  xy: 797, 1
+  size: 132, 261
+  orig: 134, 263
+  offset: 1, 1
+  index: -1
+l_arm
+  rotate: false
+  xy: 797, 264
+  size: 90, 115
+  orig: 92, 117
+  offset: 1, 1
+  index: -1
+r_leg
+  rotate: false
+  xy: 446, 1
+  size: 174, 502
+  orig: 176, 504
+  offset: 1, 1
+  index: -1
+Staff2
+  rotate: false
+  xy: 1, 1
+  size: 443, 859
+  orig: 443, 859
+  offset: 0, 0
+  index: -1
+l_leg2
+  rotate: false
+  xy: 446, 505
+  size: 169, 510
+  orig: 171, 512
+  offset: 1, 1
+  index: -1
