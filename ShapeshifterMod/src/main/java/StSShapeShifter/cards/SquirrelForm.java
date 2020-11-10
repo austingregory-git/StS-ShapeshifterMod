@@ -10,7 +10,9 @@ import StSShapeShifter.powers.SquirrelFormPower;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.powers.DexterityPower;
@@ -27,6 +29,9 @@ public class SquirrelForm extends AbstractDynamicCard {
 
     public static final String ID = ShapeshifterMod.makeID(SquirrelForm.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
+
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -53,11 +58,6 @@ public class SquirrelForm extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //p.relics.add(AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.COMMON));
-        //this.addToBot(new RelicAboveCreatureAction(p, AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.COMMON)));
-        //this.addToBot(new GainGoldAction(4));
-        //int roll = AbstractDungeon.treasureRng.random(0, 99);
-        //this.addToBot(new RollMoveAction(m));
         this.addToBot(new MakeTempCardInHandAction(new Acorn()));
         this.addToBot(new MakeTempCardInHandAction(new Acorn()));
 
@@ -76,7 +76,7 @@ public class SquirrelForm extends AbstractDynamicCard {
             upgradeName();
             //upgradeMagicNumber(UPGRADE_MAGIC);
             //upgradeDefaultSecondMagicNumber(2);
-            this.rawDescription = "Upon entering Squirrel Form, add 2 upgraded Acorns to your hand. While in Squirrel Form, add an upgraded Acorn to your hand at the start of your turn.";
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

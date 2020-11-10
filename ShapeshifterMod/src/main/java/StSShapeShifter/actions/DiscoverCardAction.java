@@ -5,6 +5,8 @@
 
 package StSShapeShifter.actions;
 
+import StSShapeShifter.patches.EnumsPatch;
+import StSShapeShifter.util.AllForms;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
@@ -15,6 +17,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Random;
 
 public class DiscoverCardAction extends AbstractGameAction {
     //public boolean upgraded;
@@ -124,7 +127,12 @@ public class DiscoverCardAction extends AbstractGameAction {
             AbstractCard tmp = null;
             if (type == null) {
                 tmp = AbstractDungeon.returnTrulyRandomCardInCombat();
-            } else {
+            }
+            else if(type == EnumsPatch.FORM) {
+                ArrayList<AbstractCard> forms = new ArrayList<AbstractCard>(AllForms.getAllFormsCards());
+                tmp = forms.get(new Random().nextInt(forms.size()));
+            }
+            else {
                 tmp = AbstractDungeon.returnTrulyRandomCardInCombat(type);
             }
 

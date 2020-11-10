@@ -45,8 +45,6 @@ public class HippoFormPower extends AbstractPower implements CloneablePowerInter
         // We load those textures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
-
-        updateDescription();
     }
 
     public void atStartOfTurnPostDraw() {
@@ -57,12 +55,6 @@ public class HippoFormPower extends AbstractPower implements CloneablePowerInter
     public void stackPower(int stackAmount) {
         this.fontScale = 8.0F;
         this.amount += stackAmount;
-    }
-
-
-    @Override
-    public void updateDescription() {
-
     }
 
     @Override

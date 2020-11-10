@@ -57,11 +57,7 @@ public class SummerPower extends AbstractPower implements CloneablePowerInterfac
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
-        updateDescription();
-
         this.isTurnBased = false;
-/*        AbstractPlayer var10000 = AbstractDungeon.player;
-        var10000.gameHandSize += amount;*/
     }
 
 
@@ -71,20 +67,6 @@ public class SummerPower extends AbstractPower implements CloneablePowerInterfac
             AbstractDynamicCard c = (AbstractDynamicCard) card;
             this.addToTop(new ModifyGrowAction(c.uuid, c.baseGrowValue));
             c.applyPowers();
-        }
-    }
-
-/*    public void onRemove() {
-        AbstractPlayer var10000 = AbstractDungeon.player;
-        var10000.gameHandSize += amount;
-    }*/
-
-    @Override
-    public void updateDescription() {
-        if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
         }
     }
 

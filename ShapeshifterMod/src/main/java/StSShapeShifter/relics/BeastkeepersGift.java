@@ -28,13 +28,13 @@ public class BeastkeepersGift extends AbstractRelic {
         super(ID, "sunflower.png", RelicTier.COMMON, LandingSound.SOLID);
     }
 
-    public String getUpdatedDescription() {
+/*    public String getUpdatedDescription() {
         return AbstractDungeon.player != null ? this.setDescription(AbstractDungeon.player.chosenClass) : this.setDescription((PlayerClass)null);
     }
 
     private String setDescription(PlayerClass c) {
         return "Upon obtaining this relic, upgrade 2 random forms.";
-    }
+    }*/
 
     public void onEquip() {
         ArrayList<AbstractCard> upgradableCards = new ArrayList();

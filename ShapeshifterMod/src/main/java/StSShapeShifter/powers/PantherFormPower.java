@@ -43,8 +43,6 @@ public class PantherFormPower extends AbstractPower implements CloneablePowerInt
         // We load those textures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
-
-        updateDescription();
     }
 
     @Override
@@ -59,11 +57,6 @@ public class PantherFormPower extends AbstractPower implements CloneablePowerInt
     public void stackPower(int stackAmount) {
         this.fontScale = 8.0F;
         this.amount += stackAmount;
-    }
-
-    @Override
-    public void updateDescription() {
-
     }
 
     @Override

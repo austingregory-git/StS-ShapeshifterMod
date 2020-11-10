@@ -1,34 +1,34 @@
 {
   "StSShapeShifter:TortoiseFormStance": {
     "NAME": "Tortoise Form",
-    "DESCRIPTIONS": ["Gain 1 Dexterity", "Or more, idk", "salkdna"]
+    "DESCRIPTION": ["Gain 1 Dexterity", "Or more, idk", "salkdna"]
   },
   "StSShapeShifter:LynxFormStance": {
     "NAME": "Lynx Form",
-    "DESCRIPTIONS": ["Gain 1 Dexterity", "Or more, idk", "salkdna"]
+    "DESCRIPTION": ["Gain 1 Dexterity", "Or more, idk", "salkdna"]
   },
   "StSShapeShifter:DeerFormStance": {
     "NAME": "Deer Form",
-    "DESCRIPTIONS": ["Gain 1 Dexterity", "Or more, idk", "salkdna"]
+    "DESCRIPTION": ["Gain 1 Dexterity", "Or more, idk", "salkdna"]
   },
   "StSShapeShifter:BearFormStance": {
     "NAME": "Bear Form",
-    "DESCRIPTIONS": ["Gain 1 Dexterity", "Or more, idk", "salkdna"]
+    "DESCRIPTION": ["Gain 1 Dexterity", "Or more, idk", "salkdna"]
   },
   "StSShapeShifter:DragonFormStance": {
     "NAME": "Dragon Form",
-    "DESCRIPTIONS": ["Gain 1 Dexterity", "Or more, idk", "salkdna"]
+    "DESCRIPTION": ["Gain 1 Dexterity", "Or more, idk", "salkdna"]
   },
   "StSShapeShifter:MammothFormStance": {
     "NAME": "Mammoth Form",
-    "DESCRIPTIONS": ["Gain 1 Dexterity", "Or more, idk", "salkdna"]
+    "DESCRIPTION": ["Gain 1 Dexterity", "Or more, idk", "salkdna"]
   },
   "StSShapeShifter:RatFormStance": {
     "NAME": "Rat Form",
-    "DESCRIPTIONS": ["Gain 1 Dexterity", "Or more, idk", "salkdna"]
+    "DESCRIPTION": ["Gain 1 Dexterity", "Or more, idk", "salkdna"]
   },
   "StSShapeShifter:EagleFormStance": {
     "NAME": "Eagle Form",
-    "DESCRIPTIONS": ["Gain 1 Dexterity", "Or more, idk", "salkdna"]
+    "DESCRIPTION": ["Gain 1 Dexterity", "Or more, idk", "salkdna"]
   }
 }

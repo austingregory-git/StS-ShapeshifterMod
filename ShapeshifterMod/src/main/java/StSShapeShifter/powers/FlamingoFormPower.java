@@ -46,8 +46,6 @@ public class FlamingoFormPower extends AbstractPower implements CloneablePowerIn
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
-        updateDescription();
-
         this.isTurnBased = false;
     }
 
@@ -65,11 +63,6 @@ public class FlamingoFormPower extends AbstractPower implements CloneablePowerIn
             AbstractPower debuffToRemove = debuffs.get(new Random().nextInt(debuffs.size()));
             this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, debuffToRemove.ID));
         }
-
-    }
-
-    @Override
-    public void updateDescription() {
 
     }
 

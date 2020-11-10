@@ -57,7 +57,6 @@ public class FreeFormPower extends AbstractPower implements CloneablePowerInterf
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
-        updateDescription();
     }
 
     @Override
@@ -81,15 +80,6 @@ public class FreeFormPower extends AbstractPower implements CloneablePowerInterf
                 }
                 this.addToBot(new RemoveSpecificPowerAction(owner, owner, ShapeshifterMod.makeID("FreeFormPower")));
             }
-        }
-    }
-
-    @Override
-    public void updateDescription() {
-        if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
         }
     }
 

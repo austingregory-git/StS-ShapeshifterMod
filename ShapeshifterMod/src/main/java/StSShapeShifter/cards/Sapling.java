@@ -5,7 +5,9 @@ import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.characters.TheDefault;
@@ -26,6 +28,9 @@ public class Sapling extends AbstractDynamicCard {
 
     public static final String ID = ShapeshifterMod.makeID(Sapling.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
+
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -66,7 +71,7 @@ public class Sapling extends AbstractDynamicCard {
             upgradeName();
             //upgradeMagicNumber(2);
             this.exhaust = false;
-            this.rawDescription = "Swap this card with a card in your discard pile. Draw 1 card.";
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

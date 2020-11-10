@@ -31,19 +31,19 @@ import java.util.Random;
 
 public class AlarmClock extends AbstractRelic {
     public boolean active;
-    public static final String ID = ShapeshifterMod.makeID("AlarmClock");
+    public static final String ID = ShapeshifterMod.makeID(AlarmClock.class.getSimpleName());
 
     public AlarmClock() {
         super(ID, "sunflower.png", RelicTier.RARE, LandingSound.SOLID);
     }
 
-    public String getUpdatedDescription() {
+    /*public String getUpdatedDescription() {
         return AbstractDungeon.player != null ? this.setDescription(AbstractDungeon.player.chosenClass) : this.setDescription((PlayerClass)null);
     }
 
     private String setDescription(PlayerClass c) {
         return "After 8 turns in combat, gain 3 Strength and 3 Dexterity";
-    }
+    }*/
 
     public void atBattleStart() {
         this.counter = 0;

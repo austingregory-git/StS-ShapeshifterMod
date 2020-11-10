@@ -5,7 +5,9 @@ import StSShapeShifter.powers.*;
 import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.characters.TheDefault;
@@ -24,6 +26,9 @@ public class Winter extends AbstractDynamicCard {
 
     public static final String ID = ShapeshifterMod.makeID(Winter.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
+
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -56,7 +61,8 @@ public class Winter extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = "Your Wither cards cost 0. Whenever you draw a Wither Card, double its Wither value.";
+            //this.rawDescription = "Your Wither cards cost 0. Whenever you draw a Wither Card, double its Wither value.";
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

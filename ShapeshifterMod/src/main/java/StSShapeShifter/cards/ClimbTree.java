@@ -9,7 +9,9 @@ import StSShapeShifter.util.BloomCountUtils;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 
@@ -31,6 +33,9 @@ public class ClimbTree extends AbstractDynamicCard {
 
     public static final String ID = ShapeshifterMod.makeID(ClimbTree.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
+
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -61,6 +66,7 @@ public class ClimbTree extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainBlockAction(p, this.block));
         if(BloomCountUtils.getBloomCount() >= -3 && BloomCountUtils.getBloomCount() <= 3) {
+            this.addToBot(new GainBlockAction(p, 4));
             this.addToBot(new ApplyPowerAction(p, p, new DodgePower(p, this.magicNumber)));
         }
         if(BloomCountUtils.getBloomCount() <= -10) {
@@ -89,8 +95,7 @@ public class ClimbTree extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
-            this.rawDescription = "Gain !B! Block. If you are Balanced, gain !M! Dodge. If you are are Wilting, add an Upgraded Falling Leaves to your hand. If you are Blooming, add 2 of a random Fruit to your hand.";
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

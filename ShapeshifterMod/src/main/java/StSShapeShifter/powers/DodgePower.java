@@ -47,7 +47,6 @@ public class DodgePower extends AbstractPower implements CloneablePowerInterface
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
-        updateDescription();
     }
 
     public void stackPower(int stackAmount) {
@@ -60,15 +59,6 @@ public class DodgePower extends AbstractPower implements CloneablePowerInterface
             this.addToTop(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
         }
         return 0;
-    }
-
-    @Override
-    public void updateDescription() {
-        if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
-        }
     }
 
     @Override

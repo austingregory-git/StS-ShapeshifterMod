@@ -6,7 +6,9 @@ import StSShapeShifter.powers.GardenPower;
 import StSShapeShifter.powers.HarmonyPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
@@ -23,6 +25,9 @@ public class Garden extends AbstractDynamicCard {
 
     public static final String ID = ShapeshifterMod.makeID(Garden.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
+
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -62,7 +67,7 @@ public class Garden extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             //upgradeBaseCost(UPGRADE_COST);
-            this.rawDescription = "At the start of your turn, if you are Balanced, add 2 random fruits to your hand. If you are Blooming, gain 1 energy and draw 1 card. If you are Wilting, add 2 Rotten Fruit to your hand.";
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

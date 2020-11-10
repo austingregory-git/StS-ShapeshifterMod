@@ -36,13 +36,13 @@ public class AnimalHeart extends CustomRelic {
         super(ID, IMG, RelicTier.STARTER, LandingSound.SOLID);
     }
 
-    public String getUpdatedDescription() {
+/*    public String getUpdatedDescription() {
         return AbstractDungeon.player != null ? this.setDescription(AbstractDungeon.player.chosenClass) : this.setDescription((PlayerClass)null);
     }
 
     private String setDescription(PlayerClass c) {
         return "Your first form each combat costs 0.";
-    }
+    }*/
 
     public void atBattleStart() {
         this.flash();

@@ -38,8 +38,6 @@ public class BearFormPower extends AbstractPower implements CloneablePowerInterf
 
         this.owner = owner;
         this.amount = amount;
-        //this.upgraded = upgraded;
-        //this.source = source;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -54,25 +52,16 @@ public class BearFormPower extends AbstractPower implements CloneablePowerInterf
     public void stackPower(int stackAmount) {
         this.fontScale = 8.0F;
         this.amount += stackAmount;
-        this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, stackAmount), stackAmount));
     }
 
     @Override
-    public void atStartOfTurn() {
+    public void atEndOfTurn(boolean isPlayer) {
         this.addToBot(new GainBlockAction(this.owner, this.amount));
     }
 
-    /*public void onInitialApplication() {
-        this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, amount), amount));
-    }
-
-    public void onRemove() {
-        this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, -amount), -amount));
-    }*/
-
     @Override
     public void updateDescription() {
-
+        description = DESCRIPTIONS[0] + amount;
     }
 
     @Override

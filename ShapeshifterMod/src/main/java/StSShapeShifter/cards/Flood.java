@@ -5,7 +5,9 @@ import StSShapeShifter.characters.ShapeShifter;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.InstantKillAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
@@ -27,6 +29,9 @@ public class Flood extends AbstractDynamicCard {
 
     public static final String ID = ShapeshifterMod.makeID(Flood.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
+
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -80,7 +85,7 @@ public class Flood extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             this.isInnate = true;
-            this.rawDescription = "Innate. Destroy all minions. Apply !M! Vulnerable and Weak to all remaining enemies. Exhaust.";
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

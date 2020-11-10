@@ -8,7 +8,9 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ModifyBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.powers.*;
@@ -24,6 +26,9 @@ public class WaspSwarmForm extends AbstractDynamicCard {
 
     public static final String ID = ShapeshifterMod.makeID(WaspSwarmForm.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
+
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -94,7 +99,8 @@ public class WaspSwarmForm extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = "Upon Entering Wasp Swarm Form, Apply X+1 Weak and Poison to all enemies. While in Wasp Swarm Form, deal 2(X+1) damage to all enemies at the start of your turn.";
+            //this.rawDescription = "Upon Entering Wasp Swarm Form, Apply X+1 Weak and Poison to all enemies. While in Wasp Swarm Form, deal 2(X+1) damage to all enemies at the start of your turn.";
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -81,7 +81,6 @@ public class EntForm extends AbstractDynamicCard {
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_SECOND_MAGIC);
             initializeDescription();
-            this.rawDescription = "Upon Entering Ent Form, gain 5 regen. While in Ent Form, gain Entangled at the start of your turn and !M! Dexterity at the end of your turn.";
         }
     }
 }

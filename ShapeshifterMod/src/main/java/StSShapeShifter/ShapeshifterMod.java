@@ -4,6 +4,7 @@ import StSShapeShifter.cards.*;
 import StSShapeShifter.cards.tempCards.*;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.events.IdentityCrisisEvent;
+import StSShapeShifter.potions.AnimalAmalgamationPotion;
 import StSShapeShifter.relics.*;
 import StSShapeShifter.util.IDCheckDontTouchPls;
 import StSShapeShifter.util.TextureLoader;
@@ -365,7 +366,7 @@ public class ShapeshifterMod implements
         // part of the game, simply don't include the dungeon ID
         // If you want to have a character-specific event, look at slimebound (CityRemoveEventPatch).
         // Essentially, you need to patch the game and say "if a player is not playing my character class, remove the event from the pool"
-        BaseMod.addEvent(IdentityCrisisEvent.ID, IdentityCrisisEvent.class, TheCity.ID);
+        //BaseMod.addEvent(IdentityCrisisEvent.ID, IdentityCrisisEvent.class, TheCity.ID);
         
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");
@@ -383,7 +384,8 @@ public class ShapeshifterMod implements
         // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
         //BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
-        
+        BaseMod.addPotion(AnimalAmalgamationPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, AnimalAmalgamationPotion.POTION_ID, ShapeShifter.Enums.SHAPESHIFTER);
+
         logger.info("Done editing potions");
     }
     
@@ -406,7 +408,7 @@ public class ShapeshifterMod implements
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         //BaseMod.addRelicToCustomPool(new PlaceholderRelic(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
         //BaseMod.addRelicToCustomPool(new PlaceholderRelic(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
-        BaseMod.addRelicToCustomPool(new Golden_Flower(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
+        //BaseMod.addRelicToCustomPool(new Golden_Flower(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
         BaseMod.addRelicToCustomPool(new AnimalHeart(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
         BaseMod.addRelicToCustomPool(new TheShapeShiftersMagnolia(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
         BaseMod.addRelicToCustomPool(new AlarmClock(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
@@ -418,6 +420,9 @@ public class ShapeshifterMod implements
         BaseMod.addRelicToCustomPool(new LemurHeaddress(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
         BaseMod.addRelicToCustomPool(new ThornsOfSummi(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
         BaseMod.addRelicToCustomPool(new WristwrapsOfDiscovery(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
+        BaseMod.addRelicToCustomPool(new Fertilizer(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
+        BaseMod.addRelicToCustomPool(new FrogOfVitality(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
+        BaseMod.addRelicToCustomPool(new LoyalLobster(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
         //BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
         //BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheDefault.Enums.COLOR_GRAY);*/
         
@@ -581,7 +586,7 @@ public class ShapeshifterMod implements
 
 
 
-        new AutoAdd("ShapeShifterMod:StSShapeShifter")
+        new AutoAdd(getModID())
             .packageFilter("StSShapeshifter.cards")
             .setDefaultSeen(true)
             .cards();
@@ -600,7 +605,6 @@ public class ShapeshifterMod implements
     
     @Override
     public void receiveEditStrings() {
-        logger.info("You seeing this?");
         logger.info("Beginning to edit strings for mod with ID: " + getModID());
         
         // CardStrings

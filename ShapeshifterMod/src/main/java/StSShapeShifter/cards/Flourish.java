@@ -6,7 +6,9 @@ import StSShapeShifter.characters.ShapeShifter;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.characters.TheDefault;
@@ -29,6 +31,9 @@ public class Flourish extends AbstractDynamicCard {
 
     public static final String ID = ShapeshifterMod.makeID(Flourish.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
+
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -72,7 +77,7 @@ public class Flourish extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = "Draw !M! Cards. Reduce their cost to 0 this turn.";
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
 
         }

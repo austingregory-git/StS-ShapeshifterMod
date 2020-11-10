@@ -17,77 +17,105 @@
     "NAME": "Animal Heart",
     "FLAVOR": "The ShapeShifter's true form...",
     "DESCRIPTIONS": [
-      "Every 4 turns, ", " Draw 1 card"
+      "Your first form each combat costs 0."
     ]
   },
   "StSShapeShifter:TheShapeShiftersMagnolia": {
     "NAME": "The Shapeshifter's Magnolia",
     "FLAVOR": "The ShapeShifter's favorite flower.",
     "DESCRIPTIONS": [
-      "Every 4 turns, ", " Draw 1 card"
+      "Keeps track of your current Bloom Count."
     ]
   },
   "StSShapeShifter:AlarmClock": {
     "NAME": "Alarm Clock",
     "FLAVOR": "IT'S TIME TO WAKE UP.",
     "DESCRIPTIONS": [
-      "Every 4 turns, ", " Draw 1 card"
+      "After 8 turns in combat, gain 3 Strength and 3 Dexterity"
     ]
   },
   "StSShapeShifter:AlchemistsNecklace": {
     "NAME": "Alchemist's Necklace",
     "FLAVOR": "Each bead contains a powerful potion.",
     "DESCRIPTIONS": [
-      "Every 4 turns, ", " Draw 1 card"
+      "Whenever you use a potion, draw 2 cards."
     ]
   },
   "StSShapeShifter:BeastkeepersGift": {
     "NAME": "Beastkeeper's Gift",
     "FLAVOR": "A book about beasts! What a wonderful gift.",
     "DESCRIPTIONS": [
-      "Every 4 turns, ", " Draw 1 card"
+      "Upon obtaining this relic, upgrade 2 random forms."
     ]
   },
   "StSShapeShifter:EmeraldPantherFigurine": {
     "NAME": "Emerald Panther Figurine",
     "FLAVOR": "Its eyes keep glowing... and the cards keep growing.",
     "DESCRIPTIONS": [
-      "Every 4 turns, ", " Draw 1 card"
+      "Cards with Grow gain +1 to their Grow value"
     ]
   },
   "StSShapeShifter:FruitTree": {
-    "NAME": "Fruit Treee",
+    "NAME": "Fruit Tree",
     "FLAVOR": "Full of Healthy Snacks!",
     "DESCRIPTIONS": [
-      "Every 4 turns, ", " Draw 1 card"
+      "At the start of each combat, add a random fruit to your hand."
     ]
   },
   "StSShapeShifter:LemurHeaddress": {
     "NAME": "Lemur Headdress",
     "FLAVOR": "To move it move it, or to not move it move it, that is the question.",
     "DESCRIPTIONS": [
-      "Every 4 turns, ", " Draw 1 card"
+      "The first time you change forms each turn, gain 1 energy."
     ]
   },
   "StSShapeShifter:DruidicMedallion": {
     "NAME": "Druidic Medallion",
     "FLAVOR": "Dodge, duck, dip, dive, and... transform",
     "DESCRIPTIONS": [
-      "Every 4 turns, ", " Draw 1 card"
+      "Whenever you change forms, gain 3 block."
     ]
   },
   "StSShapeShifter:ThornsOfSummi": {
-    "NAME": "Thorns Of Summi",
+    "NAME": "Thorns of Summi",
     "FLAVOR": "Ouch!",
     "DESCRIPTIONS": [
-      "Every 4 turns, ", " Draw 1 card"
+      "At the start of each combat, gain 1 thorns."
+    ]
+  },
+  "StSShapeShifter:FrogOfVitality": {
+    "NAME": "Frog of Vitality",
+    "FLAVOR": "He's just sitting there... healthily!",
+    "DESCRIPTIONS": [
+      "After obtaining this relic, whenever you play a unique form for this run, gain 1 max hp."
+    ]
+  },
+  "StSShapeShifter:Fertilizer": {
+    "NAME": "Fertilizer",
+    "FLAVOR": "Ingredients include... 3 Strikes? Are you sure?",
+    "DESCRIPTIONS": [
+      "After playing the same exact card 3 times, gain 3 Energy and Draw 3 cards. Can only occur once per combat."
+    ]
+  },
+  "StSShapeShifter:LoyalLobster": {
+    "NAME": "Loyal Lobster",
+    "FLAVOR": "It follows closely behind, smiling all the way through the spire, just happy to be here.",
+    "DESCRIPTIONS": [
+      "If you stay in the same form for 3 turns, gain 3 Strength for this combat. Can only trigger once."
+    ]
+  },
+  "StSShapeShifter:BearPaw": {
+    "NAME": "Loyal Lobster",
+    "FLAVOR": "It follows closely behind, smiling all the way through the spire, just happy to be here.",
+    "DESCRIPTIONS": [
+      "Whenever you gain a relic, increase your max hp by 1."
     ]
   },
   "StSShapeShifter:WristwrapsOfDiscovery": {
     "NAME": "Wristwraps of Discovery",
     "FLAVOR": "The thrill of discovery strengthens me!",
     "DESCRIPTIONS": [
-      "Every 4 turns, ", " Draw 1 card"
+      "Whenever you obtain a card, gain 2 Strength for your next combat."
     ]
   },
   "StSShapeShifter:PlaceholderRelic2": {

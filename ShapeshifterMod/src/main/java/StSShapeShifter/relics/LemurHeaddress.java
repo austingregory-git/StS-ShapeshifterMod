@@ -32,13 +32,13 @@ public class LemurHeaddress extends AbstractRelic {
         super(ID, "sunflower.png", RelicTier.BOSS, LandingSound.SOLID);
     }
 
-    public String getUpdatedDescription() {
+    /*public String getUpdatedDescription() {
         return AbstractDungeon.player != null ? this.setDescription(AbstractDungeon.player.chosenClass) : this.setDescription((PlayerClass)null);
     }
 
     private String setDescription(PlayerClass c) {
         return "The first time you change forms each turn, gain 1 energy.";
-    }
+    }*/
 
     public void onUseCard(AbstractCard c, UseCardAction action) {
         if (AllForms.getAllForms().contains(c.cardID) && active) {

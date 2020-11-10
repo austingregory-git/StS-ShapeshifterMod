@@ -9,6 +9,8 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.unique.RemoveAllPowersAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
@@ -26,6 +28,9 @@ public class RhinoCalfForm extends AbstractDynamicCard {
 
     public static final String ID = ShapeshifterMod.makeID(RhinoCalfForm.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
+
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -70,7 +75,7 @@ public class RhinoCalfForm extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = "Upon Entering Rhino Calf Form, gain !B! block. While in Rhino Calf Form, gain !M! Plated Armor at the end of your turn. This Grows by 1 each turn. After 3 turns, enter Improved Rhino Form. Exhaust.";
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

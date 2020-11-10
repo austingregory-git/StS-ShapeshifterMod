@@ -26,6 +26,7 @@ import StSShapeShifter.cards.DefaultRareAttack;
 import StSShapeShifter.util.TextureLoader;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.sun.org.glassfish.gmbal.Description;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -59,11 +60,11 @@ public class AutumnPower extends AbstractPower implements CloneablePowerInterfac
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
-        updateDescription();
-
         this.isTurnBased = false;
         AbstractPlayer var10000 = AbstractDungeon.player;
         var10000.gameHandSize += cardDraw;
+
+        updateDescription();
     }
 
 
@@ -83,11 +84,7 @@ public class AutumnPower extends AbstractPower implements CloneablePowerInterfac
 
     @Override
     public void updateDescription() {
-        if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
-        }
+        description = DESCRIPTIONS[0] + amount;
     }
 
     @Override

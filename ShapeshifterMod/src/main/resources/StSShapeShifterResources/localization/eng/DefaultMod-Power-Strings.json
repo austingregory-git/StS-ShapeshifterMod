@@ -1,19 +1,19 @@
 {
         "StSShapeShifter:CommonPower": {
-                 "NAME": "Placeholder Power",
-                 "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
+          "NAME": "Placeholder Power",
+          "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
         },
         "StSShapeShifter:RarePower": {
-                 "NAME": "Placeholder Power",
-                 "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+          "NAME": "Placeholder Power",
+          "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
         },
         "StSShapeShifter:DeepWoundPower": {
           "NAME": "Deep Wound",
           "DESCRIPTIONS": ["Whenever this creature attacks, it takes 3(4) damage", "random enemy", "hello"]
         },
         "StSShapeShifter:SapBurstPower": {
-                "NAME": "Sap Burst",
-                "DESCRIPTIONS": ["At the end of your turn, reduce a random enemy's strength by #b", "random enemy", "hello"]
+          "NAME": "Sap Burst",
+          "DESCRIPTIONS": ["At the end of your turn, reduce a random enemy's strength by #b", "random enemy", "hello"]
         },
         "StSShapeShifter:FullMoonPower": {
           "NAME": "Full Moon",
@@ -25,11 +25,11 @@
         },
         "StSShapeShifter:CosmicShifterPower": {
           "NAME": "Cosmic Shifter",
-          "DESCRIPTION": "At the end of your turn, deal damage to all enemies equal to the number of unique forms you have entered this combat."
+          "DESCRIPTIONS": ["At the end of your turn, deal #b", " damage to all enemies equal to the number of unique forms you have entered this combat."]
         },
         "StSShapeShifter:WildfirePower": {
           "NAME": "Wildfire",
-          "DESCRIPTION": "At the start of this creature's turn, they take damage. Then, Wildfire jumps to a random enemy. This effect Withers by 2 for each jump."
+          "DESCRIPTIONS": ["At the start of this creature's turn, they take damage. Then, Wildfire jumps to a random enemy. This effect Withers by 2 for each jump."]
         },
         "StSShapeShifter:FertileSoilPower": {
           "NAME": "Fertile Soil",
@@ -45,15 +45,15 @@
         },
         "StSShapeShifter:DamageAmpPower": {
           "NAME": "Amplified Attack",
-          "DESCRIPTIONS": ["Your next attack deals double damage.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["Your next attack deals #b", "X damage"]
         },
         "StSShapeShifter:WolfsBanePower": {
           "NAME": "Wolf's Bane",
-          "DESCRIPTION": "Whenever you play a Grow or Wither card, apply poison to a random enemy. These effects Grow or Wither depending on the card played."
+          "DESCRIPTIONS": ["Whenever you play a Grow or Wither card, apply poison to a random enemy. These effects Grow or Wither depending on the card played."]
         },
         "StSShapeShifter:SynchronicityPower": {
           "NAME": "Synchronicity",
-          "DESCRIPTION": "Whenever you play a Grow card, gain 1 Dexterity. Whenever you play a Wither card, gain 1 Strength."
+          "DESCRIPTIONS": ["Whenever you play a Grow card, gain 1 Dexterity. Whenever you play a Wither card, gain 1 Strength."]
         },
         "StSShapeShifter:WiltingWrathPower": {
           "NAME": "WiltingWrath",
@@ -61,7 +61,7 @@
         },
         "StSShapeShifter:BulwarkOfDiscoveryPower": {
           "NAME": "Bulwark of Discovery",
-          "DESCRIPTIONS": ["Whenever you draw a unique card, gain block.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["Whenever you draw a unique card, gain #b", " block."]
         },
         "StSShapeShifter:EvolutionPower": {
           "NAME": "Evolution",
@@ -97,35 +97,35 @@
         },
         "StSShapeShifter:FoxFormPower": {
           "NAME": "Fox Form",
-          "DESCRIPTION": "At the start of your turn, Dig for treasure, gaining gold and a small chance at gaining a relic. Lasts for up to 3 turns. Exhaust."
+          "DESCRIPTIONS": ["At the start of your turn, Dig for treasure, gaining gold and a small chance at gaining a relic. Lasts for up to 3 turns. Exhaust."]
         },
         "StSShapeShifter:WolfFormPower": {
           "NAME": "Wolf Form",
-          "DESCRIPTION": ["While in Wolf Form, your attacks heal you.", "yo", "hello"]
+          "DESCRIPTIONS": ["While in Wolf Form, your attacks heal you.", "yo", "hello"]
         },
         "StSShapeShifter:HippoFormPower": {
           "NAME": "Hippo Form",
-          "DESCRIPTION": ["While in Hippo Form, at the start of your turn, discard a card and deal damage to a random enemy.", "yo", "hello"]
+          "DESCRIPTIONS": ["While in Hippo Form, at the start of your turn, discard a card and deal damage to a random enemy.", "yo", "hello"]
         },
         "StSShapeShifter:RaptorFormPower": {
           "NAME": "Raptor Form",
-          "DESCRIPTION": ["While in Raptor Form, Grow 1", "yo", "hello"]
+          "DESCRIPTIONS": ["While in Raptor Form, Grow 1", "yo", "hello"]
         },
         "StSShapeShifter:RhinoCalfFormPower": {
           "NAME": "Rhino Calf Form",
-          "DESCRIPTION": ["While in Rhino Calf Form, gain Plated Armor at the end of your turn. This Grows by 1 each turn. After 3 turns, enter Rhino Form.", "yo", "hello"]
+          "DESCRIPTIONS": ["While in Rhino Calf Form, gain Plated Armor at the end of your turn. This Grows by 1 each turn. After 3 turns, enter Rhino Form.", "yo", "hello"]
         },
         "StSShapeShifter:RhinoFormPower": {
           "NAME": "Rhino Form",
-          "DESCRIPTION": ["Upon Entering Rhino Form, gain block and plated armor. While in Rhino Form, deal damage equal to your block to the lowest health enemy at the end of you turn. Lasts 3 turns.", "yo", "hello"]
+          "DESCRIPTIONS": ["Upon Entering Rhino Form, gain block and plated armor. While in Rhino Form, deal damage equal to your block to the lowest health enemy at the end of you turn. Lasts 3 turns.", "yo", "hello"]
         },
         "StSShapeShifter:PorcupineFormPower": {
           "NAME": "Porcupine Form",
-          "DESCRIPTION": ["While in Porcupine Form, you are immune to debuffs.", "yo", "hello"]
+          "DESCRIPTIONS": ["While in Porcupine Form, you are immune to debuffs.", "yo", "hello"]
         },
         "StSShapeShifter:PantherFormPower": {
           "NAME": "Panther Form",
-          "DESCRIPTION": ["Upon Entering Panther Form, your next attack deals double damage. While in Panther Form, gain Strength at the end of your turn. Lasts 3 turns.", "yo", "hello"]
+          "DESCRIPTIONS": ["Upon Entering Panther Form, your next attack deals double damage. While in Panther Form, gain Strength at the end of your turn. Lasts 3 turns.", "yo", "hello"]
         },
         "StSShapeShifter:DodgePower": {
           "NAME": "Dodge",
@@ -141,7 +141,7 @@
         },
         "StSShapeShifter:AutumnPower": {
           "NAME": "Autumn",
-          "DESCRIPTIONS": ["Draw 2 additional cards each turn. Whenever you draw a Wither card, increase its Wither value.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["Draw 2 additional cards each turn. Whenever you draw a Wither card, increase its Wither value by #b."]
         },
         "StSShapeShifter:WinterPower": {
           "NAME": "Winter",
@@ -177,11 +177,11 @@
         },
         "StSShapeShifter:BurrBombPower": {
           "NAME": "Burr Bomb",
-          "DESCRIPTIONS": ["After 2 turns, this explodes, dealing damage to this creature", "random enemy", "hello"]
+          "DESCRIPTIONS": ["At the end of the player's next turn, this explodes, dealing #b", " damage to this creature"]
         },
         "StSShapeShifter:DeerFormPower": {
-                "NAME": "Deer Form",
-                "DESCRIPTIONS": ["At the start of your turn, add a random skill to your hand", "random enemy", "hello"]
+          "NAME": "Deer Form",
+          "DESCRIPTIONS": ["At the start of your turn, add a random skill to your hand", "random enemy", "hello"]
         },
         "StSShapeShifter:EntFormPower": {
           "NAME": "Ent Form",
@@ -229,6 +229,6 @@
         },
         "StSShapeShifter:TortoiseFormPower": {
           "NAME": "Tortoise Form",
-          "DESCRIPTIONS": ["While in Tortoise Form, gain 1(2) Dexterity", "random enemy", "hello"]
+          "DESCRIPTIONS": ["While in Tortoise Form, gain #b",  " Dexterity"]
         }
 }

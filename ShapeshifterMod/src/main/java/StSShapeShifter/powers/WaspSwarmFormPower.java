@@ -48,8 +48,6 @@ public class WaspSwarmFormPower extends AbstractPower implements CloneablePowerI
         // We load those textures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
-
-        updateDescription();
     }
 
     public void atStartOfTurn() {
@@ -70,15 +68,6 @@ public class WaspSwarmFormPower extends AbstractPower implements CloneablePowerI
     public void stackPower(int stackAmount) {
         this.fontScale = 8.0F;
         this.amount += stackAmount;
-    }
-
-    @Override
-    public void updateDescription() {
-        if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
-        }
     }
 
     @Override

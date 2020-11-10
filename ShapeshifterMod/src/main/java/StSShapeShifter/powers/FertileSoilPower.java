@@ -44,8 +44,6 @@ public class FertileSoilPower extends AbstractPower implements CloneablePowerInt
         // We load those textures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
-
-        updateDescription();
     }
 
     @Override
@@ -53,15 +51,6 @@ public class FertileSoilPower extends AbstractPower implements CloneablePowerInt
         if(BloomCountUtils.getBloomCount() >= 10) {
             this.addToBot(new GainEnergyAction(1));
             this.addToBot(new DrawCardAction(1));
-        }
-    }
-
-    @Override
-    public void updateDescription() {
-        if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
         }
     }
 

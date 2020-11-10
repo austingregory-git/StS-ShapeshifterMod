@@ -53,7 +53,8 @@
   },
   "StSShapeShifter:Flood": {
     "NAME": "Flood",
-    "DESCRIPTION": "Destroy all minions. Apply !M! Vulnerable and Weak to all remaining enemies. Exhaust."
+    "DESCRIPTION": "Destroy all minions. Apply !M! Vulnerable and Weak to all remaining enemies. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. Destroy all minions. Apply !M! Vulnerable and Weak to all remaining enemies. Exhaust."
   },
   "StSShapeShifter:PoisonIvy": {
     "NAME": "Poison Ivy",
@@ -101,7 +102,8 @@
   },
   "StSShapeShifter:Sapling": {
     "NAME": "Sapling",
-    "DESCRIPTION": "Swap this card with a card in your discard pile. Draw 1 card. Exhaust."
+    "DESCRIPTION": "Swap this card with a card in your discard pile. Draw 1 card. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Swap this card with a card in your discard pile. Draw 1 card."
   },
   "StSShapeShifter:FlowerShield": {
     "NAME": "Flower Shield",
@@ -129,7 +131,8 @@
   },
   "StSShapeShifter:Flourish": {
     "NAME": "Flourish",
-    "DESCRIPTION": "Draw !M! Cards. Reduce their costs by 1 this turn."
+    "DESCRIPTION": "Draw !M! Cards. Reduce their costs by 1 this turn.",
+    "UPGRADE_DESCRIPTION": "Draw !M! Cards. Reduce their cost to 0 this turn."
   },
   "StSShapeShifter:SpiritOfTheEarth": {
     "NAME": "Spirit of the Earth",
@@ -193,11 +196,13 @@
   },
   "StSShapeShifter:SkullBash": {
     "NAME": "Skull Bash",
-    "DESCRIPTION": "Deal !D! Damage. Damage is equivalent half of your current hp."
+    "DESCRIPTION": "Deal !D! Damage. Damage is equivalent half of your current hp.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. Damage is equivalent half of your Max HP."
   },
   "StSShapeShifter:ReplenishingNectar": {
     "NAME": "Replenishing Nectar",
-    "DESCRIPTION": "Heal for !M!. Increase this heal by 1 permanently. Exhaust."
+    "DESCRIPTION": "Heal for !M!. Increase this heal by 1 permanently. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Heal for !M!. Increase this heal by 2 permanently. Exhaust."
   },
   "StSShapeShifter:Wildfire": {
     "NAME": "Wildfire",
@@ -225,7 +230,8 @@
   },
   "StSShapeShifter:Tornado": {
     "NAME": "Tornado",
-    "DESCRIPTION": "Swap your draw and discard piles. Retain. Exhaust."
+    "DESCRIPTION": "Swap your draw and discard piles. Retain. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Swap your draw and discard piles. Retain."
   },
   "StSShapeShifter:FullMoon": {
     "NAME": "Full Moon",
@@ -277,19 +283,23 @@
   },
   "StSShapeShifter:WaspSwarmForm": {
     "NAME": "Wasp Swarm Form",
-    "DESCRIPTION": "Upon Entering Wasp Swarm Form, Apply X Weak and Poison to all enemies. While in Wasp Swarm Form, deal 2X damage to all enemies at the start of your turn."
+    "DESCRIPTION": "Upon Entering Wasp Swarm Form, Apply X Weak and Poison to all enemies. While in Wasp Swarm Form, deal 2X damage to all enemies at the start of your turn.",
+    "UPGRADE_DESCRIPTION": "Upon Entering Wasp Swarm Form, Apply X+1 Weak and Poison to all enemies. While in Wasp Swarm Form, deal 2(X+1) damage to all enemies at the start of your turn."
   },
   "StSShapeShifter:HummingbirdForm": {
     "NAME": "Hummingbird Form",
-    "DESCRIPTION": "Upon Entering Hummingbird Form, upgrade a random card in your hand. While in Hummingbird Form, your Grow cards Grow for !M! additional when played."
+    "DESCRIPTION": "Upon Entering Hummingbird Form, upgrade a random card in your hand. While in Hummingbird Form, your Grow cards Grow for !M! additional when played.",
+    "UPGRADE_DESCRIPTION": "Upon Entering Hummingbird Form, upgrade two random cards in your hand. While in Hummingbird Form, your Grow cards Grow for !M! additional when played."
   },
   "StSShapeShifter:BulwarkOfDiscovery": {
     "NAME": "Bulwark of Discovery",
-    "DESCRIPTION": "After playing this card, whenever you draw a unique card, gain !M! Block."
+    "DESCRIPTION": "After playing this card, whenever you draw a unique card, gain !M! Block.",
+    "UPGRADE_DESCRIPTION": "Innate. After playing this card, whenever you draw a unique card, gain 2 block."
   },
   "StSShapeShifter:Evolution": {
     "NAME": "Evolution",
-    "DESCRIPTION": "Whenever you shuffle your draw pile, upgrade a random card in your deck."
+    "DESCRIPTION": "Whenever you shuffle your draw pile, upgrade a random card in your deck.",
+    "UPGRADE_DESCRIPTION": "Whenever you shuffle your draw pile, upgrade !M! random cards in your deck."
   },
   "StSShapeShifter:EagleForm": {
     "NAME": "Eagle Form",
@@ -301,7 +311,8 @@
   },
   "StSShapeShifter:MooseForm": {
     "NAME": "Moose Form",
-    "DESCRIPTION": "Upon Entering Moose Form, stun all enemies. While in Moose Form, return a card from your discard pile to your hand at the start of your turn. Exhaust."
+    "DESCRIPTION": "Upon Entering Moose Form, stun all enemies. While in Moose Form, return a card from your discard pile to your hand at the start of your turn. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Upon Entering Moose Form, stun all enemies. While in Moose Form, return !M! cards from your discard pile to your hand at the start of your turn. Exhaust."
   },
   "StSShapeShifter:HippoForm": {
     "NAME": "Hippo Form",
@@ -313,7 +324,8 @@
   },
   "StSShapeShifter:RhinoCalfForm": {
     "NAME": "Rhino Calf Form",
-    "DESCRIPTION": "Upon Entering Rhino Calf Form, gain !B! block. While in Rhino Calf Form, gain !M! Plated Armor at the end of your turn. This Grows by 1 each turn. After 3 turns, enter Rhino Form. Exhaust."
+    "DESCRIPTION": "Upon Entering Rhino Calf Form, gain !B! block. While in Rhino Calf Form, gain !M! Plated Armor at the end of your turn. This Grows by 1 each turn. After 3 turns, enter Rhino Form. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Upon Entering Rhino Calf Form, gain !B! block. While in Rhino Calf Form, gain !M! Plated Armor at the end of your turn. This Grows by 1 each turn. After 3 turns, enter Improved Rhino Form. Exhaust."
   },
   "StSShapeShifter:PorcupineForm": {
     "NAME": "Porcupine Form",
@@ -333,7 +345,8 @@
   },
   "StSShapeShifter:DeerForm": {
     "NAME": "Deer Form",
-    "DESCRIPTION": "Upon Entering Deer Form, Draw !M! card(s). While in Deer Form, add a random skill to your hand at the start of your turn."
+    "DESCRIPTION": "Upon Entering Deer Form, Draw !M! card. While in Deer Form, add a random skill to your hand at the start of your turn.",
+    "UPGRADE_DESCRIPTION": "Upon Entering Deer Form, Draw !M! cards. While in Deer Form, add a random skill to your hand at the start of your turn."
   },
   "StSShapeShifter:CosmicShifter": {
     "NAME": "Cosmic Shifter",
@@ -345,7 +358,7 @@
   },
   "StSShapeShifter:BearForm": {
     "NAME": "Bear Form",
-    "DESCRIPTION": "Upon Entering Bear Form, Gain !M! Shielding and 1 Dexterity. While in Bear Form, gain !StSShapeShifter:SecondMagic! Block at the start of your turn."
+    "DESCRIPTION": "Upon Entering Bear Form, Gain !B! Block and 1 Dexterity. While in Bear Form, gain !StSShapeShifter:SecondMagic! Block at the end of your turn."
   },
   "StSShapeShifter:WolfForm": {
     "NAME": "Wolf Form",
@@ -369,7 +382,8 @@
   },
   "StSShapeShifter:SquirrelForm": {
     "NAME": "Squirrel Form",
-    "DESCRIPTION": "Upon Entering Squirrel Form, add 2 Acorns to your hand. While in Squirrel Form, add an Acorn to your hand at the start of your turn."
+    "DESCRIPTION": "Upon Entering Squirrel Form, add 2 Acorns to your hand. While in Squirrel Form, add an Acorn to your hand at the start of your turn.",
+    "UPGRADE_DESCRIPTION": "Upon entering Squirrel Form, add 2 upgraded Acorns to your hand. While in Squirrel Form, add an upgraded Acorn to your hand at the start of your turn."
   },
   "StSShapeShifter:HydraForm": {
     "NAME": "Hydra Form",
@@ -425,15 +439,18 @@
   },
   "StSShapeShifter:BladeOfGrass": {
     "NAME": "Blade of Grass",
-    "DESCRIPTION": "Deal !D! damage. If you are Blooming, Grow 4. If you are Blossoming, Grow 8. Otherwise, Grow 2."
+    "DESCRIPTION": "Deal !D! damage. If you are Blossoming, Grow 8. If you are Blooming, Grow 4. Otherwise, Grow 2.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. If you are Blossoming, Grow 12. If you are Blooming, Grow 6. Otherwise, Grow 3."
   },
   "StSShapeShifter:SunflowerShuriken": {
     "NAME": "Sunflower Shuriken",
-    "DESCRIPTION": "Deal !D! damage. If you are Decaying, set this card's damage to 16. If you are Wilting, Reset this card's damage. Otherwise, Wither !StSShapeShifter:Wither!."
+    "DESCRIPTION": "Deal !D! damage. If you are Decaying, set this card's damage to 16. If you are Wilting, Reset this card's damage. Otherwise, Wither !StSShapeShifter:Wither!.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. If you are Decaying, set this card's damage to 20. If you are Wilting, Reset this card's damage. Otherwise, Wither !StSShapeShifter:Wither!."
   },
   "StSShapeShifter:ClimbTree": {
     "NAME": "Climb Tree",
-    "DESCRIPTION": "Gain !B! Block. If you are Balanced, gain !M! Dodge. If you are are Wilting, add Falling Leaves to your hand. If you are Blooming, add a random Fruit to your hand."
+    "DESCRIPTION": "Gain !B! Block. If you are Balanced, gain !M! Dodge. If you are are Wilting, add Falling Leaves to your hand. If you are Blooming, add a random Fruit to your hand.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. If you are Balanced, gain !M! Dodge and 3 additional Block. If you are are Wilting, add an Upgraded Falling Leaves to your hand. If you are Blooming, add 2 of a random Fruit to your hand."
   },
   "StSShapeShifter:BurstOfLife": {
     "NAME": "Burst of Life",
@@ -453,7 +470,8 @@
   },
   "StSShapeShifter:Forgiveness": {
     "NAME": "Forgiveness",
-    "DESCRIPTION": "Heal for !M!. Heal is equivalent to 30 percent of the damage you have received this combat. Exhaust."
+    "DESCRIPTION": "Heal for !M!. Heal is equivalent to 30 percent of the damage you have received this combat. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Heal for !M!. Heal is equivalent to 50 percent of the damage you have received this combat. Exhaust."
   },
   "StSShapeShifter:Rabid": {
     "NAME": "Rabid",
@@ -461,7 +479,8 @@
   },
   "StSShapeShifter:Garden": {
     "NAME": "Garden",
-    "DESCRIPTION": "At the start of your turn, if you are Balanced, add a random Fruit to your hand. If you are Blooming, gain 1 energy. If you are Wilting, add a Rotten Fruit to your hand."
+    "DESCRIPTION": "At the start of your turn, if you are Balanced, add a random Fruit to your hand. If you are Blooming, gain 1 energy. If you are Wilting, add a Rotten Fruit to your hand.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, if you are Balanced, add 2 random fruits to your hand. If you are Blooming, gain 1 energy and draw 1 card. If you are Wilting, add 2 Rotten Fruit to your hand."
   },
   "StSShapeShifter:EmbraceTheCycle": {
     "NAME": "Embrace the Cycle",
@@ -481,7 +500,8 @@
   },
   "StSShapeShifter:Winter": {
     "NAME": "Winter",
-    "DESCRIPTION": "Your Wither cards cost 1 less. Whenever you draw a Wither Card, double its Wither value."
+    "DESCRIPTION": "Your Wither cards cost 1 less. Whenever you draw a Wither Card, double its Wither value.",
+    "UPGRADE_DESCRIPTION": "Your Wither cards cost 0. Whenever you draw a Wither Card, double its Wither value."
   },
   "StSShapeShifter:DefaultCommonAttack": {
     "NAME": "Strike",

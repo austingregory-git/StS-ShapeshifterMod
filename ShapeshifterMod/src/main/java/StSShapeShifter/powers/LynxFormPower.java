@@ -41,8 +41,6 @@ public class LynxFormPower extends AbstractPower implements CloneablePowerInterf
         // We load those textures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
-
-        updateDescription();
     }
 
     public void stackPower(int stackAmount) {
@@ -57,11 +55,6 @@ public class LynxFormPower extends AbstractPower implements CloneablePowerInterf
 
     public void onRemove() {
         this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -amount), -amount));
-    }
-
-    @Override
-    public void updateDescription() {
-
     }
 
     @Override

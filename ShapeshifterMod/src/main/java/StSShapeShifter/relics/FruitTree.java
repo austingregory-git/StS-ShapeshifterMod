@@ -25,13 +25,13 @@ public class FruitTree extends AbstractRelic {
         super(ID, "sunflower.png", RelicTier.UNCOMMON, LandingSound.SOLID);
     }
 
-    public String getUpdatedDescription() {
+/*    public String getUpdatedDescription() {
         return AbstractDungeon.player != null ? this.setDescription(AbstractDungeon.player.chosenClass) : this.setDescription((PlayerClass)null);
     }
 
     private String setDescription(PlayerClass c) {
         return "At the start of each combat, add a random fruit to your hand.";
-    }
+    }*/
 
     public void atBattleStart() {
         ArrayList<AbstractCard> fruit = new ArrayList<AbstractCard>(AllFruit.getAllFruitCards());

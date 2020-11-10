@@ -70,8 +70,6 @@ public class Efflorescence extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             this.upgradeGrowValue(1);
-            //this.upgradeDefaultSecondMagicNumber(1);
-            //this.rawDescription = "Gain !M! Energy. [#32CD32] Grow[] 2";
             initializeDescription();
         }
     }

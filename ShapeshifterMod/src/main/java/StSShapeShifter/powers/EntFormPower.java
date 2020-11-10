@@ -45,8 +45,6 @@ public class EntFormPower extends AbstractPower implements CloneablePowerInterfa
         // We load those textures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
-
-        updateDescription();
     }
 
     public void onInitialApplication() {
@@ -76,11 +74,6 @@ public class EntFormPower extends AbstractPower implements CloneablePowerInterfa
         if(owner.hasPower(EntanglePower.POWER_ID)) {
             this.addToBot(new RemoveSpecificPowerAction(owner, owner, EntanglePower.POWER_ID));
         }
-    }
-
-    @Override
-    public void updateDescription() {
-
     }
 
     @Override

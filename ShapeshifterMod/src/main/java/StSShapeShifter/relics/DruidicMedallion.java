@@ -30,13 +30,13 @@ public class DruidicMedallion extends AbstractRelic {
         super(ID, "sunflower.png", RelicTier.COMMON, LandingSound.SOLID);
     }
 
-    public String getUpdatedDescription() {
+/*    public String getUpdatedDescription() {
         return AbstractDungeon.player != null ? this.setDescription(AbstractDungeon.player.chosenClass) : this.setDescription((PlayerClass)null);
     }
 
     private String setDescription(PlayerClass c) {
         return "Whenever you change forms, gain 3 block.";
-    }
+    }*/
 
     public void onChangeStance(AbstractStance prevStance, AbstractStance newStance) {
         this.addToBot(new GainBlockAction(AbstractDungeon.player, 3));

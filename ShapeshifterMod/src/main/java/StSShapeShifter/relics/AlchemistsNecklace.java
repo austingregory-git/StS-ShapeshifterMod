@@ -21,13 +21,13 @@ public class AlchemistsNecklace extends AbstractRelic {
         super(ID, "sunflower.png", RelicTier.COMMON, LandingSound.SOLID);
     }
 
-    public String getUpdatedDescription() {
+/*    public String getUpdatedDescription() {
         return AbstractDungeon.player != null ? this.setDescription(AbstractDungeon.player.chosenClass) : this.setDescription((PlayerClass)null);
     }
 
     private String setDescription(PlayerClass c) {
         return "Whenever you use a potion, draw 2 cards.";
-    }
+    }*/
 
     public void onUsePotion() {
         this.addToBot(new DrawCardAction(2));

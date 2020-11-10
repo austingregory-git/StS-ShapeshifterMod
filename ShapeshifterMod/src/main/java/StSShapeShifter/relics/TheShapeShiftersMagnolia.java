@@ -25,19 +25,19 @@ import com.megacrit.cardcrawl.relics.AbstractRelic.LandingSound;
 import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 
 public class TheShapeShiftersMagnolia extends AbstractRelic {
-    public static final String ID = ShapeshifterMod.makeID("TheShapeShiftersMagnolia");
+    public static final String ID = ShapeshifterMod.makeID(TheShapeShiftersMagnolia.class.getSimpleName());
 
     public TheShapeShiftersMagnolia() {
         super(ID, "sunflower.png", RelicTier.STARTER, LandingSound.SOLID);
     }
 
-    public String getUpdatedDescription() {
+    /*public String getUpdatedDescription() {
         return AbstractDungeon.player != null ? this.setDescription(AbstractDungeon.player.chosenClass) : this.setDescription((PlayerClass)null);
     }
 
     private String setDescription(PlayerClass c) {
         return "Keeps track of your current Bloom Count.";
-    }
+    }*/
 
     public void onEquip() {
         this.counter = 0;

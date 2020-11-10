@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
@@ -20,6 +22,9 @@ public class SunflowerShuriken extends AbstractDynamicCard {
 
     public static final String ID = ShapeshifterMod.makeID(SunflowerShuriken.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
+
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -82,7 +87,7 @@ public class SunflowerShuriken extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            this.rawDescription = "Deal !D! damage. If you are Decaying, set this card's damage to 20. If you are Wilting, Reset this card's damage. Otherwise, Wither !StSShapeShifter:Wither!.";
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
