@@ -58,7 +58,7 @@ public class FoxForm extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DamageRandomEnemyAction(new DamageInfo(p, this.damage, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        this.addToBot(new DamageRandomEnemyAction(new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
         if(!p.stance.ID.equals("FoxFormStance") && !p.hasPower("CannotChangeStancePower")) {
             this.addToBot(new ApplyPowerAction(p, p, new FoxFormPower(p, p, upgraded)));

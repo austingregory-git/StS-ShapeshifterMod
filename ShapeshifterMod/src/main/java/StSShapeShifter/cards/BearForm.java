@@ -19,7 +19,7 @@ public class BearForm extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = ShapeshifterMod.makeID(BearForm.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("card-art-generated/BearForm.png");
 
     // /TEXT DECLARATION/
 

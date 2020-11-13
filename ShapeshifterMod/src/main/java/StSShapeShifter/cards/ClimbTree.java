@@ -32,7 +32,7 @@ public class ClimbTree extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = ShapeshifterMod.makeID(ClimbTree.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("card-art-generated/ClimbTree.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -66,7 +66,8 @@ public class ClimbTree extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainBlockAction(p, this.block));
         if(BloomCountUtils.getBloomCount() >= -3 && BloomCountUtils.getBloomCount() <= 3) {
-            this.addToBot(new GainBlockAction(p, 4));
+            if(upgraded)
+                this.addToBot(new GainBlockAction(p, 4));
             this.addToBot(new ApplyPowerAction(p, p, new DodgePower(p, this.magicNumber)));
         }
         if(BloomCountUtils.getBloomCount() <= -10) {

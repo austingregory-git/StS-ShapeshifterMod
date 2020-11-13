@@ -1,19 +1,12 @@
 package StSShapeShifter.cards;
 
 import StSShapeShifter.characters.ShapeShifter;
-import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.characters.TheDefault;
-import com.megacrit.cardcrawl.powers.EnergizedPower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 

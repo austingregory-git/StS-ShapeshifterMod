@@ -1,18 +1,13 @@
 package StSShapeShifter.cards;
 
 import StSShapeShifter.characters.ShapeShifter;
-import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.ModifyBlockAction;
 import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.characters.TheDefault;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -58,7 +53,7 @@ public class MysticalSeed extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.applyGrow();
+        //applyGrow();
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         int mod = (this.baseDamage * this.growValue) - this.baseDamage;
         this.addToBot(new ModifyDamageAction(this.uuid, mod));

@@ -2,23 +2,15 @@ package StSShapeShifter.cards;
 
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.util.AllCurses;
-import StSShapeShifter.util.AllForms;
-import StSShapeShifter.util.BloomCountUtils;
-import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.characters.TheDefault;
-import com.megacrit.cardcrawl.vfx.cardManip.ExhaustCardEffect;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -33,7 +25,7 @@ public class CursedApple extends AbstractDynamicCard {
 
     //public static final String ID = ShapeshifterMod.makeID(${NAME}.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
     public static final String ID = ShapeshifterMod.makeID(CursedApple.class.getSimpleName()); // DELETE THIS ONE.
-    public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String IMG = makeCardPath("card-art-generated/CursedApple.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 
 

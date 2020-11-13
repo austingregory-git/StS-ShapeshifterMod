@@ -1,15 +1,12 @@
 package StSShapeShifter.cards;
 
 import StSShapeShifter.characters.ShapeShifter;
-import StSShapeShifter.util.BloomCountUtils;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ModifyBlockAction;
-import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.characters.TheDefault;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -25,7 +22,7 @@ public class BarkSkin extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = ShapeshifterMod.makeID(BarkSkin.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("card-art-generated/BarkSkin.png");
 
     // /TEXT DECLARATION/
 

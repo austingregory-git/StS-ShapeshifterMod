@@ -3,14 +3,11 @@ package StSShapeShifter.cards;
 import StSShapeShifter.actions.ModifyMagicAction;
 import StSShapeShifter.characters.ShapeShifter;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.characters.TheDefault;
 import com.megacrit.cardcrawl.powers.PoisonPower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 import java.util.Iterator;
 
@@ -60,7 +57,7 @@ public class PoisonIvy extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.applyGrow();
+        //applyGrow();
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flash();
             Iterator var3 = AbstractDungeon.getMonsters().monsters.iterator();

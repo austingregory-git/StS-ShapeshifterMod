@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.characters.TheDefault;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
@@ -62,12 +61,10 @@ public class Guard extends AbstractDynamicCard {
         if (dexterity != null) {
             dexterity.amount *= this.magicNumber;
         }
-
         super.applyPowers();
         if (dexterity != null) {
             dexterity.amount /= this.magicNumber;
         }
-
     }
 
     public void calculateCardDamage(AbstractMonster mo) {

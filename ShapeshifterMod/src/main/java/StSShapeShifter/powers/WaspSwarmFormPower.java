@@ -5,22 +5,13 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.cards.DefaultRareAttack;
 import StSShapeShifter.util.TextureLoader;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-
-import java.util.Iterator;
 
 public class WaspSwarmFormPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
@@ -48,26 +39,22 @@ public class WaspSwarmFormPower extends AbstractPower implements CloneablePowerI
         // We load those textures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+
+        updateDescription();
     }
 
     public void atStartOfTurn() {
         this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(2*this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        /*if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            this.flash();
-            Iterator var3 = AbstractDungeon.getMonsters().monsters.iterator();
-
-            while(var3.hasNext()) {
-                AbstractMonster monster = (AbstractMonster)var3.next();
-                if (!monster.isDead && !monster.isDying) {
-                    this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
-                }
-            }
-        }*/
     }
 
     public void stackPower(int stackAmount) {
         this.fontScale = 8.0F;
         this.amount += stackAmount;
+    }
+
+    @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0] + 2*amount + DESCRIPTIONS[1];
     }
 
     @Override

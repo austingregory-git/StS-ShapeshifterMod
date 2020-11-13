@@ -46,6 +46,8 @@ public class RhinoCalfFormPower extends AbstractPower implements CloneablePowerI
         // We load those textures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+
+        updateDescription();
     }
 
     public void stackPower(int stackAmount) {
@@ -64,6 +66,11 @@ public class RhinoCalfFormPower extends AbstractPower implements CloneablePowerI
 
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
         this.addToBot(new ApplyPowerAction(this.owner, this.owner, new PlatedArmorPower(this.owner, this.amount + count)));
+    }
+
+    @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + (3-count) + DESCRIPTIONS[2];
     }
 
     @Override

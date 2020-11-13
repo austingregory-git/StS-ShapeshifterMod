@@ -79,7 +79,7 @@ public class ShapeShifter extends CustomPlayer {
     //private static final String ID = makeID("ShapeShifterCharacter");
     //private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = {"The Shapeshifter"};
-    private static final String[] TEXT = {"A wanderer of the forest who has discovered the lost art of shapeshifting.\nThrough a combination of forms drawn from connecting with animals and powers drawn from communing with nature,\nthe Shapeshifter seeks to rid the spire of its unnatural creatures."};
+    private static final String[] TEXT = {"A wanderer of the forest who has discovered the lost art of shapeshifting."};
 
     // =============== /STRINGS/ =================
 
@@ -110,7 +110,7 @@ public class ShapeShifter extends CustomPlayer {
                         "StSShapeShifterResources/images/char/defaultCharacter/Spriter/theDefaultAnimation.scml"));*/
         super(name, setClass, orbTextures,
                 "StSShapeShifterResources/images/char/defaultCharacter/orb/vfx.png", null,
-                new SpineAnimation(SHAPESHIFTER_SKELETON_ATLAS, SHAPESHIFTER_SKELETON_JSON, 2.75F));
+                new SpineAnimation(SHAPESHIFTER_SKELETON_ATLAS, SHAPESHIFTER_SKELETON_JSON, 4.0F));
 
 
         // =============== TEXTURES, ENERGY, LOADOUT =================

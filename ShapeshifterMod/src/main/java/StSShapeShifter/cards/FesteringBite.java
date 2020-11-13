@@ -2,17 +2,14 @@ package StSShapeShifter.cards;
 
 import StSShapeShifter.actions.ModifyMagicAction;
 import StSShapeShifter.characters.ShapeShifter;
-import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.characters.TheDefault;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
@@ -59,7 +56,7 @@ public class FesteringBite extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.applyGrow();
+        //applyGrow();
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
         this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));

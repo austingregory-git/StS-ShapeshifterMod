@@ -2,13 +2,10 @@ package StSShapeShifter.cards;
 
 import StSShapeShifter.actions.ModifyMagicAction;
 import StSShapeShifter.characters.ShapeShifter;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.ModifyExhaustiveAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.characters.TheDefault;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
@@ -52,7 +49,7 @@ public class VileMushroom extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.applyGrow();
+        //applyGrow();
         this.addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p , this.magicNumber)));
         this.addToBot(new ModifyMagicAction(this.uuid, this.growValue));
         updateBloomCount(this.growValue);

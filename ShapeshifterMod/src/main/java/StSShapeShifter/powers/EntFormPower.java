@@ -1,22 +1,15 @@
 package StSShapeShifter.powers;
 
-import StSShapeShifter.characters.ShapeShifter;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.cards.DefaultRareAttack;
 import StSShapeShifter.util.TextureLoader;
 
 public class EntFormPower extends AbstractPower implements CloneablePowerInterface {
@@ -45,6 +38,8 @@ public class EntFormPower extends AbstractPower implements CloneablePowerInterfa
         // We load those textures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+
+        updateDescription();
     }
 
     public void onInitialApplication() {
@@ -74,6 +69,11 @@ public class EntFormPower extends AbstractPower implements CloneablePowerInterfa
         if(owner.hasPower(EntanglePower.POWER_ID)) {
             this.addToBot(new RemoveSpecificPowerAction(owner, owner, EntanglePower.POWER_ID));
         }
+    }
+
+    @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + (3-count) + DESCRIPTIONS[2];
     }
 
     @Override

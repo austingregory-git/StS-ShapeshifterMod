@@ -57,6 +57,14 @@ public abstract class AbstractDefaultCard extends CustomCard {
             defaultSecondMagicNumber = defaultBaseSecondMagicNumber; // Show how the number changes, as out of combat, the base number of a card is shown.
             isDefaultSecondMagicNumberModified = true; // Modified = true, color it green to highlight that the number is being changed.
         }
+        if (upgradedGrowValue) {
+            growValue = baseGrowValue;
+            isGrowValueModified = true;
+        }
+        if(upgradedWitherValue) {
+            witherValue = baseWitherValue;
+            isWitherValueModified = true;
+        }
 
     }
 

@@ -13,15 +13,15 @@
         },
         "StSShapeShifter:SapBurstPower": {
           "NAME": "Sap Burst",
-          "DESCRIPTIONS": ["At the end of your turn, reduce a random enemy's strength by #b", "random enemy", "hello"]
+          "DESCRIPTIONS": ["At the end of your turn, reduce a random enemy's strength by #b"]
         },
         "StSShapeShifter:FullMoonPower": {
           "NAME": "Full Moon",
-          "DESCRIPTIONS": ["Your forms cost 0 while the Full Moon lasts", "random enemy", "hello"]
+          "DESCRIPTIONS": ["Your next #b", "#yForm costs 0.", " #yForms cost 0"]
         },
         "StSShapeShifter:FreeFormPower": {
           "NAME": "Free Form",
-          "DESCRIPTIONS": ["Your forms cost 0.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["Your next #yForm costs 0."]
         },
         "StSShapeShifter:CosmicShifterPower": {
           "NAME": "Cosmic Shifter",
@@ -29,7 +29,7 @@
         },
         "StSShapeShifter:WildfirePower": {
           "NAME": "Wildfire",
-          "DESCRIPTIONS": ["At the start of this creature's turn, they take damage. Then, Wildfire jumps to a random enemy. This effect Withers by 2 for each jump."]
+          "DESCRIPTIONS": ["At the start of this creature's turn, they take damage. Then, Wildfire jumps to a random enemy. This effect #yWithers by 2 for each jump."]
         },
         "StSShapeShifter:FertileSoilPower": {
           "NAME": "Fertile Soil",
@@ -37,7 +37,7 @@
         },
         "StSShapeShifter:BaskInBloomPower": {
           "NAME": "Bask in Bloom",
-          "DESCRIPTIONS": ["Whenever you draw a card, if you are Blooming, increase its Grow value.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["Whenever you draw a card, if you are Blooming, increase its #yGrow value.", "random enemy", "hello"]
         },
         "StSShapeShifter:HarmonyPower": {
           "NAME": "Harmony",
@@ -49,15 +49,15 @@
         },
         "StSShapeShifter:WolfsBanePower": {
           "NAME": "Wolf's Bane",
-          "DESCRIPTIONS": ["Whenever you play a Grow or Wither card, apply poison to a random enemy. These effects Grow or Wither depending on the card played."]
+          "DESCRIPTIONS": ["Whenever you play a #yGrow card, apply #b", " poison to a random enemy. Whenever you play a #yWither card, apply #b", " poison to a random enemy. These effects #yGrow or #yWither by #b1 depending on the card played."]
         },
         "StSShapeShifter:SynchronicityPower": {
           "NAME": "Synchronicity",
-          "DESCRIPTIONS": ["Whenever you play a Grow card, gain 1 Dexterity. Whenever you play a Wither card, gain 1 Strength."]
+          "DESCRIPTIONS": ["Whenever you play a #yGrow card, gain #b", " dexterity. Whenever you play a #yWither card, gain #b", " strength."]
         },
         "StSShapeShifter:WiltingWrathPower": {
           "NAME": "WiltingWrath",
-          "DESCRIPTIONS": ["At the start of your turn, if you are Wilting, your next attack deals double damage.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["At the start of your turn, if you are Wilting, your next attack deals double damage. If you are Decaying, also deal #b", " damage to all enemies."]
         },
         "StSShapeShifter:BulwarkOfDiscoveryPower": {
           "NAME": "Bulwark of Discovery",
@@ -65,91 +65,87 @@
         },
         "StSShapeShifter:EvolutionPower": {
           "NAME": "Evolution",
-          "DESCRIPTIONS": ["Whenever you draw a unique card, gain block.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["Whenever you shuffle your discard Pile into your draw pile, upgrade #b", " random card", " random cards"]
         },
         "StSShapeShifter:GardenPower": {
           "NAME": "Garden",
-          "DESCRIPTIONS": ["At the start of your turn, if you are Balanced, add a random Fruit to your hand.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["At the start of your turn, if you are #yBalanced, add a random Fruit to your hand. If you are #yWilting, add a Rotten Fruit to your hand. If you are #yBlooming, gain [G].", "At the start of your turn, if you are #yBalanced, add #b2 random Fruits to your hand. If you are #yWilting, add #b2 Rotten Fruits to your hand. If you are #yBlooming, gain [G] and draw #b1 card"]
         },
         "StSShapeShifter:EmbraceTheCyclePower": {
           "NAME": "Embrace The Cycle",
-          "DESCRIPTIONS": ["If you are Wilting, Attacks cost 1 less. If you are Balanced, Powers cost 1 less. If you are Blooming, Skills cost 1 less. Occurs when cards are drawn.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["If you are Wilting, Attacks cost #b1 less. If you are Balanced, Powers cost #b1 less. If you are Blooming, Skills cost #b1 less. Occurs when cards are drawn."]
         },
         "StSShapeShifter:RabidPower": {
           "NAME": "Rabid",
-          "DESCRIPTIONS": ["Whenever you play a form, deal Damage to a random enemy.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["Whenever you play a #yForm, deal #b", " damage to a random enemy."]
         },
         "StSShapeShifter:MooseFormPower": {
           "NAME": "Moose Form",
-          "DESCRIPTIONS": ["Return cards to your hand from your discard pile at the start of your turn.", "random enemy", "hello"]
-        },
-        "StSShapeShifter:Evolution": {
-          "NAME": "Evolution",
-          "DESCRIPTIONS": ["Whenever you shuffle your discard pile into your draw pile, upgrade random cards in your deck.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["While in Moose #yForm, at the start of your turn, return #b", " cards from your discard pile to your hand. #b", " turns remaining."]
         },
         "StSShapeShifter:PowerShifterPower": {
           "NAME": "Power Shifter",
-          "DESCRIPTIONS": ["Whenever you play a unique form this combat, gain 1 Strength", "random enemy", "hello"]
+          "DESCRIPTIONS": ["Whenever you play a #yForm, gain #b", " strength."]
         },
         "StSShapeShifter:EnsconcePower": {
           "NAME": "Ensconce",
-          "DESCRIPTIONS": ["Improve your current Form if you do not shift forms this turn.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["Improve your current #yForm's value by #b1 if you do not shift forms this turn."]
         },
         "StSShapeShifter:FoxFormPower": {
           "NAME": "Fox Form",
-          "DESCRIPTIONS": ["At the start of your turn, Dig for treasure, gaining gold and a small chance at gaining a relic. Lasts for up to 3 turns. Exhaust."]
+          "DESCRIPTIONS": ["At the start of your turn, Dig for treasure, gaining gold and a small chance at gaining a relic. #b", " turns remaining"]
         },
         "StSShapeShifter:WolfFormPower": {
           "NAME": "Wolf Form",
-          "DESCRIPTIONS": ["While in Wolf Form, your attacks heal you.", "yo", "hello"]
+          "DESCRIPTIONS": ["While in Wolf #yForm, your attacks heal for #b"]
         },
         "StSShapeShifter:HippoFormPower": {
           "NAME": "Hippo Form",
-          "DESCRIPTIONS": ["While in Hippo Form, at the start of your turn, discard a card and deal damage to a random enemy.", "yo", "hello"]
+          "DESCRIPTIONS": ["While in Hippo #yForm, at the start of your turn, discard a card and deal #b", " damage to a random enemy."]
         },
         "StSShapeShifter:RaptorFormPower": {
           "NAME": "Raptor Form",
-          "DESCRIPTIONS": ["While in Raptor Form, Grow 1", "yo", "hello"]
+          "DESCRIPTIONS": ["While in Raptor #yForm, this card's value #yGrows by #b1"]
         },
         "StSShapeShifter:RhinoCalfFormPower": {
           "NAME": "Rhino Calf Form",
-          "DESCRIPTIONS": ["While in Rhino Calf Form, gain Plated Armor at the end of your turn. This Grows by 1 each turn. After 3 turns, enter Rhino Form.", "yo", "hello"]
+          "DESCRIPTIONS": ["While in Rhino Calf #yForm, gain #b", " Plated Armor at the end of your turn. This #yGrows by #b1 each turn. After 3 turns, enter Rhino Form. #b", " turns remaining."]
         },
         "StSShapeShifter:RhinoFormPower": {
           "NAME": "Rhino Form",
-          "DESCRIPTIONS": ["Upon Entering Rhino Form, gain block and plated armor. While in Rhino Form, deal damage equal to your block to the lowest health enemy at the end of you turn. Lasts 3 turns.", "yo", "hello"]
+          "DESCRIPTIONS": ["Upon Entering Rhino #yForm, gain #b22 block and #b10 plated armor. While in Rhino #yForm, deal damage equal to your block to the lowest health enemy at the end of you turn. #b", "Upon Entering Rhino #yForm, gain #b18 block and #b8 plated armor. While in Rhino #yForm, deal damage equal to your block to the lowest health enemy at the end of you turn. #b", " turns remaining."]
         },
         "StSShapeShifter:PorcupineFormPower": {
           "NAME": "Porcupine Form",
-          "DESCRIPTIONS": ["While in Porcupine Form, you are immune to debuffs.", "yo", "hello"]
+          "DESCRIPTIONS": ["While in Porcupine #yForm, you are immune to debuffs."]
         },
         "StSShapeShifter:PantherFormPower": {
           "NAME": "Panther Form",
-          "DESCRIPTIONS": ["Upon Entering Panther Form, your next attack deals double damage. While in Panther Form, gain Strength at the end of your turn. Lasts 3 turns.", "yo", "hello"]
+          "DESCRIPTIONS": ["While in Panther #yForm, gain #b", " strength at the end of your turn. #b", " turns remaining."]
         },
         "StSShapeShifter:DodgePower": {
           "NAME": "Dodge",
-          "DESCRIPTIONS": ["Prevent the next source of damage you take.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["Prevent the next source of damage you take."]
         },
         "StSShapeShifter:SpringPower": {
           "NAME": "Spring",
-          "DESCRIPTIONS": ["Whenever you draw a Grow card, increase its Grow value.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["Whenever you draw a #yGrow card, increase its #yGrow value by #b"]
         },
         "StSShapeShifter:SummerPower": {
           "NAME": "Summer",
-          "DESCRIPTIONS": ["Draw 1 less card each turn. Whenever you draw a Grow card, double its Grow value.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["Whenever you draw a #yGrow card, double its #yGrow value."]
         },
         "StSShapeShifter:AutumnPower": {
           "NAME": "Autumn",
-          "DESCRIPTIONS": ["Draw 2 additional cards each turn. Whenever you draw a Wither card, increase its Wither value by #b."]
+          "DESCRIPTIONS": ["Draw 2 additional cards each turn. Whenever you draw a #yWither card, increase its #yWither value by #b."]
         },
         "StSShapeShifter:WinterPower": {
           "NAME": "Winter",
-          "DESCRIPTIONS": ["Your Wither cards cost less. Whenever you draw a Wither Card, double its Wither value.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["Your #yWither cards cost less. Whenever you draw a #yWither Card, double its #yWither value.", "random enemy", "hello"]
         },
         "StSShapeShifter:RatFormPower": {
           "NAME": "Rat Form",
-          "DESCRIPTIONS": ["At the end of your turn, Apply #b poison to a random enemy", "random enemy", "hello"]
+          "DESCRIPTIONS": ["While in Rat #yForm, at the end of your turn, apply #b", " poison to a random enemy"]
         },
         "StSShapeShifter:SquirrelFormPower": {
           "NAME": "Squirrel Form",
@@ -157,23 +153,23 @@
         },
         "StSShapeShifter:MonkeyFormPower": {
           "NAME": "Monkey Form",
-          "DESCRIPTIONS": ["Whenever you play a card, Deal #b damage to a random enemy", "random enemy", "hello"]
+          "DESCRIPTIONS": ["Whenever you play a card, Deal #b", " damage to a random enemy"]
         },
         "StSShapeShifter:LionFormPower": {
           "NAME": "Lion Form",
-          "DESCRIPTIONS": ["At the start of your turn, Apply deep wounds to all enemies", "random enemy", "hello"]
+          "DESCRIPTIONS": ["While in Lion #yForm, at the start of your turn, Apply #yDeep #yWounds to a random enemy. #b", " turns remaining."]
         },
         "StSShapeShifter:DiverseSpiritPower": {
           "NAME": "Diverse Spirit",
-          "DESCRIPTIONS": ["Whenever you play a unique form this combat, gain 1 energy and draw 1 card", "random enemy", "hello"]
+          "DESCRIPTIONS": ["Whenever you play a unique #yForm, gain #b", " energy and draw #b", " card"]
         },
         "StSShapeShifter:SpiritOfTheEarthPower": {
           "NAME": "Spirit Of The Earth",
-          "DESCRIPTIONS": ["Whenever you play a skill, gain #b block", "random enemy", "hello"]
+          "DESCRIPTIONS": ["Whenever you play a skill, gain #b", " block"]
         },
         "StSShapeShifter:HummingbirdFormPower": {
           "NAME": "Hummingbird Form",
-          "DESCRIPTIONS": ["Improve your grow cards.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["While in Hummingbird #yForm, your #yGrow cards grow for 2 more."]
         },
         "StSShapeShifter:BurrBombPower": {
           "NAME": "Burr Bomb",
@@ -185,50 +181,54 @@
         },
         "StSShapeShifter:EntFormPower": {
           "NAME": "Ent Form",
-          "DESCRIPTIONS": ["At the end of your turn, gain #b Dexterity.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["At the end of your turn, gain #b", " Dexterity. #b", "turns remaining"]
         },
         "StSShapeShifter:DragonFormPower": {
           "NAME": "Dragon Form",
-          "DESCRIPTIONS": ["At the start of your turn, deal 6(8) damage to all enemies and gain 6(8).", "random enemy", "hello"]
+          "DESCRIPTIONS": ["At the start of your turn, deal #b", " damage to all enemies and gain #b", " block. #b", " turns remaining"]
         },
         "StSShapeShifter:LynxFormPower": {
           "NAME": "Lynx Form",
-          "DESCRIPTIONS": ["While in Lynx Form, gain 1(2) strength", "random enemy", "hello"]
+          "DESCRIPTIONS": ["While in Lynx #yForm, gain #b", " strength."]
         },
         "StSShapeShifter:EagleFormPower": {
           "NAME": "Eagle Form",
-          "DESCRIPTIONS": ["While in Eagle Form, apply vulnerable to enemies who intend to attack.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["While in Eagle #yForm, apply #b", " #yVulnerable to enemies who intend to attack."]
         },
         "StSShapeShifter:IntimidatingAuraPower": {
           "NAME": "Intimidating Aura",
-          "DESCRIPTIONS": ["At the end of your turn, gain block based on the number of attacks in your hand.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["At the end of your turn, gain #b", " block for each attack in your hand."]
         },
         "StSShapeShifter:HydraFormPower": {
           "NAME": "Hydra Form",
-          "DESCRIPTIONS": ["While in Hydra Form, deal triple damage.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["While in Hydra #yForm, deal triple damage. #b", " turns remaining."]
         },
         "StSShapeShifter:PhoenixFormPower": {
           "NAME": "Phoenix Form",
-          "DESCRIPTIONS": ["While in Phoenix Form, revive upon death.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["While in Phoenix #yForm, revive to #b", "30 percent max HP. #b", "30 percent max HP. #b", " turns remaining."]
         },
         "StSShapeShifter:BearFormPower": {
-                "NAME": "Bear Form",
-                "DESCRIPTIONS": ["While in Bear Form, gain 2(3) Dexterity", "random enemy", "hello"]
+          "NAME": "Bear Form",
+          "DESCRIPTIONS": ["While in Bear #yForm, gain #b", " block at the end of your turn"]
         },
         "StSShapeShifter:MammothFormPower": {
-          "NAME": "Mammoth Form Form",
-          "DESCRIPTIONS": ["While in Mammoth Form, take reduced damage", "random enemy", "hello"]
+          "NAME": "Mammoth Form",
+          "DESCRIPTIONS": ["While in Mammoth #yForm, whenever you take damage, take #b", " less. #b", " turns remaining."]
         },
         "StSShapeShifter:OwlFormPower": {
-          "NAME": "Owl Form Form",
-          "DESCRIPTIONS": ["While in Owl Form, draw 1 additional card", "random enemy", "hello"]
+          "NAME": "Owl Form",
+          "DESCRIPTIONS": ["While in Owl #yForm, draw #b", " additional card."]
+        },
+        "StSShapeShifter:FlamingoFormPower": {
+          "NAME": "Flamingo Form",
+          "DESCRIPTIONS": ["While in Flamingo #yForm, remove a random debuff at the start of your turn."]
         },
         "StSShapeShifter:WaspSwarmFormPower": {
           "NAME": "Wasp Swarm Form",
-          "DESCRIPTIONS": ["While in Wasp Swarm Form, deal damage to all enemies at the start of your turn.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["While in Wasp Swarm #yForm, at the start of your turn, deal #b", " damage to all enemies."]
         },
         "StSShapeShifter:TortoiseFormPower": {
           "NAME": "Tortoise Form",
-          "DESCRIPTIONS": ["While in Tortoise Form, gain #b",  " Dexterity"]
+          "DESCRIPTIONS": ["While in Tortoise #yForm, gain #b",  " Dexterity"]
         }
 }

@@ -1,13 +1,10 @@
 package StSShapeShifter.powers;
 
-import StSShapeShifter.cards.SpiritOfTheEarth;
-import StSShapeShifter.util.AllForms;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -17,12 +14,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.cards.DefaultRareAttack;
 import StSShapeShifter.util.TextureLoader;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-
-import java.util.ArrayList;
 
 public class MonkeyFormPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
@@ -50,6 +42,8 @@ public class MonkeyFormPower extends AbstractPower implements CloneablePowerInte
         // We load those textures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+
+        updateDescription();
     }
 
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
@@ -61,6 +55,11 @@ public class MonkeyFormPower extends AbstractPower implements CloneablePowerInte
     public void stackPower(int stackAmount) {
         this.fontScale = 8.0F;
         this.amount += stackAmount;
+    }
+
+    @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override

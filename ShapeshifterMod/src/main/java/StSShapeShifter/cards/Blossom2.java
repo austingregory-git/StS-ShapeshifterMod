@@ -27,7 +27,7 @@ public class Blossom2 extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = ShapeshifterMod.makeID(Blossom2.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("card-art-generated/Blossom2.png");
 
     // /TEXT DECLARATION/
 

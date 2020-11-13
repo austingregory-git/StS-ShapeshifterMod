@@ -60,6 +60,11 @@ public class PantherFormPower extends AbstractPower implements CloneablePowerInt
     }
 
     @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + (3-count) + DESCRIPTIONS[2];
+    }
+
+    @Override
     public AbstractPower makeCopy() {
         return new PantherFormPower(owner, amount);
     }

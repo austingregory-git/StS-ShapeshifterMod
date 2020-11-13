@@ -36,7 +36,7 @@ public class BurrBomb extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = ShapeshifterMod.makeID(BurrBomb.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("card-art-generated/BurrBomb.png");
 
     // /TEXT DECLARATION/
 
@@ -58,15 +58,14 @@ public class BurrBomb extends AbstractDynamicCard {
     public BurrBomb() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.growValue = this.baseGrowValue = 5;
-        this.baseDamage = DAMAGE;
-        this.exhaust = true;
+        this.magicNumber = this.baseMagicNumber = DAMAGE;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.applyGrow();
-        this.addToBot(new ApplyPowerAction(m, p, new BurrBombPower(m, p, damage)));
+        //applyGrow();
+        this.addToBot(new ApplyPowerAction(m, p, new BurrBombPower(m, p, this.magicNumber)));
         this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
         updateBloomCount(this.growValue);
     }
@@ -77,7 +76,7 @@ public class BurrBomb extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             initializeDescription();
-            upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            upgradeMagicNumber(UPGRADE_PLUS_DAMAGE);
             upgradeGrowValue(2);
         }
     }

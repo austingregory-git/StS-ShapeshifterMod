@@ -21,7 +21,7 @@ public class Autumn extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = ShapeshifterMod.makeID(Autumn.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("card-art-generated/Autumn.png");
 
     // /TEXT DECLARATION/
 

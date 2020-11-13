@@ -2,16 +2,10 @@ package StSShapeShifter.cards;
 
 import StSShapeShifter.actions.ModifyMagicAction;
 import StSShapeShifter.characters.ShapeShifter;
-import StSShapeShifter.util.BloomCountUtils;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.ModifyExhaustiveAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.common.ModifyBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.characters.TheDefault;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -58,7 +52,7 @@ public class Efflorescence extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.applyGrow();
+        //applyGrow();
         this.addToBot(new GainEnergyAction(this.magicNumber));
         this.addToBot(new ModifyMagicAction(this.uuid, this.growValue));
         updateBloomCount(this.growValue);

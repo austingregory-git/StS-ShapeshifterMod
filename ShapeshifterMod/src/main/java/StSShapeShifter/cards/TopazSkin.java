@@ -3,12 +3,9 @@ package StSShapeShifter.cards;
 import StSShapeShifter.characters.ShapeShifter;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ModifyBlockAction;
-import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.characters.TheDefault;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
@@ -58,7 +55,7 @@ public class TopazSkin extends AbstractDynamicCard {
     }
 
     public void topazSkinEffect(AbstractPlayer p) {
-        this.applyGrow();
+        //applyGrow();
         /*if(this.growValue > 0) {
             this.rawDescription = "Gain !B!X Block. Grow (X + !StSShapeShifter:Grow!).";
             initializeDescription();

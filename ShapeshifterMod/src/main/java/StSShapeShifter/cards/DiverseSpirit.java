@@ -2,15 +2,11 @@ package StSShapeShifter.cards;
 
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.DiverseSpiritPower;
-import StSShapeShifter.powers.SapBurstPower;
-import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.characters.TheDefault;
-import StSShapeShifter.powers.RarePower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -25,7 +21,7 @@ public class DiverseSpirit extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = ShapeshifterMod.makeID(DiverseSpirit.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("card-art-generated/DiverseSpirit.png");
 
     // /TEXT DECLARATION/
 

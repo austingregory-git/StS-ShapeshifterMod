@@ -22,7 +22,7 @@ public class BaskInBloom extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = ShapeshifterMod.makeID(BaskInBloom.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("card-art-generated/BaskInBloom.png");
 
     // /TEXT DECLARATION/
 

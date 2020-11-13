@@ -50,15 +50,17 @@ public class RhinoFormPower extends AbstractPower implements CloneablePowerInter
         // We load those textures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+
+        updateDescription();
     }
 
     public void onInitialApplication() {
         if(upgraded) {
             this.addToBot(new GainBlockAction(this.owner, 22));
-            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new PlatedArmorPower(this.owner, 12)));
+            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new PlatedArmorPower(this.owner, 10)));
         } else {
             this.addToBot(new GainBlockAction(this.owner, 18));
-            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new PlatedArmorPower(this.owner, 10)));
+            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new PlatedArmorPower(this.owner, 8)));
         }
 
     }
@@ -88,6 +90,15 @@ public class RhinoFormPower extends AbstractPower implements CloneablePowerInter
         if(count == 3) {
             this.addToBot(new ChangeStanceAction("Neutral"));
         }
+    }
+
+    @Override
+    public void updateDescription() {
+        if(upgraded)
+            description = DESCRIPTIONS[0] + (3-count) + DESCRIPTIONS[2];
+        else
+            description = DESCRIPTIONS[1] + (3-count) + DESCRIPTIONS[2];
+
     }
 
     @Override

@@ -51,6 +51,8 @@ public class WolfsBanePower extends AbstractPower implements CloneablePowerInter
         // We load those textures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+
+        updateDescription();
     }
 
     @Override
@@ -71,6 +73,11 @@ public class WolfsBanePower extends AbstractPower implements CloneablePowerInter
                     witherAmount -= witherValue;
             }
         }
+    }
+
+    @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0] + growAmount + DESCRIPTIONS[1] + witherAmount + DESCRIPTIONS[2];
     }
 
     @Override

@@ -18,6 +18,7 @@ import java.util.UUID;
 public class RockSlideAction extends AbstractGameAction {
     private UUID uuid;
     public AbstractCard card;
+    public int count = 0;
 
     public RockSlideAction(UUID targetUUID, AbstractCard card) {
         this.actionType = ActionType.WAIT;
@@ -29,8 +30,9 @@ public class RockSlideAction extends AbstractGameAction {
         if(!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && !AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty()) {
             ArrayList<AbstractCard> cardsThisTurn = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisTurn);
             if(cardsThisTurn.contains(card)) {
+                count++;
                 cardsThisTurn.remove(cardsThisTurn.size() - 1);
-                if(!cardsThisTurn.contains(card)) {
+                if(!cardsThisTurn.contains(card) && count == 1) {
                     ShapeshifterMod.logger.info(!cardsThisTurn.contains(card));;
                     AbstractDungeon.player.hand.addToHand(card);
                     card.applyPowers();

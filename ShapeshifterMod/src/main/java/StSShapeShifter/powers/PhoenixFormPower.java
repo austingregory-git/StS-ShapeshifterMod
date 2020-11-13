@@ -3,23 +3,14 @@ package StSShapeShifter.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.cards.DefaultRareAttack;
 import StSShapeShifter.util.TextureLoader;
-
-import java.util.Iterator;
 
 public class PhoenixFormPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
@@ -80,6 +71,14 @@ public class PhoenixFormPower extends AbstractPower implements CloneablePowerInt
         if(count == 3) {
             this.addToBot(new ChangeStanceAction("Neutral"));
         }
+    }
+
+    @Override
+    public void updateDescription() {
+        if(upgraded)
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + (3-count) + DESCRIPTIONS[3];
+        else
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2] + (3-count) + DESCRIPTIONS[3];
     }
 
     @Override

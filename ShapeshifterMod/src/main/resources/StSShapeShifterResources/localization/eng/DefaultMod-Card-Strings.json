@@ -279,7 +279,7 @@
   },
   "StSShapeShifter:PantherForm": {
     "NAME": "Panther Form",
-    "DESCRIPTION": "Upon Entering Panther Form, your next attack deals double damage. While in Panther Form, gain !M! Strength at the end of your turn. Lasts 3 turns. Exhaust."
+    "DESCRIPTION": "Upon Entering Panther Form, your next attack or damaging Form deals double damage. While in Panther Form, gain !M! Strength at the end of your turn. Lasts 3 turns. Exhaust."
   },
   "StSShapeShifter:WaspSwarmForm": {
     "NAME": "Wasp Swarm Form",
@@ -450,7 +450,7 @@
   "StSShapeShifter:ClimbTree": {
     "NAME": "Climb Tree",
     "DESCRIPTION": "Gain !B! Block. If you are Balanced, gain !M! Dodge. If you are are Wilting, add Falling Leaves to your hand. If you are Blooming, add a random Fruit to your hand.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. If you are Balanced, gain !M! Dodge and 3 additional Block. If you are are Wilting, add an Upgraded Falling Leaves to your hand. If you are Blooming, add 2 of a random Fruit to your hand."
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. If you are Balanced, gain !M! Dodge and 4 additional Block. If you are are Wilting, add an Upgraded Falling Leaves to your hand. If you are Blooming, add 2 of a random Fruit to your hand."
   },
   "StSShapeShifter:BurstOfLife": {
     "NAME": "Burst of Life",

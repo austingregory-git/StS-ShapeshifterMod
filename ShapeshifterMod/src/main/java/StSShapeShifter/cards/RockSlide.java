@@ -2,28 +2,16 @@ package StSShapeShifter.cards;
 
 import StSShapeShifter.actions.RockSlideAction;
 import StSShapeShifter.characters.ShapeShifter;
-import StSShapeShifter.patches.BloomWiltCountField;
 import StSShapeShifter.util.BloomCountUtils;
-import basemod.AutoAdd;
-import com.badlogic.gdx.graphics.Color;
-import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.characters.TheDefault;
-import com.megacrit.cardcrawl.powers.EnergizedPower;
-import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
@@ -57,6 +45,7 @@ public class RockSlide extends AbstractDynamicCard {
     private static final int UPGRADE_PLUS_DMG = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
     private static final int MAGIC = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
     private static final int UPGRADE_PLUS_MAGIC = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    public int count = 0;
 
     // /STAT DECLARATION/
 
@@ -72,7 +61,7 @@ public class RockSlide extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         ShapeshifterMod.logger.info(BloomCountUtils.getBloomCount());
-        this.applyGrow();
+        //applyGrow();
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
         updateBloomCount(this.growValue);
@@ -81,8 +70,21 @@ public class RockSlide extends AbstractDynamicCard {
     }
     
     public void onMoveToDiscard() {
-        this.addToBot(new RockSlideAction(this.uuid, this));
-        AbstractDungeon.player.hand.refreshHandLayout();
+        //this.addToBot(new RockSlideAction(this.uuid, this));
+        if(!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && !AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty()) {
+            ArrayList<AbstractCard> cardsThisTurn = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisTurn);
+            if(cardsThisTurn.contains(this)) {
+                count++;
+                cardsThisTurn.remove(cardsThisTurn.size() - 1);
+                if(!cardsThisTurn.contains(this) && count == 1) {
+                    AbstractDungeon.player.discardPile.removeCard(this);
+                    AbstractDungeon.player.hand.addToHand(this);
+                    this.applyGrow();
+                    AbstractDungeon.player.hand.refreshHandLayout();
+                    AbstractDungeon.player.discardPile.refreshHandLayout();
+                }
+            }
+        }
     }
 
     // Upgraded stats.

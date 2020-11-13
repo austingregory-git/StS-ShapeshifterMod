@@ -1,30 +1,14 @@
 package StSShapeShifter.powers;
 
-import StSShapeShifter.actions.ModifyGrowAction;
-import StSShapeShifter.actions.ModifyMagicAction;
-import StSShapeShifter.cards.AbstractDynamicCard;
-import StSShapeShifter.cards.HummingbirdForm;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.cards.DefaultRareAttack;
 import StSShapeShifter.util.TextureLoader;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class HummingbirdFormPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
@@ -54,6 +38,8 @@ public class HummingbirdFormPower extends AbstractPower implements CloneablePowe
         // We load those textures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+
+        updateDescription();
     }
 
     /*public void onUseCard(AbstractCard card, UseCardAction action) {
@@ -66,6 +52,11 @@ public class HummingbirdFormPower extends AbstractPower implements CloneablePowe
             c.applyPowers();
         }
     }*/
+
+    @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0];
+    }
 
     @Override
     public AbstractPower makeCopy() {

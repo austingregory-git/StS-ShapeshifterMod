@@ -35,7 +35,7 @@ public class EagleForm extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = ShapeshifterMod.makeID(EagleForm.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("card-art-generated/EagleForm.png");
 
     // /TEXT DECLARATION/
 

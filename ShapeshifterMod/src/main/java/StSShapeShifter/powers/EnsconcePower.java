@@ -60,7 +60,11 @@ public class EnsconcePower extends AbstractPower implements CloneablePowerInterf
                 }
             }
         }
+    }
 
+    @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0];
     }
 
     @Override

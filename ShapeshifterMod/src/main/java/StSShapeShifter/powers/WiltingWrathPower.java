@@ -45,6 +45,8 @@ public class WiltingWrathPower extends AbstractPower implements CloneablePowerIn
         // We load those textures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+
+        updateDescription();
     }
 
     @Override
@@ -57,6 +59,11 @@ public class WiltingWrathPower extends AbstractPower implements CloneablePowerIn
             this.flash();
             this.addToBot(new ApplyPowerAction(this.owner, this.owner, new DamageAmpPower(this.owner, this.amount)));
         }
+    }
+
+    @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override

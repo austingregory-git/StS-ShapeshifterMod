@@ -29,6 +29,7 @@ public class MooseFormPower extends AbstractPower implements CloneablePowerInter
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/MooseFormPower84.png");
     private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/MooseFormPower32.png");
+    public int count;
 
     public MooseFormPower(final AbstractCreature owner, int amount) {
         name = NAME;
@@ -43,6 +44,8 @@ public class MooseFormPower extends AbstractPower implements CloneablePowerInter
         // We load those textures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+
+        updateDescription();
     }
 
     public void stackPower(int stackAmount) {
@@ -52,6 +55,18 @@ public class MooseFormPower extends AbstractPower implements CloneablePowerInter
 
     public void atStartOfTurn() {
         this.addToBot(new BetterDiscardPileToHandAction(amount));
+    }
+
+    public void atEndOfTurn(boolean isPlayer) {
+        count++;
+        if(count == 3) {
+            this.addToBot(new ChangeStanceAction("Neutral"));
+        }
+    }
+
+    @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + (3-count) + DESCRIPTIONS[2];
     }
 
     @Override

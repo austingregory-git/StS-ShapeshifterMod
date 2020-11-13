@@ -3,6 +3,7 @@ package StSShapeShifter.powers;
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.actions.ModifyWitherAction;
 import StSShapeShifter.cards.AbstractDynamicCard;
+import StSShapeShifter.util.AllForms;
 import StSShapeShifter.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -54,7 +55,7 @@ public class DamageAmpPower extends AbstractPower implements CloneablePowerInter
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.type == AbstractCard.CardType.ATTACK) {
+        if (card.type == AbstractCard.CardType.ATTACK || (AllForms.getAllForms().contains(card.cardID) && card.baseDamage > 0)) {
             this.flash();
             this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, ShapeshifterMod.makeID("DamageAmpPower")));
         }

@@ -32,7 +32,7 @@ public class DragonForm extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = ShapeshifterMod.makeID(DragonForm.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("card-art-generated/DragonForm.png");
 
     // /TEXT DECLARATION/
 
@@ -70,7 +70,7 @@ public class DragonForm extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
+        this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flash();
             Iterator var3 = AbstractDungeon.getMonsters().monsters.iterator();

@@ -51,7 +51,7 @@ public class HippoForm extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DamageRandomEnemyAction(new DamageInfo(p, this.damage, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SMASH));
+        this.addToBot(new DamageRandomEnemyAction(new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SMASH));
 
         if(!p.stance.ID.equals("HippoFormStance") && !p.hasPower("CannotChangeStancePower")) {
             this.addToBot(new ApplyPowerAction(p, p, new HippoFormPower(p, this.magicNumber)));

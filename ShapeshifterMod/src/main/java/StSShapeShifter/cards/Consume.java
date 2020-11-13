@@ -2,20 +2,10 @@ package StSShapeShifter.cards;
 
 import StSShapeShifter.actions.ModifyMagicAction;
 import StSShapeShifter.characters.ShapeShifter;
-import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.characters.TheDefault;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-
-import java.util.Iterator;
-import java.util.Random;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -31,7 +21,7 @@ public class Consume extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = ShapeshifterMod.makeID(Consume.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("card-art-generated/Consume.png");
 
     // /TEXT DECLARATION/
 

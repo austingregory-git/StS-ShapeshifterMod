@@ -19,7 +19,7 @@ public class PorcupineFormPowerPatch {
     public static class ApplyPowerAction_PorcupineImmunity {
         public static SpireReturn Prefix(ApplyPowerAction __instance, AbstractPower ___powerToApply) {
             try {
-                if (__instance.target.hasPower(ShapeshifterMod.makeID(PorcupineFormPower.class.getSimpleName())) && ___powerToApply.type == AbstractPower.PowerType.DEBUFF) {
+                if (__instance.target != null && __instance.target.hasPower(ShapeshifterMod.makeID(PorcupineFormPower.class.getSimpleName())) && ___powerToApply.type == AbstractPower.PowerType.DEBUFF) {
                     CardCrawlGame.sound.play("NULLIFY_SFX");
                     //___duration -= Gdx.graphics.getDeltaTime();
                     __instance.target.getPower(ShapeshifterMod.makeID(PorcupineFormPower.class.getSimpleName())).flashWithoutSound();
@@ -31,20 +31,5 @@ public class PorcupineFormPowerPatch {
             }
             return SpireReturn.Continue();
         }
-        /*@SpireInsertPatch (
-                loc = 148
-        )
-        public static SpireReturn Insert(ApplyPowerAction __instance, AbstractPower ___powerToApply, float ___duration) {
-            if (__instance.target.hasPower(ShapeshifterMod.makeID("PorcupineFormPower")) && ___powerToApply.type == AbstractPower.PowerType.DEBUFF) {
-                CardCrawlGame.sound.play("NULLIFY_SFX");
-                ___duration -= Gdx.graphics.getDeltaTime();
-                __instance.target.getPower(ShapeshifterMod.makeID("PorcupineFormPower")).flashWithoutSound();
-                ShapeshifterMod.logger.info("we are in!");
-                //___isDone = true;
-                return SpireReturn.Return(null);
-            }
-            return SpireReturn.Continue();
-        }*/
-
     }
 }

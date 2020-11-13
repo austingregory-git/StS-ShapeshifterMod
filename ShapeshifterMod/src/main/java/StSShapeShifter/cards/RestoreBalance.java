@@ -1,16 +1,11 @@
 package StSShapeShifter.cards;
 
 import StSShapeShifter.characters.ShapeShifter;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.ModifyExhaustiveAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.characters.TheDefault;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 import java.util.ArrayList;
 import java.util.Iterator;
