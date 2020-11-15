@@ -27,9 +27,9 @@
           "NAME": "Cosmic Shifter",
           "DESCRIPTIONS": ["At the end of your turn, deal #b", " damage to all enemies equal to the number of unique forms you have entered this combat."]
         },
-        "StSShapeShifter:WildfirePower": {
+        "StSShapeShifter:WildFirePower": {
           "NAME": "Wildfire",
-          "DESCRIPTIONS": ["At the start of this creature's turn, they take damage. Then, Wildfire jumps to a random enemy. This effect #yWithers by 2 for each jump."]
+          "DESCRIPTIONS": ["At the start of this creature's turn, they take #b", " damage. Then, Wildfire jumps to a random enemy. This effect #yWithers by #b", " for each jump."]
         },
         "StSShapeShifter:FertileSoilPower": {
           "NAME": "Fertile Soil",
@@ -141,7 +141,7 @@
         },
         "StSShapeShifter:WinterPower": {
           "NAME": "Winter",
-          "DESCRIPTIONS": ["Your #yWither cards cost less. Whenever you draw a #yWither Card, double its #yWither value.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["Your #yWither cards cost less. Whenever you draw a #yWither Card, double its #yWither value."]
         },
         "StSShapeShifter:RatFormPower": {
           "NAME": "Rat Form",

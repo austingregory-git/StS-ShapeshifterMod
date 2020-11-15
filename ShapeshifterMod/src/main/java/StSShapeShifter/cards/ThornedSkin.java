@@ -47,7 +47,7 @@ public class ThornedSkin extends AbstractDynamicCard {
 
 
     public ThornedSkin() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         this.magicNumber = this.baseMagicNumber = 2;
         this.witherValue = this.baseWitherValue = 1;

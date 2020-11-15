@@ -52,7 +52,7 @@ public class Lynx_Form extends AbstractDynamicCard {
 
 
     public Lynx_Form() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.baseMagicNumber = 1;
         this.isMultiDamage = true;

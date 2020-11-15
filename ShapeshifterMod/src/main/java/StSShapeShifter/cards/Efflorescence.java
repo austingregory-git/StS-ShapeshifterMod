@@ -21,7 +21,7 @@ public class Efflorescence extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = ShapeshifterMod.makeID(Efflorescence.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("card-art-generated/Efflorescence.png");
 
     // /TEXT DECLARATION/
 
@@ -40,7 +40,7 @@ public class Efflorescence extends AbstractDynamicCard {
 
 
     public Efflorescence() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = 2;
         //this.defaultBaseSecondMagicNumber = 1;
         this.growValue = this.baseGrowValue = 1;

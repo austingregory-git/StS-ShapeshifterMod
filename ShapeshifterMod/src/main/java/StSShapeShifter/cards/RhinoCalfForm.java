@@ -51,7 +51,7 @@ public class RhinoCalfForm extends AbstractDynamicCard {
 
 
     public RhinoCalfForm() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         this.baseBlock = BLOCK;
         this.magicNumber = this.baseMagicNumber = 1;
         this.exhaust = true;

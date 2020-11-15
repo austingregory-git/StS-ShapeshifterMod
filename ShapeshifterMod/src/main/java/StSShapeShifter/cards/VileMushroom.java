@@ -41,7 +41,7 @@ public class VileMushroom extends AbstractDynamicCard {
 
 
     public VileMushroom() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 8;
         this.growValue = this.baseGrowValue = 3;
     }

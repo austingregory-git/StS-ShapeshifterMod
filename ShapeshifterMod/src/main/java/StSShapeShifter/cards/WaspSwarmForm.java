@@ -48,7 +48,7 @@ public class WaspSwarmForm extends AbstractDynamicCard {
 
 
     public WaspSwarmForm() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
     }
 
     // Actions the card should do.

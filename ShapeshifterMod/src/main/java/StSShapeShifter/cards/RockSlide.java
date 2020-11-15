@@ -51,7 +51,7 @@ public class RockSlide extends AbstractDynamicCard {
 
 
     public RockSlide() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.growValue = this.baseGrowValue = 1;
     }

@@ -49,7 +49,7 @@ public class Bonk extends AbstractDynamicCard {
 
 
     public Bonk() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
 
     }

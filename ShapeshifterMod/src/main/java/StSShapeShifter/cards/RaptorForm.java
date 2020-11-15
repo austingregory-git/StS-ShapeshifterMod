@@ -46,7 +46,7 @@ public class RaptorForm extends AbstractDynamicCard {
 
 
     public RaptorForm() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = MAGIC;
         this.growValue = this.baseGrowValue = GROW;

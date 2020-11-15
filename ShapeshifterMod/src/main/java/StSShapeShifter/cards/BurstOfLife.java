@@ -49,7 +49,7 @@ public class BurstOfLife extends AbstractDynamicCard {
 
 
     public BurstOfLife() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.isMultiDamage = true;
     }

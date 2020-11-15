@@ -46,7 +46,7 @@ public class FesteringBite extends AbstractDynamicCard {
 
 
     public FesteringBite() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;

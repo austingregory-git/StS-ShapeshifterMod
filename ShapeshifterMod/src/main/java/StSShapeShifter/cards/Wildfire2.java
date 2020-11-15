@@ -44,8 +44,8 @@ public class Wildfire2 extends AbstractDynamicCard {
 
 
     public Wildfire2() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
+        this.magicNumber = baseMagicNumber = DAMAGE;
         this.witherValue = this.baseWitherValue = 4;
     }
 
@@ -53,7 +53,7 @@ public class Wildfire2 extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(m, p, new WildFirePower(m, p, this.baseDamage, this.witherValue), this.baseDamage));
+        this.addToBot(new ApplyPowerAction(m, p, new WildFirePower(m, p, this.magicNumber, this.witherValue), this.baseDamage));
     }
 
 

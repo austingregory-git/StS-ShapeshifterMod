@@ -21,7 +21,7 @@ public class FallingLeaves extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = ShapeshifterMod.makeID(FallingLeaves.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("card-art-generated/FallingLeaves.png");
 
     // /TEXT DECLARATION/
 
@@ -42,7 +42,7 @@ public class FallingLeaves extends AbstractDynamicCard {
 
 
     public FallingLeaves() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;

@@ -44,7 +44,7 @@ public class Summon_Mountains extends AbstractDynamicCard {
 
 
     public Summon_Mountains() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         this.growValue = this.baseGrowValue = 6;
 

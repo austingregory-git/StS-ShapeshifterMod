@@ -56,7 +56,7 @@ public class BurrBomb extends AbstractDynamicCard {
 
 
     public BurrBomb() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         this.growValue = this.baseGrowValue = 5;
         this.magicNumber = this.baseMagicNumber = DAMAGE;
     }

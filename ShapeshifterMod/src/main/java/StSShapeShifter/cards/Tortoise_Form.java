@@ -48,7 +48,7 @@ public class Tortoise_Form extends AbstractDynamicCard {
 
 
     public Tortoise_Form() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;

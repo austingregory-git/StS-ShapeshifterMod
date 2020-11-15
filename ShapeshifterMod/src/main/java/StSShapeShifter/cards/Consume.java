@@ -43,7 +43,7 @@ public class Consume extends AbstractDynamicCard {
 
 
     public Consume() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;
         this.witherValue = this.baseWitherValue = 1;

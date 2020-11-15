@@ -26,7 +26,7 @@ public class EntForm extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = ShapeshifterMod.makeID(EntForm.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("card-art-generated/EntForm.png");
 
     // /TEXT DECLARATION/
 
@@ -48,7 +48,7 @@ public class EntForm extends AbstractDynamicCard {
 
 
     public EntForm() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
 
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;

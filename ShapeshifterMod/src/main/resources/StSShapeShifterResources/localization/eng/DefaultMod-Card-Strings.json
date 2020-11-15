@@ -210,7 +210,7 @@
   },
   "StSShapeShifter:Wildfire2": {
     "NAME": "Wildfire",
-    "DESCRIPTION": "Apply Wildfire !D! to an enemy. That enemy takes !D! damage at the end of their turn, and then Wildfire jumps to a random enemy. This effect Withers by !StSShapeShifter:Wither! for each jump."
+    "DESCRIPTION": "Apply Wildfire !M! to an enemy. That enemy takes !M! damage at the end of their turn, and then Wildfire jumps to a random enemy. This effect Withers by !StSShapeShifter:Wither! for each jump."
   },
   "StSShapeShifter:Earthquake": {
     "NAME": "Earthquake",
@@ -341,7 +341,7 @@
   },
   "StSShapeShifter:EntForm": {
     "NAME": "Ent Form",
-    "DESCRIPTION": "Upon Entering Ent Form, Gain 4 Regen. While in Ent Form, gain Entangled at the start of your turn and gain !M! Dexterity at the end of your turn. Lasts up to 3 turns. Exhaust."
+    "DESCRIPTION": "Upon Entering Ent Form, Gain !StSShapeShifter:SecondMagic! Regen. While in Ent Form, gain Entangled at the start of your turn and gain !M! Dexterity at the end of your turn. Lasts up to 3 turns. Exhaust."
   },
   "StSShapeShifter:DeerForm": {
     "NAME": "Deer Form",

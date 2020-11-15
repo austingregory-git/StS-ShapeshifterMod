@@ -45,7 +45,7 @@ public class Blossom extends AbstractDynamicCard {
 
 
     public Blossom() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = 2;
         this.defaultBaseSecondMagicNumber = 1;
         this.exhaust = true;

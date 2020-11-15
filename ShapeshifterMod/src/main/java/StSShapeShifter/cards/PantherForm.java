@@ -46,7 +46,7 @@ public class PantherForm extends AbstractDynamicCard {
 
 
     public PantherForm() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
 
         this.magicNumber = this.baseMagicNumber = 1;
         this.exhaust = true;

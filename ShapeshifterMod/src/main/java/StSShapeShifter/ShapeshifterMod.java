@@ -681,7 +681,13 @@ public class ShapeshifterMod implements
     }
     
     // ================ /LOAD THE KEYWORDS/ ===================    
-    
+
+
+    public static String imgFromId(String id) {
+        String unprefixedId = id.replace(ShapeshifterMod.getModID() + ":","");
+        return ShapeshifterMod.makeCardPath(String.format("card-art-generated/%1$s.png", unprefixedId));
+    }
+
     // this adds "ModName:" before the ID of any card/relic/power etc.
     // in order to avoid conflicts if any other mod uses the same ID.
     public static String makeID(String idText) {

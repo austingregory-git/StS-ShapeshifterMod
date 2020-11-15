@@ -24,6 +24,7 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard {
     // Been added to the default card rather than creating a new Dynamic one, but was done so to deliberately.
     public boolean hbpUpdated = false;
     public boolean epfUpdated = false;
+
     public AbstractDynamicCard(final String id,
                                final String img,
                                final int cost,

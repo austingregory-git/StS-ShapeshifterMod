@@ -41,7 +41,7 @@ public class Uproot_Redwood extends AbstractDynamicCard {
 
 
     public Uproot_Redwood() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.witherValue = this.baseWitherValue = 20;
     }

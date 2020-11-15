@@ -87,6 +87,11 @@ public class WinterPower extends AbstractPower implements CloneablePowerInterfac
     }
 
     @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0];
+    }
+
+    @Override
     public AbstractPower makeCopy() {
         return new WinterPower(owner, upgraded);
     }

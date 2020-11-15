@@ -51,7 +51,7 @@ public class PorcupineForm extends AbstractDynamicCard {
 
 
     public PorcupineForm() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;

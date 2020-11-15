@@ -49,7 +49,7 @@ public class ReplenishingNectar extends AbstractDynamicCard {
 
 
     public ReplenishingNectar() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         this.misc = 1;
         this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber = MAGIC;
         this.baseMagicNumber = this.misc;

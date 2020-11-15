@@ -44,7 +44,7 @@ public class Winter extends AbstractDynamicCard {
 
 
     public Winter() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
     }
 
     // Actions the card should do.

@@ -50,7 +50,7 @@ public class MammothForm extends AbstractDynamicCard {
 
 
     public MammothForm() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;

@@ -20,9 +20,7 @@ public class AdaptiveStrikes extends AbstractDynamicCard {
 
     //public static final String ID = ShapeshifterMod.makeID(${NAME}.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
     public static final String ID = ShapeshifterMod.makeID(AdaptiveStrikes.class.getSimpleName()); // DELETE THIS ONE.
-    public static final String IMG = makeCardPath("card-art-generated/AdaptiveStrikes.png");// "public static final String IMG = makeCardPath("${NAME}.png");
-    // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
-
+    public static final String IMG = makeCardPath("card-art-generated/AdaptiveStrikes.png");
 
     // /TEXT DECLARATION/
 
@@ -44,7 +42,7 @@ public class AdaptiveStrikes extends AbstractDynamicCard {
 
 
     public AdaptiveStrikes() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.growValue = this.baseGrowValue = 1;
     }

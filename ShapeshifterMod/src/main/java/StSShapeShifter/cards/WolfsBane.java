@@ -45,7 +45,7 @@ public class WolfsBane extends AbstractDynamicCard {
 
     public WolfsBane() {
 
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = baseMagicNumber = MAGIC;
         this.defaultSecondMagicNumber = defaultBaseSecondMagicNumber = MAGIC2;
         this.growValue = this.baseGrowValue = 1;

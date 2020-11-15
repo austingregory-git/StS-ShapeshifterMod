@@ -39,7 +39,7 @@ public class BearForm extends AbstractDynamicCard {
 
 
     public BearForm() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         this.baseBlock = 8;
         this.defaultBaseSecondMagicNumber = 4;
         this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;

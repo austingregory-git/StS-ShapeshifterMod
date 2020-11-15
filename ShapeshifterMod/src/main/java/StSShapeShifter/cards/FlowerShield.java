@@ -43,7 +43,7 @@ public class FlowerShield extends AbstractDynamicCard {
 
 
     public FlowerShield() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         this.witherValue = this.baseWitherValue = 3;
 

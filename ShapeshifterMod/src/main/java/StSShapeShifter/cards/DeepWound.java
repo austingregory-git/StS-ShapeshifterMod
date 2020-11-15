@@ -44,7 +44,7 @@ public class DeepWound extends AbstractDynamicCard {
 
 
     public DeepWound() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;

@@ -45,7 +45,7 @@ public class FruitBasket extends AbstractDynamicCard {
 
 
     public FruitBasket() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
         this.defaultBaseSecondMagicNumber = 1;
         this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;

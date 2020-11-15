@@ -17,7 +17,7 @@ public class FlamingoForm extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = ShapeshifterMod.makeID(FlamingoForm.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("card-art-generated/FlamingoForm.png");
 
     // /TEXT DECLARATION/
 
@@ -38,7 +38,7 @@ public class FlamingoForm extends AbstractDynamicCard {
 
 
     public FlamingoForm() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
     }
 

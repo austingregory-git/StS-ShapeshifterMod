@@ -48,7 +48,7 @@ public class Pounce extends AbstractDynamicCard {
 
 
     public Pounce() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = 2;
     }

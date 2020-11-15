@@ -45,7 +45,7 @@ public class Rest extends AbstractDynamicCard {
 
 
     public Rest() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         //this.magicNumber = -3;
 
