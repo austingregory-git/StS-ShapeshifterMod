@@ -27,13 +27,14 @@ public class LoyalLobster extends AbstractRelic {
         super(ID, "sunflower.png", RelicTier.UNCOMMON, LandingSound.SOLID);
     }
 
-/*    public String getUpdatedDescription() {
+    @Override
+    public String getUpdatedDescription() {
         return AbstractDungeon.player != null ? this.setDescription(AbstractDungeon.player.chosenClass) : this.setDescription((PlayerClass)null);
     }
 
     private String setDescription(PlayerClass c) {
-        return "If you stay in the same form for 3 turns, gain 3 Strength for this combat. Can only trigger once.";
-    }*/
+        return DESCRIPTIONS[0];
+    }
 
     @Override
     public void onPlayerEndTurn() {

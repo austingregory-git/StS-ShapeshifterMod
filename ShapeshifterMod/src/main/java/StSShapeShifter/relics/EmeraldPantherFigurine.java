@@ -32,13 +32,14 @@ public class EmeraldPantherFigurine extends AbstractRelic {
         super(ID, "sunflower.png", RelicTier.COMMON, LandingSound.SOLID);
     }
 
-//    public String getUpdatedDescription() {
-//        return AbstractDungeon.player != null ? this.setDescription(AbstractDungeon.player.chosenClass) : this.setDescription((PlayerClass)null);
-//    }
-//
-//    private String setDescription(PlayerClass c) {
-//        return "Cards with Grow gain +1 to their Grow value";
-//    }
+    @Override
+    public String getUpdatedDescription() {
+        return AbstractDungeon.player != null ? this.setDescription(AbstractDungeon.player.chosenClass) : this.setDescription((PlayerClass)null);
+    }
+
+    private String setDescription(PlayerClass c) {
+        return DESCRIPTIONS[0];
+    }
 
     public AbstractRelic makeCopy() {
         return new EmeraldPantherFigurine();

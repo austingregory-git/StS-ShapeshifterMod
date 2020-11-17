@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.util.TextureLoader;
 
-public class HummingbirdFormPower extends AbstractPower implements CloneablePowerInterface {
+public class HummingbirdFormPower extends AbstractFormPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
     public static final String POWER_ID = ShapeshifterMod.makeID(HummingbirdFormPower.class.getSimpleName());

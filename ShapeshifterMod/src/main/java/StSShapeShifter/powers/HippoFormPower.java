@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.Iterator;
 
-public class HippoFormPower extends AbstractPower implements CloneablePowerInterface {
+public class HippoFormPower extends AbstractFormPower implements CloneablePowerInterface {
     public static final String POWER_ID = ShapeshifterMod.makeID(HippoFormPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;

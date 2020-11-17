@@ -33,7 +33,16 @@ public class AllForms {
     }
 
     public static ArrayList<String> getAllFormsStanceNames() {
-        ArrayList<String> allForms = new ArrayList<String>(Arrays.asList(LynxFormStance.class.getSimpleName(), TortoiseFormStance.class.getSimpleName(), DeerFormStance.class.getSimpleName(), BearFormStance.class.getSimpleName()));
+        ArrayList<String> allForms = new ArrayList<String>(Arrays.asList(LynxFormStance.class.getSimpleName(), TortoiseFormStance.class.getSimpleName(),
+                                                                    DeerFormStance.class.getSimpleName(), BearFormStance.class.getSimpleName(), DragonFormStance.class.getSimpleName(),
+                                                                    EagleFormStance.class.getSimpleName(), EntFormStance.class.getSimpleName(), FlamingoFormStance.class.getSimpleName(),
+                                                                    FoxFormStance.class.getSimpleName(), HippoFormStance.class.getSimpleName(), HummingbirdFormStance.class.getSimpleName(),
+                                                                    HydraFormStance.class.getSimpleName(), LionFormStance.class.getSimpleName(), MammothFormStance.class.getSimpleName(),
+                                                                    MonkeyFormStance.class.getSimpleName(), MooseFormStance.class.getSimpleName(), OwlFormStance.class.getSimpleName(),
+                                                                    PantherFormStance.class.getSimpleName(), PhoenixFormStance.class.getSimpleName(), PorcupineFormStance.class.getSimpleName(),
+                                                                    RaptorFormStance.class.getSimpleName(), RatFormStance.class.getSimpleName(), RhinoCalfFormStance.class.getSimpleName(),
+                                                                    RhinoFormStance.class.getSimpleName(), SquirrelFormStance.class.getSimpleName(), WaspSwarmFormStance.class.getSimpleName(),
+                                                                    WolfFormStance.class.getSimpleName()));
 
         return allForms;
     }

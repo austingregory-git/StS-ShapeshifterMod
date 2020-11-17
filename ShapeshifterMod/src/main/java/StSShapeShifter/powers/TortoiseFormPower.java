@@ -12,7 +12,7 @@ import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.util.TextureLoader;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 
-public class TortoiseFormPower extends AbstractPower implements CloneablePowerInterface {
+public class TortoiseFormPower extends AbstractFormPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
     public static final String POWER_ID = ShapeshifterMod.makeID(TortoiseFormPower.class.getSimpleName());

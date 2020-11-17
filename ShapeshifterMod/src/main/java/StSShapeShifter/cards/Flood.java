@@ -5,6 +5,7 @@ import StSShapeShifter.characters.ShapeShifter;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.InstantKillAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -69,7 +70,7 @@ public class Flood extends AbstractDynamicCard {
             while(var3.hasNext()) {
                 AbstractMonster monster = (AbstractMonster)var3.next();
                 if (!monster.isDead && !monster.isDying && monster.hasPower("Minion")) {
-                    this.addToBot(new InstantKillAction(m));
+                    this.addToTop(new InstantKillAction(monster));
                 }
                 else if(!monster.isDead && !monster.isDying) {
                     this.addToBot(new ApplyPowerAction(monster, p, new VulnerablePower(monster, this.magicNumber, false), this.magicNumber));

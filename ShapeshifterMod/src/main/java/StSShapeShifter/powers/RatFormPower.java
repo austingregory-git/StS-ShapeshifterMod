@@ -15,7 +15,7 @@ import StSShapeShifter.util.TextureLoader;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 
-public class RatFormPower extends AbstractPower implements CloneablePowerInterface {
+public class RatFormPower extends AbstractFormPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
     public static final String POWER_ID = ShapeshifterMod.makeID(RatFormPower.class.getSimpleName());
@@ -24,8 +24,8 @@ public class RatFormPower extends AbstractPower implements CloneablePowerInterfa
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
-    private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/placeholder_power84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/BurrBombPower32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/RatFormPower84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/RatFormPower32.png");
 
     public RatFormPower(final AbstractCreature owner, int amount) {
         name = NAME;

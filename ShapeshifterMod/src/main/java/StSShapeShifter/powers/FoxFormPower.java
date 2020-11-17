@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.*;
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.util.TextureLoader;
 
-public class FoxFormPower extends AbstractPower implements CloneablePowerInterface {
+public class FoxFormPower extends AbstractFormPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
     public static final String POWER_ID = ShapeshifterMod.makeID(FoxFormPower.class.getSimpleName());
@@ -48,12 +48,8 @@ public class FoxFormPower extends AbstractPower implements CloneablePowerInterfa
         updateDescription();
     }
 
-    public void atStartOfTurn() {
-        this.addToBot(new FoxDigAction(player, owner, upgraded));
-    }
-
-
     public void atEndOfTurn(boolean isPlayer) {
+        this.addToBot(new FoxDigAction(player, owner, upgraded));
         count++;
         if(count == 3) {
             this.addToBot(new ChangeStanceAction("Neutral"));

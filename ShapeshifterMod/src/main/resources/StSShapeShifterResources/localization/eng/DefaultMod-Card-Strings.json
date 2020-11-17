@@ -378,7 +378,7 @@
   },
   "StSShapeShifter:FoxForm": {
     "NAME": "Fox Form",
-    "DESCRIPTION": "Upon Entering Fox Form, deal !D! to a random enemy. While in Fox Form, at the start of your turn, Dig for treasure, gaining gold and a small chance at gaining a relic. Lasts for up to 3 turns. Exhaust."
+    "DESCRIPTION": "Upon Entering Fox Form, deal !D! to a random enemy. While in Fox Form, at the end of your turn, Dig for treasure, gaining gold and a small chance at gaining a relic. Lasts for up to 3 turns. Exhaust."
   },
   "StSShapeShifter:SquirrelForm": {
     "NAME": "Squirrel Form",

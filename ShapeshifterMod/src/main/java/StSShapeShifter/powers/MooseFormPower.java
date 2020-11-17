@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.Iterator;
 
-public class MooseFormPower extends AbstractPower implements CloneablePowerInterface {
+public class MooseFormPower extends AbstractFormPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
     public static final String POWER_ID = ShapeshifterMod.makeID(MooseFormPower.class.getSimpleName());

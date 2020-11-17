@@ -305,12 +305,6 @@ public class ShapeshifterMod implements
     @Override
     public void receiveEditCharacters() {
         logger.info("Beginning to edit characters. " + "Add " + ShapeShifter.Enums.SHAPESHIFTER.toString());
-        
-        /*BaseMod.addCharacter(new TheDefault("the Default", TheDefault.Enums.THE_DEFAULT),
-                THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, TheDefault.Enums.THE_DEFAULT);*/
-
-        /*BaseMod.addCharacter(new ShapeShifter("The Shapeshifter", ShapeShifter.Enums.SHAPESHIFTER),
-                THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, ShapeShifter.Enums.SHAPESHIFTER);*/
 
         BaseMod.addCharacter(new ShapeShifter("TheShapeShifter", ShapeShifter.Enums.SHAPESHIFTER),
                 THE_SHAPESHIFTER_BUTTON,
@@ -406,9 +400,6 @@ public class ShapeshifterMod implements
         // in order to automatically differentiate which pool to add the relic too.
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        //BaseMod.addRelicToCustomPool(new PlaceholderRelic(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
-        //BaseMod.addRelicToCustomPool(new PlaceholderRelic(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
-        //BaseMod.addRelicToCustomPool(new Golden_Flower(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
         BaseMod.addRelicToCustomPool(new AnimalHeart(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
         BaseMod.addRelicToCustomPool(new TheShapeShiftersMagnolia(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
         BaseMod.addRelicToCustomPool(new AlarmClock(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
@@ -423,8 +414,7 @@ public class ShapeshifterMod implements
         BaseMod.addRelicToCustomPool(new Fertilizer(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
         BaseMod.addRelicToCustomPool(new FrogOfVitality(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
         BaseMod.addRelicToCustomPool(new LoyalLobster(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
-        //BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
-        //BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheDefault.Enums.COLOR_GRAY);*/
+
         
         // This adds a relic to the Shared pool. Every character can find this relic.
         //BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
@@ -587,7 +577,7 @@ public class ShapeshifterMod implements
 
 
         new AutoAdd(getModID())
-            .packageFilter("StSShapeshifter.cards")
+            .packageFilter("StSShapeShifter.cards")
             .setDefaultSeen(true)
             .cards();
 

@@ -38,8 +38,7 @@ public class DragonFormStance extends AbstractStance {
     }
 
     public void updateDescription() {
-        this.description = stanceString.DESCRIPTION[0];
-        //this.description = "Dragon Form Stance";
+
     }
 
     public void updateAnimation() {
@@ -54,7 +53,7 @@ public class DragonFormStance extends AbstractStance {
         this.particleTimer2 -= Gdx.graphics.getDeltaTime();
         if (this.particleTimer2 < 0.0F) {
             this.particleTimer2 = MathUtils.random(0.45F, 0.55F);
-            AbstractDungeon.effectsQueue.add(new StanceAuraEffect("Calm"));
+            AbstractDungeon.effectsQueue.add(new StanceAuraEffect("Wrath"));
         }
 
     }

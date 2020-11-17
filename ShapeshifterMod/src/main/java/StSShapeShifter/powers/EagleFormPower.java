@@ -1,11 +1,14 @@
 package StSShapeShifter.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -15,7 +18,7 @@ import StSShapeShifter.util.TextureLoader;
 
 import java.util.Iterator;
 
-public class EagleFormPower extends AbstractPower implements CloneablePowerInterface {
+public class EagleFormPower extends AbstractFormPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
     public static final String POWER_ID = ShapeshifterMod.makeID(EagleFormPower.class.getSimpleName());
@@ -64,6 +67,7 @@ public class EagleFormPower extends AbstractPower implements CloneablePowerInter
                         monster.intent == AbstractMonster.Intent.ATTACK_DEBUFF ||
                         monster.intent == AbstractMonster.Intent.ATTACK_DEFEND)
                 {
+                    this.flash();
                     this.addToBot(new ApplyPowerAction(monster, owner, new VulnerablePower(monster, amount, false), amount));
                 }
             }

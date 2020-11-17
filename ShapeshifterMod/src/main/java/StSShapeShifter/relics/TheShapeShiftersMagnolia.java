@@ -31,13 +31,14 @@ public class TheShapeShiftersMagnolia extends AbstractRelic {
         super(ID, "sunflower.png", RelicTier.STARTER, LandingSound.SOLID);
     }
 
-    /*public String getUpdatedDescription() {
+    @Override
+    public String getUpdatedDescription() {
         return AbstractDungeon.player != null ? this.setDescription(AbstractDungeon.player.chosenClass) : this.setDescription((PlayerClass)null);
     }
 
     private String setDescription(PlayerClass c) {
-        return "Keeps track of your current Bloom Count.";
-    }*/
+        return DESCRIPTIONS[0];
+    }
 
     public void onEquip() {
         this.counter = 0;

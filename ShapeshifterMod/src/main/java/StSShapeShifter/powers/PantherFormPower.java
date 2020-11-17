@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.EntanglePower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-public class PantherFormPower extends AbstractPower implements CloneablePowerInterface {
+public class PantherFormPower extends AbstractFormPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
     public static final String POWER_ID = ShapeshifterMod.makeID(PantherFormPower.class.getSimpleName());

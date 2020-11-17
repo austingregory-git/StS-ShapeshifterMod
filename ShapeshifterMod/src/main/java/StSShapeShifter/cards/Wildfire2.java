@@ -18,10 +18,8 @@ public class Wildfire2 extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    //public static final String ID = ShapeshifterMod.makeID(${NAME}.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String ID = ShapeshifterMod.makeID(Wildfire2.class.getSimpleName()); // DELETE THIS ONE.
-    public static final String IMG = makeCardPath("card-art-generated/Wildfire2.png");// "public static final String IMG = makeCardPath("${NAME}.png");
-    // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
+    public static final String ID = ShapeshifterMod.makeID(Wildfire2.class.getSimpleName());
+    public static final String IMG = makeCardPath("card-art-generated/Wildfire2.png");
 
 
     // /TEXT DECLARATION/
@@ -53,7 +51,7 @@ public class Wildfire2 extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(m, p, new WildFirePower(m, p, this.magicNumber, this.witherValue), this.baseDamage));
+        this.addToBot(new ApplyPowerAction(m, p, new WildFirePower(m, p, this.magicNumber, this.witherValue), this.magicNumber));
     }
 
 

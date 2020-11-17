@@ -26,17 +26,14 @@ public class Golden_Flower extends AbstractRelic {
         super(ID, "sunflower.png", RelicTier.STARTER, LandingSound.SOLID);
     }
 
+    @Override
     public String getUpdatedDescription() {
         return AbstractDungeon.player != null ? this.setDescription(AbstractDungeon.player.chosenClass) : this.setDescription((PlayerClass)null);
     }
 
     private String setDescription(PlayerClass c) {
-        return "Every 4 turns, gain 1 energy and draw 1 card";
+        return DESCRIPTIONS[0];
     }
-
-    /*public String getUpdatedDescription(PlayerClass c) {
-       return "Every 4 turns, gain 1 energy and draw 1 card";
-    }*/
 
     public void onEquip() {
         this.counter = 0;

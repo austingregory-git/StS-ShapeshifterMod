@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.*;
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.util.TextureLoader;
 
-public class EntFormPower extends AbstractPower implements CloneablePowerInterface {
+public class EntFormPower extends AbstractFormPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
     public static final String POWER_ID = ShapeshifterMod.makeID(EntFormPower.class.getSimpleName());

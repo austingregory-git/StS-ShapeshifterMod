@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
 
-public class FlamingoFormPower extends AbstractPower implements CloneablePowerInterface {
+public class FlamingoFormPower extends AbstractFormPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
     public static final String POWER_ID = ShapeshifterMod.makeID(FlamingoFormPower.class.getSimpleName());

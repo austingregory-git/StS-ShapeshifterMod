@@ -37,13 +37,14 @@ public class AlarmClock extends AbstractRelic {
         super(ID, "sunflower.png", RelicTier.RARE, LandingSound.SOLID);
     }
 
-    /*public String getUpdatedDescription() {
+    @Override
+    public String getUpdatedDescription() {
         return AbstractDungeon.player != null ? this.setDescription(AbstractDungeon.player.chosenClass) : this.setDescription((PlayerClass)null);
     }
 
     private String setDescription(PlayerClass c) {
-        return "After 8 turns in combat, gain 3 Strength and 3 Dexterity";
-    }*/
+        return DESCRIPTIONS[0];
+    }
 
     public void atBattleStart() {
         this.counter = 0;

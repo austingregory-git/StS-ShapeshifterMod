@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.powers.*;
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.util.TextureLoader;
 
-public class PorcupineFormPower extends AbstractPower implements CloneablePowerInterface {
+public class PorcupineFormPower extends AbstractFormPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
     public static final String POWER_ID = ShapeshifterMod.makeID("PorcupineFormPower");

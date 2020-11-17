@@ -28,13 +28,14 @@ public class Fertilizer extends AbstractRelic {
         super(ID, "sunflower.png", RelicTier.UNCOMMON, LandingSound.SOLID);
     }
 
-/*    public String getUpdatedDescription() {
+    @Override
+    public String getUpdatedDescription() {
         return AbstractDungeon.player != null ? this.setDescription(AbstractDungeon.player.chosenClass) : this.setDescription((PlayerClass)null);
     }
 
     private String setDescription(PlayerClass c) {
-        return "After obtaining this relic, whenever you play a unique form for this run, gain 1 max hp.";
-    }*/
+        return DESCRIPTIONS[0];
+    }
 
     @Override
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {

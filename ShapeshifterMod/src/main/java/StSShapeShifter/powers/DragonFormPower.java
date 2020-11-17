@@ -18,7 +18,7 @@ import StSShapeShifter.util.TextureLoader;
 
 import java.util.Iterator;
 
-public class DragonFormPower extends AbstractPower implements CloneablePowerInterface {
+public class DragonFormPower extends AbstractFormPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
     public static final String POWER_ID = ShapeshifterMod.makeID(DragonFormPower.class.getSimpleName());
@@ -54,14 +54,7 @@ public class DragonFormPower extends AbstractPower implements CloneablePowerInte
         this.addToBot(new GainBlockAction(owner, owner, amount));
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flash();
-            Iterator var3 = AbstractDungeon.getMonsters().monsters.iterator();
-
-            while(var3.hasNext()) {
-                AbstractMonster monster = (AbstractMonster)var3.next();
-                if (!monster.isDead && !monster.isDying) {
-                    this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
-                }
-            }
+            this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
         }
     }
 

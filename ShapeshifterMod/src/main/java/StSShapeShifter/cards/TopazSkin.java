@@ -55,11 +55,6 @@ public class TopazSkin extends AbstractDynamicCard {
     }
 
     public void topazSkinEffect(AbstractPlayer p) {
-        //applyGrow();
-        /*if(this.growValue > 0) {
-            this.rawDescription = "Gain !B!X Block. Grow (X + !StSShapeShifter:Grow!).";
-            initializeDescription();
-        }*/
         int effect = EnergyPanel.totalCount;
         if (this.energyOnUse != -1) {
             effect = this.energyOnUse;

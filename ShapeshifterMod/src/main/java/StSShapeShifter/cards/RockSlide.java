@@ -60,19 +60,20 @@ public class RockSlide extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ShapeshifterMod.logger.info(BloomCountUtils.getBloomCount());
         //applyGrow();
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
         updateBloomCount(this.growValue);
-        ShapeshifterMod.logger.info(BloomCountUtils.getBloomCount());
 
     }
     
     public void onMoveToDiscard() {
         //this.addToBot(new RockSlideAction(this.uuid, this));
+        ShapeshifterMod.logger.info(!AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty());
         if(!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && !AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty()) {
             ArrayList<AbstractCard> cardsThisTurn = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisTurn);
+            ShapeshifterMod.logger.info(cardsThisTurn);
+            ShapeshifterMod.logger.info(cardsThisTurn.contains(this));
             if(cardsThisTurn.contains(this)) {
                 count++;
                 cardsThisTurn.remove(cardsThisTurn.size() - 1);
@@ -85,6 +86,11 @@ public class RockSlide extends AbstractDynamicCard {
                 }
             }
         }
+    }
+
+    @Override
+    public void atTurnStart() {
+        count = 0;
     }
 
     // Upgraded stats.

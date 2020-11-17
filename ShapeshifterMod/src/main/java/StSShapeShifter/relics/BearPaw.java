@@ -25,6 +25,15 @@ public class BearPaw extends AbstractRelic {
     }
 
     @Override
+    public String getUpdatedDescription() {
+        return AbstractDungeon.player != null ? this.setDescription(AbstractDungeon.player.chosenClass) : this.setDescription((PlayerClass)null);
+    }
+
+    private String setDescription(PlayerClass c) {
+        return DESCRIPTIONS[0];
+    }
+
+    @Override
     public void atPreBattle() {
         ArrayList<AbstractRelic> relics = AbstractDungeon.player.relics;
     }

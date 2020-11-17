@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 
 import java.util.Iterator;
 
-public class RhinoCalfFormPower extends AbstractPower implements CloneablePowerInterface {
+public class RhinoCalfFormPower extends AbstractFormPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
     public static final String POWER_ID = ShapeshifterMod.makeID(RhinoCalfFormPower.class.getSimpleName());

@@ -25,12 +25,13 @@ public class VinesOfHonrogo extends AbstractRelic {
         super(ID, "sunflower.png", RelicTier.RARE, LandingSound.SOLID);
     }
 
+    @Override
     public String getUpdatedDescription() {
         return AbstractDungeon.player != null ? this.setDescription(AbstractDungeon.player.chosenClass) : this.setDescription((PlayerClass)null);
     }
 
     private String setDescription(PlayerClass c) {
-        return "At the start of each combat, apply 1 entangle to a random enemy.";
+        return DESCRIPTIONS[0];
     }
 
     //going to need to make a monster entangle power
