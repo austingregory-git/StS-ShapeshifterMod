@@ -6,6 +6,9 @@
 package StSShapeShifter.relics;
 
 import StSShapeShifter.ShapeshifterMod;
+import StSShapeShifter.util.TextureLoader;
+import basemod.abstracts.CustomRelic;
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer.PlayerClass;
@@ -13,12 +16,15 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 
-public class AlchemistsNecklace extends AbstractRelic {
-    public boolean active;
+import static StSShapeShifter.ShapeshifterMod.makeRelicPath;
+
+public class AlchemistsNecklace extends CustomRelic {
     public static final String ID = ShapeshifterMod.makeID("AlchemistsNecklace");
+    private static final String PNG = ".png";
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath(AlchemistsNecklace.class.getSimpleName() + PNG));
 
     public AlchemistsNecklace() {
-        super(ID, "sunflower.png", RelicTier.COMMON, LandingSound.SOLID);
+        super(ID, IMG, RelicTier.COMMON, LandingSound.SOLID);
     }
 
     @Override

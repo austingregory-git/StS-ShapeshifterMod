@@ -38,7 +38,7 @@ public class FesteringBite extends AbstractDynamicCard {
     private static final int COST = 2;  // COST = ${COST}
     private static final int UPGRADED_COST = 2; // UPGRADED_COST = ${UPGRADED_COST}
 
-    private static final int DAMAGE = 12;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 14;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 4;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
     private int count = 0;
 

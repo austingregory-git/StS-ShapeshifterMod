@@ -8,6 +8,9 @@ package StSShapeShifter.relics;
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.util.AllForms;
 import StSShapeShifter.util.BloomCountUtils;
+import StSShapeShifter.util.TextureLoader;
+import basemod.abstracts.CustomRelic;
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -24,12 +27,16 @@ import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 
 import java.util.Iterator;
 
-public class EmeraldPantherFigurine extends AbstractRelic {
+import static StSShapeShifter.ShapeshifterMod.makeRelicPath;
+
+public class EmeraldPantherFigurine extends CustomRelic {
     public boolean active;
-    public static final String ID = ShapeshifterMod.makeID("EmeraldPantherFigurine");
+    public static final String ID = ShapeshifterMod.makeID(EmeraldPantherFigurine.class.getSimpleName());
+    private static final String PNG = ".png";
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath(EmeraldPantherFigurine.class.getSimpleName() + PNG));
 
     public EmeraldPantherFigurine() {
-        super(ID, "sunflower.png", RelicTier.COMMON, LandingSound.SOLID);
+        super(ID, IMG, RelicTier.COMMON, LandingSound.SOLID);
     }
 
     @Override

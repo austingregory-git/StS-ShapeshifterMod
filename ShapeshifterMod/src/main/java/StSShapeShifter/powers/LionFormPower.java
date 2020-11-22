@@ -74,13 +74,11 @@ public class LionFormPower extends AbstractFormPower implements CloneablePowerIn
             this.addToBot(new ApplyPowerAction(targetMonster, owner, new DeepWoundPower(targetMonster, amount)));
             this.flash();
         }
-    }
-
-    public void atEndOfTurn(boolean isPlayer) {
         count++;
         if(count == 3) {
             this.addToBot(new ChangeStanceAction("Neutral"));
         }
+        updateDescription();
     }
 
     @Override

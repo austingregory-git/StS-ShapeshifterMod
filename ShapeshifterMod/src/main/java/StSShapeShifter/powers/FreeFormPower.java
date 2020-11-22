@@ -1,5 +1,7 @@
 package StSShapeShifter.powers;
 
+import StSShapeShifter.actions.ModifyGrowAction;
+import StSShapeShifter.cards.AbstractDynamicCard;
 import StSShapeShifter.util.AllForms;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -52,6 +54,32 @@ public class FreeFormPower extends AbstractPower implements CloneablePowerInterf
     }
 
     @Override
+    public void atStartOfTurn() {
+        Iterator var1 = AbstractDungeon.player.drawPile.group.iterator();
+        Iterator var2 = AbstractDungeon.player.hand.group.iterator();
+        Iterator var3 = AbstractDungeon.player.discardPile.group.iterator();
+
+        while(var1.hasNext()) {
+            AbstractCard card = (AbstractCard) var1.next();
+            if (AllForms.getAllForms().contains(card.cardID) && !card.purgeOnUse && this.amount > 0) {
+                card.setCostForTurn(-1);
+            }
+        }
+        while(var2.hasNext()) {
+            AbstractCard card = (AbstractCard) var2.next();
+            if (AllForms.getAllForms().contains(card.cardID) && !card.purgeOnUse && this.amount > 0) {
+                card.setCostForTurn(-1);
+            }
+        }
+        while(var3.hasNext()) {
+            AbstractCard card = (AbstractCard) var3.next();
+            if (AllForms.getAllForms().contains(card.cardID) && !card.purgeOnUse && this.amount > 0) {
+                card.setCostForTurn(-1);
+            }
+        }
+    }
+
+    @Override
     public void onCardDraw(AbstractCard card) {
         if (AllForms.getAllForms().contains(card.cardID) && !card.purgeOnUse && this.amount > 0) {
             card.setCostForTurn(-1);
@@ -59,6 +87,7 @@ public class FreeFormPower extends AbstractPower implements CloneablePowerInterf
     }
 
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
+        ShapeshifterMod.logger.info(card.costForTurn);
         if (AllForms.getAllForms().contains(card.cardID) && !card.purgeOnUse && this.amount > 0) {
             count++;
             if(count == amount) {
@@ -66,11 +95,12 @@ public class FreeFormPower extends AbstractPower implements CloneablePowerInterf
 
                 while(var2.hasNext()) {
                     AbstractCard c = (AbstractCard)var2.next();
-                    if(AllForms.getAllForms().contains(card.cardID) && c.costForTurn >= 0) {
+                    if(AllForms.getAllForms().contains(c.cardID) && c.costForTurn == 0) {
                         c.setCostForTurn(c.cost);
+                        c.isCostModifiedForTurn = false;
                     }
                 }
-                this.addToBot(new RemoveSpecificPowerAction(owner, owner, ShapeshifterMod.makeID("FreeFormPower")));
+                this.addToBot(new RemoveSpecificPowerAction(owner, owner, FreeFormPower.POWER_ID));
             }
         }
     }

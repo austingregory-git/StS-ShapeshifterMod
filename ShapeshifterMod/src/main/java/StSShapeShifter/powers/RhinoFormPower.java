@@ -1,6 +1,7 @@
 package StSShapeShifter.powers;
 
 import StSShapeShifter.ShapeshifterMod;
+import StSShapeShifter.actions.FoxDigAction;
 import StSShapeShifter.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -86,10 +87,15 @@ public class RhinoFormPower extends AbstractFormPower implements CloneablePowerI
             }
         }
         this.addToBot(new DamageAction(weakestMonster, new DamageInfo(this.owner, AbstractDungeon.player.currentBlock, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SMASH));
+    }
+
+    @Override
+    public void atStartOfTurn() {
         count++;
         if(count == 3) {
             this.addToBot(new ChangeStanceAction("Neutral"));
         }
+        updateDescription();
     }
 
     @Override

@@ -7,6 +7,9 @@ package StSShapeShifter.relics;
 
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.util.AllForms;
+import StSShapeShifter.util.TextureLoader;
+import basemod.abstracts.CustomRelic;
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -19,13 +22,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class Fertilizer extends AbstractRelic {
+import static StSShapeShifter.ShapeshifterMod.makeRelicPath;
+
+public class Fertilizer extends CustomRelic {
     public boolean active;
     public static final String ID = ShapeshifterMod.makeID(Fertilizer.class.getSimpleName());
     public HashMap<UUID, Integer> cardsPlayed = new HashMap<>();
+    private static final String PNG = ".png";
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath(Fertilizer.class.getSimpleName() + PNG));
 
     public Fertilizer() {
-        super(ID, "sunflower.png", RelicTier.UNCOMMON, LandingSound.SOLID);
+        super(ID, IMG, RelicTier.UNCOMMON, LandingSound.SOLID);
     }
 
     @Override

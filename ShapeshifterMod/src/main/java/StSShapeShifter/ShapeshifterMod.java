@@ -661,6 +661,7 @@ public class ShapeshifterMod implements
         BaseMod.addKeyword(new String[]{"balanced"}, "If your Bloom Count is less than or equal to 3 AND greater than or equal to -3, you are Balanced.");
         BaseMod.addKeyword(new String[]{"bloom count"}, "Bloom Count is the positive number associated with the Shapeshifter's Magnolia.");
         BaseMod.addKeyword(new String[]{"wilt count"}, "Wilt Count is the negative number associate with the Shapeshifter's Magnolia.");
+        BaseMod.addKeyword(new String[]{"massive"}, "Deals 100% of Normal enemy's HP, 50% of Elite enemy's HP, and 25% of Boss enemy's HP");
         /* (keywords != null) {
             for (Keyword keyword : keywords) {
                 //BaseMod.addKeyword(getModID().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);

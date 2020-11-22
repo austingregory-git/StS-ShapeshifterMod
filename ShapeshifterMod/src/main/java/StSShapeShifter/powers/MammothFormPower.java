@@ -50,15 +50,16 @@ public class MammothFormPower extends AbstractFormPower implements CloneablePowe
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
-        this.flash();
         return damage-this.amount;
     }
 
-    public void atEndOfTurn(boolean isPlayer) {
+    @Override
+    public void atStartOfTurn() {
         count++;
         if(count == 3) {
             this.addToBot(new ChangeStanceAction("Neutral"));
         }
+        updateDescription();
     }
 
     @Override

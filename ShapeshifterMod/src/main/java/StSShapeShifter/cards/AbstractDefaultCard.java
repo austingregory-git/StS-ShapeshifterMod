@@ -15,8 +15,8 @@ public abstract class AbstractDefaultCard extends CustomCard {
     public int defaultBaseSecondMagicNumber;    // And our base stat - the number in it's base state. It will reset to that by default.
     public boolean upgradedDefaultSecondMagicNumber; // A boolean to check whether the number has been upgraded or not.
     public boolean isDefaultSecondMagicNumberModified; // A boolean to check whether the number has been modified or not, for coloring purposes. (red/green)
-    public int growValue;
-    public int witherValue;
+    public int growValue = 0;
+    public int witherValue = 0;
     public int baseGrowValue;
     public int baseWitherValue;
     public boolean upgradedGrowValue;

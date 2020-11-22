@@ -53,7 +53,7 @@ public class MultiSpiritedStrike extends AbstractDynamicCard {
         super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = MAGIC;
-
+        this.tags.add(CardTags.STRIKE);
     }
 
 

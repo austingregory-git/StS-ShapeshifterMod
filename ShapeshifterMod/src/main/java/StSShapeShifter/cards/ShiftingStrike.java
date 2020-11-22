@@ -49,6 +49,7 @@ public class ShiftingStrike extends AbstractDynamicCard {
     public ShiftingStrike() {
         super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        this.tags.add(CardTags.STRIKE);
     }
 
 

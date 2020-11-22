@@ -29,8 +29,9 @@ import org.apache.logging.log4j.core.appender.rolling.action.AbstractAction;
 import static StSShapeShifter.ShapeshifterMod.makeRelicPath;
 
 public class AnimalHeart extends CustomRelic {
-    public static final String ID = ShapeshifterMod.makeID("AnimalHeart");
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("AnimalHeartBig.png"));
+    public static final String ID = ShapeshifterMod.makeID(AnimalHeart.class.getSimpleName());
+    private static final String PNG = ".png";
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath(AnimalHeart.class.getSimpleName() + PNG));
 
     public AnimalHeart() {
         super(ID, IMG, RelicTier.STARTER, LandingSound.SOLID);

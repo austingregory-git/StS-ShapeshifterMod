@@ -48,16 +48,17 @@ public class EntFormPower extends AbstractFormPower implements CloneablePowerInt
 
     @Override
     public void atStartOfTurn() {
+        count++;
+        if(count == 3) {
+            this.addToBot(new ChangeStanceAction("Neutral"));
+        }
+        updateDescription();
         this.addToBot(new ApplyPowerAction(owner, owner, new EntanglePower(owner)));
     }
 
     @Override
     public void atEndOfTurn(final boolean isPlayer) {
-        count++;
         this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, amount), amount));
-        if(count == 3) {
-            this.addToBot(new ChangeStanceAction("Neutral"));
-        }
     }
 
     public void stackPower(int stackAmount) {

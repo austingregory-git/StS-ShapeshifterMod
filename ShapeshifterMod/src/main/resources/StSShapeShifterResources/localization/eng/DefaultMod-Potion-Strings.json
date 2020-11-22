@@ -1,6 +1,6 @@
 {
-"StSShapeShifter:PlaceholderPotion": {
-        "NAME": "Placeholder Potion",
-        "DESCRIPTIONS": ["Gain ", " At the end of your turn, lose ", " Strength."]
+"StSShapeShifter:AnimalAmalgamationPotion": {
+        "NAME": "Animal Amalgamation Potion",
+        "DESCRIPTIONS": ["Discover a random Form. It costs 0 this turn."]
 }
 }

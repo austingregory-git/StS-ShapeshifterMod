@@ -7,7 +7,10 @@ package StSShapeShifter.relics;
 
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.util.BloomCountUtils;
+import StSShapeShifter.util.TextureLoader;
+import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -24,11 +27,15 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.AbstractRelic.LandingSound;
 import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 
-public class TheShapeShiftersMagnolia extends AbstractRelic {
+import static StSShapeShifter.ShapeshifterMod.makeRelicPath;
+
+public class TheShapeShiftersMagnolia extends CustomRelic {
     public static final String ID = ShapeshifterMod.makeID(TheShapeShiftersMagnolia.class.getSimpleName());
+    private static final String PNG = ".png";
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath(TheShapeShiftersMagnolia.class.getSimpleName() + PNG));
 
     public TheShapeShiftersMagnolia() {
-        super(ID, "sunflower.png", RelicTier.STARTER, LandingSound.SOLID);
+        super(ID, IMG, RelicTier.STARTER, LandingSound.SOLID);
     }
 
     @Override

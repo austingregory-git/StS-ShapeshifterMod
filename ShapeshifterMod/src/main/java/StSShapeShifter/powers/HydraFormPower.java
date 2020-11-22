@@ -57,11 +57,13 @@ public class HydraFormPower extends AbstractFormPower implements CloneablePowerI
         return type == DamageInfo.DamageType.NORMAL ? damage * (float) amount : damage;
     }
 
-    public void atEndOfTurn(boolean isPlayer) {
+    @Override
+    public void atStartOfTurn() {
         count++;
         if(count == 3) {
             this.addToBot(new ChangeStanceAction("Neutral"));
         }
+        updateDescription();
     }
 
     @Override

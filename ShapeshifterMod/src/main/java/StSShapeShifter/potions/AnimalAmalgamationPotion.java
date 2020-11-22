@@ -27,7 +27,7 @@ public class AnimalAmalgamationPotion extends AbstractPotion {
 
     public AnimalAmalgamationPotion() {
         // The bottle shape and inside is determined by potion size and color. The actual colors are the main DefaultMod.java
-        super(NAME, POTION_ID, PotionRarity.COMMON, PotionSize.MOON, PotionColor.EXPLOSIVE);
+        super(NAME, POTION_ID, PotionRarity.COMMON, PotionSize.BOTTLE, PotionColor.EXPLOSIVE);
         
         // Potency is the damage/magic number equivalent of potions.
         potency = getPotency();
@@ -60,12 +60,5 @@ public class AnimalAmalgamationPotion extends AbstractPotion {
     @Override
     public int getPotency(final int potency) {
         return 1;
-    }
-
-    public void upgradePotion()
-    {
-      potency += 1;
-      tips.clear();
-      tips.add(new PowerTip(name, description));
     }
 }

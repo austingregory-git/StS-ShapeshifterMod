@@ -22,7 +22,6 @@ public class Forgiveness extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = ShapeshifterMod.makeID(Forgiveness.class.getSimpleName()); // DELETE THIS ONE.
-    public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -34,7 +33,7 @@ public class Forgiveness extends AbstractDynamicCard {
 
     private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
-    private static final CardType TYPE = CardType.ATTACK;       //
+    private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
 
     private static final int COST = 1;
@@ -47,6 +46,7 @@ public class Forgiveness extends AbstractDynamicCard {
         super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = MAGIC;
         this.exhaust = true;
+        this.tags.add(CardTags.HEALING);
     }
 
     // Actions the card should do.
@@ -63,9 +63,9 @@ public class Forgiveness extends AbstractDynamicCard {
 
     public void applyPowers() {
         if(upgraded)
-            this.baseMagicNumber = (int)((float)GameActionManager.damageReceivedThisCombat * (50.0F / 100.0F));
+            this.baseMagicNumber = 6 + (int)((float)GameActionManager.damageReceivedThisCombat * (50.0F / 100.0F));
         else
-            this.baseMagicNumber = (int)((float)GameActionManager.damageReceivedThisCombat * (30.0F / 100.0F));
+            this.baseMagicNumber = 4 + (int)((float)GameActionManager.damageReceivedThisCombat * (30.0F / 100.0F));
         super.applyPowers();
         this.initializeDescription();
     }

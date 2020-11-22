@@ -45,6 +45,7 @@ public class AdaptiveStrikes extends AbstractDynamicCard {
         super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.growValue = this.baseGrowValue = 1;
+        this.tags.add(CardTags.STRIKE);
     }
 
 

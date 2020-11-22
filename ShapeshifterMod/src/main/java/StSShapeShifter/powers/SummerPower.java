@@ -17,7 +17,7 @@ import StSShapeShifter.util.TextureLoader;
 public class SummerPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ShapeshifterMod.makeID(Summer.class.getSimpleName());
+    public static final String POWER_ID = ShapeshifterMod.makeID(SummerPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

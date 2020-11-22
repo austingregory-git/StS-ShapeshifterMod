@@ -8,6 +8,9 @@ package StSShapeShifter.relics;
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.util.AllForms;
 import StSShapeShifter.util.BloomCountUtils;
+import StSShapeShifter.util.TextureLoader;
+import basemod.abstracts.CustomRelic;
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -22,12 +25,16 @@ import com.megacrit.cardcrawl.stances.AbstractStance;
 
 import java.util.Iterator;
 
-public class DruidicMedallion extends AbstractRelic {
+import static StSShapeShifter.ShapeshifterMod.makeRelicPath;
+
+public class DruidicMedallion extends CustomRelic {
     public boolean active;
-    public static final String ID = ShapeshifterMod.makeID("DruidicMedallion");
+    public static final String ID = ShapeshifterMod.makeID(DruidicMedallion.class.getSimpleName());
+    private static final String PNG = ".png";
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath(DruidicMedallion.class.getSimpleName() + PNG));
 
     public DruidicMedallion() {
-        super(ID, "sunflower.png", RelicTier.COMMON, LandingSound.SOLID);
+        super(ID, IMG, RelicTier.COMMON, LandingSound.SOLID);
     }
 
     @Override

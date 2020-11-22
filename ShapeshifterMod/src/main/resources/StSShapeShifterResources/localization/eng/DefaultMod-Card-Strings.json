@@ -370,7 +370,7 @@
   },
   "StSShapeShifter:LionForm": {
     "NAME": "Lion Form",
-    "DESCRIPTION": "Upon Entering Lion Form, double your strength. While in Lion Form, Apply !M! Deep Wound to a random enemy. Lasts up to 3 turns. Exhaust"
+    "DESCRIPTION": "Upon Entering Lion Form, gain !StSShapeShifter:SecondMagic! strength, then double your strength. While in Lion Form, Apply !M! Deep Wound to a random enemy. Lasts up to 3 turns. Exhaust"
   },
   "StSShapeShifter:MonkeyForm": {
     "NAME": "Monkey Form",
@@ -466,11 +466,11 @@
   },
   "StSShapeShifter:Vengeance": {
     "NAME": "Vengeance",
-    "DESCRIPTION": "Deal !D! Damage. Damage is equivalent to the damage you have received this combat. Exhaust."
+    "DESCRIPTION": "Deal !D! Damage. Damage is increased by the amount of damage you have received this combat. Exhaust."
   },
   "StSShapeShifter:Forgiveness": {
     "NAME": "Forgiveness",
-    "DESCRIPTION": "Heal for !M!. Heal is equivalent to 30 percent of the damage you have received this combat. Exhaust.",
+    "DESCRIPTION": "Heal for !M!. Heal is increased by 30 percent of the damage you have received this combat. Exhaust.",
     "UPGRADE_DESCRIPTION": "Heal for !M!. Heal is equivalent to 50 percent of the damage you have received this combat. Exhaust."
   },
   "StSShapeShifter:Rabid": {

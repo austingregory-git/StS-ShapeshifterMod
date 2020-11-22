@@ -43,7 +43,7 @@ public class LionForm extends AbstractDynamicCard {
 
     public LionForm() {
         super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 5;
+        this.magicNumber = this.baseMagicNumber = 4;
         this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber = 2;
         this.exhaust = true;
     }

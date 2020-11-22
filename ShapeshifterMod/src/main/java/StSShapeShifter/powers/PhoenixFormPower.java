@@ -66,11 +66,13 @@ public class PhoenixFormPower extends AbstractFormPower implements CloneablePowe
 
     }*/
 
-    public void atEndOfTurn(boolean isPlayer) {
+    @Override
+    public void atStartOfTurn() {
         count++;
         if(count == 3) {
             this.addToBot(new ChangeStanceAction("Neutral"));
         }
+        updateDescription();
     }
 
     @Override

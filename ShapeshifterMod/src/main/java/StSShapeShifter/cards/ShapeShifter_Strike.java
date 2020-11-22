@@ -45,6 +45,7 @@ public class ShapeShifter_Strike extends AbstractDynamicCard {
         super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
 
+        this.tags.add(CardTags.STRIKE);
         this.tags.add(CardTags.STARTER_STRIKE);
     }
 

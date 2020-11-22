@@ -80,7 +80,7 @@
     "NAME": "Thorns of Summi",
     "FLAVOR": "Ouch!",
     "DESCRIPTIONS": [
-      "At the start of each combat, gain 1 thorns."
+      "At the start of each combat, gain 1 thorns. At the end of your turn, deal damage to all enemies equivalent to the amount of thorns you have."
     ]
   },
   "StSShapeShifter:FrogOfVitality": {

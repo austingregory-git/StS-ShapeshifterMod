@@ -6,6 +6,9 @@
 package StSShapeShifter.relics;
 
 import StSShapeShifter.ShapeshifterMod;
+import StSShapeShifter.util.TextureLoader;
+import basemod.abstracts.CustomRelic;
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,12 +17,16 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-public class WristwrapsOfDiscovery extends AbstractRelic {
+import static StSShapeShifter.ShapeshifterMod.makeRelicPath;
+
+public class WristwrapsOfDiscovery extends CustomRelic {
     public boolean active;
-    public static final String ID = ShapeshifterMod.makeID("WristwrapsOfDiscovery");
+    public static final String ID = ShapeshifterMod.makeID(WristwrapsOfDiscovery.class.getSimpleName());
+    private static final String PNG = ".png";
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath(WristwrapsOfDiscovery.class.getSimpleName() + PNG));
 
     public WristwrapsOfDiscovery() {
-        super(ID, "sunflower.png", RelicTier.UNCOMMON, LandingSound.SOLID);
+        super(ID, IMG, RelicTier.UNCOMMON, LandingSound.SOLID);
     }
 
     @Override

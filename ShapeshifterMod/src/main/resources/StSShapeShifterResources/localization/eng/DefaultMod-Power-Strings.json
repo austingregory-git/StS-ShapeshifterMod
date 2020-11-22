@@ -25,7 +25,7 @@
         },
         "StSShapeShifter:CosmicShifterPower": {
           "NAME": "Cosmic Shifter",
-          "DESCRIPTIONS": ["At the end of your turn, deal #b", " damage to all enemies equal to the number of unique forms you have entered this combat."]
+          "DESCRIPTIONS": ["At the end of your turn, deal #b", " damage to all enemies equal to the number of unique #yForms you have entered this combat."]
         },
         "StSShapeShifter:WildFirePower": {
           "NAME": "Wildfire",
@@ -89,7 +89,7 @@
         },
         "StSShapeShifter:EnsconcePower": {
           "NAME": "Ensconce",
-          "DESCRIPTIONS": ["Improve your current #yForm's value by #b1 if you do not shift forms this turn."]
+          "DESCRIPTIONS": ["Improve your current #yForm's value by #b1 if you do not shift #yForms this turn."]
         },
         "StSShapeShifter:FoxFormPower": {
           "NAME": "Fox Form",

@@ -7,6 +7,9 @@ package StSShapeShifter.relics;
 
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.util.AllForms;
+import StSShapeShifter.util.TextureLoader;
+import basemod.abstracts.CustomRelic;
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.unique.IncreaseMaxHpAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -16,13 +19,17 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import java.util.ArrayList;
 
-public class FrogOfVitality extends AbstractRelic {
+import static StSShapeShifter.ShapeshifterMod.makeRelicPath;
+
+public class FrogOfVitality extends CustomRelic {
     public boolean active;
     public static final String ID = ShapeshifterMod.makeID(FrogOfVitality.class.getSimpleName());
     public ArrayList<String> formsPlayed = new ArrayList<>();
+    private static final String PNG = ".png";
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath(FrogOfVitality.class.getSimpleName() + PNG));
 
     public FrogOfVitality() {
-        super(ID, "sunflower.png", RelicTier.UNCOMMON, LandingSound.SOLID);
+        super(ID, IMG, RelicTier.UNCOMMON, LandingSound.SOLID);
     }
 
     @Override

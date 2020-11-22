@@ -58,7 +58,7 @@ public class Vengeance extends AbstractDynamicCard {
     }
 
     public void calculateCardDamage(AbstractMonster mo) {
-        this.baseDamage = GameActionManager.damageReceivedThisCombat;
+        this.baseDamage = 6 + GameActionManager.damageReceivedThisCombat;
         super.calculateCardDamage(mo);
         this.initializeDescription();
     }

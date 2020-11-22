@@ -48,12 +48,14 @@ public class FoxFormPower extends AbstractFormPower implements CloneablePowerInt
         updateDescription();
     }
 
-    public void atEndOfTurn(boolean isPlayer) {
+    @Override
+    public void atStartOfTurn() {
         this.addToBot(new FoxDigAction(player, owner, upgraded));
         count++;
         if(count == 3) {
             this.addToBot(new ChangeStanceAction("Neutral"));
         }
+        updateDescription();
     }
 
     @Override

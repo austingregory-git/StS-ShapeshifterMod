@@ -7,6 +7,9 @@ package StSShapeShifter.relics;
 
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.util.AllForms;
+import StSShapeShifter.util.TextureLoader;
+import basemod.abstracts.CustomRelic;
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer.PlayerClass;
 import com.megacrit.cardcrawl.core.Settings;
@@ -20,12 +23,16 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Random;
 
-public class BeastkeepersGift extends AbstractRelic {
+import static StSShapeShifter.ShapeshifterMod.makeRelicPath;
+
+public class BeastkeepersGift extends CustomRelic {
     public boolean active;
-    public static final String ID = ShapeshifterMod.makeID("BeastkeepersGift");
+    public static final String ID = ShapeshifterMod.makeID(BeastkeepersGift.class.getSimpleName());
+    private static final String PNG = ".png";
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath(BeastkeepersGift.class.getSimpleName() + PNG));
 
     public BeastkeepersGift() {
-        super(ID, "sunflower.png", RelicTier.COMMON, LandingSound.SOLID);
+        super(ID, IMG, RelicTier.COMMON, LandingSound.SOLID);
     }
 
     @Override

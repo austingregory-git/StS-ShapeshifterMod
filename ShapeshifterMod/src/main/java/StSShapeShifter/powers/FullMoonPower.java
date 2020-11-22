@@ -57,7 +57,7 @@ public class FullMoonPower extends AbstractPower implements CloneablePowerInterf
             while(var2.hasNext()) {
                 AbstractCard c = (AbstractCard)var2.next();
                 if(AllForms.getAllForms().contains(c.cardID)) {
-                    c.setCostForTurn(0);
+                    c.setCostForTurn(-6);
                 }
             }
         }
@@ -66,12 +66,12 @@ public class FullMoonPower extends AbstractPower implements CloneablePowerInterf
     @Override
     public void onCardDraw(AbstractCard card) {
         if (AllForms.getAllForms().contains(card.cardID) && !card.purgeOnUse && this.amount > 0) {
-            card.setCostForTurn(0);
+            card.setCostForTurn(-6);
         }
     }
 
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-        if (AllForms.getAllForms().contains(card.cardID) && !card.purgeOnUse && this.amount > 0) {
+        if (AllForms.getAllForms().contains(card.cardID) && !card.purgeOnUse && this.amount > 0 && !AbstractDungeon.player.hasPower(FreeFormPower.POWER_ID)) {
             count++;
             reducePower(1);
             if(count == amount) {
@@ -79,11 +79,11 @@ public class FullMoonPower extends AbstractPower implements CloneablePowerInterf
 
                 while(var2.hasNext()) {
                     AbstractCard c = (AbstractCard)var2.next();
-                    if(AllForms.getAllForms().contains(c.cardID) && !c.isCostModifiedForTurn && c.costForTurn >= 0) {
+                    if(AllForms.getAllForms().contains(c.cardID) && c.costForTurn == -6) {
                         c.setCostForTurn(c.cost);
                     }
                 }
-                this.addToBot(new RemoveSpecificPowerAction(owner, owner, ShapeshifterMod.makeID("FullMoonPower")));
+                this.addToBot(new RemoveSpecificPowerAction(owner, owner, FullMoonPower.POWER_ID));
             }
         }
     }

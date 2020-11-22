@@ -56,19 +56,16 @@ public class DragonFormPower extends AbstractFormPower implements CloneablePower
             this.flash();
             this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
         }
+        count++;
+        if(count == 3) {
+            this.addToBot(new ChangeStanceAction("Neutral"));
+        }
+        updateDescription();
     }
 
     public void stackPower(int stackAmount) {
         this.fontScale = 8.0F;
         this.amount += stackAmount;
-    }
-
-
-    public void atEndOfTurn(boolean isPlayer) {
-        count++;
-        if(count == 3) {
-            this.addToBot(new ChangeStanceAction("Neutral"));
-        }
     }
 
 

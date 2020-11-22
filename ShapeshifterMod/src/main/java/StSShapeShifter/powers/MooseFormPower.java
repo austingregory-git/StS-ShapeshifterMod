@@ -55,13 +55,11 @@ public class MooseFormPower extends AbstractFormPower implements CloneablePowerI
 
     public void atStartOfTurn() {
         this.addToBot(new BetterDiscardPileToHandAction(amount));
-    }
-
-    public void atEndOfTurn(boolean isPlayer) {
         count++;
         if(count == 3) {
             this.addToBot(new ChangeStanceAction("Neutral"));
         }
+        updateDescription();
     }
 
     @Override
