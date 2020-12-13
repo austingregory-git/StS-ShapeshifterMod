@@ -1,0 +1,146 @@
+{
+  "StSShapeShifter:PlaceholderRelic": {
+    "NAME": "Placeholder Energy Relic",
+    "FLAVOR": "The snake is a friend.",
+    "DESCRIPTIONS": [
+      "Gain #b1 [E] ."
+    ]
+  },
+  "StSShapeShifter:Golden_Flower": {
+    "NAME": "Golden Flower",
+    "FLAVOR": "It blooms again",
+    "DESCRIPTIONS": [
+      "Every 4 turns, ", " Draw 1 card"
+    ]
+  },
+  "StSShapeShifter:AnimalHeart": {
+    "NAME": "Animal Heart",
+    "FLAVOR": "The ShapeShifter's true form...",
+    "DESCRIPTIONS": [
+      "Your first form each combat costs 0."
+    ]
+  },
+  "StSShapeShifter:TheShapeShiftersMagnolia": {
+    "NAME": "The Shapeshifter's Magnolia",
+    "FLAVOR": "The ShapeShifter's favorite flower.",
+    "DESCRIPTIONS": [
+      "Keeps track of your current Bloom Count."
+    ]
+  },
+  "StSShapeShifter:AlarmClock": {
+    "NAME": "Alarm Clock",
+    "FLAVOR": "IT'S TIME TO WAKE UP.",
+    "DESCRIPTIONS": [
+      "After 8 turns in combat, gain 3 Strength and 3 Dexterity"
+    ]
+  },
+  "StSShapeShifter:AlchemistsNecklace": {
+    "NAME": "Alchemist's Necklace",
+    "FLAVOR": "Each bead contains a powerful potion.",
+    "DESCRIPTIONS": [
+      "Whenever you use a potion, draw 2 cards."
+    ]
+  },
+  "StSShapeShifter:BeastkeepersGift": {
+    "NAME": "Beastkeeper's Gift",
+    "FLAVOR": "A book about beasts! What a wonderful gift.",
+    "DESCRIPTIONS": [
+      "Upon obtaining this relic, upgrade 2 random forms."
+    ]
+  },
+  "StSShapeShifter:EmeraldPantherFigurine": {
+    "NAME": "Emerald Panther Figurine",
+    "FLAVOR": "Its eyes keep glowing... and the cards keep growing.",
+    "DESCRIPTIONS": [
+      "Cards with Grow gain +1 to their Grow value"
+    ]
+  },
+  "StSShapeShifter:FruitTree": {
+    "NAME": "Fruit Tree",
+    "FLAVOR": "Full of Healthy Snacks!",
+    "DESCRIPTIONS": [
+      "At the start of each combat, add a random fruit to your hand."
+    ]
+  },
+  "StSShapeShifter:LemurHeaddress": {
+    "NAME": "Lemur Headdress",
+    "FLAVOR": "To move it move it, or to not move it move it, that is the question.",
+    "DESCRIPTIONS": [
+      "The first time you change forms each turn, gain 1 energy."
+    ]
+  },
+  "StSShapeShifter:DruidicMedallion": {
+    "NAME": "Druidic Medallion",
+    "FLAVOR": "Dodge, duck, dip, dive, and... transform",
+    "DESCRIPTIONS": [
+      "Whenever you change forms, gain 3 block."
+    ]
+  },
+  "StSShapeShifter:ThornsOfSummi": {
+    "NAME": "Thorns of Summi",
+    "FLAVOR": "Ouch!",
+    "DESCRIPTIONS": [
+      "At the start of each combat, gain 1 thorns. At the end of your turn, deal damage to all enemies equivalent to the amount of thorns you have."
+    ]
+  },
+  "StSShapeShifter:FrogOfVitality": {
+    "NAME": "Frog of Vitality",
+    "FLAVOR": "He's just sitting there... healthily!",
+    "DESCRIPTIONS": [
+      "After obtaining this relic, whenever you play a unique form for this run, gain 1 max hp."
+    ]
+  },
+  "StSShapeShifter:Fertilizer": {
+    "NAME": "Fertilizer",
+    "FLAVOR": "Ingredients include... 3 Strikes? Are you sure?",
+    "DESCRIPTIONS": [
+      "After playing the same exact card 3 times, gain 3 Energy and Draw 3 cards. Can only occur once per combat."
+    ]
+  },
+  "StSShapeShifter:LoyalLobster": {
+    "NAME": "Loyal Lobster",
+    "FLAVOR": "It follows closely behind, smiling all the way through the spire, just happy to be here.",
+    "DESCRIPTIONS": [
+      "If you stay in the same form for 3 turns, gain 3 Strength for this combat. Can only trigger once."
+    ]
+  },
+  "StSShapeShifter:BearPaw": {
+    "NAME": "Loyal Lobster",
+    "FLAVOR": "It follows closely behind, smiling all the way through the spire, just happy to be here.",
+    "DESCRIPTIONS": [
+      "Whenever you gain a relic, increase your max hp by 1."
+    ]
+  },
+  "StSShapeShifter:WristwrapsOfDiscovery": {
+    "NAME": "Wristwraps of Discovery",
+    "FLAVOR": "The thrill of discovery strengthens me!",
+    "DESCRIPTIONS": [
+      "Whenever you obtain a card, gain 2 Strength for your next combat."
+    ]
+  },
+  "StSShapeShifter:PlaceholderRelic2": {
+    "NAME": "Placeholder Relic 2",
+    "FLAVOR": "You feel stronger.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, gain #b1 #yStrength."
+    ]
+  },
+  "StSShapeShifter:DefaultClickableRelic": {
+    "NAME": "Right-Clicky Relic",
+    "FLAVOR": "The more you right-click it, the more orbs you've evoked in your lifetime.",
+    "DESCRIPTIONS": [
+      "[#2aecd7]Usable [#2aecd7]once [#2aecd7]per [#2aecd7]turn.[] NL #yEvoke your rightmost Orb.",
+      "YOU ARE MINE!"
+    ]
+  },
+  "StSShapeShifter:BottledPlaceholderRelic": {
+    "NAME": "Bottled Placeholder",
+    "FLAVOR": "What is this?",
+    "DESCRIPTIONS": [
+      "Choose a card. Whenever you take play any card, draw the chosen card.",
+      "Whenever you play a card, draw ",
+      ".",
+      "Select a card to bottle for "
+    ]
+  }
+}

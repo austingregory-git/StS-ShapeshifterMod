@@ -1,0 +1,64 @@
+package StSShapeShifter.cards;
+
+import StSShapeShifter.ShapeshifterMod;
+import StSShapeShifter.actions.ModifyMagicAction;
+import StSShapeShifter.powers.HummingbirdFormPower;
+import StSShapeShifter.relics.EmeraldPantherFigurine;
+import StSShapeShifter.util.BloomCountUtils;
+import com.megacrit.cardcrawl.actions.common.ModifyBlockAction;
+import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+
+import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
+
+public abstract class AbstractGrowCard extends AbstractShapeShifterCard {
+    public boolean hbpUpdated = false;
+    public boolean epfUpdated = false;
+    public AbstractGrowCard(final String id,
+                            final String img,
+                            final int cost,
+                            final CardType type,
+                            final CardColor color,
+                            final CardRarity rarity,
+                            final CardTarget target) {
+
+        super(id, languagePack.getCardStrings(id).NAME, img, cost, languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
+
+    }
+
+    public void applyPowers() {
+        if(AbstractDungeon.player.hasPower(ShapeshifterMod.makeID(HummingbirdFormPower.class.getSimpleName())) && !hbpUpdated) {
+            this.baseGrowValue += AbstractDungeon.player.getPower(ShapeshifterMod.makeID(HummingbirdFormPower.class.getSimpleName())).amount;
+            this.isGrowValueModified = true;
+            hbpUpdated = true;
+        }
+        if(AbstractDungeon.player.hasRelic(ShapeshifterMod.makeID(EmeraldPantherFigurine.class.getSimpleName())) && !epfUpdated) {
+            this.baseGrowValue += 1;
+            this.isGrowValueModified = true;
+            epfUpdated = true;
+        }
+        applyGrow();
+        super.applyPowers();
+    }
+
+    public void applyGrow() {
+        this.growValue = this.baseGrowValue;
+    }
+
+    public void applyWither() {
+        this.witherValue = this.baseWitherValue;
+    }
+
+    public void simulateGrow(int times) {
+        for(int i=0; i<times; i++) {
+            this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
+            this.addToBot(new ModifyBlockAction(this.uuid, this.growValue));
+            this.addToBot(new ModifyMagicAction(this.uuid, this.growValue));
+            updateBloomCount(this.growValue);
+        }
+    }
+
+    public void updateBloomCount(int value) {
+        BloomCountUtils.addBloomCount(value);
+    }
+}
