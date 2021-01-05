@@ -49,8 +49,8 @@ public class RitualOfTheElders extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, -this.magicNumber)));
-        this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, -this.magicNumber)));
+        this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, -1)));
+        this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, -1)));
         p.increaseMaxHp(this.magicNumber, true);
     }
 

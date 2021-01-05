@@ -76,7 +76,7 @@ public class FoxDigAction extends AbstractGameAction {
             for(int i = 0; i < goldRoll; ++i) {
                 AbstractDungeon.effectList.add(new GainPennyEffect(this.source, this.source.hb.cX, this.source.hb.cY, this.source.hb.cX, this.source.hb.cY, true));
             }
-            if(relicRoll > 98) {
+            if(relicRoll > 97) {
                 int relicTierRoll = AbstractDungeon.treasureRng.random(0, 99);
                 if (relicTierRoll < 70) {
                     AbstractRelic relic = AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.COMMON);

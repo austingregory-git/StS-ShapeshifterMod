@@ -46,7 +46,7 @@ public class Fertilizer extends CustomRelic {
 
     @Override
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
-        if(cardsPlayed.containsKey(targetCard.uuid) && cardsPlayed.get(targetCard.uuid) == 3) {
+        if(cardsPlayed.containsKey(targetCard.uuid) && cardsPlayed.get(targetCard.uuid) == 2) {
             this.flash();
             this.addToBot(new GainEnergyAction(3));
             this.addToBot(new DrawCardAction(3));

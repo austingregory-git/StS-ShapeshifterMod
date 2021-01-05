@@ -39,14 +39,14 @@ public class Vengeance extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int UPGRADE_COST = 0;
-    private static final int DAMAGE = 0;
+    private static final int DAMAGE = 6;
 
     // /STAT DECLARATION/
 
 
     public Vengeance() {
         super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        this.baseDamage = DAMAGE;
         this.exhaust = true;
     }
 
@@ -58,7 +58,7 @@ public class Vengeance extends AbstractDynamicCard {
     }
 
     public void calculateCardDamage(AbstractMonster mo) {
-        this.baseDamage = 6 + GameActionManager.damageReceivedThisCombat;
+        this.baseDamage = DAMAGE + GameActionManager.damageReceivedThisCombat;
         super.calculateCardDamage(mo);
         this.initializeDescription();
     }

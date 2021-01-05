@@ -37,7 +37,7 @@ public class Forgiveness extends AbstractDynamicCard {
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int MAGIC = 0;
+    private static final int MAGIC = 4;
 
     // /STAT DECLARATION/
 
@@ -63,9 +63,9 @@ public class Forgiveness extends AbstractDynamicCard {
 
     public void applyPowers() {
         if(upgraded)
-            this.baseMagicNumber = 6 + (int)((float)GameActionManager.damageReceivedThisCombat * (50.0F / 100.0F));
+            this.baseMagicNumber = this.magicNumber + (int)((float)GameActionManager.damageReceivedThisCombat * (50.0F / 100.0F));
         else
-            this.baseMagicNumber = 4 + (int)((float)GameActionManager.damageReceivedThisCombat * (30.0F / 100.0F));
+            this.baseMagicNumber = this.magicNumber + (int)((float)GameActionManager.damageReceivedThisCombat * (30.0F / 100.0F));
         super.applyPowers();
         this.initializeDescription();
     }
@@ -76,6 +76,7 @@ public class Forgiveness extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(2);
             initializeDescription();
         }
     }

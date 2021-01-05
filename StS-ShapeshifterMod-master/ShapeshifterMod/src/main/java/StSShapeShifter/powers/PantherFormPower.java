@@ -46,12 +46,13 @@ public class PantherFormPower extends AbstractFormPower implements CloneablePowe
     }
 
     @Override
-    public void atEndOfTurn(final boolean isPlayer) {
+    public void atStartOfTurn() {
         count++;
         this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount), amount));
         if(count == 3) {
             this.addToBot(new ChangeStanceAction("Neutral"));
         }
+        updateDescription();
     }
 
     public void stackPower(int stackAmount) {

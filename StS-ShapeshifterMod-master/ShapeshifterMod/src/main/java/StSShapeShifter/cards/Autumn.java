@@ -35,6 +35,7 @@ public class Autumn extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int MAGIC = 2;
+    private static final int MAGIC2 = 2;
 
     // /STAT DECLARATION/
 
@@ -42,13 +43,14 @@ public class Autumn extends AbstractDynamicCard {
     public Autumn() {
         super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = baseMagicNumber = MAGIC;
+        this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber = MAGIC2;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new AutumnPower(p, this.magicNumber, 2)));
+                new ApplyPowerAction(p, p, new AutumnPower(p, this.magicNumber, this.defaultSecondMagicNumber)));
     }
 
     //Upgraded stats.

@@ -33,6 +33,7 @@ public class CosmicShifterPower extends AbstractPower implements CloneablePowerI
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/CosmicShifterPower84.png");
     private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/CosmicShifterPower32.png");
+    int numFormsPlayed;
     public CosmicShifterPower(final AbstractCreature owner) {
         name = NAME;
         ID = POWER_ID;
@@ -54,11 +55,10 @@ public class CosmicShifterPower extends AbstractPower implements CloneablePowerI
     public void atEndOfTurn(boolean isPlayer) {
         ArrayList<AbstractCard> cards = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisCombat);
         ArrayList<AbstractCard> uniqueCards = new ArrayList<>(new HashSet<>(cards));
-        int numFormsPlayed = 0;
+        numFormsPlayed = 0;
         for (AbstractCard c : uniqueCards) {
             if (AllForms.getAllForms().contains(c.cardID)) {
                 numFormsPlayed++;
-                this.amount++;
             }
         }
         this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(numFormsPlayed, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
@@ -68,7 +68,7 @@ public class CosmicShifterPower extends AbstractPower implements CloneablePowerI
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + numFormsPlayed + DESCRIPTIONS[1];
     }
 
     @Override

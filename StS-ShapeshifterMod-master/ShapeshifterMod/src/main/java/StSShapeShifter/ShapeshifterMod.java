@@ -262,7 +262,7 @@ public class ShapeshifterMod implements
         } else if (ID.equals(EXCEPTION_STRINGS.DEVID)) { // NO
             modID = EXCEPTION_STRINGS.DEFAULTID; // DON'T
         } else { // NO EDIT AREA
-            modID = ID; // DON'T WRITE OR CHANGE THINGS HERE NOT EVEN A LITTLE
+            modID = ID; // DON'T WRITE OR CHANGE THINGS HERE NOT t A LITTLE
         } // NO
         logger.info("Success! ID is " + modID); // WHY WOULD U WANT IT NOT TO LOG?? DON'T EDIT THIS.
     } // NO

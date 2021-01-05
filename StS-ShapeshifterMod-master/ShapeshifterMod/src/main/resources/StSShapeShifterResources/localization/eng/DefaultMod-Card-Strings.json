@@ -164,7 +164,7 @@
   },
   "StSShapeShifter:RestoreBalance": {
     "NAME": "Restore Balance",
-    "DESCRIPTION": "Remove all buffs from an enemy. Excludes Boss-specific buffs."
+    "DESCRIPTION": "Remove all buffs from an enemy. Excludes Boss-specific buffs. Exhaust."
   },
   "StSShapeShifter:RitualOfTheElders": {
     "NAME": "Ritual of the Elders",
@@ -247,7 +247,7 @@
   },
   "StSShapeShifter:Pounce": {
     "NAME": "Pounce",
-    "DESCRIPTION": "If your last card played was a form, apply !M! vulnerable. Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage. If your last card played was a form, apply !M! vulnerable."
   },
   "StSShapeShifter:BurrBomb": {
     "NAME": "Burr Bomb",
@@ -496,7 +496,7 @@
   },
   "StSShapeShifter:Autumn": {
     "NAME": "Autumn",
-    "DESCRIPTION": "Draw 2 additional cards each turn. Whenever you draw a Wither card, increase its Wither value by !M!."
+    "DESCRIPTION": "Whenever you play a Wither card, draw !StSShapeShifter:SecondMagic! cards. Whenever you draw a Wither card, increase its Wither value by !M!."
   },
   "StSShapeShifter:Winter": {
     "NAME": "Winter",

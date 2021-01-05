@@ -191,9 +191,9 @@ public class ShapeShifter extends CustomPlayer {
     // Starting Relics
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-
-        retVal.add(TheShapeShiftersMagnolia.ID);
         retVal.add(AnimalHeart.ID);
+        retVal.add(TheShapeShiftersMagnolia.ID);
+
 
         return retVal;
     }
