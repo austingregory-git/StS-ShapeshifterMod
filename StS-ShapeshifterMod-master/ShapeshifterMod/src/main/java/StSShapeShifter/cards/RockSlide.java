@@ -65,12 +65,17 @@ public class RockSlide extends AbstractDynamicCard {
         this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
         updateBloomCount(this.growValue);
 
+
+    }
+
+    public void onMoveToDiscard() {
+        this.addToBot(new RockSlideAction(this));
     }
     
-    public void onMoveToDiscard() {
+    /*public void onMoveToDiscard() {
         //this.addToBot(new RockSlideAction(this.uuid, this));
         ShapeshifterMod.logger.info(!AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty());
-        if(!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && !AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty()) {
+        if(!AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty()) {
             ArrayList<AbstractCard> cardsThisTurn = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisTurn);
             ShapeshifterMod.logger.info(cardsThisTurn);
             ShapeshifterMod.logger.info(cardsThisTurn.contains(this));
@@ -78,15 +83,15 @@ public class RockSlide extends AbstractDynamicCard {
                 count++;
                 cardsThisTurn.remove(cardsThisTurn.size() - 1);
                 if(!cardsThisTurn.contains(this) && count == 1) {
-                    AbstractDungeon.player.discardPile.removeCard(this);
                     AbstractDungeon.player.hand.addToHand(this);
+                    AbstractDungeon.player.discardPile.removeCard(this);
                     this.applyGrow();
                     AbstractDungeon.player.hand.refreshHandLayout();
                     AbstractDungeon.player.discardPile.refreshHandLayout();
                 }
             }
         }
-    }
+    }*/
 
     @Override
     public void atTurnStart() {

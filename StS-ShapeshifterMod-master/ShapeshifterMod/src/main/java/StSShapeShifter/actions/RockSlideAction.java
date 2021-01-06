@@ -20,28 +20,38 @@ public class RockSlideAction extends AbstractGameAction {
     public AbstractCard card;
     public int count = 0;
 
-    public RockSlideAction(UUID targetUUID, AbstractCard card) {
-        this.actionType = ActionType.WAIT;
+    public RockSlideAction(AbstractCard card) {
         this.card = card;
-        this.uuid = targetUUID;
     }
 
     public void update() {
-        if(!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && !AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty()) {
+        ShapeshifterMod.logger.info(!AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty());
+        if(!AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty()) {
             ArrayList<AbstractCard> cardsThisTurn = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisTurn);
-            if(cardsThisTurn.contains(card)) {
+            ShapeshifterMod.logger.info(cardsThisTurn);
+            ShapeshifterMod.logger.info(cardsThisTurn.contains(this.card));
+            ShapeshifterMod.logger.info(AbstractDungeon.player.hand);
+            ShapeshifterMod.logger.info("---");
+            ShapeshifterMod.logger.info(AbstractDungeon.player.discardPile);
+            if(cardsThisTurn.contains(this.card)) {
                 count++;
                 cardsThisTurn.remove(cardsThisTurn.size() - 1);
-                if(!cardsThisTurn.contains(card) && count == 1) {
-                    ShapeshifterMod.logger.info(!cardsThisTurn.contains(card));;
-                    AbstractDungeon.player.hand.addToHand(card);
-                    card.applyPowers();
+                ShapeshifterMod.logger.info(cardsThisTurn);
+                ShapeshifterMod.logger.info(cardsThisTurn.contains(this.card));
+                ShapeshifterMod.logger.info(count);
+                if(!cardsThisTurn.contains(this.card) && count == 1) {
+                    AbstractDungeon.player.hand.addToHand(this.card);
+                    AbstractDungeon.player.discardPile.removeCard(this.card);
+                    ShapeshifterMod.logger.info(AbstractDungeon.player.hand);
+                    ShapeshifterMod.logger.info("---");
+                    ShapeshifterMod.logger.info(AbstractDungeon.player.discardPile);
                     if(card instanceof AbstractDynamicCard) {
                         ((AbstractDynamicCard) card).applyGrow();
                     }
+                    AbstractDungeon.player.hand.refreshHandLayout();
+                    AbstractDungeon.player.discardPile.refreshHandLayout();
                 }
             }
-
         }
 
         this.isDone = true;

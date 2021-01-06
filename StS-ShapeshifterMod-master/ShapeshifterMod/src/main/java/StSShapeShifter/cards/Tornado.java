@@ -1,5 +1,6 @@
 package StSShapeShifter.cards;
 
+import StSShapeShifter.actions.TornadoAction;
 import StSShapeShifter.characters.ShapeShifter;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -57,35 +58,14 @@ public class Tornado extends AbstractDynamicCard {
         this.baseMagicNumber = 4;
         this.magicNumber = this.baseMagicNumber;
         this.exhaust = true;
-        this.retain = true;
+        this.selfRetain = true;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        CardGroup tmp;
-        AbstractDungeon.player.discardPile.shuffle();
-        tmp = AbstractDungeon.player.drawPile;
-        AbstractDungeon.player.drawPile = AbstractDungeon.player.discardPile;
-        AbstractDungeon.player.discardPile = tmp;
-        AbstractDungeon.player.hand.refreshHandLayout();
-        this.addToBot(new SFXAction("ATTACK_WHIRLWIND"));
-        this.addToBot(new VFXAction(new WhirlwindEffect(), 0.0F));
-    }
-
-    public void upgradeHand() {
-        Iterator var1;
-        AbstractCard c;
-        var1 = AbstractDungeon.player.hand.group.iterator();
-
-        while(var1.hasNext()) {
-            c = (AbstractCard)var1.next();
-            if (c.canUpgrade()) {
-                c.upgrade();
-                c.superFlash();
-                c.applyPowers();
-            }
-        }
+        //fishy?
+        this.addToBot(new TornadoAction());
     }
 
     //Upgraded stats.
@@ -93,8 +73,7 @@ public class Tornado extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(2);
-            this.exhaust = true;
+            this.exhaust = false;
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

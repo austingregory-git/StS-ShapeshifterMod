@@ -38,6 +38,7 @@ public class Forgiveness extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int MAGIC = 4;
+    private static final int UPGRADE_MAGIC = 2;
 
     // /STAT DECLARATION/
 
@@ -63,9 +64,9 @@ public class Forgiveness extends AbstractDynamicCard {
 
     public void applyPowers() {
         if(upgraded)
-            this.baseMagicNumber = this.magicNumber + (int)((float)GameActionManager.damageReceivedThisCombat * (50.0F / 100.0F));
+            this.baseMagicNumber = MAGIC + (int)((float)GameActionManager.damageReceivedThisCombat * (50.0F / 100.0F));
         else
-            this.baseMagicNumber = this.magicNumber + (int)((float)GameActionManager.damageReceivedThisCombat * (30.0F / 100.0F));
+            this.baseMagicNumber = MAGIC + UPGRADE_MAGIC + (int)((float)GameActionManager.damageReceivedThisCombat * (30.0F / 100.0F));
         super.applyPowers();
         this.initializeDescription();
     }
@@ -76,7 +77,7 @@ public class Forgiveness extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }
     }
