@@ -16,7 +16,7 @@ import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
 //public class ${NAME} extends AbstractDynamicCard {}
 
-public class SunflowerShuriken extends AbstractDynamicCard {
+public class SunflowerShuriken extends AbstractWitherCard {
 
     // TEXT DECLARATION
 

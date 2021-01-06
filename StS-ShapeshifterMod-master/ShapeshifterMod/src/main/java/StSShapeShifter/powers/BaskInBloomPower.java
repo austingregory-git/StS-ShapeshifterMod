@@ -3,6 +3,7 @@ package StSShapeShifter.powers;
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.actions.ModifyGrowAction;
 import StSShapeShifter.cards.AbstractDynamicCard;
+import StSShapeShifter.cards.AbstractGrowCard;
 import StSShapeShifter.util.BloomCountUtils;
 import StSShapeShifter.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
@@ -68,35 +69,24 @@ public class BaskInBloomPower extends AbstractPower implements CloneablePowerInt
 
         while(var1.hasNext()) {
             AbstractCard c = (AbstractCard) var1.next();
-            if(c instanceof AbstractDynamicCard && ((AbstractDynamicCard) c).growValue > 0) {
+            if(c instanceof AbstractGrowCard && ((AbstractGrowCard) c).growValue > 0) {
                 this.addToBot(new ModifyGrowAction(c.uuid, this.amount));
             }
         }
         while(var2.hasNext()) {
             AbstractCard c = (AbstractCard) var2.next();
-            if(c instanceof AbstractDynamicCard && ((AbstractDynamicCard) c).growValue > 0) {
+            if(c instanceof AbstractGrowCard && ((AbstractGrowCard) c).growValue > 0) {
                 this.addToBot(new ModifyGrowAction(c.uuid, this.amount));
             }
         }
         while(var3.hasNext()) {
             AbstractCard c = (AbstractCard) var3.next();
-            if(c instanceof AbstractDynamicCard && ((AbstractDynamicCard) c).growValue > 0) {
+            if(c instanceof AbstractGrowCard && ((AbstractGrowCard) c).growValue > 0) {
                 this.addToBot(new ModifyGrowAction(c.uuid, this.amount));
             }
         }
     }
 
-    /*public void onCardDraw(AbstractCard card) {
-        //card.getClass().getName().equals(AbstractDynamicCard.class.getName())
-        if(card instanceof AbstractDynamicCard && BloomCountUtils.getBloomCount() >= 10){
-            AbstractDynamicCard c = (AbstractDynamicCard) card;
-            ShapeshifterMod.logger.info(c.growValue);
-            ShapeshifterMod.logger.info(c);
-            this.addToTop(new ModifyGrowAction(c.uuid, this.amount));
-            c.applyPowers();
-        }
-
-    }*/
 
     @Override
     public void updateDescription() {

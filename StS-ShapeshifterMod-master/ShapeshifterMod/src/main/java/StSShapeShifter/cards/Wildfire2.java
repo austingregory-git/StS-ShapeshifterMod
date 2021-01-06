@@ -14,7 +14,7 @@ import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
 //public class ${NAME} extends AbstractDynamicCard {}
 
-public class Wildfire2 extends AbstractDynamicCard {
+public class Wildfire2 extends AbstractWitherCard {
 
     // TEXT DECLARATION
 

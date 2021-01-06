@@ -9,7 +9,7 @@ import StSShapeShifter.ShapeshifterMod;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
-public class Consume extends AbstractDynamicCard {
+public class Consume extends AbstractWitherCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards

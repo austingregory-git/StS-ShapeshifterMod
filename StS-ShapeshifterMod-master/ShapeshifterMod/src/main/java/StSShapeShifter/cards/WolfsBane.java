@@ -6,7 +6,9 @@ import StSShapeShifter.powers.SapBurstPower;
 import StSShapeShifter.powers.WolfsBanePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
@@ -23,6 +25,9 @@ public class WolfsBane extends AbstractDynamicCard {
 
     public static final String ID = ShapeshifterMod.makeID(WolfsBane.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
+
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -48,15 +53,20 @@ public class WolfsBane extends AbstractDynamicCard {
         super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = baseMagicNumber = MAGIC;
         this.defaultSecondMagicNumber = defaultBaseSecondMagicNumber = MAGIC2;
-        this.growValue = this.baseGrowValue = 1;
-        this.witherValue = this.baseWitherValue = 1;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new WolfsBanePower(p, this.defaultSecondMagicNumber, this.magicNumber, this.growValue, this.witherValue)));
+        if(upgraded) {
+            AbstractDungeon.actionManager.addToBottom(
+                    new ApplyPowerAction(p, p, new WolfsBanePower(p, this.defaultSecondMagicNumber, this.magicNumber, 2, 1)));
+        }
+        else {
+            AbstractDungeon.actionManager.addToBottom(
+                    new ApplyPowerAction(p, p, new WolfsBanePower(p, this.defaultSecondMagicNumber, this.magicNumber, 1, 1)));
+        }
+
     }
 
     //Upgraded stats.
@@ -64,8 +74,8 @@ public class WolfsBane extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeGrowValue(1);
             upgradeMagicNumber(2);
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

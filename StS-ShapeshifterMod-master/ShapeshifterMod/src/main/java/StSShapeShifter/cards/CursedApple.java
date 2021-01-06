@@ -19,7 +19,7 @@ import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
 //public class ${NAME} extends AbstractDynamicCard {}
 
-public class CursedApple extends AbstractDynamicCard {
+public class CursedApple extends AbstractWitherCard {
 
     // TEXT DECLARATION
 

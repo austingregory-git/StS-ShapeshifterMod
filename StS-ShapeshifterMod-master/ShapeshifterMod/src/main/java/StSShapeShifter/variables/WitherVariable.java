@@ -1,6 +1,6 @@
 package StSShapeShifter.variables;
 
-import StSShapeShifter.cards.AbstractDynamicCard;
+import StSShapeShifter.cards.AbstractWitherCard;
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
@@ -20,22 +20,22 @@ public class WitherVariable extends DynamicVariable {
 
     @Override
     public boolean isModified(AbstractCard card) {
-        return ((AbstractDynamicCard) card).isWitherValueModified;
+        return ((AbstractWitherCard) card).isWitherValueModified;
 
     }
 
     @Override
     public int value(AbstractCard card) {
-        return ((AbstractDynamicCard) card).witherValue;
+        return ((AbstractWitherCard) card).witherValue;
     }
 
     @Override
     public int baseValue(AbstractCard card) {
-        return ((AbstractDynamicCard) card).baseWitherValue;
+        return ((AbstractWitherCard) card).baseWitherValue;
     }
 
     @Override
     public boolean upgraded(AbstractCard card) {
-        return ((AbstractDynamicCard) card).upgradedWitherValue;
+        return ((AbstractWitherCard) card).upgradedWitherValue;
     }
 }

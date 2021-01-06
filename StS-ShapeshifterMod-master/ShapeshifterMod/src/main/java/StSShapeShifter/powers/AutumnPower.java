@@ -3,6 +3,7 @@ package StSShapeShifter.powers;
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.actions.ModifyWitherAction;
 import StSShapeShifter.cards.AbstractDynamicCard;
+import StSShapeShifter.cards.AbstractWitherCard;
 import StSShapeShifter.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -55,8 +56,8 @@ public class AutumnPower extends AbstractPower implements CloneablePowerInterfac
 
     public void onCardDraw(AbstractCard card) {
         //card.getClass().getName().equals(AbstractDynamicCard.class.getName())
-        if(card instanceof AbstractDynamicCard){
-            AbstractDynamicCard c = (AbstractDynamicCard) card;
+        if(card instanceof AbstractWitherCard){
+            AbstractWitherCard c = (AbstractWitherCard) card;
             this.addToTop(new ModifyWitherAction(c.uuid, this.amount));
             c.applyPowers();
         }
@@ -64,11 +65,8 @@ public class AutumnPower extends AbstractPower implements CloneablePowerInterfac
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if(card instanceof AbstractDynamicCard){
-            AbstractDynamicCard c = (AbstractDynamicCard) card;
-            if(c.witherValue > 0) {
-                this.addToBot(new DrawCardAction(this.cardDraw));
-            }
+        if(card instanceof AbstractWitherCard){
+            this.addToBot(new DrawCardAction(this.cardDraw));
         }
     }
 

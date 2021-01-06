@@ -13,7 +13,7 @@ import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
 //public class ${NAME} extends AbstractDynamicCard {}
 
-public class Mystical_Branch extends AbstractDynamicCard {
+public class Mystical_Branch extends AbstractGrowCard {
 
     // TEXT DECLARATION
 

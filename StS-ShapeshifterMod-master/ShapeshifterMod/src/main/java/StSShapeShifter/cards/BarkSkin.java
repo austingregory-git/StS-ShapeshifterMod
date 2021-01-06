@@ -10,7 +10,7 @@ import StSShapeShifter.ShapeshifterMod;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
-public class BarkSkin extends AbstractDynamicCard {
+public class BarkSkin extends AbstractGrowCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards

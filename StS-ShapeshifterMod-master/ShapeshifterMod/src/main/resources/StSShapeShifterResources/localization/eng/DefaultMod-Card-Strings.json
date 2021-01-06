@@ -435,7 +435,8 @@
   },
   "StSShapeShifter:WolfsBane": {
     "NAME": "Wolf's Bane",
-    "DESCRIPTION": "Whenever you play a Grow card, apply !StSShapeShifter:SecondMagic! Poison to a random enemy. This effect Grows by !StSShapeShifter:Grow!. Whenever you play a Wither card, apply !M! Poison to a random enemy. This effect Withers by !StSShapeShifter:Wither!."
+    "DESCRIPTION": "Whenever you play a Grow card, apply !StSShapeShifter:SecondMagic! Poison to a random enemy. This effect Grows by 1. Whenever you play a Wither card, apply !M! Poison to a random enemy. This effect Withers by !StSShapeShifter:Wither!.",
+    "UPGRADE_DESCRIPTION": "Whenever you play a Grow card, apply !StSShapeShifter:SecondMagic! Poison to a random enemy. This effect Grows by 2. Whenever you play a Wither card, apply !M! Poison to a random enemy. This effect Withers by !StSShapeShifter:Wither!."
   },
   "StSShapeShifter:BladeOfGrass": {
     "NAME": "Blade of Grass",

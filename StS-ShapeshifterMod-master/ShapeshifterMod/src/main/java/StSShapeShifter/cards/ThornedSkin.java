@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.ThornsPower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
-public class ThornedSkin extends AbstractDynamicCard {
+public class ThornedSkin extends AbstractWitherCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards

@@ -1,6 +1,6 @@
 package StSShapeShifter.variables;
 
-import StSShapeShifter.cards.AbstractDynamicCard;
+import StSShapeShifter.cards.AbstractGrowCard;
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
@@ -20,22 +20,22 @@ public class GrowVariable extends DynamicVariable {
 
     @Override
     public boolean isModified(AbstractCard card) {
-        return ((AbstractDynamicCard) card).isGrowValueModified;
+        return ((AbstractGrowCard) card).isGrowValueModified;
 
     }
 
     @Override
     public int value(AbstractCard card) {
-        return ((AbstractDynamicCard) card).growValue;
+        return ((AbstractGrowCard) card).growValue;
     }
 
     @Override
     public int baseValue(AbstractCard card) {
-        return ((AbstractDynamicCard) card).baseGrowValue;
+        return ((AbstractGrowCard) card).baseGrowValue;
     }
 
     @Override
     public boolean upgraded(AbstractCard card) {
-        return ((AbstractDynamicCard) card).upgradedGrowValue;
+        return ((AbstractGrowCard) card).upgradedGrowValue;
     }
 }

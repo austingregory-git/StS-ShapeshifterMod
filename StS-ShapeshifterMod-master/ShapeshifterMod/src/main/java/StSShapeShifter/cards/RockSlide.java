@@ -18,7 +18,7 @@ import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
 //public class ${NAME} extends AbstractDynamicCard {}
 
-public class RockSlide extends AbstractDynamicCard {
+public class RockSlide extends AbstractGrowCard {
 
     // TEXT DECLARATION
 
@@ -68,11 +68,11 @@ public class RockSlide extends AbstractDynamicCard {
 
     }
 
-    public void onMoveToDiscard() {
-        this.addToBot(new RockSlideAction(this));
-    }
-    
     /*public void onMoveToDiscard() {
+        this.addToBot(new RockSlideAction(this));
+    }*/
+    
+    public void onMoveToDiscard() {
         //this.addToBot(new RockSlideAction(this.uuid, this));
         ShapeshifterMod.logger.info(!AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty());
         if(!AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty()) {
@@ -91,7 +91,7 @@ public class RockSlide extends AbstractDynamicCard {
                 }
             }
         }
-    }*/
+    }
 
     @Override
     public void atTurnStart() {

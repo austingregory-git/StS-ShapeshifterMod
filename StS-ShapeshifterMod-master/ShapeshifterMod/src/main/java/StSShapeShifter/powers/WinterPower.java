@@ -2,6 +2,7 @@ package StSShapeShifter.powers;
 
 import StSShapeShifter.actions.ModifyWitherAction;
 import StSShapeShifter.cards.AbstractDynamicCard;
+import StSShapeShifter.cards.AbstractWitherCard;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -55,14 +56,14 @@ public class WinterPower extends AbstractPower implements CloneablePowerInterfac
 
         while(var2.hasNext()) {
             AbstractCard c = (AbstractCard) var2.next();
-            if(c instanceof AbstractDynamicCard && ((AbstractDynamicCard) c).witherValue > 0) {
+            if(c instanceof AbstractWitherCard && ((AbstractWitherCard) c).witherValue > 0) {
                 if(upgraded) {
                     this.addToBot(new ReduceCostForTurnAction(c, 1));
                 }
                 else
                     this.addToBot(new ReduceCostForTurnAction(c, 9));
 
-                this.addToTop(new ModifyWitherAction(c.uuid, ((AbstractDynamicCard) c).baseWitherValue));
+                this.addToTop(new ModifyWitherAction(c.uuid, ((AbstractWitherCard) c).baseWitherValue));
                 c.applyPowers();
             }
         }
@@ -70,8 +71,8 @@ public class WinterPower extends AbstractPower implements CloneablePowerInterfac
 
     public void onCardDraw(AbstractCard card) {
         //card.getClass().getName().equals(AbstractDynamicCard.class.getName())
-        if(card instanceof AbstractDynamicCard){
-            AbstractDynamicCard c = (AbstractDynamicCard) card;
+        if(card instanceof AbstractWitherCard){
+            AbstractWitherCard c = (AbstractWitherCard) card;
             //change to only wither cards
             if(c.witherValue>0) {
                 if(upgraded) {

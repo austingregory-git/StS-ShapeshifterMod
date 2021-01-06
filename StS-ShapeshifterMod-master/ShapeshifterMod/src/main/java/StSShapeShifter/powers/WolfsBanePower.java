@@ -2,6 +2,8 @@ package StSShapeShifter.powers;
 
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.cards.AbstractDynamicCard;
+import StSShapeShifter.cards.AbstractGrowCard;
+import StSShapeShifter.cards.AbstractWitherCard;
 import StSShapeShifter.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -57,21 +59,18 @@ public class WolfsBanePower extends AbstractPower implements CloneablePowerInter
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if(card instanceof AbstractDynamicCard){
-            AbstractDynamicCard c = (AbstractDynamicCard) card;
-            if(c.growValue > 0) {
-                this.flash();
-                AbstractMonster targetMonster = AbstractDungeon.getRandomMonster();
-                this.addToBot(new ApplyPowerAction(targetMonster, owner, new PoisonPower(targetMonster, owner, this.growAmount), this.growAmount));
-                this.growAmount += this.growValue;
-            }
-            if(c.witherValue > 0) {
-                this.flash();
-                AbstractMonster targetMonster = AbstractDungeon.getRandomMonster();
-                this.addToBot(new ApplyPowerAction(targetMonster, owner, new PoisonPower(targetMonster, owner, this.witherAmount), this.witherAmount));
-                if(witherAmount > 0)
-                    witherAmount -= witherValue;
-            }
+        if(card instanceof AbstractGrowCard) {
+            this.flash();
+            AbstractMonster targetMonster = AbstractDungeon.getRandomMonster();
+            this.addToBot(new ApplyPowerAction(targetMonster, owner, new PoisonPower(targetMonster, owner, this.growAmount), this.growAmount));
+            this.growAmount += this.growValue;
+        }
+        if(card instanceof AbstractWitherCard){
+            this.flash();
+            AbstractMonster targetMonster = AbstractDungeon.getRandomMonster();
+            this.addToBot(new ApplyPowerAction(targetMonster, owner, new PoisonPower(targetMonster, owner, this.witherAmount), this.witherAmount));
+            if(witherAmount > 0)
+                witherAmount -= witherValue;
         }
     }
 

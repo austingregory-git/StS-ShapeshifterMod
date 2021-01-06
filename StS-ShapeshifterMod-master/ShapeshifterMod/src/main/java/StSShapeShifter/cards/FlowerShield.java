@@ -10,7 +10,7 @@ import StSShapeShifter.ShapeshifterMod;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
-public class FlowerShield extends AbstractDynamicCard {
+public class FlowerShield extends AbstractWitherCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards

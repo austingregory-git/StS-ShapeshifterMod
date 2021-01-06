@@ -10,7 +10,7 @@ import StSShapeShifter.ShapeshifterMod;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
-public class Summon_Mountains extends AbstractDynamicCard {
+public class Summon_Mountains extends AbstractGrowCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards

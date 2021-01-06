@@ -61,23 +61,23 @@ public class Blossom2 extends AbstractDynamicCard {
 
         while(var1.hasNext()) {
             AbstractCard c = (AbstractCard) var1.next();
-            if(c instanceof AbstractDynamicCard && ((AbstractDynamicCard) c).growValue > 0) {
-                ((AbstractDynamicCard) c).simulateGrow(this.magicNumber);
-                ((AbstractDynamicCard) c).applyGrow();
+            if(c instanceof AbstractGrowCard && ((AbstractGrowCard) c).growValue > 0) {
+                ((AbstractGrowCard) c).simulateGrow(this.magicNumber);
+                ((AbstractGrowCard) c).applyGrow();
             }
         }
         while(var2.hasNext()) {
             AbstractCard c = (AbstractCard) var2.next();
-            if(c instanceof AbstractDynamicCard && ((AbstractDynamicCard) c).growValue > 0) {
-                ((AbstractDynamicCard) c).simulateGrow(this.magicNumber);
-                ((AbstractDynamicCard) c).applyGrow();
+            if(c instanceof AbstractGrowCard && ((AbstractGrowCard) c).growValue > 0) {
+                ((AbstractGrowCard) c).simulateGrow(this.magicNumber);
+                ((AbstractGrowCard) c).applyGrow();
             }
         }
         while(var3.hasNext()) {
             AbstractCard c = (AbstractCard) var3.next();
-            if(c instanceof AbstractDynamicCard && ((AbstractDynamicCard) c).growValue > 0) {
-                ((AbstractDynamicCard) c).simulateGrow(this.magicNumber);
-                ((AbstractDynamicCard) c).applyGrow();
+            if(c instanceof AbstractGrowCard && ((AbstractGrowCard) c).growValue > 0) {
+                ((AbstractGrowCard) c).simulateGrow(this.magicNumber);
+                ((AbstractGrowCard) c).applyGrow();
             }
         }
     }

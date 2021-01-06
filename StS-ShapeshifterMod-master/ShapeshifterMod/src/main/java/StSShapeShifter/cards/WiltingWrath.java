@@ -13,12 +13,6 @@ import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
 public class WiltingWrath extends AbstractDynamicCard {
 
-    /*
-     * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
-     *
-     * In-Progress Form At the start of your turn, play a TOUCH.
-     */
-
     // TEXT DECLARATION
 
     public static final String ID = ShapeshifterMod.makeID(WiltingWrath.class.getSimpleName());

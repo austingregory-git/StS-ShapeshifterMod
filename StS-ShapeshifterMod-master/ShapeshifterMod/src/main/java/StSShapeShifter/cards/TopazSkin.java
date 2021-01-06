@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
-public class TopazSkin extends AbstractDynamicCard {
+public class TopazSkin extends AbstractGrowCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards

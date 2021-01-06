@@ -14,7 +14,7 @@ import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
 //public class ${NAME} extends AbstractDynamicCard {}
 
-public class AdaptiveStrikes extends AbstractDynamicCard {
+public class AdaptiveStrikes extends AbstractGrowCard {
 
     // TEXT DECLARATION
 

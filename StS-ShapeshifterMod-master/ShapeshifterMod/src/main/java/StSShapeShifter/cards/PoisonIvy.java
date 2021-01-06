@@ -13,7 +13,7 @@ import java.util.Iterator;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
-public class PoisonIvy extends AbstractDynamicCard {
+public class PoisonIvy extends AbstractGrowCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards

@@ -24,7 +24,7 @@ import java.util.Iterator;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
-public class BurrBomb extends AbstractDynamicCard {
+public class BurrBomb extends AbstractGrowCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards

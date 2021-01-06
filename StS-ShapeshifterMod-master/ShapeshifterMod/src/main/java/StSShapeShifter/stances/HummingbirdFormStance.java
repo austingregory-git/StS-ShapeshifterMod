@@ -40,7 +40,7 @@ public class HummingbirdFormStance extends AbstractStance {
     }
 
     public void updateAnimation() {
-        if (!Settings.DISABLE_EFFECTS) {
+        /*if (!Settings.DISABLE_EFFECTS) {
             this.particleTimer -= Gdx.graphics.getDeltaTime();
             if (this.particleTimer < 0.0F) {
                 this.particleTimer = 0.04F;
@@ -52,7 +52,7 @@ public class HummingbirdFormStance extends AbstractStance {
         if (this.particleTimer2 < 0.0F) {
             this.particleTimer2 = MathUtils.random(0.45F, 0.55F);
             AbstractDungeon.effectsQueue.add(new StanceAuraEffect("Calm"));
-        }
+        }*/
 
     }
     public void onExitStance() {

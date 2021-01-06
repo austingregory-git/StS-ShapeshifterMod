@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.PoisonPower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
-public class VileMushroom extends AbstractDynamicCard {
+public class VileMushroom extends AbstractGrowCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards

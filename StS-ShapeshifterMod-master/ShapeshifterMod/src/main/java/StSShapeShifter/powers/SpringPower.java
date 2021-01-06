@@ -2,6 +2,7 @@ package StSShapeShifter.powers;
 
 import StSShapeShifter.actions.ModifyGrowAction;
 import StSShapeShifter.cards.AbstractDynamicCard;
+import StSShapeShifter.cards.AbstractGrowCard;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -46,8 +47,8 @@ public class SpringPower extends AbstractPower implements CloneablePowerInterfac
 
     public void onCardDraw(AbstractCard card) {
         //card.getClass().getName().equals(AbstractDynamicCard.class.getName())
-        if(card instanceof AbstractDynamicCard){
-            AbstractDynamicCard c = (AbstractDynamicCard) card;
+        if(card instanceof AbstractGrowCard){
+            AbstractGrowCard c = (AbstractGrowCard) card;
             if(c.growValue > 0) {
                 this.addToTop(new ModifyGrowAction(c.uuid, this.amount));
                 c.applyPowers();

@@ -9,7 +9,7 @@ import StSShapeShifter.ShapeshifterMod;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
-public class Efflorescence extends AbstractDynamicCard {
+public class Efflorescence extends AbstractGrowCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards

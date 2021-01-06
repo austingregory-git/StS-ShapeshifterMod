@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
-public class RaptorForm extends AbstractDynamicCard {
+public class RaptorForm extends AbstractGrowCard {
 
     // TEXT DECLARATION
 

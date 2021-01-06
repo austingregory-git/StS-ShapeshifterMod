@@ -12,7 +12,7 @@ import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
 //public class ${NAME} extends AbstractDynamicCard {}
 
-public class Earthquake extends AbstractDynamicCard {
+public class Earthquake extends AbstractWitherCard {
 
     // TEXT DECLARATION
 

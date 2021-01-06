@@ -2,6 +2,7 @@ package StSShapeShifter.powers;
 
 import StSShapeShifter.actions.ModifyGrowAction;
 import StSShapeShifter.cards.AbstractDynamicCard;
+import StSShapeShifter.cards.AbstractGrowCard;
 import StSShapeShifter.cards.Summer;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -47,8 +48,8 @@ public class SummerPower extends AbstractPower implements CloneablePowerInterfac
 
     public void onCardDraw(AbstractCard card) {
         //card.getClass().getName().equals(AbstractDynamicCard.class.getName())
-        if(card instanceof AbstractDynamicCard){
-            AbstractDynamicCard c = (AbstractDynamicCard) card;
+        if(card instanceof AbstractGrowCard){
+            AbstractGrowCard c = (AbstractGrowCard) card;
             this.addToTop(new ModifyGrowAction(c.uuid, c.baseGrowValue));
             c.applyPowers();
         }

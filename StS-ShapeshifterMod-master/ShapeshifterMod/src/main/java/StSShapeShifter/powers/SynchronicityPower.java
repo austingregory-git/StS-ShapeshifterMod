@@ -3,6 +3,8 @@ package StSShapeShifter.powers;
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.actions.ModifyGrowAction;
 import StSShapeShifter.cards.AbstractDynamicCard;
+import StSShapeShifter.cards.AbstractGrowCard;
+import StSShapeShifter.cards.AbstractWitherCard;
 import StSShapeShifter.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -49,14 +51,11 @@ public class SynchronicityPower extends AbstractPower implements CloneablePowerI
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if(card instanceof AbstractDynamicCard){
-            AbstractDynamicCard c = (AbstractDynamicCard) card;
-            if(c.growValue > 0) {
-                this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, amount)));
-            }
-            if(c.witherValue > 0) {
-                this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount)));
-            }
+        if(card instanceof AbstractGrowCard){
+            this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, amount)));
+        }
+        if(card instanceof AbstractWitherCard){
+            this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount)));
         }
     }
 

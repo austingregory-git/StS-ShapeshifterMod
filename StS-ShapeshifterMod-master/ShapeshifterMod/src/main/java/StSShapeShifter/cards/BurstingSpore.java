@@ -16,7 +16,7 @@ import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
 //public class ${NAME} extends AbstractDynamicCard {}
 
-public class BurstingSpore extends AbstractDynamicCard {
+public class BurstingSpore extends AbstractGrowCard {
 
     // TEXT DECLARATION
 
