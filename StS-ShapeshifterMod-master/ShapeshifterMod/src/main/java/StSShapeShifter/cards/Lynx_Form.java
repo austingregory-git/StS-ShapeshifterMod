@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
@@ -72,6 +73,7 @@ public class Lynx_Form extends AbstractDynamicCard {
             this.addToBot(new ChangeStanceAction("LynxFormStance"));
         }
 
+        CardCrawlGame.sound.playAV(ShapeshifterMod.makeID("SFX_LynxForm"), 0.0F, 2.0F);
         //this.addToBot();
     }
 

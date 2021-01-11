@@ -5,6 +5,9 @@ import StSShapeShifter.cards.tempCards.*;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.events.IdentityCrisisEvent;
 import StSShapeShifter.potions.AnimalAmalgamationPotion;
+import StSShapeShifter.potions.DeathWeedPotion;
+import StSShapeShifter.potions.GreenSmothie;
+import StSShapeShifter.potions.PotionOfTheGoldenFlower;
 import StSShapeShifter.relics.*;
 import StSShapeShifter.util.IDCheckDontTouchPls;
 import StSShapeShifter.util.TextureLoader;
@@ -37,34 +40,6 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
-//TODO: DON'T MASS RENAME/REFACTOR
-//TODO: DON'T MASS RENAME/REFACTOR
-//TODO: DON'T MASS RENAME/REFACTOR
-//TODO: DON'T MASS RENAME/REFACTOR
-// Please don't just mass replace "theDefault" with "yourMod" everywhere.
-// It'll be a bigger pain for you. You only need to replace it in 3 places.
-// I comment those places below, under the place where you set your ID.
-
-//TODO: FIRST THINGS FIRST: RENAME YOUR PACKAGE AND ID NAMES FIRST-THING!!!
-// Right click the package (Open the project pane on the left. Folder with black dot on it. The name's at the very top) -> Refactor -> Rename, and name it whatever you wanna call your mod.
-// Scroll down in this file. Change the ID from "theDefault:" to "yourModName:" or whatever your heart desires (don't use spaces). Dw, you'll see it.
-// In the JSON strings (resources>localization>eng>[all them files] make sure they all go "yourModName:" rather than "theDefault". You can ctrl+R to replace in 1 file, or ctrl+shift+r to mass replace in specific files/directories (Be careful.).
-// Start with the DefaultCommon cards - they are the most commented cards since I don't feel it's necessary to put identical comments on every card.
-// After you sorta get the hang of how to make cards, check out the card template which will make your life easier
-
-/*
- * With that out of the way:
- * Welcome to this super over-commented Slay the Spire modding base.
- * Use it to make your own mod of any type. - If you want to add any standard in-game content (character,
- * cards, relics), this is a good starting point.
- * It features 1 character with a minimal set of things: 1 card of each type, 1 debuff, couple of relics, etc.
- * If you're new to modding, you basically *need* the BaseMod wiki for whatever you wish to add
- * https://github.com/daviscook477/BaseMod/wiki - work your way through with this base.
- * Feel free to use this in any way you like, of course. MIT licence applies. Happy modding!
- *
- * And pls. Read the comments.
- */
-
 @SpireInitializer
 public class ShapeshifterMod implements
         EditCardsSubscriber,
@@ -72,9 +47,8 @@ public class ShapeshifterMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        PostInitializeSubscriber {
-    // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
-    // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
+        PostInitializeSubscriber,
+        AddAudioSubscriber {
     public static final Logger logger = LogManager.getLogger(ShapeshifterMod.class.getName());
     private static String modID;
 
@@ -99,13 +73,7 @@ public class ShapeshifterMod implements
     public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
     public static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(255.0f, 230.0f, 230.0f); // Near White
     public static final Color PLACEHOLDER_POTION_SPOTS = CardHelper.getColor(100.0f, 25.0f, 10.0f); // Super Dark Red/Brown
-    
-    // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
-    // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
-    // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
-    // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
-    // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
-    // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
+
   
     // Card backgrounds - The actual rectangular card.
     private static final String ATTACK_DEFAULT_GRAY = "StSShapeShifterResources/images/512/bg_attack_default_gray.png";
@@ -379,6 +347,9 @@ public class ShapeshifterMod implements
         // Remember, you can press ctrl+P inside parentheses like addPotions)
         //BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
         BaseMod.addPotion(AnimalAmalgamationPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, AnimalAmalgamationPotion.POTION_ID, ShapeShifter.Enums.SHAPESHIFTER);
+        BaseMod.addPotion(GreenSmothie.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, AnimalAmalgamationPotion.POTION_ID, ShapeShifter.Enums.SHAPESHIFTER);
+        BaseMod.addPotion(PotionOfTheGoldenFlower.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, AnimalAmalgamationPotion.POTION_ID, ShapeShifter.Enums.SHAPESHIFTER);
+        BaseMod.addPotion(DeathWeedPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, AnimalAmalgamationPotion.POTION_ID, ShapeShifter.Enums.SHAPESHIFTER);
 
         logger.info("Done editing potions");
     }
@@ -662,6 +633,7 @@ public class ShapeshifterMod implements
         BaseMod.addKeyword(new String[]{"bloom count"}, "Bloom Count is the positive number associated with the Shapeshifter's Magnolia.");
         BaseMod.addKeyword(new String[]{"wilt count"}, "Wilt Count is the negative number associate with the Shapeshifter's Magnolia.");
         BaseMod.addKeyword(new String[]{"massive"}, "Deals 100% of Normal enemy's HP, 50% of Elite enemy's HP, and 25% of Boss enemy's HP");
+        BaseMod.addKeyword(new String[]{"deep wound"}, "Whenever this monster attacks, they take damage");
         /* (keywords != null) {
             for (Keyword keyword : keywords) {
                 //BaseMod.addKeyword(getModID().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
@@ -671,8 +643,18 @@ public class ShapeshifterMod implements
         }*/
     }
     
-    // ================ /LOAD THE KEYWORDS/ ===================    
+    // ================ /LOAD THE KEYWORDS/ ===================
 
+
+    @Override
+    public void receiveAddAudio() {
+        logger.info("in receive add audio");
+        BaseMod.addAudio(makeID("SFX_Flood"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/Flood_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_LionForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/LionForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_LynxForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/LynxForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_BearForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/BearForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_TortoiseForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/TortoiseForm_SFX.ogg");
+    }
 
     public static String imgFromId(String id) {
         String unprefixedId = id.replace(ShapeshifterMod.getModID() + ":","");

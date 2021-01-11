@@ -291,7 +291,7 @@ public class ShapeShifter extends CustomPlayer {
     // core to its maximum..."
     @Override
     public String getSpireHeartText() {
-        return "Oi";
+        return "You shift into your most ferocious form...";
     }
 
     // The vampire events refer to the base game characters as "brother", "sister",
@@ -299,7 +299,7 @@ public class ShapeShifter extends CustomPlayer {
     // the full text that will be displayed as the first screen of the vampires event.
     @Override
     public String getVampireText() {
-        return "Oi2";
+        return "I see you are familiar with the Lycan--can I interest you in something even more powerful?";
     }
 
 }

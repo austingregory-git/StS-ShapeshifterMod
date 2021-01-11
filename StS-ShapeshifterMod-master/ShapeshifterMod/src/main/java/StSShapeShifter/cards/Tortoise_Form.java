@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
@@ -69,6 +70,9 @@ public class Tortoise_Form extends AbstractDynamicCard {
             this.addToBot(new ApplyPowerAction(p, p, new TortoiseFormPower(p, this.magicNumber)));
             this.addToBot(new ChangeStanceAction("TortoiseFormStance"));
         }
+
+        CardCrawlGame.sound.playAV(ShapeshifterMod.makeID("SFX_TortoiseForm"), 0.0F, 3.0F);
+
 
         //this.addToBot();
     }

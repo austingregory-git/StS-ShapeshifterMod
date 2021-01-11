@@ -337,7 +337,7 @@
   },
   "StSShapeShifter:WiltingWrath": {
     "NAME": "Wilting Wrath",
-    "DESCRIPTION": "At the start of your turn, if you are Wilting, your next attack deals double damage. If you are Decaying, also deal !D! Damage to all enemies"
+    "DESCRIPTION": "At the start of your turn, if you are Wilting, your next attack deals 2X damage (this effect stacks). If you are Decaying, also deal !D! Damage to all enemies"
   },
   "StSShapeShifter:EntForm": {
     "NAME": "Ent Form",
@@ -435,8 +435,8 @@
   },
   "StSShapeShifter:WolfsBane": {
     "NAME": "Wolf's Bane",
-    "DESCRIPTION": "Whenever you play a Grow card, apply !StSShapeShifter:SecondMagic! Poison to a random enemy. This effect Grows by 1. Whenever you play a Wither card, apply !M! Poison to a random enemy. This effect Withers by !StSShapeShifter:Wither!.",
-    "UPGRADE_DESCRIPTION": "Whenever you play a Grow card, apply !StSShapeShifter:SecondMagic! Poison to a random enemy. This effect Grows by 2. Whenever you play a Wither card, apply !M! Poison to a random enemy. This effect Withers by !StSShapeShifter:Wither!."
+    "DESCRIPTION": "Whenever you play a Grow card, apply !StSShapeShifter:SecondMagic! Poison to a random enemy. This effect Grows by 1. Whenever you play a Wither card, apply !M! Poison to a random enemy. This effect Withers by 1.",
+    "UPGRADE_DESCRIPTION": "Whenever you play a Grow card, apply !StSShapeShifter:SecondMagic! Poison to a random enemy. This effect Grows by 2. Whenever you play a Wither card, apply !M! Poison to a random enemy. This effect Withers by 1."
   },
   "StSShapeShifter:BladeOfGrass": {
     "NAME": "Blade of Grass",

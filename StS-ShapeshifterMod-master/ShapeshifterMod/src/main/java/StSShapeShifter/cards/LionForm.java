@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
@@ -59,6 +60,7 @@ public class LionForm extends AbstractDynamicCard {
             this.addToBot(new ChangeStanceAction("LionFormStance"));
         }
 
+        CardCrawlGame.sound.playA(ShapeshifterMod.makeID("SFX_LionForm"), 1.0F);
         //this.addToBot();
     }
 

@@ -78,6 +78,7 @@ public class Flood extends AbstractDynamicCard {
                 }
             }
         }
+        CardCrawlGame.sound.playA(ShapeshifterMod.makeID("SFX_Flood"), 1.0F);
     }
 
     //Upgraded stats.
