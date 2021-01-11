@@ -45,12 +45,10 @@ public class BurrBombPower extends AbstractPower implements CloneablePowerInterf
         updateDescription();
     }
 
-    // At the end of the turn, remove gained Dexterity.
     @Override
-    public void atEndOfTurn(final boolean isPlayer) {
+    public void atStartOfTurn() {
         count++;
-        this.description = "" + (1-count) + " Turns Remaining.";
-        if(count == 1) {
+        if(count == 2) {
             this.addToBot(new DamageAction(owner, new DamageInfo(owner, amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
             this.addToBot(new RemoveSpecificPowerAction(owner, owner, ShapeshifterMod.makeID("BurrBombPower")));
         }

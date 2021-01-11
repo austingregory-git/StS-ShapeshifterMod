@@ -7,6 +7,7 @@ package StSShapeShifter.actions;
 
 import StSShapeShifter.patches.EnumsPatch;
 import StSShapeShifter.util.AllForms;
+import StSShapeShifter.util.AllGrowWitherCards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
@@ -130,6 +131,14 @@ public class DiscoverCardAction extends AbstractGameAction {
             }
             else if(type == EnumsPatch.FORM) {
                 ArrayList<AbstractCard> forms = new ArrayList<AbstractCard>(AllForms.getAllFormsCards());
+                tmp = forms.get(new Random().nextInt(forms.size()));
+            }
+            else if(type == EnumsPatch.GROW) {
+                ArrayList<AbstractCard> forms = new ArrayList<AbstractCard>(AllGrowWitherCards.getAllGrowCards());
+                tmp = forms.get(new Random().nextInt(forms.size()));
+            }
+            else if(type == EnumsPatch.WITHER) {
+                ArrayList<AbstractCard> forms = new ArrayList<AbstractCard>(AllGrowWitherCards.getAllWitherCards());
                 tmp = forms.get(new Random().nextInt(forms.size()));
             }
             else {

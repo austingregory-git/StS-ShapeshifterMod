@@ -16,6 +16,9 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.BottledFlame;
+import com.megacrit.cardcrawl.relics.BottledLightning;
+import com.megacrit.cardcrawl.relics.BottledTornado;
 import com.megacrit.cardcrawl.rewards.chests.AbstractChest;
 import com.megacrit.cardcrawl.ui.panels.TopPanel;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
@@ -55,6 +58,8 @@ public class FoxDigAction extends AbstractGameAction {
                     //owner.relics.add(relic);
                 } else if (relicTierRoll < 95) {
                     AbstractRelic relic = AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.UNCOMMON);
+                    while(relic.relicId.equals(BottledFlame.ID) || relic.relicId.equals(BottledLightning.ID) || relic.relicId.equals(BottledTornado.ID))
+                        relic = AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.UNCOMMON);
                     this.addToBot(new RelicAboveCreatureAction(owner, relic));
                     relic.instantObtain();
                     CardCrawlGame.metricData.addRelicObtainData(relic);

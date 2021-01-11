@@ -90,7 +90,7 @@
   },
   "StSShapeShifter:ShiftingStrike": {
     "NAME": "Shifting Strike",
-    "DESCRIPTION": "Deal !D! Damage. If you changed forms this turn, this card costs 0."
+    "DESCRIPTION": "If your last card played was a form, this card costs 0. Deal !D! Damage."
   },
   "StSShapeShifter:OakBlade": {
     "NAME": "Oak Blade",
@@ -210,7 +210,7 @@
   },
   "StSShapeShifter:Wildfire2": {
     "NAME": "Wildfire",
-    "DESCRIPTION": "Apply Wildfire !M! to an enemy. That enemy takes !M! damage at the end of their turn, and then Wildfire jumps to a random enemy. This effect Withers by !StSShapeShifter:Wither! for each jump."
+    "DESCRIPTION": "Apply Wildfire !M! to an enemy. That enemy takes !M! damage at the start of their turn, and then Wildfire jumps to a random enemy. This effect Withers by !StSShapeShifter:Wither! for each jump."
   },
   "StSShapeShifter:Earthquake": {
     "NAME": "Earthquake",
@@ -251,7 +251,7 @@
   },
   "StSShapeShifter:BurrBomb": {
     "NAME": "Burr Bomb",
-    "DESCRIPTION": "Apply a Burr Bomb to an enemy. At the end of your next turn, it explodes, dealing !D! damage. Grow !StSShapeShifter:Grow!."
+    "DESCRIPTION": "Apply a Burr Bomb to an enemy. At the end of your next turn, it explodes, dealing !M! damage. Grow !StSShapeShifter:Grow!."
   },
   "StSShapeShifter:Summon_Mountains": {
     "NAME": "Summon Mountains",

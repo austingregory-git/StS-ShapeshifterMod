@@ -56,8 +56,12 @@
           "DESCRIPTIONS": ["Whenever you play a #yGrow card, gain #b", " dexterity. Whenever you play a #yWither card, gain #b", " strength."]
         },
         "StSShapeShifter:WiltingWrathPower": {
-          "NAME": "WiltingWrath",
+          "NAME": "Wilting Wrath",
           "DESCRIPTIONS": ["At the start of your turn, if you are Wilting, your next attack deals double damage. If you are Decaying, also deal #b", " damage to all enemies."]
+        },
+        "StSShapeShifter:GreenSmoothiePower": {
+          "NAME": "Green Smoothie",
+          "DESCRIPTIONS": ["At the start of your turn, gain #b", " energy"]
         },
         "StSShapeShifter:BulwarkOfDiscoveryPower": {
           "NAME": "Bulwark of Discovery",

@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
@@ -56,25 +57,26 @@ public class ShiftingStrike extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
-    public void triggerOnOtherCardPlayed(AbstractCard card) {
-/*        ArrayList<AbstractCard> cards = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisTurn);
-        ArrayList<String> cardIDs = new ArrayList<>();
-        for (AbstractCard c : cards) {
-            cardIDs.add(c.cardID);
-        }
-        if(!Collections.disjoint(AllForms.getAllForms(), cardIDs)) {
+    public void triggerOnGlowCheck() {
+        if (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && (AllForms.getAllForms().contains(AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1).cardID))) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
             this.setCostForTurn(-9);
-            this.addToTop(new VFXAction(new BorderFlashEffect(Color.GOLD, true), 0.1F));
-        }*/
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+            this.setCostForTurn(this.cost);
+        }
+
+    }
+
+    /*public void triggerOnOtherCardPlayed(AbstractCard card) {
         if(AllForms.getAllForms().contains(card.cardID)) {
             this.setCostForTurn(-9);
             this.addToTop(new VFXAction(new BorderFlashEffect(Color.GOLD, true), 0.1F));
         }
-    }
+    }*/
 
     // Upgraded stats.
     @Override

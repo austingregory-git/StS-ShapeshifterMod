@@ -1,6 +1,7 @@
 package StSShapeShifter.powers;
 
 import StSShapeShifter.ShapeshifterMod;
+import StSShapeShifter.util.BloomCountUtils;
 import StSShapeShifter.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -39,7 +40,7 @@ public class WildFirePower extends AbstractPower implements CloneablePowerInterf
         this.source = source;
         this.witherValue = witherValue;
 
-        type = PowerType.BUFF;
+        type = PowerType.DEBUFF;
         isTurnBased = false;
 
         // We load those textures here.
@@ -55,9 +56,10 @@ public class WildFirePower extends AbstractPower implements CloneablePowerInterf
         if(this.amount > 0) {
             this.addToBot(new DamageAction(owner, new DamageInfo(owner, amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
             AbstractMonster targetMonster = AbstractDungeon.getRandomMonster();
-            if(this.amount > 2) {
+            if(this.amount > witherValue) {
                 if(targetMonster.equals(owner)) {
                     this.reducePower(this.witherValue);
+                    BloomCountUtils.addBloomCount(-this.witherValue);
                 }
                 else {
                     this.addToBot(new RemoveSpecificPowerAction(owner, owner, this));

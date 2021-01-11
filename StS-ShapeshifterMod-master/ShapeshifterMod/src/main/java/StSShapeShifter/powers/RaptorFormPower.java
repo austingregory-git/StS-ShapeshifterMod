@@ -2,6 +2,7 @@ package StSShapeShifter.powers;
 
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.actions.ModifyMagicAction;
+import StSShapeShifter.util.BloomCountUtils;
 import StSShapeShifter.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -47,6 +48,7 @@ public class RaptorFormPower extends AbstractFormPower implements CloneablePower
     @Override
     public void atEndOfTurn(final boolean isPlayer) {
         this.addToBot(new ModifyDamageAction(this.card.uuid, this.amount));
+        BloomCountUtils.addBloomCount(this.amount);
         //this.addToBot(new ModifyMagicAction(this.card.uuid, this.amount));
         this.card.applyPowers();
         this.flash();

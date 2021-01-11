@@ -1,5 +1,6 @@
 package StSShapeShifter.cards;
 
+import StSShapeShifter.actions.ModifyMagicAction;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.BurrBombPower;
 import StSShapeShifter.powers.DeerFormPower;
@@ -66,7 +67,7 @@ public class BurrBomb extends AbstractGrowCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         //applyGrow();
         this.addToBot(new ApplyPowerAction(m, p, new BurrBombPower(m, p, this.magicNumber)));
-        this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
+        this.addToBot(new ModifyMagicAction(this.uuid, this.growValue));
         updateBloomCount(this.growValue);
     }
 

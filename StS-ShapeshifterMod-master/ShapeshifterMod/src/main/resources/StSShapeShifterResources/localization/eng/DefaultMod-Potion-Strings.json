@@ -1,6 +1,18 @@
 {
-"StSShapeShifter:AnimalAmalgamationPotion": {
-        "NAME": "Animal Amalgamation Potion",
-        "DESCRIPTIONS": ["Discover a random Form. It costs 0 this turn."]
-}
+        "StSShapeShifter:AnimalAmalgamationPotion": {
+                "NAME": "Animal Amalgamation Potion",
+                "DESCRIPTIONS": ["Discover a random Form. It costs 0 this turn."]
+        },
+        "StSShapeShifter:PotionOfTheGoldenFlower": {
+                "NAME": "Potion of the Golden Flower",
+                "DESCRIPTIONS": ["Discover a random Grow card. It costs 0 this turn."]
+        },
+        "StSShapeShifter:DeathWeedPotion": {
+                "NAME": "Deathweed Potion",
+                "DESCRIPTIONS": ["Discover a random Wither card. It costs 0 this turn."]
+        },
+        "StSShapeShifter:GreenSmoothie": {
+                "NAME": "Green Smoothie",
+                "DESCRIPTIONS": ["For the rest of combat, gain 1 energy at the start of each turn."]
+        }
 }
