@@ -1,6 +1,8 @@
 package StSShapeShifter.cards;
 
 import StSShapeShifter.characters.ShapeShifter;
+import StSShapeShifter.powers.FreeFormPower;
+import StSShapeShifter.powers.FullMoonPower;
 import StSShapeShifter.util.AllForms;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -59,6 +61,12 @@ public class Bonk extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        if(p.hasPower(FreeFormPower.POWER_ID)) {
+            p.getPower(FreeFormPower.POWER_ID).stackPower(1);
+        }
+        else if(p.hasPower(FullMoonPower.POWER_ID)) {
+            p.getPower(FullMoonPower.POWER_ID).stackPower(1);
+        }
         ArrayList<AbstractCard> forms = new ArrayList<AbstractCard>(AllForms.getAllFormsCards());
         AbstractCard c = forms.get(new Random().nextInt(forms.size()));
         ShapeshifterMod.logger.info(c.cardID);

@@ -5,10 +5,13 @@ import StSShapeShifter.actions.DiscoverCardAction;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.FlamingoFormPower;
 import StSShapeShifter.powers.OwlFormPower;
+import StSShapeShifter.stances.FlamingoFormStance;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -47,9 +50,11 @@ public class FlamingoForm extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DiscoverCardAction(false, CardType.SKILL, ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR, false, 1));
 
-        if(!p.stance.ID.equals("FlamingoFormStance") && !p.hasPower("CannotChangeStancePower")) {
+        if(!p.stance.ID.equals(FlamingoFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             this.addToBot(new ApplyPowerAction(p, p, new FlamingoFormPower(p, this.magicNumber)));
-            this.addToBot(new ChangeStanceAction("FlamingoFormStance"));
+            this.addToBot(new ChangeStanceAction(FlamingoFormStance.STANCE_ID));
+            CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_FlamingoForm"));
+
         }
 
         //this.addToBot();

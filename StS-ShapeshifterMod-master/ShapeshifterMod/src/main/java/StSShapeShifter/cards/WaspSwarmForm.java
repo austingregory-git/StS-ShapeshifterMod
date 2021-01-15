@@ -3,6 +3,7 @@ package StSShapeShifter.cards;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.BearFormPower;
 import StSShapeShifter.powers.WaspSwarmFormPower;
+import StSShapeShifter.stances.WaspSwarmFormStance;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ModifyBlockAction;
@@ -14,6 +15,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.powers.*;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import java.util.Iterator;
@@ -89,8 +91,9 @@ public class WaspSwarmForm extends AbstractDynamicCard {
                 p.energy.use(EnergyPanel.totalCount);
             }
         }
-        if(!p.stance.ID.equals("WaspSwarmFormStance") && !p.hasPower("CannotChangeStancePower")) {
-            this.addToBot(new ChangeStanceAction("WaspSwarmFormStance"));
+        if(!p.stance.ID.equals(WaspSwarmFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
+            this.addToBot(new ChangeStanceAction(WaspSwarmFormStance.STANCE_ID));
+            CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_WaspSwarmForm"));
         }
     }
 

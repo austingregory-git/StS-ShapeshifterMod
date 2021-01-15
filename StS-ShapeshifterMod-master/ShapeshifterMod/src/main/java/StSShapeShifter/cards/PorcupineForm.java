@@ -4,16 +4,19 @@ import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.BearFormPower;
 import StSShapeShifter.powers.PorcupineFormPower;
 import StSShapeShifter.powers.TortoiseFormPower;
+import StSShapeShifter.stances.PorcupineFormStance;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -62,9 +65,10 @@ public class PorcupineForm extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(!p.stance.ID.equals("PorcupineFormStance") && !p.hasPower("CannotChangeStancePower")) {
-            this.addToBot(new ChangeStanceAction("PorcupineFormStance"));
+        if(!p.stance.ID.equals(PorcupineFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
+            this.addToBot(new ChangeStanceAction(PorcupineFormStance.STANCE_ID));
             this.addToBot(new ApplyPowerAction(p, p, new PorcupineFormPower(p, this.magicNumber)));
+            CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_PorcupineForm"));
         }
         else {
             this.addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, this.magicNumber)));

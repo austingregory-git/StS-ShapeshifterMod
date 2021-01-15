@@ -5,6 +5,7 @@ import StSShapeShifter.actions.ModifyMagicAction;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.FoxFormPower;
 import StSShapeShifter.powers.RaptorFormPower;
+import StSShapeShifter.stances.RaptorFormStance;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
@@ -13,7 +14,9 @@ import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -60,9 +63,10 @@ public class RaptorForm extends AbstractGrowCard {
             this.addToBot(new DamageRandomEnemyAction(new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }
 
-        if(!p.stance.ID.equals("RaptorFormStance") && !p.hasPower("CannotChangeStancePower")) {
+        if(!p.stance.ID.equals(RaptorFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             this.addToBot(new ApplyPowerAction(p, p, new RaptorFormPower(p, this.growValue, this)));
-            this.addToBot(new ChangeStanceAction("RaptorFormStance"));
+            this.addToBot(new ChangeStanceAction(RaptorFormStance.STANCE_ID));
+            CardCrawlGame.sound.playAV(ShapeshifterMod.makeID("SFX_RaptorForm"), 0.0F, 2.0F);
         }
     }
 

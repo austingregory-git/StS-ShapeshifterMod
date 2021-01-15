@@ -5,14 +5,17 @@ import StSShapeShifter.powers.BearFormPower;
 import StSShapeShifter.powers.DodgePower;
 import StSShapeShifter.powers.RatFormPower;
 import StSShapeShifter.powers.TortoiseFormPower;
+import StSShapeShifter.stances.RatFormStance;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -65,10 +68,11 @@ public class RatForm extends AbstractDynamicCard {
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, -this.defaultSecondMagicNumber)));
         this.addToBot(new ApplyPowerAction(p, p, new DodgePower(p, this.defaultSecondMagicNumber)));
 
-        if(!p.stance.ID.equals("RatFormStance") && !p.hasPower("CannotChangeStancePower")) {
+        if(!p.stance.ID.equals(RatFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             //this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
             this.addToBot(new ApplyPowerAction(p, p, new RatFormPower(p, this.magicNumber)));
-            this.addToBot(new ChangeStanceAction("RatFormStance"));
+            this.addToBot(new ChangeStanceAction(RatFormStance.STANCE_ID));
+            CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_RatForm"));
         }
 
         //this.addToBot();

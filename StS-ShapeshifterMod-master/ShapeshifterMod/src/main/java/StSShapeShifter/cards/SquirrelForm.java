@@ -7,6 +7,7 @@ import StSShapeShifter.powers.BearFormPower;
 import StSShapeShifter.powers.LionFormPower;
 import StSShapeShifter.powers.MonkeyFormPower;
 import StSShapeShifter.powers.SquirrelFormPower;
+import StSShapeShifter.stances.SquirrelFormStance;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -18,6 +19,7 @@ import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.chests.AbstractChest;
 
@@ -61,9 +63,10 @@ public class SquirrelForm extends AbstractDynamicCard {
         this.addToBot(new MakeTempCardInHandAction(new Acorn()));
         this.addToBot(new MakeTempCardInHandAction(new Acorn()));
 
-        if(!p.stance.ID.equals("SquirrelFormStance") && !p.hasPower("CannotChangeStancePower")) {
+        if(!p.stance.ID.equals(SquirrelFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             this.addToBot(new ApplyPowerAction(p, p, new SquirrelFormPower(p)));
-            this.addToBot(new ChangeStanceAction("SquirrelFormStance"));
+            this.addToBot(new ChangeStanceAction(SquirrelFormStance.STANCE_ID));
+            CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_SquirrelForm"));
         }
 
         //this.addToBot();

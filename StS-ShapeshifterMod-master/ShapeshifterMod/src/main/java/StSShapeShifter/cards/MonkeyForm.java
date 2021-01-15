@@ -5,17 +5,20 @@ import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.BearFormPower;
 import StSShapeShifter.powers.LionFormPower;
 import StSShapeShifter.powers.MonkeyFormPower;
+import StSShapeShifter.stances.MonkeyFormStance;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -54,9 +57,10 @@ public class MonkeyForm extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new MakeTempCardInHandAction(new Banana()));
 
-        if(!p.stance.ID.equals("MonkeyFormStance") && !p.hasPower("CannotChangeStancePower")) {
+        if(!p.stance.ID.equals(MonkeyFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             this.addToBot(new ApplyPowerAction(p, p, new MonkeyFormPower(p, this.magicNumber)));
-            this.addToBot(new ChangeStanceAction("MonkeyFormStance"));
+            this.addToBot(new ChangeStanceAction(MonkeyFormStance.STANCE_ID));
+            CardCrawlGame.sound.playAV(ShapeshifterMod.makeID("SFX_MonkeyForm"), 0.0F, 2.0F);
         }
 
         //this.addToBot();

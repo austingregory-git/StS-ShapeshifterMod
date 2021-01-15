@@ -4,6 +4,7 @@ import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.FullMoonPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
@@ -55,6 +56,7 @@ public class FullMoon extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p, new FullMoonPower(p, p, magicNumber), magicNumber));
+        CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_FullMoon"));
     }
 
     //Upgraded stats.

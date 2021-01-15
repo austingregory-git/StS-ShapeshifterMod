@@ -3,6 +3,7 @@ package StSShapeShifter.cards;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.LynxFormPower;
 import StSShapeShifter.powers.TortoiseFormPower;
+import StSShapeShifter.stances.LynxFormStance;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -16,6 +17,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -67,14 +69,13 @@ public class Lynx_Form extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
 
-        if(!p.stance.ID.equals("LynxFormStance") && !p.hasPower("CannotChangeStancePower")) {
+        if(!p.stance.ID.equals(LynxFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             //this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
             this.addToBot(new ApplyPowerAction(p, p, new LynxFormPower(p, this.magicNumber)));
-            this.addToBot(new ChangeStanceAction("LynxFormStance"));
-        }
+            this.addToBot(new ChangeStanceAction(LynxFormStance.STANCE_ID));
+            CardCrawlGame.sound.playAV(ShapeshifterMod.makeID("SFX_LynxForm"), 0.0F, 2.0F);
 
-        CardCrawlGame.sound.playAV(ShapeshifterMod.makeID("SFX_LynxForm"), 0.0F, 2.0F);
-        //this.addToBot();
+        }
     }
 
     //Upgraded stats.

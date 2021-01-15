@@ -56,6 +56,7 @@ public class RhinoFormPower extends AbstractFormPower implements CloneablePowerI
     }
 
     public void onInitialApplication() {
+        CardCrawlGame.sound.playV(ShapeshifterMod.makeID("SFX_RhinoForm"), 2.0F);
         if(upgraded) {
             this.addToBot(new GainBlockAction(this.owner, 22));
             this.addToBot(new ApplyPowerAction(this.owner, this.owner, new PlatedArmorPower(this.owner, 10)));

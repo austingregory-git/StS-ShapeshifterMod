@@ -4,6 +4,7 @@ import StSShapeShifter.characters.ShapeShifter;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ModifyBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
@@ -58,6 +59,8 @@ public class Summon_Mountains extends AbstractGrowCard {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         this.addToBot(new ModifyBlockAction(this.uuid, this.growValue));
         updateBloomCount(this.growValue);
+        CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_SummonMountains"));
+
     }
 
     //Upgraded stats.

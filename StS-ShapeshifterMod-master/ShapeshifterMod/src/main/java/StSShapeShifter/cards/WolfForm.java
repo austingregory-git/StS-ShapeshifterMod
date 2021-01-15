@@ -3,16 +3,19 @@ package StSShapeShifter.cards;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.BearFormPower;
 import StSShapeShifter.powers.WolfFormPower;
+import StSShapeShifter.stances.WolfFormStance;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -52,12 +55,11 @@ public class WolfForm extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
 
-        if(!p.stance.ID.equals("WolfFormStance") && !p.hasPower("CannotChangeStancePower")) {
+        if(!p.stance.ID.equals(WolfFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             this.addToBot(new ApplyPowerAction(p, p, new WolfFormPower(p, this.magicNumber, this.defaultSecondMagicNumber)));
-            this.addToBot(new ChangeStanceAction("WolfFormStance"));
+            this.addToBot(new ChangeStanceAction(WolfFormStance.STANCE_ID));
+            CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_WolfForm"));
         }
-
-        //this.addToBot();
     }
 
     //Upgraded stats.

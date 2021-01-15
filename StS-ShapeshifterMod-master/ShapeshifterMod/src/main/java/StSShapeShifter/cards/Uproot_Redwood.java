@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 
@@ -54,6 +55,7 @@ public class Uproot_Redwood extends AbstractWitherCard {
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         this.addToBot(new ModifyDamageAction(this.uuid, -this.witherValue));
         updateBloomCount(-this.witherValue);
+        CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_UprootRedwood"));
     }
 
 

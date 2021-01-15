@@ -4,14 +4,17 @@ import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.HippoFormPower;
 import StSShapeShifter.powers.WolfFormPower;
+import StSShapeShifter.stances.HippoFormStance;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -53,9 +56,11 @@ public class HippoForm extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageRandomEnemyAction(new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SMASH));
 
-        if(!p.stance.ID.equals("HippoFormStance") && !p.hasPower("CannotChangeStancePower")) {
+        if(!p.stance.ID.equals(HippoFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             this.addToBot(new ApplyPowerAction(p, p, new HippoFormPower(p, this.magicNumber)));
-            this.addToBot(new ChangeStanceAction("HippoFormStance"));
+            this.addToBot(new ChangeStanceAction(HippoFormStance.STANCE_ID));
+            CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_HippoForm"));
+
         }
 
         //this.addToBot();

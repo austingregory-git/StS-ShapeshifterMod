@@ -3,6 +3,7 @@ package StSShapeShifter.cards;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.BearFormPower;
 import StSShapeShifter.powers.HummingbirdFormPower;
+import StSShapeShifter.stances.HummingbirdFormStance;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.UpgradeRandomCardAction;
@@ -15,6 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -59,9 +61,11 @@ public class HummingbirdForm extends AbstractDynamicCard {
         else
             this.addToBot(new UpgradeRandomCardAction());
 
-        if(!p.stance.ID.equals("HummingbirdFormStance") && !p.hasPower("CannotChangeStancePower")) {
+        if(!p.stance.ID.equals(HummingbirdFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             this.addToBot(new ApplyPowerAction(p, p, new HummingbirdFormPower(p, this.magicNumber)));
-            this.addToBot(new ChangeStanceAction("HummingbirdFormStance"));
+            this.addToBot(new ChangeStanceAction(HummingbirdFormStance.STANCE_ID));
+            CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_HummingbirdForm"));
+
         }
 
         //this.addToBot();

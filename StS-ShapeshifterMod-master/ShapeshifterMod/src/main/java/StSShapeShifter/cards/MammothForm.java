@@ -4,14 +4,17 @@ import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.BearFormPower;
 import StSShapeShifter.powers.MammothFormPower;
 import StSShapeShifter.powers.TortoiseFormPower;
+import StSShapeShifter.stances.MammothFormStance;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -64,12 +67,11 @@ public class MammothForm extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
 
-        if(!p.stance.ID.equals("MammothFormStance") && !p.hasPower("CannotChangeStancePower")) {
+        if(!p.stance.ID.equals(MammothFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             this.addToBot(new ApplyPowerAction(p, p, new MammothFormPower(p, this.magicNumber)));
-            this.addToBot(new ChangeStanceAction("MammothFormStance"));
+            this.addToBot(new ChangeStanceAction(MammothFormStance.STANCE_ID));
+            CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_MammothForm"));
         }
-
-        //this.addToBot();
     }
 
     //Upgraded stats.

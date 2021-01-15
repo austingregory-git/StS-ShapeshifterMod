@@ -3,6 +3,7 @@ package StSShapeShifter.cards;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.BearFormPower;
 import StSShapeShifter.powers.LionFormPower;
+import StSShapeShifter.stances.LionFormStance;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
@@ -14,6 +15,7 @@ import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -55,12 +57,11 @@ public class LionForm extends AbstractDynamicCard {
         this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.defaultSecondMagicNumber)));
         this.applyPowers();
 
-        if(!p.stance.ID.equals("LionFormStance") && !p.hasPower("CannotChangeStancePower")) {
+        if(!p.stance.ID.equals(LionFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             this.addToBot(new ApplyPowerAction(p, p, new LionFormPower(p, this.magicNumber, this.upgraded)));
-            this.addToBot(new ChangeStanceAction("LionFormStance"));
+            this.addToBot(new ChangeStanceAction(LionFormStance.STANCE_ID));
+            CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_LionForm"));
         }
-
-        CardCrawlGame.sound.playA(ShapeshifterMod.makeID("SFX_LionForm"), 1.0F);
         //this.addToBot();
     }
 

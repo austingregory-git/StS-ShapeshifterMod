@@ -4,6 +4,7 @@ import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.PhoenixFormPower;
 import StSShapeShifter.powers.RhinoCalfFormPower;
+import StSShapeShifter.stances.RhinoCalfFormStance;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.unique.RemoveAllPowersAction;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -62,9 +64,10 @@ public class RhinoCalfForm extends AbstractGrowCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainBlockAction(p, this.block));
 
-        if(!p.stance.ID.equals("RhinoCalfFormStance") && !p.hasPower("CannotChangeStancePower")) {
+        if(!p.stance.ID.equals(RhinoCalfFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             this.addToBot(new ApplyPowerAction(p, p, new RhinoCalfFormPower(p, this.magicNumber, this.upgraded)));
-            this.addToBot(new ChangeStanceAction("RhinoCalfFormStance"));
+            this.addToBot(new ChangeStanceAction(RhinoCalfFormStance.STANCE_ID));
+            CardCrawlGame.sound.playA(ShapeshifterMod.makeID("SFX_RhinoForm"), 1.0F);
         }
 
         //this.addToBot();

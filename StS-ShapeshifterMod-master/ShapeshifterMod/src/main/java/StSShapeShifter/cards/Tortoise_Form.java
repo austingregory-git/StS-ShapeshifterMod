@@ -3,6 +3,7 @@ package StSShapeShifter.cards;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.BearFormPower;
 import StSShapeShifter.powers.TortoiseFormPower;
+import StSShapeShifter.stances.TortoiseFormStance;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -65,13 +67,14 @@ public class Tortoise_Form extends AbstractDynamicCard {
                 new ApplyPowerAction(p, p, new TortoiseFormPower(p, p, magicNumber), magicNumber));*/
         /*AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new DexterityPower(p, this.magicNumber), this.magicNumber));*/
-        if(!p.stance.ID.equals("TortoiseFormStance") && !p.hasPower("CannotChangeStancePower")) {
+        if(!p.stance.ID.equals(TortoiseFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             //this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
             this.addToBot(new ApplyPowerAction(p, p, new TortoiseFormPower(p, this.magicNumber)));
-            this.addToBot(new ChangeStanceAction("TortoiseFormStance"));
+            this.addToBot(new ChangeStanceAction(TortoiseFormStance.STANCE_ID));
+            CardCrawlGame.sound.playAV(ShapeshifterMod.makeID("SFX_TortoiseForm"), 0.0F, 3.0F);
+
         }
 
-        CardCrawlGame.sound.playAV(ShapeshifterMod.makeID("SFX_TortoiseForm"), 0.0F, 3.0F);
 
 
         //this.addToBot();

@@ -4,6 +4,7 @@ import StSShapeShifter.actions.DiscoverCardAction;
 import StSShapeShifter.cards.tempCards.Banana;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.*;
+import StSShapeShifter.stances.OwlFormStance;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
@@ -12,12 +13,14 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -56,9 +59,10 @@ public class OwlForm extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DiscoverCardAction(false, CardType.POWER, ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR, false, 1));
 
-        if(!p.stance.ID.equals("OwlFormStance") && !p.hasPower("CannotChangeStancePower")) {
+        if(!p.stance.ID.equals(OwlFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             this.addToBot(new ApplyPowerAction(p, p, new OwlFormPower(p, this.magicNumber)));
-            this.addToBot(new ChangeStanceAction("OwlFormStance"));
+            this.addToBot(new ChangeStanceAction(OwlFormStance.STANCE_ID));
+            CardCrawlGame.sound.playV(ShapeshifterMod.makeID("SFX_OwlForm"), 4.0F);
         }
 
         //this.addToBot();

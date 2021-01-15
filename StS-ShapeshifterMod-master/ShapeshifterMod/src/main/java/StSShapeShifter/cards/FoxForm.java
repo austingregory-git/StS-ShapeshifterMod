@@ -6,6 +6,7 @@ import StSShapeShifter.powers.BearFormPower;
 import StSShapeShifter.powers.FoxFormPower;
 import StSShapeShifter.powers.LionFormPower;
 import StSShapeShifter.powers.MonkeyFormPower;
+import StSShapeShifter.stances.FoxFormStance;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
@@ -14,12 +15,14 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -60,9 +63,11 @@ public class FoxForm extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageRandomEnemyAction(new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
-        if(!p.stance.ID.equals("FoxFormStance") && !p.hasPower("CannotChangeStancePower")) {
+        if(!p.stance.ID.equals(FoxFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             this.addToBot(new ApplyPowerAction(p, p, new FoxFormPower(p, p, upgraded)));
-            this.addToBot(new ChangeStanceAction("FoxFormStance"));
+            this.addToBot(new ChangeStanceAction(FoxFormStance.STANCE_ID));
+            CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_FlamingoForm"));
+
         }
 
         //this.addToBot();

@@ -4,6 +4,7 @@ import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.MammothFormPower;
 import StSShapeShifter.powers.MooseFormPower;
+import StSShapeShifter.stances.MooseFormStance;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -15,6 +16,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 
 import java.util.Iterator;
 
@@ -84,9 +86,10 @@ public class MooseForm extends AbstractDynamicCard {
         }
         //this.addToBot(new TransformCardInHandAction());
 
-        if(!p.stance.ID.equals("MooseFormStance") && !p.hasPower("CannotChangeStancePower")) {
+        if(!p.stance.ID.equals(MooseFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             this.addToBot(new ApplyPowerAction(p, p, new MooseFormPower(p, this.magicNumber)));
-            this.addToBot(new ChangeStanceAction("MooseFormStance"));
+            this.addToBot(new ChangeStanceAction(MooseFormStance.STANCE_ID));
+            CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_MooseForm"));
         }
 
         //this.addToBot();

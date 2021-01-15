@@ -654,6 +654,33 @@ public class ShapeshifterMod implements
         BaseMod.addAudio(makeID("SFX_LynxForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/LynxForm_SFX.ogg");
         BaseMod.addAudio(makeID("SFX_BearForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/BearForm_SFX.ogg");
         BaseMod.addAudio(makeID("SFX_TortoiseForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/TortoiseForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_RaptorForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/RaptorForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_MonkeyForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/MonkeyForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_RhinoForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/RhinoForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_DeerForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/DeerForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_EagleForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/EagleForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_EntForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/EntForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_FlamingoForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/FlamingoForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_FoxForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/FoxForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_DragonForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/DragonForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_HippoForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/HippoForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_HummingbirdForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/HummingbirdForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_HydraForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/HydraForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_MammothForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/MammothForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_HydraForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/HydraForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_MooseForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/MooseForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_OwlForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/OwlForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_PantherForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/PantherForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_PhoenixForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/PhoenixForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_PorcupineForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/PorcupineForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_RatForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/RatForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_SquirrelForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/SquirrelForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_WaspSwarmForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/WaspSwarmForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_WolfForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/WolfForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_SummonMountains"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/SummonMountains_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_RockSlide"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/RockSlide_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_UprootRedwood"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/UprootRedwood_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_FullMoon"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/FullMoon_SFX.ogg");
     }
 
     public static String imgFromId(String id) {

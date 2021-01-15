@@ -299,7 +299,7 @@ public class ShapeShifter extends CustomPlayer {
     // the full text that will be displayed as the first screen of the vampires event.
     @Override
     public String getVampireText() {
-        return "I see you are familiar with the Lycan--can I interest you in something even more powerful?";
+        return "I see you are familiar with the Lycan--can I interest you in something more powerful?";
     }
 
 }

@@ -2,6 +2,7 @@ package StSShapeShifter.cards;
 
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.DeerFormPower;
+import StSShapeShifter.stances.DeerFormStance;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -14,6 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -65,9 +67,10 @@ public class DeerForm extends AbstractDynamicCard {
         //this.addToBot(new ApplyPowerAction(p, p, new WeakPower(p, this.magicNumber, false), this.magicNumber));
         this.addToBot(new DrawCardAction(this.magicNumber));
 
-        if(!p.stance.ID.equals("DeerFormStance") && !p.hasPower("CannotChangeStancePower")) {
+        if(!p.stance.ID.equals(DeerFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             this.addToBot(new ApplyPowerAction(p, p, new DeerFormPower(p)));
-            this.addToBot(new ChangeStanceAction("DeerFormStance"));
+            this.addToBot(new ChangeStanceAction(DeerFormStance.STANCE_ID));
+            CardCrawlGame.sound.playA(ShapeshifterMod.makeID("SFX_DeerForm"), 1.0F);
         }
 
         //this.addToBot();

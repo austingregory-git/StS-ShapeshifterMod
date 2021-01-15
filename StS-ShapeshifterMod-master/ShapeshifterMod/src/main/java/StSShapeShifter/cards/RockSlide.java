@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
@@ -64,8 +65,7 @@ public class RockSlide extends AbstractGrowCard {
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
         updateBloomCount(this.growValue);
-
-
+        CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_RockSlide"));
     }
 
     /*public void onMoveToDiscard() {

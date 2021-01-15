@@ -5,11 +5,14 @@ import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.DamageAmpPower;
 import StSShapeShifter.powers.EntFormPower;
 import StSShapeShifter.powers.PantherFormPower;
+import StSShapeShifter.stances.PantherFormStance;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.RegenPower;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -58,10 +61,11 @@ public class PantherForm extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new DamageAmpPower(p, 2)));
-        if(!p.stance.ID.equals("PantherFormStance") && !p.hasPower("CannotChangeStancePower")) {
+        if(!p.stance.ID.equals(PantherFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             //this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
             this.addToBot(new ApplyPowerAction(p, p, new PantherFormPower(p, this.magicNumber)));
-            this.addToBot(new ChangeStanceAction("PantherFormStance"));
+            this.addToBot(new ChangeStanceAction(PantherFormStance.STANCE_ID));
+            CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_PantherForm"));
         }
 
         //this.addToBot();

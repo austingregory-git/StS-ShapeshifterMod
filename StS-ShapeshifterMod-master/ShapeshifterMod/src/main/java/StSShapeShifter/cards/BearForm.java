@@ -2,6 +2,7 @@ package StSShapeShifter.cards;
 
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.BearFormPower;
+import StSShapeShifter.stances.BearFormStance;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -54,13 +56,11 @@ public class BearForm extends AbstractDynamicCard {
         this.addToBot(new GainBlockAction(p, block));
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 1), 1));
 
-        if(!p.stance.ID.equals("BearFormStance") && !p.hasPower("CannotChangeStancePower")) {
+        if(!p.stance.ID.equals(BearFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             this.addToBot(new ApplyPowerAction(p, p, new BearFormPower(p, this.defaultSecondMagicNumber)));
-            this.addToBot(new ChangeStanceAction("BearFormStance"));
+            this.addToBot(new ChangeStanceAction(BearFormStance.STANCE_ID));
+            CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_BearForm"));
         }
-
-        CardCrawlGame.sound.playA(ShapeshifterMod.makeID("SFX_BearForm"), 1.0F);
-        //this.addToBot();
     }
 
     //Upgraded stats.

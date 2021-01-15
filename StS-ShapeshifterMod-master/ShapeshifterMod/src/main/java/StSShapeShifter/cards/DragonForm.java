@@ -3,11 +3,13 @@ package StSShapeShifter.cards;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.DeerFormPower;
 import StSShapeShifter.powers.DragonFormPower;
+import StSShapeShifter.stances.DragonFormStance;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
@@ -15,6 +17,7 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 
 import java.util.Iterator;
 
@@ -85,9 +88,10 @@ public class DragonForm extends AbstractDynamicCard {
             }
         }
 
-        if(!p.stance.ID.equals("DragonFormStance") && !p.hasPower("CannotChangeStancePower")) {
+        if(!p.stance.ID.equals(DragonFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             this.addToBot(new ApplyPowerAction(p, p, new DragonFormPower(p, this.defaultSecondMagicNumber)));
-            this.addToBot(new ChangeStanceAction("DragonFormStance"));
+            this.addToBot(new ChangeStanceAction(DragonFormStance.STANCE_ID));
+            CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_DragonForm"));
         }
 
         //this.addToBot();
