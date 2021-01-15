@@ -60,6 +60,7 @@ public class WaspSwarmForm extends AbstractDynamicCard {
     }
 
     public void waspSwarmFormEffect(AbstractPlayer p) {
+        this.ModifiedCostCode = 2;
         int effect = EnergyPanel.totalCount;
         if (this.energyOnUse != -1) {
             effect = this.energyOnUse;

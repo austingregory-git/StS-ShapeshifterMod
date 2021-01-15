@@ -1,5 +1,6 @@
 package StSShapeShifter.powers;
 
+import StSShapeShifter.cards.AbstractShapeShifterCard;
 import StSShapeShifter.util.AllForms;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -56,8 +57,9 @@ public class FullMoonPower extends AbstractPower implements CloneablePowerInterf
 
             while(var2.hasNext()) {
                 AbstractCard c = (AbstractCard)var2.next();
-                if(AllForms.getAllForms().contains(c.cardID)) {
+                if(AllForms.getAllForms().contains(c.cardID) && c instanceof AbstractShapeShifterCard) {
                     c.setCostForTurn(-6);
+                    ((AbstractShapeShifterCard) c).ModifiedCostCode = 3;
                 }
             }
         }
@@ -65,15 +67,16 @@ public class FullMoonPower extends AbstractPower implements CloneablePowerInterf
 
     @Override
     public void onCardDraw(AbstractCard card) {
-        if (AllForms.getAllForms().contains(card.cardID) && !card.purgeOnUse && this.amount > 0) {
+        if (AllForms.getAllForms().contains(card.cardID) && !card.purgeOnUse && this.amount > 0 && card instanceof AbstractShapeShifterCard) {
             card.setCostForTurn(-6);
+            ((AbstractShapeShifterCard) card).ModifiedCostCode = 3;
         }
     }
 
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         if (AllForms.getAllForms().contains(card.cardID) && !card.purgeOnUse && this.amount > 0 && !AbstractDungeon.player.hasPower(FreeFormPower.POWER_ID)) {
             count++;
-            reducePower(1);
+            this.reducePower(1);
             if(count == amount) {
                 Iterator var2 = AbstractDungeon.player.hand.group.iterator();
 
@@ -83,7 +86,7 @@ public class FullMoonPower extends AbstractPower implements CloneablePowerInterf
                         c.setCostForTurn(c.cost);
                     }
                 }
-                this.addToBot(new RemoveSpecificPowerAction(owner, owner, FullMoonPower.POWER_ID));
+                this.addToBot(new RemoveSpecificPowerAction(owner, owner, this));
             }
         }
     }

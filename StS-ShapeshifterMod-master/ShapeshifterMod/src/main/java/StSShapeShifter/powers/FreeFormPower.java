@@ -85,7 +85,7 @@ public class FreeFormPower extends AbstractPower implements CloneablePowerInterf
 
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         ShapeshifterMod.logger.info(card.costForTurn);
-        if (AllForms.getAllForms().contains(card.cardID) && !card.purgeOnUse && this.amount > 0) {
+        if (AllForms.getAllForms().contains(card.cardID) && !card.purgeOnUse && this.amount > 0 && (card instanceof AbstractShapeShifterCard && ((AbstractShapeShifterCard) card).ModifiedCostCode != 2)) {
             count++;
             if(count == amount) {
                 Iterator var2 = AbstractDungeon.player.hand.group.iterator();
@@ -96,6 +96,9 @@ public class FreeFormPower extends AbstractPower implements CloneablePowerInterf
                         if(AllForms.getAllForms().contains(c.cardID) && c.costForTurn == 0 && ((AbstractShapeShifterCard) c).ModifiedCostCode == 0) {
                             c.setCostForTurn(c.cost);
                             c.isCostModifiedForTurn = false;
+                        }
+                        else if(AllForms.getAllForms().contains(c.cardID) && c.costForTurn == 0 && ((AbstractShapeShifterCard) c).ModifiedCostCode == 1) {
+                            c.setCostForTurn(c.cost-1);
                         }
                     }
                 }

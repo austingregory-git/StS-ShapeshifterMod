@@ -37,14 +37,8 @@ public class WaspSwarmFormStance extends AbstractStance {
     }
 
     public void updateDescription() {
-        //this.description = stanceString.DESCRIPTION[0];
         this.description = "Wasp Swarm Form Stance";
     }
-
-    /*public void onEnterStance() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner,
-                new DexterityPower(owner, amount), amount));
-    }*/
 
     public void updateAnimation() {
 /*        if (!Settings.DISABLE_EFFECTS) {
