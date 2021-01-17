@@ -1,6 +1,7 @@
 package StSShapeShifter.actions;
 
 import StSShapeShifter.cards.AbstractDynamicCard;
+import StSShapeShifter.cards.AbstractWitherCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.helpers.GetAllInBattleInstances;
 
@@ -20,7 +21,7 @@ public class ModifyWitherAction extends AbstractGameAction {
         Iterator var1 = GetAllInBattleInstances.get(this.uuid).iterator();
 
         while(var1.hasNext()) {
-            AbstractDynamicCard c = (AbstractDynamicCard)var1.next();
+            AbstractWitherCard c = (AbstractWitherCard)var1.next();
             c.baseWitherValue += this.amount;
             if (c.baseWitherValue < 0) {
                 c.baseWitherValue = 0;

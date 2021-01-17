@@ -44,7 +44,10 @@ public class WaspSwarmFormPower extends AbstractFormPower implements CloneablePo
     }
 
     public void atStartOfTurn() {
-        this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(2*this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        for(int i=0; i<this.amount; i++) {
+            this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(2, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+
+        }
     }
 
     public void stackPower(int stackAmount) {

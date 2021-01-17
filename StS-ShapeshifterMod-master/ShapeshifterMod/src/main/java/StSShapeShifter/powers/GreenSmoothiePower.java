@@ -1,27 +1,20 @@
 package StSShapeShifter.powers;
 
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.util.AllForms;
 import StSShapeShifter.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import java.util.ArrayList;
-
-public class GreenSmothiePower extends AbstractPower implements CloneablePowerInterface {
+public class GreenSmoothiePower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ShapeshifterMod.makeID(GreenSmothiePower.class.getSimpleName());
+    public static final String POWER_ID = ShapeshifterMod.makeID(GreenSmoothiePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -30,11 +23,12 @@ public class GreenSmothiePower extends AbstractPower implements CloneablePowerIn
     private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/DiverseSpiritPower84.png");
     private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/DiverseSpiritPower32.png");
 
-    public GreenSmothiePower(final int amount) {
+    public GreenSmoothiePower(AbstractCreature owner, int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.amount = amount;
+        this.owner = owner;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -48,7 +42,8 @@ public class GreenSmothiePower extends AbstractPower implements CloneablePowerIn
 
     @Override
     public void atStartOfTurn() {
-        this.addToBot(new GainEnergyAction(amount));
+        this.addToBot(new GainEnergyAction(this.amount));
+        this.flash();
     }
 
     @Override
@@ -58,7 +53,7 @@ public class GreenSmothiePower extends AbstractPower implements CloneablePowerIn
 
     @Override
     public AbstractPower makeCopy() {
-        return new GreenSmothiePower(amount);
+        return new GreenSmoothiePower(owner, amount);
     }
 }
 

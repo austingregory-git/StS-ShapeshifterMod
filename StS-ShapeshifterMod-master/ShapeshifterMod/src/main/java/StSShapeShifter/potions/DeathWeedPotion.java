@@ -43,7 +43,7 @@ public class DeathWeedPotion extends AbstractPotion {
     public void use(AbstractCreature target) {
         target = AbstractDungeon.player;
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            this.addToBot(new DiscoverCardAction(true, EnumsPatch.GROW, ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR, false, 1));
+            this.addToBot(new DiscoverCardAction(true, EnumsPatch.WITHER, ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR, false, 1));
         }
     }
     

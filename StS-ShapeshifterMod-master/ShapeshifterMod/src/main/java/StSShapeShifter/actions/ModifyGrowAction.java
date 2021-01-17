@@ -1,6 +1,7 @@
 package StSShapeShifter.actions;
 
 import StSShapeShifter.cards.AbstractDynamicCard;
+import StSShapeShifter.cards.AbstractGrowCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -21,7 +22,7 @@ public class ModifyGrowAction extends AbstractGameAction {
         Iterator var1 = GetAllInBattleInstances.get(this.uuid).iterator();
 
         while(var1.hasNext()) {
-            AbstractDynamicCard c = (AbstractDynamicCard)var1.next();
+            AbstractGrowCard c = (AbstractGrowCard)var1.next();
             c.baseGrowValue += this.amount;
             if (c.baseGrowValue < 0) {
                 c.baseGrowValue = 0;

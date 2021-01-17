@@ -8,6 +8,7 @@ package StSShapeShifter.relics;
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.util.AllFruit;
 import StSShapeShifter.util.TextureLoader;
+import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -26,14 +27,14 @@ import java.util.Random;
 
 import static StSShapeShifter.ShapeshifterMod.makeRelicPath;
 
-public class ThornsOfSummi extends AbstractRelic {
+public class ThornsOfSummi extends CustomRelic {
     public boolean active;
     public static final String ID = ShapeshifterMod.makeID(ThornsOfSummi.class.getSimpleName());
     private static final String PNG = ".png";
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath(ThornsOfSummi.class.getSimpleName() + PNG));
 
     public ThornsOfSummi() {
-        super(ID, "sunflower.png", RelicTier.UNCOMMON, LandingSound.SOLID);
+        super(ID, IMG, RelicTier.UNCOMMON, LandingSound.SOLID);
     }
 
     @Override
@@ -54,6 +55,7 @@ public class ThornsOfSummi extends AbstractRelic {
         if(AbstractDungeon.player.hasPower(ThornsPower.POWER_ID)) {
             int dmg = AbstractDungeon.player.getPower(ThornsPower.POWER_ID).amount;
             this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(dmg, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            this.flash();
         }
     }
 

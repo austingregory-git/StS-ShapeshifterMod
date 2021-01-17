@@ -6,25 +6,23 @@
 package StSShapeShifter.relics;
 
 import StSShapeShifter.ShapeshifterMod;
+import StSShapeShifter.potions.AnimalAmalgamationPotion;
+import StSShapeShifter.potions.DeathWeedPotion;
+import StSShapeShifter.potions.GreenSmoothie;
+import StSShapeShifter.potions.PotionOfTheGoldenFlower;
 import StSShapeShifter.powers.FreeFormPower;
-import StSShapeShifter.util.AllForms;
-import StSShapeShifter.util.BloomCountUtils;
 import StSShapeShifter.util.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer.PlayerClass;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
+import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.relics.AbstractRelic.LandingSound;
-import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
-import org.apache.logging.log4j.core.appender.rolling.action.AbstractAction;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
 
 import static StSShapeShifter.ShapeshifterMod.makeRelicPath;
 

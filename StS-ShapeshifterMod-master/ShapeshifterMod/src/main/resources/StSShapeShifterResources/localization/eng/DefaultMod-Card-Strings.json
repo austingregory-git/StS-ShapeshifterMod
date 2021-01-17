@@ -283,8 +283,8 @@
   },
   "StSShapeShifter:WaspSwarmForm": {
     "NAME": "Wasp Swarm Form",
-    "DESCRIPTION": "Upon Entering Wasp Swarm Form, Apply X Weak and Poison to all enemies. While in Wasp Swarm Form, deal 2X damage to all enemies at the start of your turn.",
-    "UPGRADE_DESCRIPTION": "Upon Entering Wasp Swarm Form, Apply X+1 Weak and Poison to all enemies. While in Wasp Swarm Form, deal 2(X+1) damage to all enemies at the start of your turn."
+    "DESCRIPTION": "Upon Entering Wasp Swarm Form, Apply X Weak and Poison to all enemies. While in Wasp Swarm Form, deal 2 damage X times to all enemies at the start of your turn.",
+    "UPGRADE_DESCRIPTION": "Upon Entering Wasp Swarm Form, Apply X+1 Weak and Poison to all enemies. While in Wasp Swarm Form, deal 2 damage X+1 times to all enemies at the start of your turn."
   },
   "StSShapeShifter:HummingbirdForm": {
     "NAME": "Hummingbird Form",

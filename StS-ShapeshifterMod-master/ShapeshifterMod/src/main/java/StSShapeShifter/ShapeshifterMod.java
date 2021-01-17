@@ -3,10 +3,9 @@ package StSShapeShifter;
 import StSShapeShifter.cards.*;
 import StSShapeShifter.cards.tempCards.*;
 import StSShapeShifter.characters.ShapeShifter;
-import StSShapeShifter.events.IdentityCrisisEvent;
 import StSShapeShifter.potions.AnimalAmalgamationPotion;
 import StSShapeShifter.potions.DeathWeedPotion;
-import StSShapeShifter.potions.GreenSmothie;
+import StSShapeShifter.potions.GreenSmoothie;
 import StSShapeShifter.potions.PotionOfTheGoldenFlower;
 import StSShapeShifter.relics.*;
 import StSShapeShifter.util.IDCheckDontTouchPls;
@@ -28,7 +27,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
@@ -347,7 +345,7 @@ public class ShapeshifterMod implements
         // Remember, you can press ctrl+P inside parentheses like addPotions)
         //BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
         BaseMod.addPotion(AnimalAmalgamationPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, AnimalAmalgamationPotion.POTION_ID, ShapeShifter.Enums.SHAPESHIFTER);
-        BaseMod.addPotion(GreenSmothie.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, AnimalAmalgamationPotion.POTION_ID, ShapeShifter.Enums.SHAPESHIFTER);
+        BaseMod.addPotion(GreenSmoothie.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, AnimalAmalgamationPotion.POTION_ID, ShapeShifter.Enums.SHAPESHIFTER);
         BaseMod.addPotion(PotionOfTheGoldenFlower.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, AnimalAmalgamationPotion.POTION_ID, ShapeShifter.Enums.SHAPESHIFTER);
         BaseMod.addPotion(DeathWeedPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, AnimalAmalgamationPotion.POTION_ID, ShapeShifter.Enums.SHAPESHIFTER);
 

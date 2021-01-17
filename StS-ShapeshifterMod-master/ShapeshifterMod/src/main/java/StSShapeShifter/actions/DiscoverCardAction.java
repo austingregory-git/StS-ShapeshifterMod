@@ -5,6 +5,7 @@
 
 package StSShapeShifter.actions;
 
+import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.patches.EnumsPatch;
 import StSShapeShifter.util.AllForms;
 import StSShapeShifter.util.AllGrowWitherCards;
@@ -134,12 +135,14 @@ public class DiscoverCardAction extends AbstractGameAction {
                 tmp = forms.get(new Random().nextInt(forms.size()));
             }
             else if(type == EnumsPatch.GROW) {
-                ArrayList<AbstractCard> forms = new ArrayList<AbstractCard>(AllGrowWitherCards.getAllGrowCards());
-                tmp = forms.get(new Random().nextInt(forms.size()));
+                ShapeshifterMod.logger.info("discover grow");
+                ArrayList<AbstractCard> growCards = new ArrayList<AbstractCard>(AllGrowWitherCards.getAllGrowCards());
+                tmp = growCards.get(new Random().nextInt(growCards.size()));
             }
             else if(type == EnumsPatch.WITHER) {
-                ArrayList<AbstractCard> forms = new ArrayList<AbstractCard>(AllGrowWitherCards.getAllWitherCards());
-                tmp = forms.get(new Random().nextInt(forms.size()));
+                ShapeshifterMod.logger.info("discover wither");
+                ArrayList<AbstractCard> witherCards = new ArrayList<AbstractCard>(AllGrowWitherCards.getAllWitherCards());
+                tmp = witherCards.get(new Random().nextInt(witherCards.size()));
             }
             else {
                 tmp = AbstractDungeon.returnTrulyRandomCardInCombat(type);
