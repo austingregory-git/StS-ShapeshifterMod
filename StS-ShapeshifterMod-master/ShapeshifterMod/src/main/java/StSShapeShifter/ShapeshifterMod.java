@@ -3,10 +3,8 @@ package StSShapeShifter;
 import StSShapeShifter.cards.*;
 import StSShapeShifter.cards.tempCards.*;
 import StSShapeShifter.characters.ShapeShifter;
-import StSShapeShifter.potions.AnimalAmalgamationPotion;
-import StSShapeShifter.potions.DeathWeedPotion;
-import StSShapeShifter.potions.GreenSmoothie;
-import StSShapeShifter.potions.PotionOfTheGoldenFlower;
+import StSShapeShifter.events.MysteriousCreatureEvent;
+import StSShapeShifter.potions.*;
 import StSShapeShifter.relics.*;
 import StSShapeShifter.util.IDCheckDontTouchPls;
 import StSShapeShifter.util.TextureLoader;
@@ -27,6 +25,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
@@ -327,6 +326,7 @@ public class ShapeshifterMod implements
         // If you want to have a character-specific event, look at slimebound (CityRemoveEventPatch).
         // Essentially, you need to patch the game and say "if a player is not playing my character class, remove the event from the pool"
         //BaseMod.addEvent(IdentityCrisisEvent.ID, IdentityCrisisEvent.class, TheCity.ID);
+        BaseMod.addEvent(MysteriousCreatureEvent.ID, MysteriousCreatureEvent.class, Exordium.ID);
         
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");
@@ -348,6 +348,7 @@ public class ShapeshifterMod implements
         BaseMod.addPotion(GreenSmoothie.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, AnimalAmalgamationPotion.POTION_ID, ShapeShifter.Enums.SHAPESHIFTER);
         BaseMod.addPotion(PotionOfTheGoldenFlower.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, AnimalAmalgamationPotion.POTION_ID, ShapeShifter.Enums.SHAPESHIFTER);
         BaseMod.addPotion(DeathWeedPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, AnimalAmalgamationPotion.POTION_ID, ShapeShifter.Enums.SHAPESHIFTER);
+        BaseMod.addPotion(PolyBeastPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, AnimalAmalgamationPotion.POTION_ID, ShapeShifter.Enums.SHAPESHIFTER);
 
         logger.info("Done editing potions");
     }

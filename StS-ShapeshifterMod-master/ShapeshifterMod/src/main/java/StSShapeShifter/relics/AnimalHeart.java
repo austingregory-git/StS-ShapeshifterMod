@@ -6,10 +6,7 @@
 package StSShapeShifter.relics;
 
 import StSShapeShifter.ShapeshifterMod;
-import StSShapeShifter.potions.AnimalAmalgamationPotion;
-import StSShapeShifter.potions.DeathWeedPotion;
-import StSShapeShifter.potions.GreenSmoothie;
-import StSShapeShifter.potions.PotionOfTheGoldenFlower;
+import StSShapeShifter.potions.*;
 import StSShapeShifter.powers.FreeFormPower;
 import StSShapeShifter.util.TextureLoader;
 import basemod.abstracts.CustomRelic;
@@ -47,6 +44,7 @@ public class AnimalHeart extends CustomRelic {
         this.flash();
         this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FreeFormPower(AbstractDungeon.player, 1), 1));
         this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        //this.addToBot(new ObtainPotionAction(new PolyBeastPotion()));
     }
     public AbstractRelic makeCopy() {
         return new AnimalHeart();

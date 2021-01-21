@@ -94,6 +94,9 @@ public class AbstractStancePatch {
             if (stanceID.equals(PantherFormStance.STANCE_ID)) {
                 return SpireReturn.Return(new PantherFormStance());
             }
+            if (stanceID.equals(UnicornFormStance.STANCE_ID)) {
+                return SpireReturn.Return(new UnicornFormStance());
+            }
 
             return SpireReturn.Continue();
         }

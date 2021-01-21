@@ -14,5 +14,9 @@
         "StSShapeShifter:GreenSmoothie": {
                 "NAME": "Green Smoothie",
                 "DESCRIPTIONS": ["For the rest of combat, gain 1 energy at the start of each turn."]
+        },
+        "StSShapeShifter:PolyBeastPotion": {
+                "NAME": "Poly Beast Potion",
+                "DESCRIPTIONS": ["Play 3 random forms."]
         }
 }

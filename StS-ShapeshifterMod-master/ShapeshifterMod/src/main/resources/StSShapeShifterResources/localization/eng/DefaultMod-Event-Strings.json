@@ -17,5 +17,23 @@
       "[Leave]",
       "Select card to remove."
     ]
+  },
+
+  "StSShapeShifter:MysteriousCreatureEvent": {
+    "NAME": "Mysterious Creature",
+    "DESCRIPTIONS": [
+      "You hear a terrifying growl near you. As the fear inside you subsides, you slowly encroach the creature that emitted such a sound. Beyond a cluster of trees, you see the silhouette of some sort of beast.",
+      "You approach the creature slowly, watch it closely, and practice shifting into the beast until you master it.",
+      "You slay the beast and collect the bounty.",
+      "You narrowly avoid the beast's attention."
+    ],
+    "OPTIONS": [
+      "[Observe] #gObtain #ga #gspecial #gForm.",
+      "[Hunt] Collect the bounty on the beast: #ggain #g",
+      " #ggold. #rlose #r",
+      " #rHP.",
+      "[Flee] Run away from the beast.",
+      "[Leave]"
+    ]
   }
 }
