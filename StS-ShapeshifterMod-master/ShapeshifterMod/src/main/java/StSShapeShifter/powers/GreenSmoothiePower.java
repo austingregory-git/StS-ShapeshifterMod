@@ -20,8 +20,8 @@ public class GreenSmoothiePower extends AbstractPower implements CloneablePowerI
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
-    private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/DiverseSpiritPower84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/DiverseSpiritPower32.png");
+    private static final Texture tex84 = TextureLoader.getTexture(ShapeshifterMod.powerImg84FromId(POWER_ID));
+    private static final Texture tex32 = TextureLoader.getTexture(ShapeshifterMod.powerImg32FromId(POWER_ID));
 
     public GreenSmoothiePower(AbstractCreature owner, int amount) {
         name = NAME;

@@ -4,6 +4,7 @@ import StSShapeShifter.cards.*;
 import StSShapeShifter.cards.tempCards.*;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.events.MysteriousCreatureEvent;
+import StSShapeShifter.events.ViolentStormsEvent;
 import StSShapeShifter.potions.*;
 import StSShapeShifter.relics.*;
 import StSShapeShifter.util.IDCheckDontTouchPls;
@@ -26,6 +27,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
@@ -326,8 +328,9 @@ public class ShapeshifterMod implements
         // If you want to have a character-specific event, look at slimebound (CityRemoveEventPatch).
         // Essentially, you need to patch the game and say "if a player is not playing my character class, remove the event from the pool"
         //BaseMod.addEvent(IdentityCrisisEvent.ID, IdentityCrisisEvent.class, TheCity.ID);
-        BaseMod.addEvent(MysteriousCreatureEvent.ID, MysteriousCreatureEvent.class, Exordium.ID);
-        
+        BaseMod.addEvent(MysteriousCreatureEvent.ID, MysteriousCreatureEvent.class);
+        BaseMod.addEvent(ViolentStormsEvent.ID, ViolentStormsEvent.class);
+
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");
     }
@@ -545,6 +548,7 @@ public class ShapeshifterMod implements
         BaseMod.addCard(new WolfsBane());
         BaseMod.addCard(new UnicornForm());
         BaseMod.addCard(new Star());
+        BaseMod.addCard(new StormGryphonForm());
 
 
 

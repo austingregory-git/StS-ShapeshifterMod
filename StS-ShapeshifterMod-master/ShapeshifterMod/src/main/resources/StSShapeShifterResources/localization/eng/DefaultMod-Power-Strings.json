@@ -11,6 +11,10 @@
           "NAME": "Deep Wound",
           "DESCRIPTIONS": ["Whenever this creature attacks, it takes 3(4) damage", "random enemy", "hello"]
         },
+        "StSShapeShifter:PlayerFlightPower": {
+          "NAME": "Flight",
+          "DESCRIPTIONS": ["Take 50% reduced damage."]
+        },
         "StSShapeShifter:SapBurstPower": {
           "NAME": "Sap Burst",
           "DESCRIPTIONS": ["At the end of your turn, reduce a random enemy's strength by #b"]
@@ -130,6 +134,10 @@
         "StSShapeShifter:UnicornFormPower": {
           "NAME": "Unicorn Form",
           "DESCRIPTIONS": ["While in Unicorn #yForm, Reduce the cost of a random card in your hand to 0 for this turn.", "While in Unicorn #yForm, Upgrade and reduce the cost of a random card in your hand to 0 for this turn."]
+        },
+        "StSShapeShifter:StormGryphonFormPower": {
+          "NAME": "Storm Gryphon Form",
+          "DESCRIPTIONS": ["While in Storm Gryphon #yForm, at the end of your turn, deal #b", " damage to all enemies. This effect grows by #b", " each turn until you exit Storm Gryphon #yForm"]
         },
         "StSShapeShifter:DodgePower": {
           "NAME": "Dodge",

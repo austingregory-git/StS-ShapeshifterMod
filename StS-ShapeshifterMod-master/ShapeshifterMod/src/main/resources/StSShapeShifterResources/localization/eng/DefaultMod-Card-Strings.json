@@ -291,6 +291,10 @@
     "DESCRIPTION": "Upon Entering Unicorn Form, shuffle !M! Stars into your draw pile. While in Unicorn Form, at the start of your turn, reduce the cost of a random card in your hand to 0 for this turn.",
     "UPGRADE_DESCRIPTION": "Upon Entering Unicorn Form, shuffle !M! Stars into your draw pile. While in Unicorn Form, at the start of your turn, upgrade and reduce the cost of a random card in your hand to 0 for this turn."
   },
+  "StSShapeShifter:StormGryphonForm": {
+    "NAME": "Storm Gryphon Form",
+    "DESCRIPTION": "Upon Entering Gryphon Form, gain !M! Flight. While in Storm Gryphon Form, at the end of your turn, deal !StSShapeShifter:SecondMagic! damage to all enemies. This effect grows by !StSShapeShifter:Grow! each turn until you exit Storm Gryphon Form."
+  },
   "StSShapeShifter:WaspSwarmForm": {
     "NAME": "Wasp Swarm Form",
     "DESCRIPTION": "Upon Entering Wasp Swarm Form, Apply X Weak and Poison to all enemies. While in Wasp Swarm Form, deal 2 damage X times to all enemies at the start of your turn.",
