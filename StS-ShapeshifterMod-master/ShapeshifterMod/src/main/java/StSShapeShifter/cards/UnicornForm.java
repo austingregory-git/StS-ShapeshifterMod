@@ -1,12 +1,15 @@
 package StSShapeShifter.cards;
 
 import StSShapeShifter.ShapeshifterMod;
+import StSShapeShifter.cards.tempCards.Star;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.UnicornFormPower;
 import StSShapeShifter.powers.WolfFormPower;
 import StSShapeShifter.stances.UnicornFormStance;
 import StSShapeShifter.stances.WolfFormStance;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -28,7 +31,7 @@ public class UnicornForm extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
@@ -48,12 +51,12 @@ public class UnicornForm extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
+        this.addToBot(new MakeTempCardInDrawPileAction(new Star(), this.magicNumber, true, true));
 
         if(!p.stance.ID.equals(UnicornFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             this.addToBot(new ApplyPowerAction(p, p, new UnicornFormPower(p, upgraded)));
-            this.addToBot(new ChangeStanceAction(WolfFormStance.STANCE_ID));
-            CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_WolfForm"));
+            this.addToBot(new ChangeStanceAction(UnicornFormStance.STANCE_ID));
+            CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_UnicornForm"));
         }
     }
 

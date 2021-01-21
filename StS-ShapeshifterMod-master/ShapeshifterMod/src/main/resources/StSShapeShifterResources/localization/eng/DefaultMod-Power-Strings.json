@@ -127,6 +127,10 @@
           "NAME": "Panther Form",
           "DESCRIPTIONS": ["While in Panther #yForm, gain #b", " strength at the end of your turn. #b", " turns remaining."]
         },
+        "StSShapeShifter:UnicornFormPower": {
+          "NAME": "Unicorn Form",
+          "DESCRIPTIONS": ["While in Unicorn #yForm, Reduce the cost of a random card in your hand to 0 for this turn.", "While in Unicorn #yForm, Upgrade and reduce the cost of a random card in your hand to 0 for this turn."]
+        },
         "StSShapeShifter:DodgePower": {
           "NAME": "Dodge",
           "DESCRIPTIONS": ["Prevent the next source of damage you take."]

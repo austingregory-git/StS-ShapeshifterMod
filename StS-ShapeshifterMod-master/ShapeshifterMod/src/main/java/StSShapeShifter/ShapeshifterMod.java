@@ -543,6 +543,8 @@ public class ShapeshifterMod implements
         BaseMod.addCard(new CosmicShifter());
         BaseMod.addCard(new Synchronicity());
         BaseMod.addCard(new WolfsBane());
+        BaseMod.addCard(new UnicornForm());
+        BaseMod.addCard(new Star());
 
 
 
@@ -648,6 +650,7 @@ public class ShapeshifterMod implements
     @Override
     public void receiveAddAudio() {
         logger.info("in receive add audio");
+        String sound_dir = "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/";
         BaseMod.addAudio(makeID("SFX_Flood"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/Flood_SFX.ogg");
         BaseMod.addAudio(makeID("SFX_LionForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/LionForm_SFX.ogg");
         BaseMod.addAudio(makeID("SFX_LynxForm"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/LynxForm_SFX.ogg");
@@ -680,12 +683,25 @@ public class ShapeshifterMod implements
         BaseMod.addAudio(makeID("SFX_RockSlide"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/RockSlide_SFX.ogg");
         BaseMod.addAudio(makeID("SFX_UprootRedwood"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/UprootRedwood_SFX.ogg");
         BaseMod.addAudio(makeID("SFX_FullMoon"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/FullMoon_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_UnicornForm"), sound_dir + "UnicornForm_SFX.ogg");
     }
 
     public static String imgFromId(String id) {
         String unprefixedId = id.replace(ShapeshifterMod.getModID() + ":","");
         return ShapeshifterMod.makeCardPath(String.format("card-art-generated/%1$s.png", unprefixedId));
     }
+
+    public static String powerImg84FromId(String id) {
+        String unprefixedId = id.replace(ShapeshifterMod.getModID() + ":","");
+        return ShapeshifterMod.makePowerPath(String.format("%1$s84.png", unprefixedId));
+    }
+
+    public static String powerImg32FromId(String id) {
+        String unprefixedId = id.replace(ShapeshifterMod.getModID() + ":","");
+        logger.info(ShapeshifterMod.makePowerPath(String.format("%1s32.png", unprefixedId)));
+        return ShapeshifterMod.makePowerPath(String.format("%1$s32.png", unprefixedId));
+    }
+
 
     // this adds "ModName:" before the ID of any card/relic/power etc.
     // in order to avoid conflicts if any other mod uses the same ID.

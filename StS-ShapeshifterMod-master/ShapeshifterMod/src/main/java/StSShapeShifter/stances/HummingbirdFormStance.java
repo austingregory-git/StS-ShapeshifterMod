@@ -30,7 +30,7 @@ public class HummingbirdFormStance extends AbstractStance {
 
     public HummingbirdFormStance() {
         this.ID = STANCE_ID;
-        this.name = NAME;
+        this.name = STANCE_ID;
         this.updateDescription();
         this.owner = AbstractDungeon.player;
     }

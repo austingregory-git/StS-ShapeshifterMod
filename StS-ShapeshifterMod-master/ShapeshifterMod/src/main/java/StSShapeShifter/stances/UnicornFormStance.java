@@ -12,14 +12,14 @@ import com.megacrit.cardcrawl.stances.AbstractStance;
 
 public class UnicornFormStance extends AbstractStance {
     public static final String STANCE_ID = UnicornFormStance.class.getSimpleName();
-    public static final String NAME = "Wolf Form Stance";
+    public static final String NAME = "UnicornFormStance";
     private static final StanceStrings stanceString;
     private static long sfxId;
     private final AbstractPlayer owner;
 
     public UnicornFormStance() {
         this.ID = STANCE_ID;
-        this.name = NAME;
+        this.name = STANCE_ID;
         this.updateDescription();
         this.owner = AbstractDungeon.player;
     }

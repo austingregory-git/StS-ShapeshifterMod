@@ -19,6 +19,11 @@
     "NAME": "Banana",
     "DESCRIPTION": "Gain !M! Dexterity. Exhaust."
   },
+  "StSShapeShifter:Star": {
+    "NAME": "Star",
+    "DESCRIPTION": "Draw !M! card and reduce its cost to 0 for this turn. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards and reduce their costs to 0 for this turn. Exhaust."
+  },
   "StSShapeShifter:Pineapple": {
     "NAME": "Pineapple",
     "DESCRIPTION": "Gain !M! Thorns. Exhaust."
@@ -281,6 +286,11 @@
     "NAME": "Panther Form",
     "DESCRIPTION": "Upon Entering Panther Form, your next attack or damaging Form deals double damage. While in Panther Form, gain !M! Strength at the end of your turn. Lasts 3 turns. Exhaust."
   },
+  "StSShapeShifter:UnicornForm": {
+    "NAME": "Unicorn Form",
+    "DESCRIPTION": "Upon Entering Unicorn Form, shuffle !M! Stars into your draw pile. While in Unicorn Form, at the start of your turn, reduce the cost of a random card in your hand to 0 for this turn.",
+    "UPGRADE_DESCRIPTION": "Upon Entering Unicorn Form, shuffle !M! Stars into your draw pile. While in Unicorn Form, at the start of your turn, upgrade and reduce the cost of a random card in your hand to 0 for this turn."
+  },
   "StSShapeShifter:WaspSwarmForm": {
     "NAME": "Wasp Swarm Form",
     "DESCRIPTION": "Upon Entering Wasp Swarm Form, Apply X Weak and Poison to all enemies. While in Wasp Swarm Form, deal 2 damage X times to all enemies at the start of your turn.",
@@ -419,7 +429,7 @@
   },
   "StSShapeShifter:Ensconce": {
     "NAME": "Ensconce",
-    "DESCRIPTION": "If you haven't changed forms this turn, increase the value of your current form by !M!."
+    "DESCRIPTION": "At the end of your turn, if you haven't changed forms this turn, increase the value of your current form by !M!."
   },
   "StSShapeShifter:BaskInBloom": {
     "NAME": "Bask in Bloom",

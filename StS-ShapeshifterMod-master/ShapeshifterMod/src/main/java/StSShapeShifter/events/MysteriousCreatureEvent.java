@@ -2,6 +2,7 @@ package StSShapeShifter.events;
 
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.cards.DragonForm;
+import StSShapeShifter.cards.UnicornForm;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -67,7 +68,7 @@ public class MysteriousCreatureEvent extends AbstractImageEvent {
                          // Screen set the screen number to 1. Once we exit the switch (i) statement,
                         // we'll still continue the switch (screenNum) statement. It'll find screen 1 and do it's actions
                         // (in our case, that's the final screen, but you can chain as many as you want like that)
-                        AbstractCard c = new DragonForm();
+                        AbstractCard c = new UnicornForm();
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, (float)Settings.WIDTH * 0.3F, (float)Settings.HEIGHT / 2.0F));
                         this.screenNum = 1;

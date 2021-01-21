@@ -1,6 +1,7 @@
 package StSShapeShifter.powers;
 
 import StSShapeShifter.ShapeshifterMod;
+import StSShapeShifter.actions.UnicornFormAction;
 import StSShapeShifter.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import javafx.scene.shape.Shape;
 
 public class UnicornFormPower extends AbstractFormPower implements CloneablePowerInterface {
     public AbstractCreature source;
@@ -23,8 +25,10 @@ public class UnicornFormPower extends AbstractFormPower implements CloneablePowe
     public boolean upgraded;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
-    private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/WolfFormPower84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/WolfFormPower32.png");
+    //private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/UnicornFormPower84.png");
+    private static final Texture tex84 = TextureLoader.getTexture(ShapeshifterMod.powerImg84FromId(POWER_ID));
+    //private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/UnicornFormPower32.png");
+    private static final Texture tex32 = TextureLoader.getTexture(ShapeshifterMod.powerImg32FromId(POWER_ID));
 
     public UnicornFormPower(final AbstractCreature owner, boolean upgraded) {
         name = NAME;
@@ -47,7 +51,7 @@ public class UnicornFormPower extends AbstractFormPower implements CloneablePowe
 
     @Override
     public void atStartOfTurnPostDraw() {
-
+        this.addToBot(new UnicornFormAction(this.upgraded));
     }
 
     @Override

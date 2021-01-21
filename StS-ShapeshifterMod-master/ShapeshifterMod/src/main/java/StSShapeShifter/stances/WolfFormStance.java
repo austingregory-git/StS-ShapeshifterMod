@@ -31,7 +31,7 @@ public class WolfFormStance extends AbstractStance {
 
     public WolfFormStance() {
         this.ID = STANCE_ID;
-        this.name = NAME;
+        this.name = STANCE_ID;
         //this.name = null;
         this.updateDescription();
         this.owner = AbstractDungeon.player;

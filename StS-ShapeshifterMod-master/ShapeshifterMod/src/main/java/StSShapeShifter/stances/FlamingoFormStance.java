@@ -22,7 +22,7 @@ public class FlamingoFormStance extends AbstractStance {
 
     public FlamingoFormStance() {
         this.ID = STANCE_ID;
-        this.name = NAME;
+        this.name = STANCE_ID;
         //this.name = null;
         this.updateDescription();
         this.owner = AbstractDungeon.player;
