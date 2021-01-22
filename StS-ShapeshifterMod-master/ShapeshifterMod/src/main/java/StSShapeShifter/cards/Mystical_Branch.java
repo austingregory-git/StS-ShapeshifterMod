@@ -36,8 +36,8 @@ public class Mystical_Branch extends AbstractGrowCard {
     private static final int COST = 2;  // COST = ${COST}
     private static final int UPGRADED_COST = 2; // UPGRADED_COST = ${UPGRADED_COST}
 
-    private static final int DAMAGE = 12;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = 3;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int DAMAGE = 14;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADE_PLUS_DMG = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
 
@@ -64,7 +64,7 @@ public class Mystical_Branch extends AbstractGrowCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(2);
+            upgradeDamage(UPGRADE_PLUS_DMG);
             upgradeGrowValue(2);
             upgradeBaseCost(UPGRADED_COST);
             initializeDescription();

@@ -14,6 +14,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import java.awt.*;
+
 public class PlayerFlightPower extends AbstractFormPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
@@ -21,7 +23,6 @@ public class PlayerFlightPower extends AbstractFormPower implements CloneablePow
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    public int amount;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     //private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/MammothFormPower84.png");
@@ -51,9 +52,12 @@ public class PlayerFlightPower extends AbstractFormPower implements CloneablePow
 
     public void atEndOfRound() {
         this.flash();
+        ShapeshifterMod.logger.info(this.amount);
         if (this.amount == 0) {
+            ShapeshifterMod.logger.info("removing flight");
             this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, PlayerFlightPower.POWER_ID));
         } else {
+            ShapeshifterMod.logger.info(PlayerFlightPower.POWER_ID);
             this.addToBot(new ReducePowerAction(this.owner, this.owner, PlayerFlightPower.POWER_ID, 1));
         }
 

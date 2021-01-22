@@ -81,8 +81,8 @@ public class SkullBash extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            initializeDescription();
             this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

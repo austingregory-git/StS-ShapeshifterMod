@@ -1,8 +1,10 @@
 package StSShapeShifter.cards;
 
+import StSShapeShifter.actions.ModifyMagicAction;
 import StSShapeShifter.characters.ShapeShifter;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ModifyBlockAction;
 import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -58,6 +60,16 @@ public class MysticalSeed extends AbstractGrowCard {
         int mod = (this.baseDamage * this.growValue) - this.baseDamage;
         this.addToBot(new ModifyDamageAction(this.uuid, mod));
         updateBloomCount(mod);
+    }
+
+    @Override
+    public void simulateGrow(int times) {
+        for(int i=0; i<times; i++) {
+            this.addToBot(new ModifyDamageAction(this.uuid, (this.growValue * this.baseDamage) - this.baseDamage));
+            this.addToBot(new ModifyBlockAction(this.uuid, this.growValue));
+            this.addToBot(new ModifyMagicAction(this.uuid, this.growValue));
+            updateBloomCount(this.growValue);
+        }
     }
 
 

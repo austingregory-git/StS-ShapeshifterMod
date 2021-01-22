@@ -59,7 +59,7 @@ public class StormGryphonForm extends AbstractGrowCard {
         if(!p.stance.ID.equals(StormGryphonFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
             this.addToBot(new ApplyPowerAction(p, p, new StormGryphonFormPower(p, this.defaultSecondMagicNumber, this.growValue)));
             this.addToBot(new ChangeStanceAction(StormGryphonFormStance.STANCE_ID));
-            CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_UnicornForm"));
+            CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_StormGryphonForm"));
         }
     }
 

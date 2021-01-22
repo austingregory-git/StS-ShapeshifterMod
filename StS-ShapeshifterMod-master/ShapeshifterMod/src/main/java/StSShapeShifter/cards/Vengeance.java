@@ -63,6 +63,12 @@ public class Vengeance extends AbstractDynamicCard {
         this.initializeDescription();
     }
 
+    @Override
+    public void atTurnStart() {
+        this.baseDamage = DAMAGE + GameActionManager.damageReceivedThisCombat;
+        this.initializeDescription();
+    }
+
     // Upgraded stats.
     @Override
     public void upgrade() {

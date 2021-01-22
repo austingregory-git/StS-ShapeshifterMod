@@ -90,6 +90,9 @@ public class FoxDigAction extends AbstractGameAction {
                     relic.flash();
                 } else if (relicTierRoll < 95) {
                     AbstractRelic relic = AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.UNCOMMON);
+                    while(relic.relicId.equals(BottledFlame.ID) || relic.relicId.equals(BottledTornado.ID) || relic.relicId.equals(BottledLightning.ID)) {
+                        relic = AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.UNCOMMON);
+                    }
                     relic.instantObtain();
                     CardCrawlGame.metricData.addRelicObtainData(relic);
                     relic.flash();

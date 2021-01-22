@@ -39,7 +39,7 @@ public class Blossom2 extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
 
-    private static final int COST = 3;
+    private static final int COST = 2;
     private static final int UPGRADE_BASE_COST = 2;
 
     private int count = 0;
@@ -50,6 +50,7 @@ public class Blossom2 extends AbstractDynamicCard {
     public Blossom2() {
         super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
+        this.exhaust = true;
     }
 
     // Actions the card should do.

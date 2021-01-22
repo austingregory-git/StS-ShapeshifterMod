@@ -80,7 +80,8 @@ public class ShapeshifterMod implements
     private static final String POWER_DEFAULT_GRAY = "StSShapeShifterResources/images/512/bg_power_default_gray.png";
     
     private static final String ENERGY_ORB_DEFAULT_GRAY = "StSShapeShifterResources/images/512/card_default_gray_orb.png";
-    private static final String CARD_ENERGY_ORB = "StSShapeShifterResources/images/512/card_small_orb.png";
+    private static final String ENERGY_ORB_SHAPESHIFTER_BROWN = "StSShapeShifterResources/images/512/card_ss_orb3.png";
+    private static final String CARD_ENERGY_ORB = "StSShapeShifterResources/images/512/SSEnergyOrb2.png";
     
     private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "StSShapeShifterResources/images/1024/bg_attack_default_gray.png";
     private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "StSShapeShifterResources/images/1024/bg_skill_default_gray.png";
@@ -94,11 +95,14 @@ public class ShapeshifterMod implements
     private static final String THE_SHAPESHIFTER_PORTRAIT = "StSShapeShifterResources/images/charSelect/shapeshifter_portrait_bg2.png";
     public static final String THE_DEFAULT_SHOULDER_1 = "StSShapeShifterResources/images/char/defaultCharacter/shoulder.png";
     public static final String THE_DEFAULT_SHOULDER_2 = "StSShapeShifterResources/images/char/defaultCharacter/shoulder2.png";
+    public static final String THE_SHAPESHIFTER_SHOULDER_1 = "StSShapeShifterResources/images/char/defaultCharacter/ShapeShifterShoulder.png";
+    public static final String THE_SHAPESHIFTER_SHOULDER_2 = "StSShapeShifterResources/images/char/defaultCharacter/ShapeShifterShoulder.png";
     public static final String THE_DEFAULT_CORPSE = "StSShapeShifterResources/images/char/defaultCharacter/corpse.png";
-    
+    public static final String THE_SHAPESHIFTER_CORPSE = "StSShapeShifterResources/images/char/defaultCharacter/ShapeShifterCorpse.png";
+
     //Mod Badge - A small icon that appears in the mod settings menu next to your mod.
     public static final String BADGE_IMAGE = "StSShapeShifterResources/images/Badge.png";
-    
+
     // Atlas and JSON files for the Animations
     public static final String THE_DEFAULT_SKELETON_ATLAS = "StSShapeShifterResources/images/char/defaultCharacter/skeleton.atlas";
     public static final String THE_DEFAULT_SKELETON_JSON = "StSShapeShifterResources/images/char/defaultCharacter/skeleton.json";
@@ -189,11 +193,11 @@ public class ShapeshifterMod implements
                 "StSShapeShifterResources/images/512/card_bg_ss_512.png",
                 "StSShapeShifterResources/images/512/card_bg_ss_512.png",
                 "StSShapeShifterResources/images/512/card_bg_ss_512.png",
-                ENERGY_ORB_DEFAULT_GRAY,
+                ENERGY_ORB_SHAPESHIFTER_BROWN,
                 ATTACK_DEFAULT_GRAY_PORTRAIT,
                 SKILL_DEFAULT_GRAY_PORTRAIT,
                 POWER_DEFAULT_GRAY_PORTRAIT,
-                ENERGY_ORB_DEFAULT_GRAY_PORTRAIT,
+                ENERGY_ORB_SHAPESHIFTER_BROWN,
                 CARD_ENERGY_ORB);
 
         logger.info("Done creating the color");
@@ -688,6 +692,7 @@ public class ShapeshifterMod implements
         BaseMod.addAudio(makeID("SFX_UprootRedwood"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/UprootRedwood_SFX.ogg");
         BaseMod.addAudio(makeID("SFX_FullMoon"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/FullMoon_SFX.ogg");
         BaseMod.addAudio(makeID("SFX_UnicornForm"), sound_dir + "UnicornForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_StormGryphonForm"), sound_dir + "StormGryphonForm_SFX.ogg");
     }
 
     public static String imgFromId(String id) {

@@ -58,7 +58,7 @@ public class PowerShifter extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADE_COST);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

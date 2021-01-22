@@ -63,7 +63,7 @@ public class Efflorescence extends AbstractGrowCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.upgradeGrowValue(1);
+            this.upgradeMagicNumber(1);
             initializeDescription();
         }
     }

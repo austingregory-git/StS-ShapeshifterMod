@@ -74,7 +74,7 @@ public class FullMoonPower extends AbstractPower implements CloneablePowerInterf
     }
 
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-        if (AllForms.getAllForms().contains(card.cardID) && !card.purgeOnUse && this.amount > 0 && !AbstractDungeon.player.hasPower(FreeFormPower.POWER_ID)) {
+        if (AllForms.getAllForms().contains(card.cardID) && !card.purgeOnUse && this.amount > 0 && !AbstractDungeon.player.hasPower(FreeFormPower.POWER_ID) && (card instanceof AbstractShapeShifterCard && ((AbstractShapeShifterCard) card).ModifiedCostCode == 3)) {
             count++;
             this.reducePower(1);
             if(count == amount) {

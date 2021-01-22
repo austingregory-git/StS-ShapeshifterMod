@@ -53,8 +53,11 @@ public class BurstOfLifeEscapeDeath extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.triggerOnGlowCheck();
-        if(BloomCountUtils.getBloomCount() > 0)
+        if(BloomCountUtils.getBloomCount() > 0) {
+            calculateCardDamage(m);
+            this.applyPowers();
             this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+        }
         else {
             ShapeshifterMod.logger.info(this.baseBlock);
             ShapeshifterMod.logger.info(this.block);
@@ -71,6 +74,14 @@ public class BurstOfLifeEscapeDeath extends AbstractDynamicCard {
         this.baseDamage = BloomCountUtils.getBloomCount();
         super.calculateCardDamage(mo);
     }
+
+    @Override
+    public void atTurnStart() {
+        this.baseDamage = BloomCountUtils.getBloomCount();
+        this.baseBlock = Math.abs(BloomCountUtils.getBloomCount());
+        super.atTurnStart();
+    }
+
 
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         boolean canUse = super.canUse(p, m);

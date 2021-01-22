@@ -66,7 +66,10 @@ public class ShiftingStrike extends AbstractDynamicCard {
             this.setCostForTurn(-9);
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-            this.setCostForTurn(this.cost);
+            if(this.ModifiedCostCode == 0) {
+                this.setCostForTurn(this.cost);
+            }
+
         }
 
     }

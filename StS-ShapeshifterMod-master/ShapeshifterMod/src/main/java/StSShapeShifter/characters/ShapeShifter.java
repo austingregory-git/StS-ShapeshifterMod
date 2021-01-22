@@ -87,17 +87,17 @@ public class ShapeShifter extends CustomPlayer {
     // =============== TEXTURES OF BIG ENERGY ORB ===============
 
     public static final String[] orbTextures = {
-            "StSShapeShifterResources/images/char/defaultCharacter/orb/layer1.png",
-            "StSShapeShifterResources/images/char/defaultCharacter/orb/layer2.png",
-            "StSShapeShifterResources/images/char/defaultCharacter/orb/layer3.png",
-            "StSShapeShifterResources/images/char/defaultCharacter/orb/layer4.png",
-            "StSShapeShifterResources/images/char/defaultCharacter/orb/layer5.png",
-            "StSShapeShifterResources/images/char/defaultCharacter/orb/layer6.png",
-            "StSShapeShifterResources/images/char/defaultCharacter/orb/layer1d.png",
-            "StSShapeShifterResources/images/char/defaultCharacter/orb/layer2d.png",
-            "StSShapeShifterResources/images/char/defaultCharacter/orb/layer3d.png",
-            "StSShapeShifterResources/images/char/defaultCharacter/orb/layer4d.png",
-            "StSShapeShifterResources/images/char/defaultCharacter/orb/layer5d.png",};
+            "StSShapeShifterResources/images/char/defaultCharacter/orb/ss_layer1.png",
+            "StSShapeShifterResources/images/char/defaultCharacter/orb/ss_layer2.png",
+            "StSShapeShifterResources/images/char/defaultCharacter/orb/ss_layer3.png",
+            "StSShapeShifterResources/images/char/defaultCharacter/orb/ss_layer4.png",
+            "StSShapeShifterResources/images/char/defaultCharacter/orb/ss_layer5.png",
+            "StSShapeShifterResources/images/char/defaultCharacter/orb/ss_layer6_2.png",
+            "StSShapeShifterResources/images/char/defaultCharacter/orb/ss_layer1d.png",
+            "StSShapeShifterResources/images/char/defaultCharacter/orb/ss_layer2d.png",
+            "StSShapeShifterResources/images/char/defaultCharacter/orb/ss_layer3d.png",
+            "StSShapeShifterResources/images/char/defaultCharacter/orb/ss_layer4d.png",
+            "StSShapeShifterResources/images/char/defaultCharacter/orb/ss_layer5d.png",};
 
     // =============== /TEXTURES OF BIG ENERGY ORB/ ===============
 
@@ -109,7 +109,7 @@ public class ShapeShifter extends CustomPlayer {
                 new SpriterAnimation(
                         "StSShapeShifterResources/images/char/defaultCharacter/Spriter/theDefaultAnimation.scml"));*/
         super(name, setClass, orbTextures,
-                "StSShapeShifterResources/images/char/defaultCharacter/orb/vfx.png", null,
+                "StSShapeShifterResources/images/char/defaultCharacter/orb/ss_vfx2.png", null,
                 new SpineAnimation(SHAPESHIFTER_SKELETON_ATLAS, SHAPESHIFTER_SKELETON_JSON, 4.0F));
 
 
@@ -124,9 +124,9 @@ public class ShapeShifter extends CustomPlayer {
 
         initializeClass(null, // required call to load textures and setup energy/loadout.
                 // I left these in DefaultMod.java (Ctrl+click them to see where they are, Ctrl+hover to see what they read.)
-                THE_DEFAULT_SHOULDER_2, // campfire pose
-                THE_DEFAULT_SHOULDER_1, // another campfire pose
-                THE_DEFAULT_CORPSE, // dead corpse
+                THE_SHAPESHIFTER_SHOULDER_2, // campfire pose
+                THE_SHAPESHIFTER_SHOULDER_1, // another campfire pose
+                THE_SHAPESHIFTER_CORPSE, // dead corpse
                 getLoadout(), 0.0F, -15.0F, 240.0F, 330.0F, new EnergyManager(ENERGY_PER_TURN));
         // =============== /TEXTURES, ENERGY, LOADOUT/ =================
 

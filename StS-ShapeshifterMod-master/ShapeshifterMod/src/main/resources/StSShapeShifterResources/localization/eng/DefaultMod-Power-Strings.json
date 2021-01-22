@@ -41,7 +41,7 @@
         },
         "StSShapeShifter:BaskInBloomPower": {
           "NAME": "Bask in Bloom",
-          "DESCRIPTIONS": ["Whenever you draw a card, if you are Blooming, increase its #yGrow value.", "random enemy", "hello"]
+          "DESCRIPTIONS": ["At the start of your turn, if you are Blossoming, draw an extra card, and if you are Blooming, increase all Grow card's #yGrow value by #b"]
         },
         "StSShapeShifter:HarmonyPower": {
           "NAME": "Harmony",
