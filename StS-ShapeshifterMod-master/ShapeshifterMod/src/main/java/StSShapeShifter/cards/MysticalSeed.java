@@ -64,12 +64,15 @@ public class MysticalSeed extends AbstractGrowCard {
 
     @Override
     public void simulateGrow(int times) {
+        int mod = this.baseDamage;
         for(int i=0; i<times; i++) {
-            this.addToBot(new ModifyDamageAction(this.uuid, (this.growValue * this.baseDamage) - this.baseDamage));
+            ShapeshifterMod.logger.info(this.baseDamage);
+            mod *= this.growValue;
             this.addToBot(new ModifyBlockAction(this.uuid, this.growValue));
             this.addToBot(new ModifyMagicAction(this.uuid, this.growValue));
             updateBloomCount(this.growValue);
         }
+        this.addToBot(new ModifyDamageAction(this.uuid, mod - this.baseDamage));
     }
 
 

@@ -1,10 +1,13 @@
 package StSShapeShifter.cards;
 
+import StSShapeShifter.cards.tempCards.Cherry;
+import StSShapeShifter.cards.tempCards.Star;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.util.AllFruit;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 
@@ -49,12 +52,22 @@ public class FruitBasket extends AbstractDynamicCard {
         this.magicNumber = this.baseMagicNumber = 2;
         this.defaultBaseSecondMagicNumber = 1;
         this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;
+        ArrayList<AbstractCard> fruit = new ArrayList<AbstractCard>(AllFruit.getAllFruitCards());
+        this.cardsToPreview = fruit.get(new Random().nextInt(fruit.size()));
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         ArrayList<AbstractCard> fruit = new ArrayList<AbstractCard>(AllFruit.getAllFruitCards());
+        ArrayList<AbstractCard> cardsPlayed = AbstractDungeon.actionManager.cardsPlayedThisCombat;
+        //only get cherry once out of a fruit basket
+        //there is definitely a better way than this lmao it is 2am and brain is being fishy
+        for(AbstractCard c: cardsPlayed) {
+            if(c.cardID.equals(Cherry.ID)) {
+                fruit = new ArrayList<>(AllFruit.getAllNonHealingFruitCards());
+            }
+        }
         for(int i = 0; i<this.magicNumber; i++) {
             AbstractCard c = fruit.get(new Random().nextInt(fruit.size()));
             this.addToBot(new MakeTempCardInHandAction(c, 1));

@@ -161,11 +161,11 @@
   },
   "StSShapeShifter:Blossom": {
     "NAME": "Blossom",
-    "DESCRIPTION": "Double your current buffs"
+    "DESCRIPTION": "Double your current buffs. Exhaust."
   },
   "StSShapeShifter:Blossom2": {
     "NAME": "Blossom",
-    "DESCRIPTION": "Simulate the Growth of all of your Grow cards !M! times."
+    "DESCRIPTION": "Simulate the Growth of all of your Grow cards !M! times. Exhaust"
   },
   "StSShapeShifter:RestoreBalance": {
     "NAME": "Restore Balance",

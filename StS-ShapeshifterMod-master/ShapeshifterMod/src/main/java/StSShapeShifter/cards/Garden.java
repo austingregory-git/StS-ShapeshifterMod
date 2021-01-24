@@ -4,12 +4,17 @@ import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.GardenPower;
 import StSShapeShifter.powers.HarmonyPower;
+import StSShapeShifter.util.AllFruit;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -51,6 +56,8 @@ public class Garden extends AbstractDynamicCard {
 
         super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = baseMagicNumber = MAGIC;
+        ArrayList<AbstractCard> fruit = new ArrayList<AbstractCard>(AllFruit.getAllFruitCards());
+        this.cardsToPreview = fruit.get(new Random().nextInt(fruit.size()));
 
     }
 

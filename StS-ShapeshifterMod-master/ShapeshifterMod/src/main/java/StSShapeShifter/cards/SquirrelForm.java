@@ -55,6 +55,7 @@ public class SquirrelForm extends AbstractDynamicCard {
 
     public SquirrelForm() {
         super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
+        this.cardsToPreview = new Acorn();
     }
 
     // Actions the card should do.

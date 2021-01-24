@@ -8,6 +8,7 @@ package StSShapeShifter.relics;
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.util.AllFruit;
 import StSShapeShifter.util.TextureLoader;
+import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
@@ -21,14 +22,14 @@ import java.util.Random;
 
 import static StSShapeShifter.ShapeshifterMod.makeRelicPath;
 
-public class FruitTree extends AbstractRelic {
+public class FruitTree extends CustomRelic {
     public boolean active;
     public static final String ID = ShapeshifterMod.makeID(FruitTree.class.getSimpleName());
     private static final String PNG = ".png";
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath(FruitTree.class.getSimpleName() + PNG));
 
     public FruitTree() {
-        super(ID, "sunflower.png", RelicTier.UNCOMMON, LandingSound.SOLID);
+        super(ID, IMG, RelicTier.UNCOMMON, LandingSound.SOLID);
     }
 
     @Override

@@ -643,6 +643,7 @@ public class ShapeshifterMod implements
         BaseMod.addKeyword(new String[]{"wilt count"}, "Wilt Count is the negative number associate with the Shapeshifter's Magnolia.");
         BaseMod.addKeyword(new String[]{"massive"}, "Deals 100% of Normal enemy's HP, 50% of Elite enemy's HP, and 25% of Boss enemy's HP");
         BaseMod.addKeyword(new String[]{"deep wound"}, "Whenever this monster attacks, they take damage");
+        BaseMod.addKeyword(new String[]{"rhino form"}, "Upon Entering Rhino Form, gain plated armor. While in Rhino Form, deal damage equal to your block to the lowest HP enemy at the end of your turn. Lasts up to 3 turns.");
         /* (keywords != null) {
             for (Keyword keyword : keywords) {
                 //BaseMod.addKeyword(getModID().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);

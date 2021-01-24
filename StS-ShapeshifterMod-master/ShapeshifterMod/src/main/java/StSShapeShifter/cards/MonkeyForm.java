@@ -20,6 +20,8 @@ import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
 
+import java.util.Random;
+
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
 public class MonkeyForm extends AbstractDynamicCard {
@@ -50,6 +52,7 @@ public class MonkeyForm extends AbstractDynamicCard {
     public MonkeyForm() {
         super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
+        this.cardsToPreview = new Banana();
     }
 
     // Actions the card should do.

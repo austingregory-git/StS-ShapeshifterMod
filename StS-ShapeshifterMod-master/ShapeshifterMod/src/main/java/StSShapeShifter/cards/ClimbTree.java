@@ -2,6 +2,7 @@ package StSShapeShifter.cards;
 
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.actions.ModifyMagicAction;
+import StSShapeShifter.cards.tempCards.Star;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.DodgePower;
 import StSShapeShifter.util.AllFruit;
@@ -58,6 +59,7 @@ public class ClimbTree extends AbstractDynamicCard {
         super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         this.magicNumber = this.baseMagicNumber = 1;
+        this.cardsToPreview = new FallingLeaves();
 
     }
 

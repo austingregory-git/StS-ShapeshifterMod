@@ -20,4 +20,8 @@ public class AllFruit {
         return new ArrayList<AbstractCard>(Arrays.asList(new Banana(), new Pineapple(), new Dragonfruit(), new Cherry(), new Avocado()));
 
     }
+    public static ArrayList<AbstractCard> getAllNonHealingFruitCards() {
+        return new ArrayList<AbstractCard>(Arrays.asList(new Banana(), new Pineapple(), new Dragonfruit(), new Avocado()));
+
+    }
 }
