@@ -628,7 +628,7 @@ public class ShapeshifterMod implements
         
         Gson gson = new Gson();
         String json = Gdx.files.internal(getModID() + "Resources/localization/eng/DefaultMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
-        com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
+        //com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
         BaseMod.addKeyword(new String[]{"grow"}, "Whenever you play this card, it is improved for the rest of combat");
         BaseMod.addKeyword(new String[]{"wither"}, "Whenever you play this card, it is worsened for the rest of combat");
         BaseMod.addKeyword(new String[]{"form"}, "You can only occupy one Form at a time. Forms perform some effect upon entrance, and have a persisting effect while you remain in that Form.");

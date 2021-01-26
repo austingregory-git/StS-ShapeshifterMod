@@ -2,13 +2,16 @@ package StSShapeShifter.cards;
 
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.characters.ShapeShifter;
+import StSShapeShifter.util.AllForms;
 import StSShapeShifter.util.BloomCountUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -40,6 +43,8 @@ public class BladeOfGrass extends AbstractGrowCard {
     private static final int UPGRADED_COST = 1; // UPGRADED_COST = ${UPGRADED_COST}
 
     private static final int DAMAGE = 8;    // DAMAGE = ${DAMAGE}
+    private static final int GROW = 2;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADED_GROW = 3;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
     private static final int UPGRADE_PLUS_GROW = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
@@ -50,24 +55,42 @@ public class BladeOfGrass extends AbstractGrowCard {
     public BladeOfGrass() {
         super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        this.growValue = this.baseGrowValue = 2;
+        this.growValue = this.baseGrowValue = GROW;
+        if(upgraded) {
+            this.magicNumber = this.baseMagicNumber = 12;
+            this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber = 6;
+        }
+        else {
+            this.magicNumber = this.baseMagicNumber = 8;
+            this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber = 4;
+        }
+
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.applyGrow();
+        //this.applyGrow();
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         if(BloomCountUtils.getBloomCount() >= 20) {
-            int mod = this.growValue * 4;
-            this.addToBot(new ModifyDamageAction(this.uuid, mod));
-            updateBloomCount(mod);
+            int mod;
+            if(upgraded) {
+                this.magicNumber = this.growValue + (UPGRADED_GROW*3);
+            }
+            else
+                this.magicNumber = this.growValue + (GROW*3);
+            this.addToBot(new ModifyDamageAction(this.uuid, this.magicNumber));
+            updateBloomCount(this.magicNumber);
         }
         else if(BloomCountUtils.getBloomCount() >= 10) {
-            int mod = this.growValue * 2;
-            this.addToBot(new ModifyDamageAction(this.uuid, mod));
-            updateBloomCount(mod);
+            if(upgraded) {
+                this.defaultSecondMagicNumber = this.growValue + UPGRADED_GROW;
+            }
+            else
+                this.defaultSecondMagicNumber = this.growValue + GROW;
+            this.addToBot(new ModifyDamageAction(this.uuid, this.defaultSecondMagicNumber));
+            updateBloomCount(this.defaultSecondMagicNumber);
         }
         else {
             this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
@@ -75,6 +98,17 @@ public class BladeOfGrass extends AbstractGrowCard {
         }
 
 
+    }
+
+    public void triggerOnGlowCheck() {
+        if (BloomCountUtils.getBloomCount() >= 20) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        } else if (BloomCountUtils.getBloomCount() >= 10) {
+            this.glowColor = AbstractCard.GREEN_BORDER_GLOW_COLOR.cpy();
+        }
+        else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        }
     }
 
     // Upgraded stats.

@@ -454,8 +454,8 @@
   },
   "StSShapeShifter:BladeOfGrass": {
     "NAME": "Blade of Grass",
-    "DESCRIPTION": "Deal !D! damage. If you are Blossoming, Grow 8. If you are Blooming, Grow 4. Otherwise, Grow 2.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. If you are Blossoming, Grow 12. If you are Blooming, Grow 6. Otherwise, Grow 3."
+    "DESCRIPTION": "Deal !D! damage. If you are Blossoming, Grow !M!. If you are Blooming, Grow !StSShapeShifter:SecondMagic!. Otherwise, Grow !StSShapeShifter:Grow!.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. If you are Blossoming, Grow !M!. If you are Blooming, Grow !StSShapeShifter:SecondMagic!. Otherwise, Grow !StSShapeShifter:Grow!."
   },
   "StSShapeShifter:SunflowerShuriken": {
     "NAME": "Sunflower Shuriken",

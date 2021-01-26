@@ -46,20 +46,21 @@ public class Fertilizer extends CustomRelic {
 
     @Override
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
-        if(cardsPlayed.containsKey(targetCard.uuid) && cardsPlayed.get(targetCard.uuid) == 2) {
+        if(cardsPlayed.containsKey(targetCard.uuid) && cardsPlayed.get(targetCard.uuid) == 2 && this.active) {
             this.flash();
+            cardsPlayed.put(targetCard.uuid, cardsPlayed.get(targetCard.uuid) + 1);
+            this.counter = cardsPlayed.get(targetCard.uuid);
             this.addToBot(new GainEnergyAction(3));
             this.addToBot(new DrawCardAction(3));
             this.active = false;
+            this.grayscale = true;
         }
         else if (!cardsPlayed.containsKey(targetCard.uuid)) {
             cardsPlayed.put(targetCard.uuid, 1);
-            this.flash();
             this.counter = 1;
         }
         else {
             cardsPlayed.put(targetCard.uuid, cardsPlayed.get(targetCard.uuid) + 1);
-            this.flash();
             this.counter = cardsPlayed.get(targetCard.uuid);
         }
     }
@@ -69,6 +70,7 @@ public class Fertilizer extends CustomRelic {
         this.counter = 0;
         cardsPlayed.clear();
         this.active = true;
+        this.grayscale = false;
     }
 
     public AbstractRelic makeCopy() {

@@ -1,8 +1,10 @@
 package StSShapeShifter.cards;
 
 import StSShapeShifter.characters.ShapeShifter;
+import StSShapeShifter.util.BloomCountUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -37,6 +39,7 @@ public class OpportuneSwoop extends AbstractDynamicCard {
 
     private static final int DAMAGE = 18;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 6;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    boolean canUse;
 
     // /STAT DECLARATION/
 
@@ -56,7 +59,7 @@ public class OpportuneSwoop extends AbstractDynamicCard {
     }
 
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = super.canUse(p, m);
+        canUse = super.canUse(p, m);
         if (!canUse) {
             return false;
         } else {
@@ -64,6 +67,15 @@ public class OpportuneSwoop extends AbstractDynamicCard {
             if(!canUse)
                 this.cantUseMessage = "Draw Pile and Discard Pile must have at least 5 cards to play this card.";
             return canUse;
+        }
+    }
+
+    public void triggerOnGlowCheck() {
+        if(canUse) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        }
+        else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
     }
 

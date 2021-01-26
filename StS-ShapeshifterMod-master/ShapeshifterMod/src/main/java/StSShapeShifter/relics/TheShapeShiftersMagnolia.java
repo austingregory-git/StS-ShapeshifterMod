@@ -55,6 +55,15 @@ public class TheShapeShiftersMagnolia extends CustomRelic {
         this.counter = BloomCountUtils.getBloomCount();
     }
 
+    public void atTurnStart() {
+        this.counter = BloomCountUtils.getBloomCount();
+    }
+
+    public void onPlayerEndTurn() {
+        this.counter = BloomCountUtils.getBloomCount();
+    }
+
+
     @Override
     public void onVictory() {
         BloomCountUtils.setBloomCount(0);

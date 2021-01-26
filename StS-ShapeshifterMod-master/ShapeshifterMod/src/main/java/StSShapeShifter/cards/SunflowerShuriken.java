@@ -3,9 +3,11 @@ package StSShapeShifter.cards;
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.util.BloomCountUtils;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -77,8 +79,17 @@ public class SunflowerShuriken extends AbstractWitherCard {
             this.addToBot(new ModifyDamageAction(this.uuid, -this.witherValue));
             updateBloomCount(-this.witherValue);
         }
+    }
 
-
+    public void triggerOnGlowCheck() {
+        if (BloomCountUtils.getBloomCount() <= -20) {
+            this.glowColor = Color.BLACK.cpy();
+        } else if (BloomCountUtils.getBloomCount() <= -10) {
+            this.glowColor = Color.LIGHT_GRAY.cpy();
+        }
+        else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        }
     }
 
     // Upgraded stats.

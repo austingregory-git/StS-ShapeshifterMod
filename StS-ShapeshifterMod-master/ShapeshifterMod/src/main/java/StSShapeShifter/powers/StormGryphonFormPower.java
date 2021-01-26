@@ -8,13 +8,21 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
+
+import java.util.Iterator;
 
 public class StormGryphonFormPower extends AbstractFormPower implements CloneablePowerInterface {
     public AbstractCreature source;
@@ -51,6 +59,14 @@ public class StormGryphonFormPower extends AbstractFormPower implements Cloneabl
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+            Iterator var3 = AbstractDungeon.getMonsters().monsters.iterator();
+
+            while(var3.hasNext()) {
+                AbstractMonster monster = (AbstractMonster)var3.next();
+                if (!monster.isDead && !monster.isDying) {
+                    this.addToTop(new VFXAction(new LightningEffect(monster.drawX, monster.drawY), 0.0F));
+                }
+            }
             this.flash();
             this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.LIGHTNING));
             this.amount += this.growVal;
