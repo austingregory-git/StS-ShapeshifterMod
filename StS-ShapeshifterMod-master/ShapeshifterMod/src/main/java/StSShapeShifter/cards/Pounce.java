@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
@@ -66,6 +67,7 @@ public class Pounce extends AbstractDynamicCard {
         }
         m.applyPowers();
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        CardCrawlGame.sound.play(ShapeshifterMod.makeID(ShapeshifterMod.sfxFromId(ID)));
     }
 
     public void triggerOnGlowCheck() {

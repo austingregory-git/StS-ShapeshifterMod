@@ -9,7 +9,7 @@
         },
         "StSShapeShifter:DeepWoundPower": {
           "NAME": "Deep Wound",
-          "DESCRIPTIONS": ["Whenever this creature attacks, it takes 3(4) damage", "random enemy", "hello"]
+          "DESCRIPTIONS": ["Whenever this creature attacks, it takes #b", " damage"]
         },
         "StSShapeShifter:PlayerFlightPower": {
           "NAME": "Flight",

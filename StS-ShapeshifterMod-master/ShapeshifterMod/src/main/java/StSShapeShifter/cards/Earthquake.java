@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 
@@ -57,6 +58,7 @@ public class Earthquake extends AbstractWitherCard {
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         this.addToBot(new ModifyDamageAction(this.uuid, -this.witherValue));
         updateBloomCount(-this.witherValue);
+        CardCrawlGame.sound.play(ShapeshifterMod.makeID(ShapeshifterMod.sfxFromId(ID)));
     }
 
 

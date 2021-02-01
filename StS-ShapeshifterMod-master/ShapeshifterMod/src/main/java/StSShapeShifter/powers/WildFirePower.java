@@ -54,7 +54,7 @@ public class WildFirePower extends AbstractPower implements CloneablePowerInterf
     @Override
     public void atStartOfTurn() {
         if(this.amount > 0) {
-            this.addToBot(new DamageAction(owner, new DamageInfo(owner, amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+            this.addToBot(new DamageAction(owner, new DamageInfo(source, amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
             AbstractMonster targetMonster = AbstractDungeon.getRandomMonster();
             if(this.amount > witherValue) {
                 if(targetMonster.equals(owner)) {

@@ -54,6 +54,7 @@ public class ReplenishingNectar extends AbstractDynamicCard {
         this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber = MAGIC;
         this.baseMagicNumber = this.misc;
         this.exhaust = true;
+        this.tags.add(CardTags.HEALING);
         //this.tags.add(CardTags.STARTER_DEFEND); //Tag your strike, defend and form (Wraith form, Demon form, Echo form, etc.) cards so that they function correctly.
     }
 

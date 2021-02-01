@@ -68,7 +68,7 @@ public class StormGryphonFormPower extends AbstractFormPower implements Cloneabl
                 }
             }
             this.flash();
-            this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.LIGHTNING));
+            this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE));
             this.amount += this.growVal;
             BloomCountUtils.addBloomCount(this.growVal);
             updateDescription();

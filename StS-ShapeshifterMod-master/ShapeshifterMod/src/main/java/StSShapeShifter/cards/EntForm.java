@@ -58,6 +58,7 @@ public class EntForm extends AbstractDynamicCard {
         this.defaultBaseSecondMagicNumber = 4;
         this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;
         this.exhaust = true;
+        this.tags.add(CardTags.HEALING);
 
         //this.tags.add(CardTags.STARTER_DEFEND); //Tag your strike, defend and form (Wraith form, Demon form, Echo form, etc.) cards so that they function correctly.
     }

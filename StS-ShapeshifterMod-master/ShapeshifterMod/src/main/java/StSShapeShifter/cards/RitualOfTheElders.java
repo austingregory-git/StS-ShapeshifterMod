@@ -44,6 +44,7 @@ public class RitualOfTheElders extends AbstractDynamicCard {
         super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
         this.exhaust = true;
+        this.tags.add(CardTags.HEALING);
     }
 
     // Actions the card should do.

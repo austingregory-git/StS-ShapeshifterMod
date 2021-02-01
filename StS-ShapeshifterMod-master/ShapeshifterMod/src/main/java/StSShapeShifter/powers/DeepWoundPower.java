@@ -40,11 +40,17 @@ public class DeepWoundPower extends AbstractPower implements CloneablePowerInter
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+        updateDescription();
     }
 
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
         this.flash();
         this.addToBot(new LoseHPAction(this.owner, (AbstractCreature) null, this.amount, AbstractGameAction.AttackEffect.LIGHTNING));
+    }
+
+    @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
     @Override

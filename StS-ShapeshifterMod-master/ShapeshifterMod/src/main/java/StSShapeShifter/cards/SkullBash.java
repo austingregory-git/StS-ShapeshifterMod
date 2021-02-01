@@ -53,6 +53,7 @@ public class SkullBash extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        CardCrawlGame.sound.play(ShapeshifterMod.makeID(ShapeshifterMod.sfxFromId(ID)));
     }
 
     public void applyPowers() {

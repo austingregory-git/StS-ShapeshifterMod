@@ -3,12 +3,16 @@ package StSShapeShifter.cards;
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.util.BloomCountUtils;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.awt.*;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -54,25 +58,25 @@ public class BurstOfLifeEscapeDeath extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.triggerOnGlowCheck();
         if(BloomCountUtils.getBloomCount() > 0) {
-            calculateCardDamage(m);
-            this.applyPowers();
             this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         }
         else {
             ShapeshifterMod.logger.info(this.baseBlock);
             ShapeshifterMod.logger.info(this.block);
             this.baseBlock = Math.abs(BloomCountUtils.getBloomCount());
-            this.applyPowersToBlock();
             ShapeshifterMod.logger.info(this.baseBlock);
             ShapeshifterMod.logger.info(this.block);
             this.addToBot(new GainBlockAction(p, this.block));
         }
         BloomCountUtils.setBloomCount(0);
+        ShapeshifterMod.logger.info(ShapeshifterMod.makeID(ShapeshifterMod.sfxFromId(ID)));
+        CardCrawlGame.sound.play(ShapeshifterMod.makeID(ShapeshifterMod.sfxFromId(ID)));
     }
 
     public void calculateCardDamage(AbstractMonster mo) {
         this.baseDamage = BloomCountUtils.getBloomCount();
         super.calculateCardDamage(mo);
+        this.initializeDescription();
     }
 
     @Override
@@ -80,6 +84,7 @@ public class BurstOfLifeEscapeDeath extends AbstractDynamicCard {
         this.baseDamage = BloomCountUtils.getBloomCount();
         this.baseBlock = Math.abs(BloomCountUtils.getBloomCount());
         super.atTurnStart();
+        this.initializeDescription();
     }
 
 
@@ -95,9 +100,18 @@ public class BurstOfLifeEscapeDeath extends AbstractDynamicCard {
         }
     }
 
+    public void hover() {
+        this.baseDamage = BloomCountUtils.getBloomCount();
+        this.baseBlock = Math.abs(BloomCountUtils.getBloomCount());
+        super.hover();
+        this.initializeDescription();
+    }
+
     public void triggerOnGlowCheck() {
         if (BloomCountUtils.getBloomCount() > 0) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        } else if(BloomCountUtils.getBloomCount() < 0) {
+            this.glowColor = Color.BLACK.cpy();
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }

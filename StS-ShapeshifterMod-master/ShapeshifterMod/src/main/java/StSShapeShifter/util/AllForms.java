@@ -51,7 +51,7 @@ public class AllForms {
         ArrayList<String> allForms = new ArrayList<String>(Arrays.asList(TortoiseFormPower.POWER_ID, LynxFormPower.POWER_ID, BearFormPower.POWER_ID, DeerFormPower.POWER_ID, HydraFormPower.POWER_ID, DragonFormPower.POWER_ID,
                 MammothFormPower.POWER_ID, RatFormPower.POWER_ID, EagleFormPower.POWER_ID, PhoenixFormPower.POWER_ID, FoxFormPower.POWER_ID, EntFormPower.POWER_ID,
                 PorcupineFormPower.POWER_ID, SquirrelFormPower.POWER_ID, MonkeyFormPower.POWER_ID, LionFormPower.POWER_ID, OwlFormPower.POWER_ID, HummingbirdFormPower.POWER_ID,
-                WaspSwarmFormPower.POWER_ID));
+                WaspSwarmFormPower.POWER_ID, WolfFormPower.POWER_ID, StormGryphonFormPower.POWER_ID, UnicornFormPower.POWER_ID));
 
         return allForms;
     }

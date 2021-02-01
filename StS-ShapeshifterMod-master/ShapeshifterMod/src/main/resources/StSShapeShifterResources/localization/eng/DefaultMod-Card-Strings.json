@@ -384,7 +384,8 @@
   },
   "StSShapeShifter:LionForm": {
     "NAME": "Lion Form",
-    "DESCRIPTION": "Upon Entering Lion Form, gain !StSShapeShifter:SecondMagic! strength, then double your strength. While in Lion Form, Apply !M! Deep Wound to a random enemy. Lasts up to 3 turns. Exhaust"
+    "DESCRIPTION": "Upon Entering Lion Form, gain !StSShapeShifter:SecondMagic! strength, then double your strength. While in Lion Form, Apply !M! Deep Wound to a random enemy. Lasts up to 3 turns. Exhaust",
+    "UPGRADE_DESCRIPTION": "Upon Entering Lion Form, gain !StSShapeShifter:SecondMagic! strength, then triple your strength. While in Lion Form, Apply !M! Deep Wound to a random enemy. Lasts up to 3 turns. Exhaust"
   },
   "StSShapeShifter:MonkeyForm": {
     "NAME": "Monkey Form",
@@ -473,7 +474,7 @@
   },
   "StSShapeShifter:BurstOfLifeEscapeDeath": {
     "NAME": "Burst of Life/Death",
-    "DESCRIPTION": "Can only be played if your Bloom Count is NOT 0. If your Bloom Count is greater than 0, Deal !D! Damage to all enemies. If your Bloom Count is less than 0, Gain !B! Block. Damage/Block is equivalent to your Bloom/Wilt Count. Reset your Bloom Count to 0."
+    "DESCRIPTION": "If your Bloom Count is greater than 0, Deal !D! Damage to all enemies. If your Bloom Count is less than 0, Gain !B! Block. Damage/Block is equivalent to your Bloom/Wilt Count. Reset your Bloom Count to 0. Can only be played if your Bloom Count is NOT 0."
   },
   "StSShapeShifter:EscapeDeath": {
     "NAME": "Escape Death",

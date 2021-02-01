@@ -694,6 +694,11 @@ public class ShapeshifterMod implements
         BaseMod.addAudio(makeID("SFX_FullMoon"), "StSShapeShifterResources/sounds/StSShapeShifter-Sounds/FullMoon_SFX.ogg");
         BaseMod.addAudio(makeID("SFX_UnicornForm"), sound_dir + "UnicornForm_SFX.ogg");
         BaseMod.addAudio(makeID("SFX_StormGryphonForm"), sound_dir + "StormGryphonForm_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_Earthquake"), sound_dir + "Earthquake_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_BurstOfLifeEscapeDeath"), sound_dir + "BurstOfLifeEscapeDeath_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_Blossom2"), sound_dir + "Blossom2_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_Pounce"), sound_dir + "Pounce_SFX.ogg");
+        BaseMod.addAudio(makeID("SFX_SkullBash"), sound_dir + "SkullBash_SFX.ogg");
     }
 
     public static String imgFromId(String id) {
@@ -710,6 +715,11 @@ public class ShapeshifterMod implements
         String unprefixedId = id.replace(ShapeshifterMod.getModID() + ":","");
         logger.info(ShapeshifterMod.makePowerPath(String.format("%1s32.png", unprefixedId)));
         return ShapeshifterMod.makePowerPath(String.format("%1$s32.png", unprefixedId));
+    }
+    public static String sfxFromId(String id) {
+        String unprefixedId = id.replace(ShapeshifterMod.getModID() + ":","");
+        logger.info("SFX_" + unprefixedId);
+        return "SFX_" + unprefixedId;
     }
 
 

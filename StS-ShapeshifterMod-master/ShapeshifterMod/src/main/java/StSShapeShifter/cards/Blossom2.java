@@ -6,6 +6,7 @@ import StSShapeShifter.characters.ShapeShifter;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -59,7 +60,7 @@ public class Blossom2 extends AbstractDynamicCard {
         Iterator var1 = AbstractDungeon.player.drawPile.group.iterator();
         Iterator var2 = AbstractDungeon.player.hand.group.iterator();
         Iterator var3 = AbstractDungeon.player.discardPile.group.iterator();
-
+        CardCrawlGame.sound.play(ShapeshifterMod.makeID(ShapeshifterMod.sfxFromId(ID)));
         while(var1.hasNext()) {
             AbstractCard c = (AbstractCard) var1.next();
             if(c instanceof AbstractGrowCard && ((AbstractGrowCard) c).growValue > 0) {

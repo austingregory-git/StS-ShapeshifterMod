@@ -46,7 +46,7 @@ public class GoldenBerries extends AbstractDynamicCard {
         this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;
         this.exhaust = true;
-
+        this.tags.add(CardTags.HEALING);
         //this.tags.add(CardTags.STARTER_DEFEND); //Tag your strike, defend and form (Wraith form, Demon form, Echo form, etc.) cards so that they function correctly.
     }
 

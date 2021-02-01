@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.powers.DexterityPower;
@@ -25,6 +26,8 @@ public class LionForm extends AbstractDynamicCard {
 
     public static final String ID = ShapeshifterMod.makeID(LionForm.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -46,7 +49,7 @@ public class LionForm extends AbstractDynamicCard {
 
     public LionForm() {
         super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 4;
+        this.magicNumber = this.baseMagicNumber = 3;
         this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber = 2;
         this.exhaust = true;
     }
@@ -71,7 +74,7 @@ public class LionForm extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
-            upgradeDefaultSecondMagicNumber(1);
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
