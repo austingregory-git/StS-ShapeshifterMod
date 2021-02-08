@@ -27,8 +27,11 @@ public class WildFirePower extends AbstractPower implements CloneablePowerInterf
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
-    private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/SapBurstPower84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/SapBurstPower32.png");
+    //private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/SapBurstPower84.png");
+    //private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/SapBurstPower32.png");
+
+    private static final Texture tex84 = TextureLoader.getTexture(ShapeshifterMod.powerImg84FromId(POWER_ID));
+    private static final Texture tex32 = TextureLoader.getTexture(ShapeshifterMod.powerImg32FromId(POWER_ID));
     public int witherValue;
 
     public WildFirePower(final AbstractCreature owner, final AbstractCreature source, final int amount, int witherValue) {
@@ -54,7 +57,7 @@ public class WildFirePower extends AbstractPower implements CloneablePowerInterf
     @Override
     public void atStartOfTurn() {
         if(this.amount > 0) {
-            this.addToBot(new DamageAction(owner, new DamageInfo(source, amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+            this.addToBot(new DamageAction(owner, new DamageInfo(source, amount, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
             AbstractMonster targetMonster = AbstractDungeon.getRandomMonster();
             if(this.amount > witherValue) {
                 if(targetMonster.equals(owner)) {

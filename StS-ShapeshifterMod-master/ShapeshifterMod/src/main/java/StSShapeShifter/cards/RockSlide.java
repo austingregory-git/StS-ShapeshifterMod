@@ -55,6 +55,7 @@ public class RockSlide extends AbstractGrowCard {
         super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.growValue = this.baseGrowValue = 1;
+        this.isMultiDamage = true;
     }
 
 

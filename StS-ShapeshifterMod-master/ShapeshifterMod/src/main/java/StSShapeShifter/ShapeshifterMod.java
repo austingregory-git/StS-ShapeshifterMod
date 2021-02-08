@@ -391,6 +391,7 @@ public class ShapeshifterMod implements
         BaseMod.addRelicToCustomPool(new Fertilizer(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
         BaseMod.addRelicToCustomPool(new FrogOfVitality(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
         BaseMod.addRelicToCustomPool(new LoyalLobster(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
+        BaseMod.addRelicToCustomPool(new MysticalFossil(), ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR);
 
         
         // This adds a relic to the Shared pool. Every character can find this relic.

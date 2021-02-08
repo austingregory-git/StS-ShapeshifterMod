@@ -2,6 +2,7 @@ package StSShapeShifter.potions;
 
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.actions.DiscoverCardAction;
+import StSShapeShifter.cards.AbstractShapeShifterCard;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.patches.EnumsPatch;
 import StSShapeShifter.util.AllForms;
@@ -53,6 +54,9 @@ public class PolyBeastPotion extends AbstractPotion {
                 ArrayList<AbstractCard> forms = new ArrayList<AbstractCard>(AllForms.getAllFormsCards());
                 AbstractCard c = forms.get(new Random().nextInt(forms.size()));
                 ShapeshifterMod.logger.info(c.cardID);
+                if(c instanceof AbstractShapeShifterCard) {
+                    ((AbstractShapeShifterCard) c).ModifiedCostCode = 2;
+                }
                 c.costForTurn = 0;
                 c.exhaust = true;
                 AbstractMonster targetMonster = AbstractDungeon.getRandomMonster();

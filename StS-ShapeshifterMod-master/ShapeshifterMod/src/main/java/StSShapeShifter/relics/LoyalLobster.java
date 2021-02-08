@@ -46,21 +46,23 @@ public class LoyalLobster extends CustomRelic {
     @Override
     public void onPlayerEndTurn() {
         ArrayList<AbstractCard> cardsThisTurn = new ArrayList<>(AbstractDungeon.actionManager.cardsPlayedThisTurn);
-        ArrayList<String> powerIDs = new ArrayList<>();
         for(AbstractCard c : cardsThisTurn) {
             if(AllForms.getAllForms().contains(c.cardID)) {
                 count = 0;
+                this.counter = 0;
             }
         }
         for(AbstractPower pid : AbstractDungeon.player.powers) {
             if(AllForms.getAllFormsPowerIDs().contains(pid.ID)) {
                 count++;
+                this.counter++;
             }
         }
         if(count == 3) {
             this.flash();
             this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 3)));
-            count = 0;
+            this.count = 0;
+            this.counter = 0;
             this.active = false;
         }
     }

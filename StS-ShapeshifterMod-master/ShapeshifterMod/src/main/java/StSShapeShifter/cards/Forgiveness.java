@@ -64,9 +64,9 @@ public class Forgiveness extends AbstractDynamicCard {
 
     public void applyPowers() {
         if(upgraded)
-            this.baseMagicNumber = MAGIC + (int)((float)GameActionManager.damageReceivedThisCombat * (50.0F / 100.0F));
+            this.baseMagicNumber = MAGIC + UPGRADE_MAGIC + (int)((float)GameActionManager.damageReceivedThisCombat * (50.0F / 100.0F));
         else
-            this.baseMagicNumber = MAGIC + UPGRADE_MAGIC + (int)((float)GameActionManager.damageReceivedThisCombat * (30.0F / 100.0F));
+            this.baseMagicNumber = MAGIC + (int)((float)GameActionManager.damageReceivedThisCombat * (30.0F / 100.0F));
         super.applyPowers();
         this.initializeDescription();
     }
