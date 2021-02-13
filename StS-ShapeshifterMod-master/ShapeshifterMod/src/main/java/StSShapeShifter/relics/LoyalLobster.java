@@ -53,12 +53,12 @@ public class LoyalLobster extends CustomRelic {
             }
         }
         for(AbstractPower pid : AbstractDungeon.player.powers) {
-            if(AllForms.getAllFormsPowerIDs().contains(pid.ID)) {
+            if(AllForms.getAllFormsPowerIDs().contains(pid.ID) && this.active) {
                 count++;
                 this.counter++;
             }
         }
-        if(count == 3) {
+        if(count == 3 && this.active) {
             this.flash();
             this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 3)));
             this.count = 0;

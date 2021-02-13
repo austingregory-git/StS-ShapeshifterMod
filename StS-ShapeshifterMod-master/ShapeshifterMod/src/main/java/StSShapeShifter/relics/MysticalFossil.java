@@ -32,7 +32,7 @@ public class MysticalFossil extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath(MysticalFossil.class.getSimpleName() + PNG));
 
     public MysticalFossil() {
-        super(ID, IMG, RelicTier.STARTER, LandingSound.SOLID);
+        super(ID, IMG, RelicTier.RARE, LandingSound.SOLID);
     }
 
     public String getUpdatedDescription() {

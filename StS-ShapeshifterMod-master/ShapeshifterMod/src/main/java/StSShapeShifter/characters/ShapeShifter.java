@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
@@ -31,6 +32,7 @@ import StSShapeShifter.cards.*;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
 
 import static StSShapeShifter.ShapeshifterMod.*;
 import static StSShapeShifter.characters.ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
@@ -114,13 +116,6 @@ public class ShapeShifter extends CustomPlayer {
 
 
         // =============== TEXTURES, ENERGY, LOADOUT =================
-
-        /*initializeClass(null, // required call to load textures and setup energy/loadout.
-                // I left these in DefaultMod.java (Ctrl+click them to see where they are, Ctrl+hover to see what they read.)
-                THE_DEFAULT_SHOULDER_2, // campfire pose
-                THE_DEFAULT_SHOULDER_1, // another campfire pose
-                THE_DEFAULT_CORPSE, // dead corpse
-                getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));*/
 
         initializeClass(null, // required call to load textures and setup energy/loadout.
                 // I left these in DefaultMod.java (Ctrl+click them to see where they are, Ctrl+hover to see what they read.)
@@ -300,6 +295,13 @@ public class ShapeShifter extends CustomPlayer {
     @Override
     public String getVampireText() {
         return "I see you are familiar with the Lycan--can I interest you in something more powerful?";
+    }
+
+    public java.util.List<CutscenePanel> getCutscenePanels() {
+        List<CutscenePanel> panels = new ArrayList();
+        panels.add(new CutscenePanel("StSShapeShifterResources/images/scenes/shapeshifter1.png", ShapeshifterMod.makeID("SFX_BearForm")));
+        panels.add(new CutscenePanel("StSShapeShifterResources/images/scenes/shapeshifter2.png", ShapeshifterMod.makeID("SFX_DragonForm")));
+        return panels;
     }
 
 }

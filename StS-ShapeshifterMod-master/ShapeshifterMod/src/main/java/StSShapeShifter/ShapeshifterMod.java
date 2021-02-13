@@ -65,8 +65,6 @@ public class ShapeshifterMod implements
     
     // Colors (RGB)
     // Character Color
-    public static final Color DEFAULT_GRAY = CardHelper.getColor(64.0f, 70.0f, 70.0f);
-    //public static final Color SHAPESHIFTER_BROWN = CardHelper.getColor(160.0f, 82.0f, 45.0f);
     public static final Color SHAPESHIFTER_BROWN = new Color(160.0f, 82.0f, 45.0f, 1.0f);
     // Potion Colors in RGB
     public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
@@ -104,8 +102,6 @@ public class ShapeshifterMod implements
     public static final String BADGE_IMAGE = "StSShapeShifterResources/images/Badge.png";
 
     // Atlas and JSON files for the Animations
-    public static final String THE_DEFAULT_SKELETON_ATLAS = "StSShapeShifterResources/images/char/defaultCharacter/skeleton.atlas";
-    public static final String THE_DEFAULT_SKELETON_JSON = "StSShapeShifterResources/images/char/defaultCharacter/skeleton.json";
     public static final String SHAPESHIFTER_SKELETON_ATLAS = "StSShapeShifterResources/images/ShapeShifter/ShapeShifterCharacter.atlas";
     public static final String SHAPESHIFTER_SKELETON_JSON = "StSShapeShifterResources/images/ShapeShifter/ShapeShifterCharacter.json";
 

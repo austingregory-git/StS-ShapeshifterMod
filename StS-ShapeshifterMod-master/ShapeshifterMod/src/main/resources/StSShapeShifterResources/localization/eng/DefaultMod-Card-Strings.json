@@ -500,7 +500,7 @@
   },
   "StSShapeShifter:EmbraceTheCycle": {
     "NAME": "Embrace the Cycle",
-    "DESCRIPTION": "If you are Wilting, Attacks cost 1 less. If you are Balanced, Powers cost 1 less. If you are Blooming, Skills cost 1 less. Occurs when cards are drawn."
+    "DESCRIPTION": "At the start of your turn, if you are Wilting, Attacks cost 1 less. If you are Balanced, Powers cost 1 less. If you are Blooming, Skills cost 1 less."
   },
   "StSShapeShifter:Spring": {
     "NAME": "Spring",

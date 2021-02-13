@@ -34,6 +34,13 @@
       "After 8 turns in combat, gain 3 Strength and 3 Dexterity"
     ]
   },
+  "StSShapeShifter:MysticalFossil": {
+    "NAME": "Mystical Fossil",
+    "FLAVOR": "The shape of the fossil seems to shift with each passing moment.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, enter a random form."
+    ]
+  },
   "StSShapeShifter:AlchemistsNecklace": {
     "NAME": "Alchemist's Necklace",
     "FLAVOR": "Each bead contains a powerful potion.",

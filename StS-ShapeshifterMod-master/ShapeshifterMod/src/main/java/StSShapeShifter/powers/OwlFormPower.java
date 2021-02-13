@@ -54,6 +54,15 @@ public class OwlFormPower extends AbstractFormPower implements CloneablePowerInt
     }
 
     @Override
+    public void stackPower(int stackAmount) {
+        AbstractPlayer var10000 = AbstractDungeon.player;
+        if(var10000.gameHandSize < 10) {
+            var10000.gameHandSize++;
+        }
+        super.stackPower(stackAmount);
+    }
+
+    @Override
     public void updateDescription() {
         description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
