@@ -6,7 +6,7 @@
     <groupId>defaultmod</groupId>
     <artifactId>ShapeShifterMod</artifactId> <!--Keep a note of this one: this is the ID used in the "auto add cards" method-->
     <name>Shapeshifter Mod</name>
-    <version>0.9.9</version>
+    <version>1.0.3</version>
     <description>Slay the Spire as a new character--The Shapeshifter!.</description>
 
     <properties>

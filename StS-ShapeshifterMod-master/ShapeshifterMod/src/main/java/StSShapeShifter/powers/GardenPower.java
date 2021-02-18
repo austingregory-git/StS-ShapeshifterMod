@@ -1,6 +1,7 @@
 package StSShapeShifter.powers;
 
 import StSShapeShifter.ShapeshifterMod;
+import StSShapeShifter.cards.tempCards.Cherry;
 import StSShapeShifter.cards.tempCards.RottenFruit;
 import StSShapeShifter.util.AllFruit;
 import StSShapeShifter.util.BloomCountUtils;
@@ -15,6 +16,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
@@ -56,6 +58,12 @@ public class GardenPower extends AbstractPower implements CloneablePowerInterfac
     public void atStartOfTurn() {
         if(BloomCountUtils.getBloomCount() >= -3 && BloomCountUtils.getBloomCount() <= 3) {
             ArrayList<AbstractCard> fruit = new ArrayList<AbstractCard>(AllFruit.getAllFruitCards());
+            ArrayList<AbstractCard> cardsPlayed = AbstractDungeon.actionManager.cardsPlayedThisCombat;
+            for(AbstractCard c: cardsPlayed) {
+                if(c.cardID.equals(Cherry.ID)) {
+                    fruit = new ArrayList<>(AllFruit.getAllNonHealingFruitCards());
+                }
+            }
             if(upgraded) {
                 this.addToBot(new MakeTempCardInHandAction(fruit.get(new Random().nextInt(fruit.size())), 1));
                 this.addToBot(new MakeTempCardInHandAction(fruit.get(new Random().nextInt(fruit.size())), 1));

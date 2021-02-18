@@ -24,7 +24,7 @@
     "NAME": "The Shapeshifter's Magnolia",
     "FLAVOR": "The ShapeShifter's favorite flower.",
     "DESCRIPTIONS": [
-      "Keeps track of your current Bloom Count."
+      "Keeps track of your current Bloom Count. Some cards have different effects when you are Balanced, Blooming, Blossoming, Wilting, or Decaying"
     ]
   },
   "StSShapeShifter:AlarmClock": {

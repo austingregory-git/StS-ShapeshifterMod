@@ -10,6 +10,7 @@ import StSShapeShifter.powers.SquirrelFormPower;
 import StSShapeShifter.stances.SquirrelFormStance;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -61,11 +62,20 @@ public class SquirrelForm extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new MakeTempCardInHandAction(new Acorn()));
-        this.addToBot(new MakeTempCardInHandAction(new Acorn()));
+        if(upgraded) {
+            AbstractCard c = new Acorn();
+            c.upgrade();
+            this.addToBot(new MakeTempCardInHandAction(c));
+            this.addToBot(new MakeTempCardInHandAction(c));
+        }
+        else {
+            this.addToBot(new MakeTempCardInHandAction(new Acorn()));
+            this.addToBot(new MakeTempCardInHandAction(new Acorn()));
+        }
+
 
         if(!p.stance.ID.equals(SquirrelFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
-            this.addToBot(new ApplyPowerAction(p, p, new SquirrelFormPower(p)));
+            this.addToBot(new ApplyPowerAction(p, p, new SquirrelFormPower(p, upgraded)));
             this.addToBot(new ChangeStanceAction(SquirrelFormStance.STANCE_ID));
             CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_SquirrelForm"));
         }

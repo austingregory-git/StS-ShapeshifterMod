@@ -38,9 +38,8 @@ public class MysticalSeed extends AbstractGrowCard {
     private static final int COST = 0;  // COST = ${COST}
     private static final int UPGRADED_COST = 1; // UPGRADED_COST = ${UPGRADED_COST}
 
-    private static final int DAMAGE = 3;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
-    private static final int UPGRADE_PLUS_MAGIC = 1;
+    private static final int DAMAGE = 2;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADE_PLUS_DMG = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
 
@@ -82,7 +81,6 @@ public class MysticalSeed extends AbstractGrowCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeGrowValue(1);
             initializeDescription();
         }
     }

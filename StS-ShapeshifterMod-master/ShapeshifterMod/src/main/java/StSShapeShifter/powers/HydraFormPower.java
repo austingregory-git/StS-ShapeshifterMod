@@ -68,7 +68,13 @@ public class HydraFormPower extends AbstractFormPower implements CloneablePowerI
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + (3-count) + DESCRIPTIONS[1];
+        if(amount == 3) {
+            description = DESCRIPTIONS[0] + DESCRIPTIONS[4] + DESCRIPTIONS[1] + (3-count) + DESCRIPTIONS[2];
+        }
+        else {
+            description = DESCRIPTIONS[0] + DESCRIPTIONS[3] + DESCRIPTIONS[1] + (3-count) + DESCRIPTIONS[2];
+        }
+
     }
 
     @Override

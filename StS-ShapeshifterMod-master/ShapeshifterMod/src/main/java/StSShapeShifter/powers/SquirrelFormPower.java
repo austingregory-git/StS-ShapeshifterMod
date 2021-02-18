@@ -5,6 +5,7 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -23,14 +24,14 @@ public class SquirrelFormPower extends AbstractFormPower implements CloneablePow
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/SquirrelFormPower84.png");
     private static final Texture tex32 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/SquirrelFormPower32.png");
+    private boolean upgraded;
 
-    public SquirrelFormPower(final AbstractCreature owner) {
+    public SquirrelFormPower(final AbstractCreature owner, boolean upgraded) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
-        /*this.amount = amount;
-        this.source = source;*/
+        this.upgraded = upgraded;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -41,12 +42,18 @@ public class SquirrelFormPower extends AbstractFormPower implements CloneablePow
     }
 
     public void atStartOfTurn() {
-        this.addToBot(new MakeTempCardInHandAction(new Acorn()));
+        if(upgraded) {
+            AbstractCard c = new Acorn();
+            c.upgrade();
+            this.addToBot(new MakeTempCardInHandAction(c));
+        }
+        else
+            this.addToBot(new MakeTempCardInHandAction(new Acorn()));
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new SquirrelFormPower(owner);
+        return new SquirrelFormPower(owner, upgraded);
     }
 }
 

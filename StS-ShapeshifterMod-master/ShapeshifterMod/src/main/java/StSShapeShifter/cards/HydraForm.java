@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
 import com.megacrit.cardcrawl.powers.DexterityPower;
@@ -35,6 +36,8 @@ public class HydraForm extends AbstractDynamicCard {
 
     public static final String ID = ShapeshifterMod.makeID(HydraForm.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -49,7 +52,7 @@ public class HydraForm extends AbstractDynamicCard {
     //public int amount = Integer.MIN_VALUE;
     private static final int COST = 3;
     private static final int UPGRADED_BASE_COST = 2;
-    private static final int UPGRADE_PLUS_MAGIC = -1;
+    private static final int UPGRADE_PLUS_MAGIC = 1;
     private static final boolean IS_FORM = true;
 
     // /STAT DECLARATION/
@@ -57,7 +60,7 @@ public class HydraForm extends AbstractDynamicCard {
 
     public HydraForm() {
         super(ID, ShapeshifterMod.imgFromId(ID), COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = 3;
+        this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
         this.exhaust = true;
 
@@ -70,7 +73,12 @@ public class HydraForm extends AbstractDynamicCard {
         this.addToBot(new ApplyPowerAction(p, p, new VulnerablePower(p, this.magicNumber, false), this.magicNumber));
 
         if(!p.stance.ID.equals(HydraFormStance.STANCE_ID) && !p.hasPower(CannotChangeStancePower.POWER_ID)) {
-            this.addToBot(new ApplyPowerAction(p, p, new HydraFormPower(p, 3)));
+            if(upgraded) {
+                this.addToBot(new ApplyPowerAction(p, p, new HydraFormPower(p, 3)));
+            }
+            else {
+                this.addToBot(new ApplyPowerAction(p, p, new HydraFormPower(p, 2)));
+            }
             this.addToBot(new ChangeStanceAction(HydraFormStance.STANCE_ID));
             CardCrawlGame.sound.play(ShapeshifterMod.makeID("SFX_HydraForm"));
         }
@@ -84,7 +92,7 @@ public class HydraForm extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
-            upgradeBaseCost(UPGRADED_BASE_COST);
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

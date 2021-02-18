@@ -41,6 +41,8 @@ public class PhoenixFormPower extends AbstractFormPower implements CloneablePowe
         // We load those textures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+
+        updateDescription();
     }
 
     public int onLoseHp(int damageAmount) {
@@ -62,9 +64,6 @@ public class PhoenixFormPower extends AbstractFormPower implements CloneablePowe
         return damageAmount;
     }
 
-/*    public void onDeath() {
-
-    }*/
 
     @Override
     public void atStartOfTurn() {
@@ -78,9 +77,9 @@ public class PhoenixFormPower extends AbstractFormPower implements CloneablePowe
     @Override
     public void updateDescription() {
         if(upgraded)
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + (3-count) + DESCRIPTIONS[3];
+            description = DESCRIPTIONS[0] + DESCRIPTIONS[1] + (3-count) + DESCRIPTIONS[3];
         else
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2] + (3-count) + DESCRIPTIONS[3];
+            description = DESCRIPTIONS[0] + DESCRIPTIONS[2] + (3-count) + DESCRIPTIONS[3];
     }
 
     @Override

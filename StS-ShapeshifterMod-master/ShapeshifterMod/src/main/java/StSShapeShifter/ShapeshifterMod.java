@@ -17,6 +17,7 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
+import basemod.eventUtil.AddEventParams;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -27,6 +28,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -328,8 +330,14 @@ public class ShapeshifterMod implements
         // If you want to have a character-specific event, look at slimebound (CityRemoveEventPatch).
         // Essentially, you need to patch the game and say "if a player is not playing my character class, remove the event from the pool"
         //BaseMod.addEvent(IdentityCrisisEvent.ID, IdentityCrisisEvent.class, TheCity.ID);
-        BaseMod.addEvent(MysteriousCreatureEvent.ID, MysteriousCreatureEvent.class);
-        BaseMod.addEvent(ViolentStormsEvent.ID, ViolentStormsEvent.class);
+        AddEventParams mysteriousCreatureEventParams = new AddEventParams.Builder(MysteriousCreatureEvent.ID, MysteriousCreatureEvent.class) // for this specific event
+                .playerClass(ShapeShifter.Enums.SHAPESHIFTER) // Character specific event
+                .create();
+        AddEventParams violentStormsEventParams = new AddEventParams.Builder(ViolentStormsEvent.ID, ViolentStormsEvent.class)
+                .playerClass(ShapeShifter.Enums.SHAPESHIFTER) // Character specific event
+                .create();
+        BaseMod.addEvent(mysteriousCreatureEventParams);
+        BaseMod.addEvent(violentStormsEventParams);
 
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");
@@ -525,7 +533,7 @@ public class ShapeshifterMod implements
         BaseMod.addCard(new Evolution());
         BaseMod.addCard(new HippoForm());
         BaseMod.addCard(new RaptorForm());
-        BaseMod.addCard(new FlamingoForm());
+        //BaseMod.addCard(new FlamingoForm());
         BaseMod.addCard(new RhinoCalfForm());
         //BaseMod.addCard(new FertileSoil());
         BaseMod.addCard(new Flood());
@@ -636,11 +644,14 @@ public class ShapeshifterMod implements
         BaseMod.addKeyword(new String[]{"wilting"}, "If your Bloom Count is less than or equal to -10, you are Wilting.");
         BaseMod.addKeyword(new String[]{"decaying"}, "If your Bloom Count is less than or equal to -20, you are Decaying.");
         BaseMod.addKeyword(new String[]{"balanced"}, "If your Bloom Count is less than or equal to 3 AND greater than or equal to -3, you are Balanced.");
-        BaseMod.addKeyword(new String[]{"bloom count"}, "Bloom Count is the positive number associated with the Shapeshifter's Magnolia.");
-        BaseMod.addKeyword(new String[]{"wilt count"}, "Wilt Count is the negative number associate with the Shapeshifter's Magnolia.");
+        BaseMod.addKeyword(new String[]{"bloom_count"}, "Bloom Count is the positive number associated with the Shapeshifter's Magnolia.");
+        BaseMod.addKeyword(new String[]{"wilt_count"}, "Wilt Count is the negative number associate with the Shapeshifter's Magnolia.");
         BaseMod.addKeyword(new String[]{"massive"}, "Deals 100% of Normal enemy's HP, 50% of Elite enemy's HP, and 25% of Boss enemy's HP");
-        BaseMod.addKeyword(new String[]{"deep wound"}, "Whenever this monster attacks, they take damage");
-        BaseMod.addKeyword(new String[]{"rhino form"}, "Upon Entering Rhino Form, gain plated armor. While in Rhino Form, deal damage equal to your block to the lowest HP enemy at the end of your turn. Lasts up to 3 turns.");
+        BaseMod.addKeyword("Deep Wound", new String[]{"deep"}, "Whenever this monster attacks, they take damage");
+        BaseMod.addKeyword("Rhino Form", new String[]{"rhino"}, "Upon Entering Rhino Form, gain plated armor. While in Rhino Form, deal damage equal to your block to the lowest HP enemy at the end of your turn. Lasts up to 3 turns.");
+        BaseMod.addKeyword(new String[]{"wildfire"}, "Deals damage to the enemy at the start of its turn, and then jumps to a random enemy. This effect withers by 4 each time it is applied.");
+        BaseMod.addKeyword(new String[]{"burst"}, "Deals damage to all enemies equal to your bloom count.");
+        BaseMod.addKeyword(new String[]{"escape"}, "You gain armor equal to your wilt count.");
         /* (keywords != null) {
             for (Keyword keyword : keywords) {
                 //BaseMod.addKeyword(getModID().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);

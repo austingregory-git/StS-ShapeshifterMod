@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import StSShapeShifter.ShapeshifterMod;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -62,7 +63,13 @@ public class Bonk extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         ArrayList<AbstractCard> forms = new ArrayList<AbstractCard>(AllForms.getAllFormsCards());
+        //ArrayList<String> formPowers = new ArrayList<>(AllForms.getAllFormsPowerIDs());
+        //String powerID = formPowers.get(new Random().nextInt(formPowers.size()));
         AbstractCard c = forms.get(new Random().nextInt(forms.size()));
+        while(AllForms.getAllHealingFormIDs().contains(c.cardID)) {
+            c = forms.get(new Random().nextInt(forms.size()));
+        }
+
         if(c instanceof AbstractShapeShifterCard) {
             ((AbstractShapeShifterCard) c).ModifiedCostCode = 2;
         }

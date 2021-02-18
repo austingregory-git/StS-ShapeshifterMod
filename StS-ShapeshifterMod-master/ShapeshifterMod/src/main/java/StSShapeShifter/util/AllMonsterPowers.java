@@ -14,16 +14,15 @@ import java.util.Arrays;
 public class AllMonsterPowers {
     public static ArrayList<String> getAllMonsterPowerIDs() {
         ArrayList<String> allMonsterPowers = new ArrayList<String>(Arrays.asList(AngryPower.POWER_ID, BackAttackPower.POWER_ID, CurlUpPower.POWER_ID,
-                                                                            ExplosivePower.POWER_ID, BeatOfDeathPower.POWER_ID, CuriosityPower.POWER_ID, DragonForm.ID, MammothForm.ID));
+                                                                            ExplosivePower.POWER_ID, BeatOfDeathPower.POWER_ID, CuriosityPower.POWER_ID));
 
         return allMonsterPowers;
     }
 
-    /*public static ArrayList<AbstractCard> getAllMonsterPowers() {
-        ArrayList<AbstractPower> allMonsterPowers = new ArrayList<AbstractCard>(Arrays.asList(new Tortoise_Form(), new Lynx_Form(), new BearForm(), new DeerForm(), new DragonForm(), new HydraForm(), new MammothForm()));
-
-        return allMonsterPowers;
-    }*/
+    public static ArrayList<String> getAllBossPowerIDs() {
+        ArrayList<String> allBossPowers = new ArrayList<>(Arrays.asList(BeatOfDeathPower.POWER_ID, CuriosityPower.POWER_ID, InvinciblePower.POWER_ID, ModeShiftPower.POWER_ID, UnawakenedPower.POWER_ID, TimeWarpPower.POWER_ID, FadingPower.POWER_ID));
+        return allBossPowers;
+    }
 
     public static ArrayList<String> getAllViableMonsterPowers() {
         ArrayList<String> allMonsterPowers = new ArrayList<String>(Arrays.asList(AngryPower.POWER_ID, CurlUpPower.POWER_ID, ExplosivePower.POWER_ID, DeerForm.ID,

@@ -91,7 +91,7 @@
   },
   "StSShapeShifter:DeepWound": {
     "NAME": "Deep Wound",
-    "DESCRIPTION": "Deal !D! Damage. Whenever the target attacks, they take !M! damage."
+    "DESCRIPTION": "Deal !D! Damage. Apply Deep Wound !M!"
   },
   "StSShapeShifter:ShiftingStrike": {
     "NAME": "Shifting Strike",
@@ -185,7 +185,7 @@
   },
   "StSShapeShifter:Bonk": {
     "NAME": "Bonk",
-    "DESCRIPTION": "Deal !D! Damage. Enter a random form."
+    "DESCRIPTION": "Deal !D! Damage. Play a random form card."
   },
   "StSShapeShifter:ThrashAbout": {
     "NAME": "Thrash About",
@@ -215,7 +215,7 @@
   },
   "StSShapeShifter:Wildfire2": {
     "NAME": "Wildfire",
-    "DESCRIPTION": "Apply Wildfire !M! to an enemy. That enemy takes !M! damage at the start of their turn, and then Wildfire jumps to a random enemy. This effect Withers by !StSShapeShifter:Wither! for each jump."
+    "DESCRIPTION": "Apply Wildfire !M! to an enemy."
   },
   "StSShapeShifter:Earthquake": {
     "NAME": "Earthquake",
@@ -402,7 +402,8 @@
   },
   "StSShapeShifter:HydraForm": {
     "NAME": "Hydra Form",
-    "DESCRIPTION": "Upon Entering Hydra Form, Gain !M! Vulnerable. While in Hydra Form, deal triple damage. Lasts up to 3 turns. Exhaust"
+    "DESCRIPTION": "Upon Entering Hydra Form, Gain !M! Vulnerable. While in Hydra Form, deal double damage. Lasts up to 3 turns. Exhaust",
+    "UPGRADE_DESCRIPTION": "Upon Entering Hydra Form, Gain !M! Vulnerable. While in Hydra Form, deal triple damage. Lasts up to 3 turns. Exhaust"
   },
   "StSShapeShifter:MammothForm": {
     "NAME": "Mammoth Form",
@@ -446,7 +447,7 @@
   },
   "StSShapeShifter:Synchronicity": {
     "NAME": "Synchronicity",
-    "DESCRIPTION": "Whenever you play a Grow card, gain 1 Dexterity. Whenever you play a Wither card, gain 1 Strength."
+    "DESCRIPTION": "The first time you play a Grow card each turn, gain 1 Dexterity. The first time you play a Wither card each turn, gain 1 Strength."
   },
   "StSShapeShifter:WolfsBane": {
     "NAME": "Wolf's Bane",
@@ -474,7 +475,7 @@
   },
   "StSShapeShifter:BurstOfLifeEscapeDeath": {
     "NAME": "Burst of Life/Death",
-    "DESCRIPTION": "If your Bloom Count is greater than 0, Deal !D! Damage to all enemies. If your Bloom Count is less than 0, Gain !B! Block. Damage/Block is equivalent to your Bloom/Wilt Count. Reset your Bloom Count to 0. Can only be played if your Bloom Count is NOT 0."
+    "DESCRIPTION": "If your Bloom Count is greater than 0, Burst !D!. If your Bloom Count is less than 0, Escape !B!. Reset your Bloom Count to 0."
   },
   "StSShapeShifter:EscapeDeath": {
     "NAME": "Escape Death",

@@ -217,11 +217,11 @@
         },
         "StSShapeShifter:HydraFormPower": {
           "NAME": "Hydra Form",
-          "DESCRIPTIONS": ["While in Hydra #yForm, deal triple damage. #b", " turns remaining."]
+          "DESCRIPTIONS": ["While in Hydra #yForm, deal ", "damage. #b", " turns remaining.", "double", "triple"]
         },
         "StSShapeShifter:PhoenixFormPower": {
           "NAME": "Phoenix Form",
-          "DESCRIPTIONS": ["While in Phoenix #yForm, revive to #b", "30 percent max HP. #b", "30 percent max HP. #b", " turns remaining."]
+          "DESCRIPTIONS": ["While in Phoenix #yForm, revive to #b", "30 percent max HP. #b", "20 percent max HP. #b", " turns remaining."]
         },
         "StSShapeShifter:BearFormPower": {
           "NAME": "Bear Form",

@@ -2,6 +2,7 @@ package StSShapeShifter.cards;
 
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.actions.ModifyMagicAction;
+import StSShapeShifter.cards.tempCards.Cherry;
 import StSShapeShifter.cards.tempCards.Star;
 import StSShapeShifter.characters.ShapeShifter;
 import StSShapeShifter.powers.DodgePower;
@@ -85,6 +86,12 @@ public class ClimbTree extends AbstractDynamicCard {
         }
         if(BloomCountUtils.getBloomCount() >= 10) {
             ArrayList<AbstractCard> fruit = new ArrayList<AbstractCard>(AllFruit.getAllFruitCards());
+            ArrayList<AbstractCard> cardsPlayed = AbstractDungeon.actionManager.cardsPlayedThisCombat;
+            for(AbstractCard c: cardsPlayed) {
+                if(c.cardID.equals(Cherry.ID)) {
+                    fruit = new ArrayList<>(AllFruit.getAllNonHealingFruitCards());
+                }
+            }
             if(upgraded)
                 this.addToBot(new MakeTempCardInHandAction(fruit.get(new Random().nextInt(fruit.size())), 2));
             else

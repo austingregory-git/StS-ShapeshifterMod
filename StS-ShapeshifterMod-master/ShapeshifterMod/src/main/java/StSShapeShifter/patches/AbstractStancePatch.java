@@ -76,9 +76,6 @@ public class AbstractStancePatch {
             if (stanceID.equals(MooseFormStance.STANCE_ID)) {
                 return SpireReturn.Return(new MooseFormStance());
             }
-            if (stanceID.equals(FlamingoFormStance.STANCE_ID)) {
-                return SpireReturn.Return(new FlamingoFormStance());
-            }
             if (stanceID.equals(HippoFormStance.STANCE_ID)) {
                 return SpireReturn.Return(new HippoFormStance());
             }

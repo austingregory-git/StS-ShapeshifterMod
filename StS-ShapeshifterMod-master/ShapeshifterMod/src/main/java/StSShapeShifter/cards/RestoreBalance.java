@@ -1,6 +1,7 @@
 package StSShapeShifter.cards;
 
 import StSShapeShifter.characters.ShapeShifter;
+import StSShapeShifter.util.AllMonsterPowers;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -62,7 +63,7 @@ public class RestoreBalance extends AbstractDynamicCard {
 
         while(var3.hasNext()) {
             AbstractPower power = (AbstractPower)var3.next();
-            if (power != null && power.type == AbstractPower.PowerType.BUFF) {
+            if (power != null && power.type == AbstractPower.PowerType.BUFF && !AllMonsterPowers.getAllBossPowerIDs().contains(power.ID)) {
                 this.addToBot(new RemoveSpecificPowerAction(m, p, power));
             }
         }

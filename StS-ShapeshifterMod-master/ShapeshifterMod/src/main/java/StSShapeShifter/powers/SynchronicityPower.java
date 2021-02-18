@@ -26,6 +26,8 @@ public class SynchronicityPower extends AbstractPower implements CloneablePowerI
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    private boolean growCardForTurn = false;
+    private boolean witherCardForTurn = false;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     private static final Texture tex84 = TextureLoader.getTexture("StSShapeShifterResources/images/powers/SpringPower84.png");
@@ -50,12 +52,20 @@ public class SynchronicityPower extends AbstractPower implements CloneablePowerI
     }
 
     @Override
+    public void atStartOfTurn() {
+        growCardForTurn = false;
+        witherCardForTurn = false;
+    }
+
+    @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if(card instanceof AbstractGrowCard){
+        if(card instanceof AbstractGrowCard && !growCardForTurn){
             this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, amount)));
+            growCardForTurn = true;
         }
-        if(card instanceof AbstractWitherCard){
+        if(card instanceof AbstractWitherCard && !witherCardForTurn){
             this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount)));
+            witherCardForTurn = true;
         }
     }
 
