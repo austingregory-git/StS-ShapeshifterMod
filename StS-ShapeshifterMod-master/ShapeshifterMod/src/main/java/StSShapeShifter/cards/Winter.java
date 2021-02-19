@@ -38,7 +38,8 @@ public class Winter extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = ShapeShifter.Enums.SHAPESHIFTER_CARD_COLOR;
 
-    private static final int COST = 1;
+    private static final int COST = 3;
+    private static final int UPGRADED_COST = 2;
 
     // /STAT DECLARATION/
 
@@ -59,8 +60,7 @@ public class Winter extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            //this.rawDescription = "Your Wither cards cost 0. Whenever you draw a Wither Card, double its Wither value.";
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

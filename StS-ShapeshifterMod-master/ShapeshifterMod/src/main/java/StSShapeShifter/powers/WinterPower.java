@@ -52,18 +52,34 @@ public class WinterPower extends AbstractPower implements CloneablePowerInterfac
 
     @Override
     public void onInitialApplication() {
+        Iterator var1 = AbstractDungeon.player.drawPile.group.iterator();
         Iterator var2 = AbstractDungeon.player.hand.group.iterator();
+        Iterator var3 = AbstractDungeon.player.discardPile.group.iterator();
 
+        while(var1.hasNext()) {
+            AbstractCard c = (AbstractCard) var1.next();
+            if(c instanceof AbstractWitherCard && ((AbstractWitherCard) c).witherValue > 0) {
+                c.modifyCostForCombat(-9);
+                this.addToTop(new ModifyWitherAction(c.uuid, ((AbstractWitherCard) c).baseWitherValue));
+                ((AbstractWitherCard) c).ModifiedCostCode = 3;
+                c.applyPowers();
+            }
+        }
         while(var2.hasNext()) {
             AbstractCard c = (AbstractCard) var2.next();
             if(c instanceof AbstractWitherCard && ((AbstractWitherCard) c).witherValue > 0) {
-                if(upgraded) {
-                    this.addToBot(new ReduceCostForTurnAction(c, 1));
-                }
-                else
-                    this.addToBot(new ReduceCostForTurnAction(c, 9));
-
+                c.modifyCostForCombat(-9);
                 this.addToTop(new ModifyWitherAction(c.uuid, ((AbstractWitherCard) c).baseWitherValue));
+                ((AbstractWitherCard) c).ModifiedCostCode = 3;
+                c.applyPowers();
+            }
+        }
+        while(var3.hasNext()) {
+            AbstractCard c = (AbstractCard) var3.next();
+            if(c instanceof AbstractWitherCard && ((AbstractWitherCard) c).witherValue > 0) {
+                c.modifyCostForCombat(-9);
+                this.addToTop(new ModifyWitherAction(c.uuid, ((AbstractWitherCard) c).baseWitherValue));
+                ((AbstractWitherCard) c).ModifiedCostCode = 3;
                 c.applyPowers();
             }
         }
@@ -71,19 +87,18 @@ public class WinterPower extends AbstractPower implements CloneablePowerInterfac
 
     public void onCardDraw(AbstractCard card) {
         //card.getClass().getName().equals(AbstractDynamicCard.class.getName())
-        if(card instanceof AbstractWitherCard){
+        if(card instanceof AbstractWitherCard && ((AbstractWitherCard) card).witherValue > 0){
             AbstractWitherCard c = (AbstractWitherCard) card;
             //change to only wither cards
-            if(c.witherValue>0) {
-                if(upgraded) {
-                    this.addToBot(new ReduceCostForTurnAction(c, 1));
-                }
-                else
-                    this.addToBot(new ReduceCostForTurnAction(c, 9));
-
+            c.modifyCostForCombat(-9);
+            ShapeshifterMod.logger.info(c.witherValue);
+            ShapeshifterMod.logger.info(c.ModifiedCostCode);
+            if(c.ModifiedCostCode != 3)
                 this.addToTop(new ModifyWitherAction(c.uuid, c.baseWitherValue));
-                c.applyPowers();
-            }
+            ShapeshifterMod.logger.info(c.witherValue);
+            c.applyPowers();
+            ShapeshifterMod.logger.info(c.witherValue);
+
         }
     }
 

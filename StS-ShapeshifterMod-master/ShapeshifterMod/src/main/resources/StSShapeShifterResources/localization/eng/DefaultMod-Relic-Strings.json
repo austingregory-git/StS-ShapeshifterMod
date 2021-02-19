@@ -41,6 +41,13 @@
       "At the start of each combat, enter a random form."
     ]
   },
+  "StSShapeShifter:PetrifiedLog": {
+    "NAME": "Petrified Log",
+    "FLAVOR": "This life has turned to stone.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, reduce the Wither value of all Wither cards in your deck by half (won't be reduced to 0)."
+    ]
+  },
   "StSShapeShifter:AlchemistsNecklace": {
     "NAME": "Alchemist's Necklace",
     "FLAVOR": "Each bead contains a powerful potion.",

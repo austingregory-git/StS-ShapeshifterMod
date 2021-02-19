@@ -517,8 +517,7 @@
   },
   "StSShapeShifter:Winter": {
     "NAME": "Winter",
-    "DESCRIPTION": "Your Wither cards cost 1 less. Whenever you draw a Wither Card, double its Wither value.",
-    "UPGRADE_DESCRIPTION": "Your Wither cards cost 0. Whenever you draw a Wither Card, double its Wither value."
+    "DESCRIPTION": "Your Wither cards cost 0. Double the Wither value of all of your Wither cards."
   },
   "StSShapeShifter:DefaultCommonAttack": {
     "NAME": "Strike",
