@@ -45,8 +45,10 @@ public class DeepWoundPower extends AbstractPower implements CloneablePowerInter
     }
 
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-        this.flash();
-        this.addToBot(new LoseHPAction(this.owner, (AbstractCreature) null, this.amount, AbstractGameAction.AttackEffect.LIGHTNING));
+        if(info.type.equals(DamageInfo.DamageType.NORMAL)) {
+            this.flash();
+            this.addToBot(new LoseHPAction(this.owner, (AbstractCreature) null, this.amount, AbstractGameAction.AttackEffect.LIGHTNING));
+        }
     }
 
     @Override

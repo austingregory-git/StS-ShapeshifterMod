@@ -7,6 +7,7 @@ import StSShapeShifter.powers.TortoiseFormPower;
 import StSShapeShifter.stances.PorcupineFormStance;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -17,6 +18,8 @@ import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 import com.megacrit.cardcrawl.powers.watcher.CannotChangeStancePower;
+import com.megacrit.cardcrawl.stances.NeutralStance;
+import javafx.scene.shape.Shape;
 
 import static StSShapeShifter.ShapeshifterMod.makeCardPath;
 
@@ -73,8 +76,6 @@ public class PorcupineForm extends AbstractDynamicCard {
         else {
             this.addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, this.magicNumber)));
         }
-
-
     }
 
     //Upgraded stats.

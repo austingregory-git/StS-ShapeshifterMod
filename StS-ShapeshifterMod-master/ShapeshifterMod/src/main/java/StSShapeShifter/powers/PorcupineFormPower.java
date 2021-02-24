@@ -52,19 +52,6 @@ public class PorcupineFormPower extends AbstractFormPower implements CloneablePo
         this.addToBot(new ApplyPowerAction(owner, owner, new ThornsPower(owner, stackAmount), stackAmount));
     }
 
-/*public void onRemove() {
-        this.addToBot(new ApplyPowerAction(owner, owner, new ThornsPower(owner, -amount), -amount));
-        ShapeshifterMod.logger.info(owner.hasPower("Thorns"));
-        if(owner.hasPower("Thorns")) {
-            int thorns_amount = owner.getPower("Thorns").amount;
-            ShapeshifterMod.logger.info(thorns_amount);
-            if(thorns_amount == amount) {
-                this.addToBot(new RemoveSpecificPowerAction(owner, owner, "Thorns"));
-                ShapeshifterMod.logger.info(owner.hasPower("Thorns"));
-            }
-        }
-    }*/
-
     @Override
     public void updateDescription() {
         description = DESCRIPTIONS[0];

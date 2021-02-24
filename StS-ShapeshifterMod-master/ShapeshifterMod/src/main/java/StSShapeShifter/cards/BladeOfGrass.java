@@ -2,6 +2,8 @@ package StSShapeShifter.cards;
 
 import StSShapeShifter.ShapeshifterMod;
 import StSShapeShifter.characters.ShapeShifter;
+import StSShapeShifter.powers.HummingbirdFormPower;
+import StSShapeShifter.relics.EmeraldPantherFigurine;
 import StSShapeShifter.util.AllForms;
 import StSShapeShifter.util.BloomCountUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -96,8 +98,32 @@ public class BladeOfGrass extends AbstractGrowCard {
             this.addToBot(new ModifyDamageAction(this.uuid, this.growValue));
             updateBloomCount(this.growValue);
         }
+    }
 
-
+    @Override
+    public void applyPowers() {
+        if(AbstractDungeon.player.hasPower(ShapeshifterMod.makeID(HummingbirdFormPower.class.getSimpleName())) && !hbpUpdated) {
+            this.baseGrowValue += AbstractDungeon.player.getPower(ShapeshifterMod.makeID(HummingbirdFormPower.class.getSimpleName())).amount;
+            this.defaultBaseSecondMagicNumber += AbstractDungeon.player.getPower(ShapeshifterMod.makeID(HummingbirdFormPower.class.getSimpleName())).amount;
+            this.baseMagicNumber += AbstractDungeon.player.getPower(ShapeshifterMod.makeID(HummingbirdFormPower.class.getSimpleName())).amount;
+            this.isGrowValueModified = true;
+            this.isDefaultSecondMagicNumberModified = true;
+            this.isMagicNumberModified = true;
+            hbpUpdated = true;
+        }
+        if(AbstractDungeon.player.hasRelic(ShapeshifterMod.makeID(EmeraldPantherFigurine.class.getSimpleName())) && !epfUpdated) {
+            this.baseGrowValue += 1;
+            this.defaultBaseSecondMagicNumber += 1;
+            this.baseMagicNumber += 1;
+            this.isDefaultSecondMagicNumberModified = true;
+            this.isMagicNumberModified = true;
+            this.isGrowValueModified = true;
+            epfUpdated = true;
+        }
+        applyGrow();
+        this.magicNumber = this.baseMagicNumber;
+        this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;
+        super.applyPowers();
     }
 
     public void triggerOnGlowCheck() {

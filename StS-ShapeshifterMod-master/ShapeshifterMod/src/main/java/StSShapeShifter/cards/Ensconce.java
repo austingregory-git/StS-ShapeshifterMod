@@ -62,7 +62,7 @@ public class Ensconce extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeBaseCost(1);
             initializeDescription();
         }
     }
